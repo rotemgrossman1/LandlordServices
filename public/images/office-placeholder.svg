@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="360" viewBox="0 0 560 360" role="img" aria-label="תמונה זמנית">
+  <!-- Placeholder: replace with a real office photo -->
+  <rect width="560" height="360" fill="#e6eef1"/>
+  <rect x="200" y="40" width="160" height="300" fill="#12394a"/>
+  <g fill="#5d8a9b">
+    <rect x="220" y="60" width="50" height="30"/><rect x="290" y="60" width="50" height="30"/>
+    <rect x="220" y="110" width="50" height="30"/><rect x="290" y="110" width="50" height="30"/>
+    <rect x="220" y="160" width="50" height="30"/><rect x="290" y="160" width="50" height="30"/>
+    <rect x="220" y="210" width="50" height="30"/><rect x="290" y="210" width="50" height="30"/>
+    <rect x="220" y="260" width="50" height="30"/><rect x="290" y="260" width="50" height="30"/>
+  </g>
+  <rect x="80" y="160" width="100" height="180" fill="#8aa7b2"/>
+  <rect x="380" y="120" width="110" height="220" fill="#8aa7b2"/>
+  <rect x="0" y="340" width="560" height="20" fill="#b04f17"/>
+</svg>

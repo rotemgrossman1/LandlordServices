@@ -1,0 +1,39 @@
+.bar {
+  position: fixed;
+  inset-inline: 0;
+  inset-block-end: 0;
+  z-index: 40;
+  display: flex;
+  height: var(--mobile-bar-height);
+  background: var(--color-primary);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.item:hover {
+  color: #fff;
+}
+
+.call {
+  background: var(--color-accent);
+}
+
+.wa {
+  background: #1d6b45;
+}
+
+@media (min-width: 768px) {
+  .bar {
+    display: none;
+  }
+}

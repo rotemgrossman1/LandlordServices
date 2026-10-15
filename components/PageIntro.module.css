@@ -1,0 +1,8 @@
+.intro {
+  padding-block: var(--space-7) var(--space-6);
+  background: var(--color-primary-soft);
+}
+
+.intro p {
+  margin-block-end: 0;
+}

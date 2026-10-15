@@ -1,0 +1,32 @@
+.band {
+  background: var(--color-bg-alt);
+  padding-block: var(--section-space);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1.1fr;
+    align-items: start;
+  }
+}
+
+.phone {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+}
+
+.phone a {
+  text-decoration: none;
+}
+
+.formBox {
+  padding: var(--space-5);
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}

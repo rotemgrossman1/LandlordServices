@@ -1,0 +1,33 @@
+.toc {
+  padding-block: var(--space-5) 0;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.toc a {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.service {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 900px) {
+  .service {
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-7);
+  }
+}

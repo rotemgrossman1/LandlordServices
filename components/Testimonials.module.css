@@ -1,0 +1,33 @@
+.rating {
+  font-weight: 700;
+}
+
+.grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  padding: var(--space-5);
+  background: var(--color-bg-alt);
+  border-radius: var(--radius);
+}
+
+.quote {
+  margin: 0;
+}
+
+.who {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-primary);
+}
