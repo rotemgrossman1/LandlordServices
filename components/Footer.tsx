@@ -1,44 +1,40 @@
 import Link from "next/link";
-import { labels, nav, site } from "@/content/site";
-import { telHref } from "@/lib/format";
+import { areas, cta, labels, nav, services, site } from "@/content/site";
+import { telHref, whatsappHref } from "@/lib/format";
+import Icon from "./Icon";
+import Logo from "./Logo";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
-        <div>
-          <p className={styles.brand}>
-            {site.nameHe} <span className={styles.brandEn}>{site.name}</span>
-          </p>
-          <p className={styles.small}>{labels.footerTagline}</p>
+        <div className={styles.brandCol}>
+          <Logo tone="light" />
+          <p className={styles.tagline}>{labels.footerTagline}</p>
+          <div className="btn-row">
+            {site.whatsapp && (
+              <a
+                href={whatsappHref(site.whatsapp, cta.whatsappText)}
+                className="btn btn-whatsapp"
+                rel="noopener"
+                target="_blank"
+              >
+                <Icon name="whatsapp" size={20} />
+                {cta.whatsappLong}
+              </a>
+            )}
+          </div>
         </div>
 
         <div>
-          <h2 className={styles.heading}>{labels.contactUs}</h2>
+          <h2 className={styles.heading}>{labels.services}</h2>
           <ul className={styles.list}>
-            <li>
-              {labels.phone}: <a href={telHref(site.phone)} className="ltr">{site.phone}</a>
-            </li>
-            <li>
-              {labels.mobile}: <a href={telHref(site.mobile)} className="ltr">{site.mobile}</a>
-            </li>
-            <li>
-              {labels.email}: <a href={`mailto:${site.email}`}>{site.email}</a>
-            </li>
-            <li>
-              {labels.address}: <a href={site.mapsUrl}>{site.address.full}</a>
-            </li>
-            {site.hours && (
-              <li>
-                {labels.hours}: {site.hours}
+            {services.map((s) => (
+              <li key={s.id}>
+                <Link href={`/services#${s.id}`}>{s.title}</Link>
               </li>
-            )}
-            {site.companyId && (
-              <li>
-                {labels.companyId} {site.companyId}
-              </li>
-            )}
+            ))}
           </ul>
         </div>
 
@@ -56,20 +52,51 @@ export default function Footer() {
             <li>
               <Link href="/accessibility">{labels.accessibility}</Link>
             </li>
-            {site.facebook && (
+          </ul>
+        </nav>
+
+        <div>
+          <h2 className={styles.heading}>{labels.contactUs}</h2>
+          <ul className={`${styles.list} ${styles.contact}`}>
+            <li>
+              <Icon name="phone" size={18} />
+              <a href={telHref(site.phone)} className="ltr">
+                {site.phone}
+              </a>
+            </li>
+            <li>
+              <Icon name="mail" size={18} />
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+            </li>
+            <li>
+              <Icon name="mapPin" size={18} />
+              <a href={site.mapsUrl}>{site.address.full}</a>
+            </li>
+            {site.hours && (
               <li>
-                <a href={site.facebook} rel="noopener">
-                  {labels.facebook}
-                </a>
+                <Icon name="clock" size={18} />
+                <span>{site.hours}</span>
               </li>
             )}
           </ul>
-        </nav>
+          {areas.regions.length > 0 && (
+            <p className={styles.small}>
+              {labels.areas}: {areas.regions.join(" · ")}
+            </p>
+          )}
+        </div>
       </div>
+
       <div className={`container ${styles.bottom}`}>
         <p>
           © {new Date().getFullYear()} {site.legalName || site.nameHe}. {labels.rights}.
+          {site.companyId && ` ${labels.companyId} ${site.companyId}`}
         </p>
+        {site.facebook && (
+          <a href={site.facebook} rel="noopener">
+            {labels.facebook}
+          </a>
+        )}
       </div>
     </footer>
   );

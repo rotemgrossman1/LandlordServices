@@ -1,32 +1,55 @@
-.band {
-  background: var(--color-bg-alt);
-  padding-block: var(--section-space);
+/* small top gap: the section before it already has bottom padding */
+.section {
+  padding-block: var(--space-6) var(--section-space);
 }
 
-.inner {
+.band {
+  position: relative;
+  overflow: hidden;
   display: grid;
   gap: var(--space-6);
+  padding: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(40rem 30rem at 0% 100%, rgba(224, 133, 92, 0.25), transparent 60%),
+    var(--color-primary);
+  color: var(--color-on-dark);
 }
 
-@media (min-width: 900px) {
-  .inner {
+@media (min-width: 960px) {
+  .band {
     grid-template-columns: 1fr 1.1fr;
-    align-items: start;
+    gap: var(--space-8);
+    align-items: center;
   }
 }
 
-.phone {
-  font-size: var(--text-2xl);
-  font-weight: 800;
+.text h2 {
+  color: #fff;
+  font-size: var(--text-3xl);
+  max-width: 14ch;
 }
 
-.phone a {
-  text-decoration: none;
+.text :global(.lead) {
+  color: var(--color-on-dark-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-start: var(--space-5);
 }
 
 .formBox {
-  padding: var(--space-5);
-  background: #fff;
+  padding: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+  background: var(--color-surface);
+  color: var(--color-text);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
+}
+
+.formTitle {
+  margin-block-end: var(--space-4);
+  font-size: var(--text-xl);
 }

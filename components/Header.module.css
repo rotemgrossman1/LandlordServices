@@ -2,8 +2,18 @@
   position: sticky;
   inset-block-start: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.97);
-  border-block-end: 1px solid var(--color-border);
+  background: rgba(251, 248, 243, 0.86);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  backdrop-filter: saturate(1.4) blur(14px);
+  border-block-end: 1px solid transparent;
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.scrolled {
+  border-block-end-color: var(--color-border);
+  box-shadow: 0 6px 24px -12px rgba(31, 42, 40, 0.18);
 }
 
 .inner {
@@ -15,23 +25,9 @@
 }
 
 .logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  display: inline-flex;
   text-decoration: none;
-  color: var(--color-primary);
-}
-
-.logoHe {
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
-.logoEn {
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-muted);
+  border-radius: var(--radius-sm);
 }
 
 .toggle {
@@ -41,9 +37,9 @@
   width: 48px;
   height: 48px;
   padding: 0;
-  background: transparent;
+  background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  border-radius: 14px;
   cursor: pointer;
 }
 
@@ -51,11 +47,13 @@
 .burger::before,
 .burger::after {
   display: block;
-  width: 22px;
+  width: 20px;
   height: 2px;
   background: var(--color-primary);
   border-radius: 2px;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .burger {
@@ -70,11 +68,11 @@
 }
 
 .burger::before {
-  inset-block-start: -7px;
+  inset-block-start: -6px;
 }
 
 .burger::after {
-  inset-block-start: 7px;
+  inset-block-start: 6px;
 }
 
 .toggle[aria-expanded="true"] .burger {
@@ -82,11 +80,11 @@
 }
 
 .toggle[aria-expanded="true"] .burger::before {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
 }
 
 .toggle[aria-expanded="true"] .burger::after {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* Mobile: menu panel below the header */
@@ -95,10 +93,10 @@
   position: absolute;
   inset-inline: 0;
   inset-block-start: 100%;
-  padding: var(--space-4) var(--gutter) var(--space-5);
-  background: #fff;
+  padding: var(--space-3) var(--gutter) var(--space-6);
+  background: var(--color-bg);
   border-block-end: 1px solid var(--color-border);
-  box-shadow: var(--shadow);
+  box-shadow: 0 24px 40px -24px rgba(31, 42, 40, 0.35);
 }
 
 .nav.open {
@@ -111,9 +109,15 @@
   padding: 0;
 }
 
+.list li + li {
+  border-block-start: 1px solid var(--color-border);
+}
+
 .link {
   display: block;
-  padding: var(--space-3) 0;
+  padding: var(--space-4) 0;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
   font-weight: 500;
   text-decoration: none;
   color: var(--color-text);
@@ -121,7 +125,6 @@
 
 .link[aria-current="page"] {
   color: var(--color-accent-dark);
-  font-weight: 700;
 }
 
 .actions {
@@ -131,13 +134,27 @@
   margin-block-start: var(--space-4);
 }
 
-.phone {
+.contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: var(--space-2) var(--space-4);
+  border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
-  padding: var(--space-2) 0;
+  color: var(--color-whatsapp);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
 }
 
-@media (min-width: 1000px) {
+.contact:hover {
+  color: var(--color-whatsapp);
+  border-color: var(--color-whatsapp);
+}
+
+@media (min-width: 1080px) {
   .toggle {
     display: none;
   }
@@ -155,11 +172,31 @@
 
   .list {
     display: flex;
-    gap: var(--space-5);
+    gap: var(--space-1);
+  }
+
+  .list li + li {
+    border: 0;
   }
 
   .link {
-    padding: var(--space-2) 0;
+    position: relative;
+    padding: var(--space-2) var(--space-3);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    border-radius: 999px;
+    transition: background-color 0.2s ease;
+  }
+
+  .link:hover {
+    background: var(--color-sand);
+    color: var(--color-text);
+  }
+
+  .link[aria-current="page"] {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-weight: 700;
   }
 
   .actions {

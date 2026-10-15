@@ -1,15 +1,24 @@
 .footer {
   background: var(--color-primary-dark);
-  color: #e8eef0;
-  padding-block: var(--space-7) var(--space-4);
+  color: var(--color-on-dark-muted);
+  padding-block: var(--space-8) var(--space-5);
+  font-size: var(--text-sm);
 }
 
 .footer a {
-  color: #fff;
+  color: var(--color-on-dark);
+  text-decoration: none;
 }
 
 .footer a:hover {
   color: var(--color-accent-light);
+  text-decoration: underline;
+}
+
+.footer :global(.btn-whatsapp),
+.footer :global(.btn-whatsapp):hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .grid {
@@ -17,53 +26,70 @@
   gap: var(--space-6);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .grid {
-    grid-template-columns: 1.2fr 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-.brand {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-  margin-block-end: var(--space-2);
+@media (min-width: 1000px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr 0.8fr 1.2fr;
+    gap: var(--space-7);
+  }
 }
 
-.brandEn {
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: #c3d0d5;
+.brandCol {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+.tagline {
+  margin: 0;
+  max-width: 22rem;
+  font-size: var(--text-base);
+  line-height: 1.6;
 }
 
 .heading {
+  margin-block-end: var(--space-4);
   font-size: var(--text-base);
   color: #fff;
-  margin-block-end: var(--space-3);
 }
 
 .list {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
 }
 
-.list li {
-  margin-block-end: var(--space-2);
+.contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.contact svg {
+  flex-shrink: 0;
+  margin-block-start: 0.2rem;
+  color: var(--color-accent-light);
 }
 
 .small {
-  font-size: var(--text-sm);
-  color: #c3d0d5;
+  margin-block: var(--space-4) 0;
 }
 
 .bottom {
-  margin-block-start: var(--space-6);
-  padding-block-start: var(--space-4);
-  border-block-start: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: var(--text-sm);
-  color: #c3d0d5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-block-start: var(--space-7);
+  padding-block-start: var(--space-5);
+  border-block-start: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .bottom p {

@@ -1,0 +1,46 @@
+.fab {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .fab {
+    position: fixed;
+    inset-inline-end: 1.5rem;
+    inset-block-end: 1.5rem;
+    z-index: 40;
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    height: 58px;
+    padding-inline: 16px;
+    border-radius: 999px;
+    background: var(--color-whatsapp);
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 14px 30px -10px rgba(15, 122, 64, 0.6);
+    transition:
+      gap 0.25s var(--ease),
+      transform 0.2s var(--ease);
+  }
+
+  .fab:hover,
+  .fab:focus-visible {
+    color: #fff;
+    gap: var(--space-2);
+    transform: translateY(-2px);
+  }
+
+  /* The label slides out on hover/focus; it's always available to screen readers */
+  .label {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.3s var(--ease);
+  }
+
+  .fab:hover .label,
+  .fab:focus-visible .label {
+    max-width: 14rem;
+  }
+}

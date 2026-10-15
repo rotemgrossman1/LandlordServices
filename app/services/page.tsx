@@ -1,8 +1,9 @@
-import CtaBand from "@/components/CtaBand";
-import PageIntro from "@/components/PageIntro";
-import { labels, pages, services } from "@/content/site";
-import { buildMetadata } from "@/lib/seo";
 import Link from "next/link";
+import CtaBand from "@/components/CtaBand";
+import Icon from "@/components/Icon";
+import PageIntro from "@/components/PageIntro";
+import { home, labels, pages, services } from "@/content/site";
+import { buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
 export const metadata = buildMetadata(pages.services, "/services");
@@ -10,17 +11,20 @@ export const metadata = buildMetadata(pages.services, "/services");
 export default function ServicesPage() {
   return (
     <>
-      <PageIntro page={pages.services} />
-
-      <nav className={`container ${styles.toc}`} aria-label={pages.services.h1}>
-        <ul>
-          {services.map((s) => (
-            <li key={s.id}>
-              <a href={`#${s.id}`}>{s.title}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <PageIntro page={pages.services} eyebrow={home.servicesEyebrow}>
+        <nav className={styles.toc} aria-label={labels.onThisPage}>
+          <ul>
+            {services.map((s) => (
+              <li key={s.id}>
+                <a href={`#${s.id}`}>
+                  <Icon name={s.icon} size={18} />
+                  {s.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </PageIntro>
 
       {services.map((s, i) => (
         <section
@@ -30,19 +34,23 @@ export default function ServicesPage() {
           aria-labelledby={`${s.id}-title`}
         >
           <div className={`container ${styles.service}`}>
-            <div>
+            <div data-reveal>
+              <span className={`${styles.icon} ${s.id === "landlord-safe" ? styles.iconSafe : ""}`}>
+                <Icon name={s.icon} size={30} />
+              </span>
               <h2 id={`${s.id}-title`}>{s.title}</h2>
               <p className="lead">{s.short}</p>
-              <h3>{labels.forWhom}</h3>
+              <h3 className={styles.subhead}>{labels.forWhom}</h3>
               <p>{s.forWhom}</p>
               {s.id === "landlord-safe" && (
-                <p>
-                  <Link href="/landlord-safe">{labels.learnMore} – Landlord Safe</Link>
-                </p>
+                <Link href="/landlord-safe" className="btn btn-primary">
+                  {labels.learnMore} – Landlord Safe
+                  <Icon name="arrow" size={20} />
+                </Link>
               )}
             </div>
-            <div>
-              <h3>{labels.includes}</h3>
+            <div className={styles.includes} data-reveal>
+              <h3 className={styles.subhead}>{labels.includes}</h3>
               <ul className="check-list">
                 {s.includes.map((item) => (
                   <li key={item}>{item}</li>

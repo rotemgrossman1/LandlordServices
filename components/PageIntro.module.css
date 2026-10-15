@@ -1,8 +1,45 @@
 .intro {
-  padding-block: var(--space-7) var(--space-6);
-  background: var(--color-primary-soft);
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(2.5rem, 1.5rem + 4vw, 5rem);
+  background: var(--color-sand);
 }
 
-.intro p {
+.shape {
+  position: absolute;
+  inset-block-start: -8rem;
+  inset-inline-end: -8rem;
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224, 133, 92, 0.22), rgba(224, 133, 92, 0) 68%);
+  pointer-events: none;
+}
+
+.shape::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 10rem;
+  inset-inline-end: 12rem;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border: 2px dashed var(--color-sand-dark);
+}
+
+.inner {
+  position: relative;
+}
+
+.title {
+  max-width: 22ch;
+  text-wrap: balance;
+}
+
+.lead {
   margin-block-end: 0;
+}
+
+.inner :global(.btn-row) {
+  margin-block-start: var(--space-5);
 }

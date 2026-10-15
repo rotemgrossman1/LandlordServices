@@ -18,7 +18,9 @@ npm run start      # serve the production build
 **All text and business details are in [`content/site.ts`](content/site.ts).** You never need to touch components to change copy.
 
 - Phone, email, address, Facebook, WhatsApp, business hours, company number: `site`
+- Home page section order: `homeSections`. Remove a key to hide a section, or reorder keys to move sections.
 - Numbers strip: `stats` (an item with an empty `value` is hidden; "מאז 2013" always shows)
+- Home sections: `personas` (who it's for), `ownerView` (the illustrative phone with updates), `protection` (the legal layers), `comparison` (the table), `areas` (cities)
 - Testimonials, Google rating, team, pricing, Landlord Safe terms: `testimonials`, `googleRating`, `team`, `pricing`, `safeTerms`
 - Services (one entry per service, and `id` is the anchor on `/services`): `services`
 - Page titles, meta descriptions, H1s and opening paragraphs: `pages`
@@ -29,17 +31,12 @@ npm run start      # serve the production build
 
 `public/llms.txt` (a summary for AI assistants) is a separate plain-text file. Update it if contact details or services change.
 
-## Replacing images
+## Images and logo
 
-Placeholder images are in `public/images/`:
-
-| File | Used in |
-|---|---|
-| `hero-placeholder.svg` | Home page hero |
-| `office-placeholder.svg` | About page, office section |
-| `og-default.png` (1200×630) | Social sharing preview |
-
-To swap one, either replace the file and keep the same name, or add a new file (e.g. `hero.jpg`) and update the path in the component (`components/Hero.tsx`, `app/about/page.tsx`). For the partner photo, add e.g. `public/images/partner-doron-marom.jpg` and set `partner.photo` in `content/site.ts`.
+- **Photos:** set the paths in `images` in `content/site.ts` (e.g. `hero: "/images/hero.jpg"`, `office: "/images/office.jpg"`) after adding the files to `public/images/`. While `images.hero` is empty, the home page shows a drawn illustration (`components/HeroArt.tsx`).
+- **Team and partner photos:** set `photo` on each entry in `team`, and `partner.photo`. While empty, initials are shown.
+- **Logo:** `components/Logo.tsx` holds a temporary mark. To use the official logo, put the file in `public/images/` and replace the `<svg>` in that component.
+- **Social preview:** `public/images/og-default.png` (1200×630).
 
 ## Environment variables
 

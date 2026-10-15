@@ -1,28 +1,38 @@
 :root {
-  /* Colors (all text/background pairs pass WCAG AA) */
-  --color-primary: #12394a; /* deep petrol */
-  --color-primary-dark: #0b2733;
-  --color-primary-soft: #e6eef1;
-  --color-accent: #b04f17; /* warm accent – buttons (white text 5.3:1) */
-  --color-accent-dark: #8f3f10;
-  --color-accent-light: #f0b37e; /* accent on dark backgrounds */
-  --color-bg: #ffffff;
-  --color-bg-alt: #f6f4ef;
-  --color-text: #1c2a30;
-  --color-muted: #5b6b73;
-  --color-border: #dde3e6;
+  /* Colors – warm & friendly. All text/background pairs pass WCAG AA. */
+  --color-primary: #1e4d45; /* deep warm teal-green */
+  --color-primary-dark: #143832;
+  --color-primary-soft: #e3eeea;
+  --color-accent: #b4532b; /* terracotta – buttons (white text 4.9:1) */
+  --color-accent-dark: #933f1f;
+  --color-accent-bright: #e0855c; /* decorative only, never for text */
+  --color-accent-light: #f4b892; /* accent text on dark backgrounds */
+  --color-accent-soft: #fbe9df;
+  --color-bg: #fbf8f3; /* warm off-white */
+  --color-surface: #ffffff;
+  --color-sand: #f3ece1; /* alternate sections */
+  --color-sand-dark: #e8ddcc;
+  --color-text: #1f2a28;
+  --color-muted: #56625f;
+  --color-border: #e4ddd2;
+  --color-on-dark: #f6f1e9;
+  --color-on-dark-muted: #c9d8d3;
   --color-focus: #1a73e8;
   --color-success: #1e6b3a;
+  --color-success-soft: #e4f2e8;
   --color-error: #a51d1d;
+  --color-whatsapp: #0f7a40; /* white text 5.4:1 */
 
   /* Typography */
   --font-body: var(--font-heebo), "Heebo", "Arial Hebrew", Arial, sans-serif;
+  --font-display: var(--font-rubik), "Rubik", var(--font-body);
+  --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
   --text-base: 1.0625rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
-  --text-2xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.25rem);
-  --text-3xl: clamp(2rem, 1.5rem + 2.6vw, 3.125rem);
+  --text-lg: 1.1875rem;
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.75rem, 1.35rem + 1.8vw, 2.5rem);
+  --text-3xl: clamp(2.125rem, 1.5rem + 3vw, 3.5rem);
   --leading: 1.7;
 
   /* Spacing */
@@ -34,21 +44,25 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4.5rem;
-  --section-space: clamp(3rem, 2rem + 4vw, 5.5rem);
+  --section-space: clamp(3.5rem, 2rem + 5vw, 6.5rem);
 
-  --radius: 12px;
-  --radius-sm: 8px;
-  --max-width: 1120px;
+  --radius-lg: 28px;
+  --radius: 20px;
+  --radius-sm: 12px;
+  --max-width: 1180px;
   --gutter: 1rem;
-  --header-height: 64px;
-  --mobile-bar-height: 60px;
-  --shadow: 0 2px 12px rgba(18, 57, 74, 0.08);
+  --header-height: 68px;
+  --mobile-bar-height: 64px;
+  --shadow-sm: 0 1px 2px rgba(31, 42, 40, 0.05), 0 2px 8px rgba(31, 42, 40, 0.05);
+  --shadow: 0 2px 4px rgba(31, 42, 40, 0.04), 0 12px 32px -8px rgba(31, 42, 40, 0.12);
+  --shadow-lg: 0 4px 8px rgba(31, 42, 40, 0.05), 0 28px 60px -16px rgba(31, 42, 40, 0.22);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @media (min-width: 768px) {
   :root {
     --gutter: 1.5rem;
-    --header-height: 76px;
+    --header-height: 80px;
   }
 }
 
@@ -76,8 +90,10 @@ body {
   line-height: var(--leading);
   color: var(--color-text);
   background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
   /* room for the sticky mobile call bar */
   padding-block-end: var(--mobile-bar-height);
+  overflow-x: clip;
 }
 
 @media (min-width: 768px) {
@@ -88,15 +104,18 @@ body {
 
 h1,
 h2,
-h3 {
-  line-height: 1.25;
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: 1.2;
   color: var(--color-primary);
   margin-block: 0 var(--space-4);
+  letter-spacing: -0.01em;
 }
 
 h1 {
   font-size: var(--text-3xl);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 h2 {
@@ -106,7 +125,7 @@ h2 {
 
 h3 {
   font-size: var(--text-lg);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 p {
@@ -136,8 +155,13 @@ ol {
 
 :focus-visible {
   outline: 3px solid var(--color-focus);
-  outline-offset: 2px;
-  border-radius: 2px;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-accent-soft);
+  color: var(--color-text);
 }
 
 /* ---------- Layout helpers ---------- */
@@ -154,18 +178,79 @@ ol {
 }
 
 .section-alt {
-  background: var(--color-bg-alt);
+  background: var(--color-sand);
+}
+
+.section-white {
+  background: var(--color-surface);
+}
+
+.section-dark {
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+}
+
+.section-dark h2,
+.section-dark h3 {
+  color: #fff;
+}
+
+.section-dark a:not(.btn) {
+  color: var(--color-accent-light);
 }
 
 .section-head {
-  max-width: 46rem;
-  margin-block-end: var(--space-6);
+  max-width: 44rem;
+  margin-block-end: var(--space-7);
+}
+
+.section-head.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-head h2 {
+  margin-block-end: var(--space-3);
+}
+
+.section-head .lead {
+  margin: 0;
+}
+
+.section-head.center .lead {
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-end: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 1.5rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.section-dark .eyebrow {
+  color: var(--color-accent-light);
 }
 
 .lead {
   font-size: var(--text-lg);
-  color: var(--color-text);
-  max-width: 46rem;
+  color: var(--color-muted);
+  max-width: 44rem;
+}
+
+.section-dark .lead {
+  color: var(--color-on-dark-muted);
 }
 
 .prose {
@@ -179,31 +264,52 @@ ol {
 
 .check-list li {
   position: relative;
-  padding-inline-start: 1.75rem;
-  margin-block-end: var(--space-2);
+  padding-inline-start: 2rem;
+  margin-block-end: var(--space-3);
 }
 
 .check-list li::before {
   content: "";
   position: absolute;
   inset-inline-start: 0;
-  inset-block-start: 0.55em;
-  width: 0.9rem;
-  height: 0.5rem;
-  border-inline-start: 2.5px solid var(--color-accent);
-  border-block-end: 2.5px solid var(--color-accent);
-  transform: rotate(-45deg);
+  inset-block-start: 0.3em;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e4d45' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E")
+      center / 0.8rem no-repeat,
+    var(--color-primary-soft);
 }
 
 .more-link {
-  margin-block: var(--space-5) 0;
+  margin-block: var(--space-6) 0;
   font-weight: 700;
+}
+
+.more-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--color-accent-dark);
 }
 
 .btn-row {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: var(--text-sm);
+  font-weight: 600;
 }
 
 /* ---------- Buttons ---------- */
@@ -213,20 +319,35 @@ ol {
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  min-height: 48px;
+  min-height: 50px;
   padding: var(--space-3) var(--space-5);
   border: 2px solid transparent;
   border-radius: 999px;
   font: inherit;
   font-weight: 700;
+  line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s var(--ease),
+    box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn svg {
+  flex-shrink: 0;
 }
 
 .btn-primary {
   background: var(--color-accent);
   color: #fff;
+  box-shadow: 0 6px 16px -6px rgba(180, 83, 43, 0.55);
 }
 
 .btn-primary:hover {
@@ -253,6 +374,44 @@ ol {
 .btn-light:hover {
   background: var(--color-primary-soft);
   color: var(--color-primary);
+}
+
+.btn-whatsapp {
+  background: var(--color-whatsapp);
+  color: #fff;
+}
+
+.btn-whatsapp:hover {
+  background: #0b5f32;
+  color: #fff;
+}
+
+.btn-ghost-light {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-ghost-light:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* ---------- Reveal on scroll (see components/RevealObserver.tsx) ---------- */
+
+[data-reveal].reveal-armed {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+[data-reveal].reveal-armed.reveal-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.7s var(--ease),
+    transform 0.7s var(--ease);
+  transition-delay: calc(var(--reveal-i, 0) * 80ms);
 }
 
 /* ---------- Accessibility ---------- */

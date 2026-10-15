@@ -4,16 +4,27 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { cta, labels, nav, site } from "@/content/site";
-import { telHref } from "@/lib/format";
+import { telHref, whatsappHref } from "@/lib/format";
+import Icon from "./Icon";
+import Logo from "./Logo";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   // Close the menu when navigating
   useEffect(() => setOpen(false), [pathname]);
+
+  // Shadow once the page scrolls
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Escape closes the menu and returns focus to the toggle
   useEffect(() => {
@@ -29,11 +40,10 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled || open ? styles.scrolled : ""}`}>
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo} aria-label={`${site.nameHe} – ${labels.homeLink}`}>
-          <span className={styles.logoHe}>{site.nameHe}</span>
-          <span className={styles.logoEn}>{site.name}</span>
+          <Logo />
         </Link>
 
         <button
@@ -67,10 +77,24 @@ export default function Header() {
             ))}
           </ul>
           <div className={styles.actions}>
-            <a href={telHref(site.phone)} className={styles.phone}>
-              <span className="visually-hidden">{labels.phone}: </span>
-              <span className="ltr">{site.phone}</span>
-            </a>
+            {site.whatsapp ? (
+              <a
+                href={whatsappHref(site.whatsapp, cta.whatsappText)}
+                className={styles.contact}
+                rel="noopener"
+                target="_blank"
+              >
+                <Icon name="whatsapp" size={20} />
+                <span className="visually-hidden">{labels.phoneAndWhatsapp}: </span>
+                <span className="ltr">{site.phone}</span>
+              </a>
+            ) : (
+              <a href={telHref(site.phone)} className={styles.contact}>
+                <Icon name="phone" size={20} />
+                <span className="visually-hidden">{labels.phone}: </span>
+                <span className="ltr">{site.phone}</span>
+              </a>
+            )}
             <Link href={cta.primaryHref} className="btn btn-primary">
               {cta.primary}
             </Link>

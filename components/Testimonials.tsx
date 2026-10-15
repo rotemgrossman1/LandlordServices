@@ -1,4 +1,5 @@
 import { googleRating, home, testimonials } from "@/content/site";
+import SectionHeading from "./SectionHeading";
 import styles from "./Testimonials.module.css";
 
 /** Renders nothing until real testimonials are added in content/site.ts. */
@@ -7,7 +8,7 @@ export default function Testimonials() {
   return (
     <section className="section" aria-labelledby="testimonials-title">
       <div className="container">
-        <h2 id="testimonials-title">{home.testimonialsTitle}</h2>
+        <SectionHeading id="testimonials-title" eyebrow={home.testimonialsEyebrow} title={home.testimonialsTitle} />
         {googleRating.value && (
           <p className={styles.rating}>
             {googleRating.url ? (
@@ -24,7 +25,7 @@ export default function Testimonials() {
         )}
         <ul className={styles.grid}>
           {testimonials.map((t) => (
-            <li key={t.name + t.text} className={styles.card}>
+            <li key={t.name + t.text} className={styles.card} data-reveal>
               <blockquote className={styles.quote}>
                 <p>{t.text}</p>
               </blockquote>

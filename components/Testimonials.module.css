@@ -1,33 +1,56 @@
 .rating {
+  margin-block: calc(var(--space-5) * -1) var(--space-6);
   font-weight: 700;
 }
 
 .grid {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   display: grid;
   gap: var(--space-4);
 }
 
 @media (min-width: 768px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: var(--space-5);
   }
 }
 
 .card {
-  padding: var(--space-5);
-  background: var(--color-bg-alt);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .quote {
+  position: relative;
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}
+
+.quote::before {
+  content: "”";
+  display: block;
+  height: 2.25rem;
+  font-family: Georgia, serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-accent-bright);
+}
+
+.quote p {
   margin: 0;
 }
 
 .who {
-  margin: 0;
+  margin: auto 0 0;
   font-weight: 700;
   color: var(--color-primary);
 }

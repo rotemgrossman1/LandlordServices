@@ -2,7 +2,7 @@ import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
-import { faq, pages } from "@/content/site";
+import { faq, home, pages } from "@/content/site";
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
 
 export const metadata = buildMetadata(pages.faq, "/faq");
@@ -10,7 +10,7 @@ export const metadata = buildMetadata(pages.faq, "/faq");
 export default function FaqPage() {
   return (
     <>
-      <PageIntro page={pages.faq} />
+      <PageIntro page={pages.faq} eyebrow={home.faqEyebrow} />
       <section className="section">
         <div className="container">
           <Faq items={faq} />

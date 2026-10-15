@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { site, summary, type FaqItem, type PageMeta } from "@/content/site";
+import { areas, site, summary, type FaqItem, type PageMeta } from "@/content/site";
 
 export function buildMetadata(page: PageMeta, path: string): Metadata {
   return {
@@ -36,6 +36,9 @@ export function organizationJsonLd() {
       addressLocality: site.address.city,
       addressCountry: "IL",
     },
+    ...(areas.cities.length > 0
+      ? { areaServed: areas.cities.map((name) => ({ "@type": "City", name })) }
+      : {}),
     ...(site.facebook ? { sameAs: [site.facebook] } : {}),
     ...(site.companyId ? { taxID: site.companyId } : {}),
   };
