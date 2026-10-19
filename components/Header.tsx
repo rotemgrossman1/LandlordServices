@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { cta, labels, nav, site } from "@/content/site";
-import { telHref, whatsappHref } from "@/lib/format";
+import { telHref } from "@/lib/format";
 import Icon from "./Icon";
 import Logo from "./Logo";
 import styles from "./Header.module.css";
@@ -77,24 +77,11 @@ export default function Header() {
             ))}
           </ul>
           <div className={styles.actions}>
-            {site.whatsapp ? (
-              <a
-                href={whatsappHref(site.whatsapp, cta.whatsappText)}
-                className={styles.contact}
-                rel="noopener"
-                target="_blank"
-              >
-                <Icon name="whatsapp" size={20} />
-                <span className="visually-hidden">{labels.phoneAndWhatsapp}: </span>
-                <span className="ltr">{site.phone}</span>
-              </a>
-            ) : (
-              <a href={telHref(site.phone)} className={styles.contact}>
-                <Icon name="phone" size={20} />
-                <span className="visually-hidden">{labels.phone}: </span>
-                <span className="ltr">{site.phone}</span>
-              </a>
-            )}
+            <a href={telHref(site.phone)} className={styles.contact}>
+              <Icon name="phone" size={20} />
+              <span className="visually-hidden">{labels.phone}: </span>
+              <span className="ltr">{site.phone}</span>
+            </a>
             <Link href={cta.primaryHref} className="btn btn-primary">
               {cta.primary}
             </Link>

@@ -19,7 +19,8 @@ import { buildMetadata, faqJsonLd } from "@/lib/seo";
 
 export const metadata = buildMetadata(pages.home, "/");
 
-const homeFaq = faq.filter((q) => homeFaqIds.includes(q.id));
+// In the order listed in `homeFaqIds`
+const homeFaq = homeFaqIds.flatMap((id) => faq.filter((q) => q.id === id));
 
 // Each key in `homeSections` (content/site.ts) maps to one block here.
 const sections: Record<HomeSection, () => React.ReactNode> = {

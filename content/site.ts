@@ -698,7 +698,6 @@ export const form = {
 export const labels = {
   phone: "טלפון",
   whatsapp: "וואטסאפ",
-  phoneAndWhatsapp: "טלפון ווואטסאפ",
   email: "אימייל",
   address: "כתובת",
   hours: "שעות פעילות",

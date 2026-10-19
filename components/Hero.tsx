@@ -8,7 +8,7 @@ import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} data-fab-hide>
       <div className={`container ${styles.inner}`}>
         <div className={styles.text}>
           <h1 className={styles.title}>{pages.home.h1}</h1>
@@ -22,7 +22,7 @@ export default function Hero() {
             {site.whatsapp ? (
               <a
                 href={whatsappHref(site.whatsapp, cta.whatsappText)}
-                className="btn btn-outline"
+                className="btn btn-whatsapp"
                 rel="noopener"
                 target="_blank"
               >

@@ -100,6 +100,22 @@
   text-align: center;
 }
 
+/* On phones the rings are a small emblem above the list, not a full screen */
+@media (max-width: 639px) {
+  .inner {
+    gap: var(--space-6);
+  }
+
+  .visual {
+    width: min(72%, 260px);
+  }
+
+  .badge {
+    width: 28px;
+    height: 28px;
+  }
+}
+
 /* ---------- the four layers ---------- */
 
 .list {

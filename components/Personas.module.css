@@ -45,3 +45,9 @@
   margin: 0;
   color: var(--color-muted);
 }
+
+.solution {
+  margin: var(--space-1) 0 0;
+  font-weight: 500;
+  color: var(--color-primary);
+}
