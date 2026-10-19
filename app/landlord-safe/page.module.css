@@ -18,7 +18,7 @@
   margin-block-start: var(--space-6);
   padding: var(--space-5);
   border-radius: var(--radius);
-  background: linear-gradient(160deg, var(--color-accent-soft), var(--color-surface));
+  background: var(--color-accent-soft);
   border: 1px solid rgba(180, 83, 43, 0.3);
 }
 

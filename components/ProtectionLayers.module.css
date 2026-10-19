@@ -1,47 +1,67 @@
+/* The design's sand "split" card, inset from the page edges */
 .section {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(60rem 40rem at 100% 0%, rgba(255, 255, 255, 0.07), transparent 60%),
-    var(--color-primary);
+  padding-block: var(--section-space) var(--space-7);
+  padding-inline: clamp(0.75rem, 0.25rem + 2vw, 2.5rem);
 }
 
-.inner {
+.card {
   display: grid;
-  gap: var(--space-7);
-  align-items: center;
+  max-width: calc(var(--max-width) + 2rem);
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-sand);
 }
 
-@media (min-width: 960px) {
-  .inner {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: var(--space-8);
+@media (min-width: 1024px) {
+  .card {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
-/* ---------- concentric rings ---------- */
+/* ---------- forest panel with the rings ---------- */
+
+.visualPanel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 420px;
+  padding: var(--space-7) var(--space-5) 9rem;
+  background: var(--color-primary);
+  --color-focus: var(--color-accent-light);
+}
+
+@media (min-width: 1024px) {
+  .visualPanel {
+    min-height: 560px;
+  }
+}
 
 .visual {
   position: relative;
-  width: min(100%, 440px);
+  width: min(100%, 420px);
   aspect-ratio: 1;
-  margin-inline: auto;
   display: grid;
   place-items: center;
+}
+
+@media (max-width: 639px) {
+  .visual {
+    width: min(72%, 260px);
+  }
 }
 
 .ring {
   position: absolute;
   inset: calc((4 - var(--ring)) * 10%);
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.035);
 }
 
 .ringOuter {
-  border: 2px solid var(--color-accent-bright);
-  background: rgba(224, 133, 92, 0.08);
-  box-shadow: 0 0 60px -10px rgba(224, 133, 92, 0.45);
+  border: 2px solid var(--color-accent);
+  background: rgba(212, 154, 104, 0.08);
 }
 
 /* badge sits on each ring at the 45° point (14.64% in from the box corner) */
@@ -56,15 +76,16 @@
   height: 32px;
   border-radius: 50%;
   background: var(--color-primary-dark);
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-on-dark);
+  font-size: var(--text-xs);
   font-weight: 700;
-  font-size: var(--text-sm);
 }
 
 .ringOuter .badge {
   background: var(--color-accent);
-  border-color: var(--color-accent-bright);
+  border-color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .core {
@@ -72,41 +93,78 @@
   display: grid;
   justify-items: center;
   gap: var(--space-1);
-  width: 28%;
+  width: 30%;
   aspect-ratio: 1;
   align-content: center;
   border-radius: 50%;
-  background: #fff;
+  background: var(--color-bg);
   color: var(--color-primary);
   font-family: var(--font-display);
-  font-weight: 600;
   font-size: var(--text-sm);
+  font-weight: 500;
   text-align: center;
-  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.4);
 }
 
-/* ---------- list ---------- */
+/* Small cream card in the corner, like the design's "Every detail matters" */
+.note {
+  position: absolute;
+  inset-block-end: var(--space-5);
+  inset-inline-start: var(--space-5);
+  max-width: 17rem;
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  box-shadow: var(--shadow-lg);
+}
+
+.noteTitle {
+  margin: 0 0 var(--space-1);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  color: var(--color-primary);
+}
+
+.noteText {
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--color-muted);
+}
+
+/* ---------- content side ---------- */
+
+.content {
+  padding: clamp(2.5rem, 1.5rem + 4vw, 5rem) clamp(1.5rem, 0.5rem + 4vw, 5rem);
+}
+
+.heading {
+  max-width: 18ch;
+  margin-block-end: var(--space-4);
+  font-size: clamp(2.25rem, 1.5rem + 2.6vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.lead {
+  max-width: 36rem;
+  margin-block-end: var(--space-6);
+  font-size: var(--text-base);
+  color: var(--color-muted);
+}
 
 .list {
   list-style: none;
   margin: 0 0 var(--space-6);
   padding: 0;
-  display: grid;
-  gap: var(--space-3);
+  border-block-start: 1px solid var(--color-border);
 }
 
 .item {
   display: flex;
   gap: var(--space-4);
-  padding: var(--space-4) var(--space-5);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.itemSafe {
-  background: rgba(224, 133, 92, 0.14);
-  border-color: rgba(244, 184, 146, 0.5);
+  padding-block: var(--space-4);
+  border-block-end: 1px solid var(--color-border);
 }
 
 .num {
@@ -116,28 +174,85 @@
   height: 32px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  font-size: var(--text-xs);
   font-weight: 700;
-  font-size: var(--text-sm);
 }
 
-.itemSafe .num {
+.numSafe {
   background: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .title {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
   margin-block-end: var(--space-1);
-}
-
-.title svg {
-  color: var(--color-accent-light);
+  font-size: var(--text-lg);
 }
 
 .text {
   margin: 0;
-  color: var(--color-on-dark-muted);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+/* who stands behind the shield */
+.partner {
+  display: flex;
+  gap: var(--space-4);
+  margin-block-end: var(--space-6);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+}
+
+.name {
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.role {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.bio {
+  margin-block-end: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.proof {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 700;
+  color: var(--color-primary);
 }

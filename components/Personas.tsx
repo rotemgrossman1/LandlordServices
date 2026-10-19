@@ -1,35 +1,37 @@
 import { personas } from "@/content/site";
-import Icon from "./Icon";
-import SectionHeading from "./SectionHeading";
+import AccentText from "./AccentText";
 import styles from "./Personas.module.css";
 
-/** "Who is it for": one card per typical owner, with their pain and our answer. */
+/**
+ * "Who is it for", laid out as the design's manifesto: eyebrow on one side, a large
+ * headline on the other, then the lead and each typical owner (pain + our answer)
+ * in two columns under a hairline.
+ */
 export default function Personas() {
   if (personas.items.length === 0) return null;
   return (
     <section className="section" aria-labelledby="personas-title">
-      <div className="container">
-        <SectionHeading id="personas-title" eyebrow={personas.eyebrow} title={personas.title} lead={personas.lead} />
-        <ul className={styles.grid}>
-          {personas.items.map((p, i) => (
-            <li
-              key={p.title}
-              className={styles.card}
-              data-reveal
-              style={{ "--reveal-i": i } as React.CSSProperties}
-            >
-              <span className={styles.icon}>
-                <Icon name={p.icon} size={26} />
-              </span>
-              <h3 className={styles.title}>{p.title}</h3>
-              <p className={styles.pain}>{p.pain}</p>
-              <p className={styles.solution}>
-                <Icon name="check" size={18} />
-                <span>{p.solution}</span>
-              </p>
-            </li>
-          ))}
-        </ul>
+      <div className={`container ${styles.inner}`}>
+        <p className="eyebrow">{personas.eyebrow}</p>
+        <div>
+          <h2 id="personas-title" className={styles.heading}>
+            <AccentText text={personas.title} accent={personas.titleAccent} />
+          </h2>
+          <ul className={styles.list}>
+            {personas.lead && (
+              <li className={styles.lead}>
+                <p>{personas.lead}</p>
+              </li>
+            )}
+            {personas.items.map((p) => (
+              <li key={p.title} className={styles.item}>
+                <h3 className={styles.title}>{p.title}</h3>
+                <p className={styles.pain}>{p.pain}</p>
+                {p.solution && <p className={styles.solution}>{p.solution}</p>}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

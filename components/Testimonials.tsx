@@ -25,7 +25,7 @@ export default function Testimonials() {
         )}
         <ul className={styles.grid}>
           {testimonials.map((t) => (
-            <li key={t.name + t.text} className={styles.card} data-reveal>
+            <li key={t.name + t.text} className={styles.card}>
               <blockquote className={styles.quote}>
                 <p>{t.text}</p>
               </blockquote>

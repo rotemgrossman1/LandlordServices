@@ -1,74 +1,73 @@
 import Image from "next/image";
 import Link from "next/link";
-import { cta, home, images, pages, site } from "@/content/site";
+import { areas, cta, home, images, pages, partner, site } from "@/content/site";
 import { telHref, whatsappHref } from "@/lib/format";
-import HeroArt from "./HeroArt";
+import AccentText from "./AccentText";
 import Icon from "./Icon";
-import NumbersStrip from "./NumbersStrip";
 import styles from "./Hero.module.css";
 
+/** Full-bleed photo hero: giant serif H1 with its accent line, a side note and the actions. */
 export default function Hero() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.blob} aria-hidden="true" />
+    <section className={`on-dark ${styles.hero}`} data-fab-hide>
+      {images.hero && (
+        <Image
+          src={images.hero}
+          alt={images.heroAlt}
+          fill
+          priority
+          sizes="100vw"
+          className={styles.photo}
+        />
+      )}
+      <div className={styles.scrim} aria-hidden="true" />
+
       <div className={`container ${styles.inner}`}>
-        <div className={styles.text}>
-          <p className={styles.eyebrow}>
-            <Icon name="home" size={18} />
-            {home.eyebrow}
-          </p>
-          <h1 className={styles.title}>{pages.home.h1}</h1>
+        <div className={styles.headline}>
+          <p className="eyebrow">{home.eyebrow}</p>
+          <h1 className={styles.title}>
+            <AccentText text={pages.home.h1} accent={pages.home.h1Accent} block />
+          </h1>
+        </div>
+
+        <div className={styles.note}>
           <p className={styles.promise}>{home.promise}</p>
           <p className={styles.intro}>{pages.home.intro}</p>
           <div className={styles.actions}>
             <Link href={cta.primaryHref} className="btn btn-primary">
               {cta.primary}
-              <Icon name="arrow" size={20} />
+              <Icon name="arrow" size={18} className="icon-diag" />
             </Link>
             {site.whatsapp ? (
               <a
                 href={whatsappHref(site.whatsapp, cta.whatsappText)}
-                className="btn btn-outline"
+                className="btn btn-whatsapp"
                 rel="noopener"
                 target="_blank"
               >
                 <Icon name="whatsapp" size={20} />
-                {cta.whatsappLong}
+                {cta.whatsapp}
               </a>
             ) : (
-              <a href={telHref(site.phone)} className="btn btn-outline">
+              <a href={telHref(site.phone)} className="btn btn-ghost-light">
                 <Icon name="phone" size={20} />
-                {cta.call} <span className="ltr">{site.phone}</span>
+                {cta.call}
               </a>
             )}
           </div>
-          <NumbersStrip />
-        </div>
-
-        <div className={styles.media}>
-          <div className={styles.frame}>
-            {images.hero ? (
-              <Image src={images.hero} alt="" fill sizes="(min-width: 960px) 520px, 100vw" priority />
-            ) : (
-              <HeroArt />
-            )}
-          </div>
-          {home.heroCards.map((c, i) => (
-            <div key={c.title} className={`${styles.card} ${i === 0 ? styles.cardA : styles.cardB}`} aria-hidden="true">
-              <span className={styles.cardIcon}>
-                <Icon name={c.icon} size={20} />
-              </span>
-              <span>
-                <strong>{c.title}</strong>
-                <span className={styles.cardText}>{c.text}</span>
-              </span>
-              <span className={styles.cardCheck}>
-                <Icon name="check" size={16} />
-              </span>
-            </div>
-          ))}
+          {partner.name && (
+            <p className={styles.partner}>
+              {home.ledBy} {partner.name}, {partner.role}
+            </p>
+          )}
         </div>
       </div>
+
+      {areas.regions.length > 0 && (
+        <p className={styles.badge}>
+          {home.sinceLabel} · {areas.regions.join(" ו")}
+        </p>
+      )}
     </section>
   );
 }

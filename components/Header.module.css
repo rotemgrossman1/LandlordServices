@@ -1,19 +1,26 @@
+/* Inner pages: a solid forest bar. Home: floats over the hero photo and turns
+   solid once the page scrolls (see .overlay). */
 .header {
   position: sticky;
   inset-block-start: 0;
   z-index: 50;
-  background: rgba(251, 248, 243, 0.86);
-  -webkit-backdrop-filter: saturate(1.4) blur(14px);
-  backdrop-filter: saturate(1.4) blur(14px);
-  border-block-end: 1px solid transparent;
+  color: var(--color-on-dark);
+  background: var(--color-primary);
+  --color-focus: var(--color-accent-light);
   transition:
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  inset-inline: 0;
+  background: transparent;
 }
 
 .scrolled {
-  border-block-end-color: var(--color-border);
-  box-shadow: 0 6px 24px -12px rgba(31, 42, 40, 0.18);
+  background: var(--color-primary);
+  box-shadow: 0 12px 30px -20px rgba(0, 0, 0, 0.55);
 }
 
 .inner {
@@ -26,20 +33,28 @@
 
 .logo {
   display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   text-decoration: none;
   border-radius: var(--radius-sm);
+  color: inherit;
 }
 
+.logo:hover {
+  color: inherit;
+}
+
+/* Round menu button from the design */
 .toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   width: 48px;
   height: 48px;
   padding: 0;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
+  color: inherit;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -48,9 +63,8 @@
 .burger::after {
   display: block;
   width: 20px;
-  height: 2px;
-  background: var(--color-primary);
-  border-radius: 2px;
+  height: 1.5px;
+  background: currentColor;
   transition:
     transform 0.2s ease,
     background-color 0.2s ease;
@@ -87,16 +101,18 @@
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Mobile: menu panel below the header */
+/* Phone: a cream panel under the bar */
 .nav {
   display: none;
   position: absolute;
-  inset-inline: 0;
-  inset-block-start: 100%;
-  padding: var(--space-3) var(--gutter) var(--space-6);
+  inset-inline: var(--gutter);
+  inset-block-start: calc(100% - var(--space-2));
+  padding: var(--space-6);
+  color: var(--color-primary);
   background: var(--color-bg);
-  border-block-end: 1px solid var(--color-border);
-  box-shadow: 0 24px 40px -24px rgba(31, 42, 40, 0.35);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  --color-focus: var(--color-accent-dark);
 }
 
 .nav.open {
@@ -107,20 +123,22 @@
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.list li + li {
-  border-block-start: 1px solid var(--color-border);
+  display: grid;
 }
 
 .link {
-  display: block;
-  padding: var(--space-4) 0;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
   font-family: var(--font-display);
-  font-size: var(--text-lg);
+  font-size: 1.6rem;
   font-weight: 500;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--color-primary);
+}
+
+.link:hover {
+  color: var(--color-accent-dark);
 }
 
 .link[aria-current="page"] {
@@ -130,31 +148,30 @@
 .actions {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-3);
-  margin-block-start: var(--space-4);
+  margin-block-start: var(--space-5);
 }
 
 .contact {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: var(--space-2);
-  min-height: 48px;
-  padding: var(--space-2) var(--space-4);
-  border-radius: 999px;
-  font-weight: 700;
+  min-height: 44px;
+  font-weight: 600;
   text-decoration: none;
-  color: var(--color-whatsapp);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  color: inherit;
 }
 
 .contact:hover {
-  color: var(--color-whatsapp);
-  border-color: var(--color-whatsapp);
+  color: var(--color-accent-dark);
 }
 
-@media (min-width: 1080px) {
+.cta {
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 960px) {
   .toggle {
     display: none;
   }
@@ -162,46 +179,59 @@
   .nav {
     display: flex;
     align-items: center;
-    gap: var(--space-5);
+    gap: var(--space-6);
     position: static;
     padding: 0;
-    border: 0;
-    box-shadow: none;
+    color: inherit;
     background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    --color-focus: var(--color-accent-light);
   }
 
   .list {
     display: flex;
-    gap: var(--space-1);
-  }
-
-  .list li + li {
-    border: 0;
+    gap: var(--space-5);
   }
 
   .link {
-    position: relative;
-    padding: var(--space-2) var(--space-3);
+    min-height: 44px;
     font-family: var(--font-body);
-    font-size: var(--text-base);
-    border-radius: 999px;
-    transition: background-color 0.2s ease;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.82);
+    transition: color 0.18s ease;
   }
 
   .link:hover {
-    background: var(--color-sand);
-    color: var(--color-text);
+    color: #fff;
   }
 
   .link[aria-current="page"] {
-    background: var(--color-primary-soft);
-    color: var(--color-primary);
-    font-weight: 700;
+    color: var(--color-accent-light);
   }
 
   .actions {
     flex-direction: row;
     align-items: center;
+    gap: var(--space-5);
     margin: 0;
+  }
+
+  .contact:hover {
+    color: var(--color-accent-light);
+  }
+}
+
+/* Laptops (960–1199px): keep the full nav and the primary action; the phone
+   number gives way (WhatsApp and the phone stay one tap away further down). */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .contact {
+    display: none;
+  }
+
+  .list {
+    gap: var(--space-4);
   }
 }

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Heebo, Rubik } from "next/font/google";
+import { Frank_Ruhl_Libre, Heebo } from "next/font/google";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import JsonLd from "@/components/JsonLd";
@@ -17,11 +17,12 @@ const heebo = Heebo({
   variable: "--font-heebo",
 });
 
-const rubik = Rubik({
+// Display serif (the design's Instrument Serif has no Hebrew)
+const frank = Frank_Ruhl_Libre({
   subsets: ["hebrew", "latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "700"],
   display: "swap",
-  variable: "--font-rubik",
+  variable: "--font-frank",
 });
 
 export const metadata: Metadata = {
@@ -33,12 +34,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1e4d45",
+  themeColor: "#17382f",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="he" dir="rtl" className={`${heebo.variable} ${rubik.variable}`}>
+    <html lang="he" dir="rtl" className={`${heebo.variable} ${frank.variable}`}>
       <body>
         <a href="#main" className="skip-link">
           {labels.skip}

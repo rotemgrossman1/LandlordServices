@@ -7,7 +7,7 @@ import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-fab-hide>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brandCol}>
           <Logo tone="light" />

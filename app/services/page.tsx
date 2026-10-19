@@ -34,9 +34,9 @@ export default function ServicesPage() {
           aria-labelledby={`${s.id}-title`}
         >
           <div className={`container ${styles.service}`}>
-            <div data-reveal>
-              <span className={`${styles.icon} ${s.id === "landlord-safe" ? styles.iconSafe : ""}`}>
-                <Icon name={s.icon} size={30} />
+            <div>
+              <span className={styles.num} aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
               </span>
               <h2 id={`${s.id}-title`}>{s.title}</h2>
               <p className="lead">{s.short}</p>
@@ -49,7 +49,7 @@ export default function ServicesPage() {
                 </Link>
               )}
             </div>
-            <div className={styles.includes} data-reveal>
+            <div className={styles.includes}>
               <h3 className={styles.subhead}>{labels.includes}</h3>
               <ul className="check-list">
                 {s.includes.map((item) => (

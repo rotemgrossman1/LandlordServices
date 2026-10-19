@@ -7,6 +7,7 @@ import Faq from "@/components/Faq";
 import Hero from "@/components/Hero";
 import Icon from "@/components/Icon";
 import JsonLd from "@/components/JsonLd";
+import NumbersStrip from "@/components/NumbersStrip";
 import OwnerView from "@/components/OwnerView";
 import Personas from "@/components/Personas";
 import ProtectionLayers from "@/components/ProtectionLayers";
@@ -19,36 +20,20 @@ import { buildMetadata, faqJsonLd } from "@/lib/seo";
 
 export const metadata = buildMetadata(pages.home, "/");
 
-const homeFaq = faq.filter((q) => homeFaqIds.includes(q.id));
+// In the order listed in `homeFaqIds`
+const homeFaq = homeFaqIds.flatMap((id) => faq.filter((q) => q.id === id));
 
 // Each key in `homeSections` (content/site.ts) maps to one block here.
 const sections: Record<HomeSection, () => React.ReactNode> = {
   personas: () => <Personas />,
   ownerView: () => <OwnerView />,
   protection: () => <ProtectionLayers />,
-  services: () => (
-    <section className="section section-white" aria-labelledby="services-title">
-      <div className="container">
-        <SectionHeading
-          id="services-title"
-          eyebrow={home.servicesEyebrow}
-          title={home.servicesTitle}
-          lead={home.servicesLead}
-        />
-        <ServiceCards />
-        <p className="more-link">
-          <Link href="/services">
-            {home.servicesMore} <Icon name="arrow" size={16} />
-          </Link>
-        </p>
-      </div>
-    </section>
-  ),
+  services: () => <ServiceCards />,
   comparison: () => <Comparison />,
   steps: () => (
     <section className="section section-alt" aria-labelledby="steps-title">
       <div className="container">
-        <SectionHeading id="steps-title" eyebrow={home.stepsEyebrow} title={home.stepsTitle} />
+        <SectionHeading id="steps-title" title={home.stepsTitle} />
         <Steps steps={steps} />
       </div>
     </section>
@@ -57,7 +42,7 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
   testimonials: () => <Testimonials />,
   faq: () =>
     homeFaq.length > 0 && (
-      <section className="section" aria-labelledby="faq-title">
+      <section className="section section-alt" aria-labelledby="faq-title">
         <div className="container">
           <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} />
           <Faq items={homeFaq} />
@@ -76,6 +61,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <NumbersStrip band />
       {homeSections.map((key) => (
         <Fragment key={key}>{sections[key]()}</Fragment>
       ))}

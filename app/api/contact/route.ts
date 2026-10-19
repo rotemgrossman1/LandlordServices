@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 import { form, labels, site } from "@/content/site";
 import { telHref } from "@/lib/format";
+import { isValidPhone } from "@/lib/validation";
 
 type Lead = {
   name: string;
@@ -38,8 +39,8 @@ async function readLead(req: Request): Promise<{ lead: Lead; isJson: boolean }> 
 }
 
 function validate(lead: Lead): string | null {
-  const digits = lead.phone.replace(/\D/g, "");
-  if (digits.length < 9 || digits.length > 15 || !/^[\d\s()+-]+$/.test(lead.phone)) return form.invalidPhone;
+  if (!lead.phone) return form.missingPhone;
+  if (!isValidPhone(lead.phone)) return form.invalidPhone;
   if (!lead.consent) return form.invalidConsent;
   return null;
 }
@@ -73,7 +74,9 @@ export async function POST(req: Request) {
     return reply(false, form.error, 500);
   }
 
-  const residence = lead.residence === "abroad" ? form.residenceAbroad : form.residenceIsrael;
+  // The short home-page form has no residence field, so it can be empty
+  const residence =
+    lead.residence === "abroad" ? form.residenceAbroad : lead.residence === "israel" ? form.residenceIsrael : "-";
   const text = [
     `${form.name}: ${lead.name || "-"}`,
     `${form.phone}: ${lead.phone}`,

@@ -17,7 +17,7 @@
 
 - [עמוד הבית](https://landlords.co.il/): חברת ניהול נכסים לבעלי דירות מושכרות
 - [שירותים](https://landlords.co.il/services): כל שירותי הניהול ומה כלול בכל אחד
-- [Landlord Safe](https://landlords.co.il/landlord-safe): שכר דירה מובטח וטיפול משפטי בדייר שלא משלם
+- [Landlord Safe](https://landlords.co.il/landlord-safe): שכר דירה מובטח (בכפוף לתנאי השירות) וטיפול משפטי בדייר שלא משלם
 - [אודות](https://landlords.co.il/about): הסיפור, הערכים, השותף המנהל והצוות
 - [שאלות נפוצות](https://landlords.co.il/faq): תשובות לשאלות של בעלי דירות
 - [צור קשר](https://landlords.co.il/contact): טלפון, וואטסאפ, אימייל, כתובת וטופס פנייה
