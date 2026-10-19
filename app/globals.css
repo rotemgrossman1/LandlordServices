@@ -17,7 +17,7 @@
   --color-border: #e4ddd2;
   --color-on-dark: #f6f1e9;
   --color-on-dark-muted: #c9d8d3;
-  --color-focus: #1a73e8;
+  --color-focus: var(--color-accent-dark); /* 7:1 on the warm background */
   --color-success: #1e6b3a;
   --color-success-soft: #e4f2e8;
   --color-error: #a51d1d;
@@ -159,6 +159,17 @@ ol {
   border-radius: 4px;
 }
 
+/* On the dark green surfaces the ring switches to the light accent */
+.section-dark,
+footer {
+  --color-focus: var(--color-accent-light);
+}
+
+input,
+textarea {
+  caret-color: var(--color-accent-dark);
+}
+
 ::selection {
   background: var(--color-accent-soft);
   color: var(--color-text);
@@ -179,10 +190,6 @@ ol {
 
 .section-alt {
   background: var(--color-sand);
-}
-
-.section-white {
-  background: var(--color-surface);
 }
 
 .section-dark {
@@ -279,18 +286,6 @@ ol {
   gap: var(--space-3);
 }
 
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-1) var(--space-3);
-  border-radius: 999px;
-  background: var(--color-primary-soft);
-  color: var(--color-primary);
-  font-size: var(--text-sm);
-  font-weight: 600;
-}
-
 /* ---------- Buttons ---------- */
 
 .btn {
@@ -315,8 +310,21 @@ ol {
     box-shadow 0.2s ease;
 }
 
-.btn:hover {
-  transform: translateY(-1px);
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.btn:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: progress;
+  transform: none;
 }
 
 .btn svg {
