@@ -22,7 +22,13 @@ export default function Comparison() {
   return (
     <section className="section" aria-labelledby="compare-title">
       <div className="container">
-        <SectionHeading id="compare-title" title={comparison.title} lead={comparison.lead} center />
+        <SectionHeading
+          id="compare-title"
+          eyebrow={comparison.eyebrow}
+          title={comparison.title}
+          accent={comparison.titleAccent}
+          lead={comparison.lead}
+        />
         <div className={styles.wrap}>
           <table className={styles.table}>
             <caption className="visually-hidden">{comparison.title}</caption>

@@ -40,10 +40,12 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className={`${styles.header} ${scrolled || open ? styles.scrolled : ""}`}>
+    <header
+      className={`${styles.header} ${pathname === "/" ? styles.overlay : ""} ${scrolled || open ? styles.scrolled : ""}`}
+    >
       <div className={`container ${styles.inner}`}>
         <Link href="/" className={styles.logo} aria-label={`${site.nameHe} – ${labels.homeLink}`}>
-          <Logo />
+          <Logo tone="light" />
         </Link>
 
         <button
@@ -82,8 +84,11 @@ export default function Header() {
               <span className="visually-hidden">{labels.phone}: </span>
               <span className="ltr">{site.phone}</span>
             </a>
-            <Link href={cta.primaryHref} className="btn btn-primary">
+            <Link href={cta.primaryHref} className={`btn btn-pill ${styles.cta}`}>
               {cta.primary}
+              <span className="btn-circle" aria-hidden="true">
+                <Icon name="arrow" size={16} className="icon-diag" />
+              </span>
             </Link>
           </div>
         </nav>

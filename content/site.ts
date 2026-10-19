@@ -22,7 +22,8 @@ export type Service = {
   forWhom: string;
   includes: string[];
 };
-export type PageMeta = { title: string; description: string; h1: string; intro: string };
+// h1Accent: part of h1 shown in the accent colour (must appear in h1)
+export type PageMeta = { title: string; description: string; h1: string; h1Accent?: string; intro: string };
 export type Feature = { icon: IconName; title: string; text: string };
 export type Persona = { icon: IconName; title: string; pain: string; solution: string };
 export type CompareValue = "yes" | "no" | "you";
@@ -65,9 +66,12 @@ export const site = {
   companyId: "", // ח.פ.
 };
 
-// Photos. Empty = the designed illustration is shown instead.
+// Photos. Placeholder stock photos for now (sources in public/images/CREDITS.md);
+// replace with your own office and apartment photos. Empty = the slot falls back
+// to a plain colour field.
 export const images = {
-  hero: "", // e.g. "/images/hero.jpg" (landscape, at least 1200px wide)
+  hero: "/images/hero.jpg", // landscape, at least 1800px wide
+  heroAlt: "", // decorative: the headline carries the meaning
   office: "", // e.g. "/images/office.jpg"
 };
 
@@ -99,6 +103,12 @@ export const safeTerms = {
 export const areas = {
   regions: ["גוש דן", "ירושלים"],
   cities: ["תל אביב", "רמת גן", "גבעתיים", "הרצליה", "רעננה", "גבעת שמואל", "בת ים", "ירושלים"],
+  // Home page photo cards: views of the cities themselves (not our properties)
+  featured: [
+    { city: "תל אביב", region: "גוש דן", image: "/images/area-tel-aviv.jpg", alt: "נוף של תל אביב" },
+    { city: "הרצליה", region: "גוש דן", image: "/images/area-herzliya.jpg", alt: "המרינה של הרצליה" },
+    { city: "ירושלים", region: "ירושלים", image: "/images/area-jerusalem.jpg", alt: "נוף של ירושלים" },
+  ],
 };
 
 // ---------------------------------------------------------------------------
@@ -128,12 +138,12 @@ export const cta = {
 // (The hero always comes first.)
 // ---------------------------------------------------------------------------
 
-// "steps", "areas" and "ownerView" are off to keep the home page short: the FAQ
-// answers where we work, and the hero already shows the owner's phone.
+// Order follows the Acre & Key design. "steps" and "ownerView" are off.
 export const homeSections: HomeSection[] = [
   "personas",
-  "protection",
   "services",
+  "protection",
+  "areas",
   "comparison",
   "testimonials",
   "faq",
@@ -253,7 +263,9 @@ export const steps: Step[] = [
 // ---------------------------------------------------------------------------
 
 export const personas = {
+  eyebrow: "למי זה מתאים",
   title: "יש לכם דירה. אין לכם כוח לנהל אותה.",
+  titleAccent: "אין לכם כוח לנהל אותה.",
   lead: "רוב הלקוחות שלנו הם אנשים רגילים עם דירה אחת עד שלוש, שלא יכולים או לא רוצים לנהל את השכירות בעצמם.",
   items: [
     {
@@ -331,7 +343,9 @@ export const ownerView = {
 // ---------------------------------------------------------------------------
 
 export const protection = {
+  eyebrow: "הגב המשפטי",
   title: "הגנה בשכבות, עוד לפני שהדייר נכנס",
+  titleAccent: "עוד לפני שהדייר נכנס",
   lead: "השותף המנהל שלנו הוא עורך דין, ולכן כל שלב בשכירות בנוי אצלנו כדי להגן עליכם: מבדיקת הדייר, דרך חוזה חזק ועד שכר דירה מובטח. השילוב הזה הוא מה שמייחד אותנו.",
   layers: [
     {
@@ -367,7 +381,9 @@ export const protection = {
 // ---------------------------------------------------------------------------
 
 export const comparison = {
+  eyebrow: "מה ההבדל",
   title: "לבד, דרך מתווך, או עם לנדלורד",
+  titleAccent: "או עם לנדלורד",
   lead: "אנחנו לא משרד תיווך. העבודה שלנו לא נגמרת בחתימה על החוזה – היא מתחילה שם.",
   columns: ["לבד", "מתווך", "לנדלורד"],
   highlight: 2, // index of our column
@@ -575,6 +591,7 @@ export const pages: Record<
     description:
       "לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות בגוש דן ובירושלים, מאז 2013. בדיקת שוכרים, חוזה משפטי חזק, טיפול בתקלות ו-Landlord Safe לשכר דירה מובטח.",
     h1: "ניהול הדירה המושכרת שלכם, מקצה לקצה ועם גב משפטי",
+    h1Accent: "מקצה לקצה ועם גב משפטי",
     intro:
       "לנדלורד היא חברת ניהול נכסים שמנהלת דירות מושכרות בשביל בעלי דירות מאז 2013, בגוש דן ובירושלים. אנחנו מוצאים ובודקים דיירים, מכינים חוזה משפטי חזק ומטפלים בכל תקלה ובכל חשבון. ועם Landlord Safe, שכר הדירה מובטח (בכפוף לתנאי השירות).",
   },
@@ -583,6 +600,7 @@ export const pages: Record<
     description:
       "כל שירותי לנדלורד: ניהול נכסים מושכרים, Landlord Safe, ניהול דירות לתושבי חוץ, אחזקה ותחזוקה, נכסי יוקרה, משרדים ונכסים מסחריים.",
     h1: "שירותי ניהול נכסים",
+    h1Accent: "ניהול נכסים",
     intro:
       "כחברת ניהול נדל״ן לבעלי דירות, אנחנו מטפלים בכל מה שקשור להשכרת הדירה שלכם: מציאת דיירים, חוזה, תחזוקה וגבייה. אנחנו פועלים מאז 2013 בגוש דן ובירושלים, גם עבור בעלי דירות שגרים בחו״ל.",
   },
@@ -591,6 +609,7 @@ export const pages: Record<
     description:
       "Landlord Safe: בדיקת דייר, חוזה וביטחונות, ערבות על דמי השכירות, פינוי משפטי וגביית חובות. גם אם הדייר מפסיק לשלם – אתם ממשיכים לקבל שכר דירה.",
     h1: "Landlord Safe – שכר הדירה ממשיך להגיע",
+    h1Accent: "שכר הדירה ממשיך להגיע",
     intro:
       "Landlord Safe הוא שירות של לנדלורד, חברת ניהול נכסים שפועלת מאז 2013, לבעלי דירות שרוצים ביטחון בשכירות. אם הדייר מפסיק לשלם, אתם ממשיכים לקבל שכר דירה, ואנחנו מטפלים בפינוי ובגבייה בהליך משפטי.",
   },
@@ -599,6 +618,7 @@ export const pages: Record<
     description:
       "לנדלורד הוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות. שקיפות, בלי ניגוד עניינים וגיבוי משפטי, בהובלת עו״ד דורון מרום.",
     h1: "אודות לנדלורד",
+    h1Accent: "לנדלורד",
     intro:
       "לנדלורד היא חברת ניהול נכסים שהוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות מושכרות. אנחנו מנהלים מאות נכסים בשביל בעלי דירות בגוש דן ובירושלים, בהובלת השותף המנהל עו״ד דורון מרום.",
   },
@@ -607,6 +627,7 @@ export const pages: Record<
     description:
       "תשובות לשאלות נפוצות על שירותי חברת ניהול הנכסים לנדלורד: למי השירות מיועד, מה כלול, ניהול מחו״ל, תשלומי רשויות ועוד.",
     h1: "שאלות נפוצות על ניהול נכסים",
+    h1Accent: "על ניהול נכסים",
     intro:
       "כאן ריכזנו תשובות לשאלות שבעלי דירות שואלים אותנו לפני שמתחילים. לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות, מאז 2013. לא מצאתם תשובה? דברו איתנו.",
   },
@@ -615,6 +636,7 @@ export const pages: Record<
     description:
       "צרו קשר עם לנדלורד, חברת ניהול נכסים בגוש דן ובירושלים: 054-2110096 (גם בוואטסאפ), info@landlords.co.il. השאירו פרטים ונחזור אליכם.",
     h1: "בואו נדבר על הדירה שלכם",
+    h1Accent: "על הדירה שלכם",
     intro:
       "השאירו פרטים ונחזור אליכם, או כתבו לנו בוואטסאפ. לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות מאז 2013, והמשרד שלנו נמצא בבני ברק.",
   },
@@ -637,21 +659,32 @@ export const pages: Record<
 // ---------------------------------------------------------------------------
 
 export const home = {
+  eyebrow: "חברת ניהול נכסים לבעלי דירות",
   promise: "אתם נהנים מהשכירות. אנחנו דואגים לכל השאר.",
   sinceLabel: `מאז ${site.foundingYear}`,
   sinceText: "מנהלים נכסים בשביל בעלי דירות",
   ledBy: "בהובלת", // hero line: "בהובלת <partner>, <role>"
   googleRatingLabel: "דירוג ב-Google:",
+  servicesEyebrow: "מה אנחנו עושים",
   servicesTitle: "כל מה שהדירה שלכם צריכה, במקום אחד",
+  servicesTitleAccent: "במקום אחד",
   servicesLead: "כל לקוח מקבל חבילה שמותאמת לנכס ולצרכים שלו.",
   servicesMore: "לכל השירותים",
   stepsTitle: "ארבעה צעדים, ואתם בשקט",
+  areasEyebrow: "איפה אנחנו",
   areasTitle: "פעילים בגוש דן ובירושלים",
+  areasTitleAccent: "בגוש דן ובירושלים",
+  citiesLabel: "ערים בגוש דן ובירושלים", // numbers strip: "<count> ערים..."
+  areasAllLabel: "הערים שבהן אנחנו פעילים",
   areasLead: "אנחנו מתמקדים בערים עם ביקוש גבוה להשכרה. הנכס שלכם בעיר אחרת? דברו איתנו.",
+  testimonialsEyebrow: "לקוחות מספרים",
   testimonialsTitle: "מה אומרים עלינו",
+  faqEyebrow: "שאלות ותשובות",
   faqTitle: "שאלות נפוצות",
   faqMore: "לכל השאלות",
+  ctaEyebrow: "בואו נדבר",
   ctaTitle: "שיחת היכרות על הדירה שלכם",
+  ctaTitleAccent: "על הדירה שלכם",
   ctaText: "שיחה קצרה ולא מחייבת. אפשר להשאיר טלפון, או לכתוב לנו עכשיו בוואטסאפ.",
   // What happens after someone leaves details (shown as an ordered list)
   ctaNextTitle: "מה קורה אחרי שתשאירו פרטים",

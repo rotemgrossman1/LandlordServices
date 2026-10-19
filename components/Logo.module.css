@@ -37,20 +37,20 @@
 }
 
 .en {
-  margin-block-start: 0.2rem;
-  font-size: 0.68rem;
+  margin-block-start: 0.25rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-muted);
 }
 
 .light {
-  color: #fff;
+  color: var(--color-on-dark);
 }
 
 .light .markBg {
-  fill: #fff;
+  fill: var(--color-on-dark);
 }
 
 .light .markLine {

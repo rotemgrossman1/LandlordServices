@@ -1,19 +1,36 @@
 import Image from "next/image";
 import { cta, form, home, partner, site } from "@/content/site";
 import { initials, telHref, whatsappHref } from "@/lib/format";
+import AccentText from "./AccentText";
 import ContactForm from "./ContactForm";
 import Icon from "./Icon";
 import styles from "./CtaBand.module.css";
 
-/** Final call-to-action: what happens next, who stands behind it, and a short form. */
+/**
+ * Closing call to action, after the design's contact block: a large headline with a
+ * copper circle that jumps to the form, then what happens next, who stands behind it,
+ * and the short form.
+ */
 export default function CtaBand() {
   return (
     <section className={styles.section} aria-labelledby="cta-title">
       <div className="container">
-        <div className={styles.band}>
+        <div className={styles.head}>
+          <div>
+            <p className="eyebrow">{home.ctaEyebrow}</p>
+            <h2 id="cta-title" className={styles.heading}>
+              <AccentText text={home.ctaTitle} accent={home.ctaTitleAccent} />
+            </h2>
+          </div>
+          <a href="#cta-form" className={styles.circle}>
+            {cta.primary}
+            <Icon name="arrow" size={20} className="icon-diag" />
+          </a>
+        </div>
+
+        <div className={styles.panel}>
           <div className={styles.text}>
-            <h2 id="cta-title">{home.ctaTitle}</h2>
-            <p className="lead">{home.ctaText}</p>
+            <p className={styles.lead}>{home.ctaText}</p>
 
             {home.ctaNext.length > 0 && (
               <>
@@ -54,13 +71,14 @@ export default function CtaBand() {
                   {cta.whatsappLong}
                 </a>
               )}
-              <a href={telHref(site.phone)} className="btn btn-ghost-light">
+              <a href={telHref(site.phone)} className="btn btn-outline">
                 <Icon name="phone" size={20} />
                 {cta.call} <span className="ltr">{site.phone}</span>
               </a>
             </div>
           </div>
-          <div className={styles.formBox}>
+
+          <div className={styles.formBox} id="cta-form">
             <h3 className={styles.formTitle}>{form.titleShort}</h3>
             <ContactForm idPrefix="cta" compact />
           </div>

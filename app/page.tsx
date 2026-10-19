@@ -7,6 +7,7 @@ import Faq from "@/components/Faq";
 import Hero from "@/components/Hero";
 import Icon from "@/components/Icon";
 import JsonLd from "@/components/JsonLd";
+import NumbersStrip from "@/components/NumbersStrip";
 import OwnerView from "@/components/OwnerView";
 import Personas from "@/components/Personas";
 import ProtectionLayers from "@/components/ProtectionLayers";
@@ -27,23 +28,7 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
   personas: () => <Personas />,
   ownerView: () => <OwnerView />,
   protection: () => <ProtectionLayers />,
-  services: () => (
-    <section className="section section-alt" aria-labelledby="services-title">
-      <div className="container">
-        <SectionHeading
-          id="services-title"
-          title={home.servicesTitle}
-          lead={home.servicesLead}
-        />
-        <ServiceCards />
-        <p className="more-link">
-          <Link href="/services">
-            {home.servicesMore} <Icon name="arrow" size={16} />
-          </Link>
-        </p>
-      </div>
-    </section>
-  ),
+  services: () => <ServiceCards />,
   comparison: () => <Comparison />,
   steps: () => (
     <section className="section section-alt" aria-labelledby="steps-title">
@@ -59,7 +44,7 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
     homeFaq.length > 0 && (
       <section className="section section-alt" aria-labelledby="faq-title">
         <div className="container">
-          <SectionHeading id="faq-title" title={home.faqTitle} />
+          <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} />
           <Faq items={homeFaq} />
           <p className="more-link">
             <Link href="/faq">
@@ -76,6 +61,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <NumbersStrip band />
       {homeSections.map((key) => (
         <Fragment key={key}>{sections[key]()}</Fragment>
       ))}

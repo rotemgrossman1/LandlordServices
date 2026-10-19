@@ -8,7 +8,7 @@ export default function Testimonials() {
   return (
     <section className="section" aria-labelledby="testimonials-title">
       <div className="container">
-        <SectionHeading id="testimonials-title" title={home.testimonialsTitle} />
+        <SectionHeading id="testimonials-title" eyebrow={home.testimonialsEyebrow} title={home.testimonialsTitle} />
         {googleRating.value && (
           <p className={styles.rating}>
             {googleRating.url ? (

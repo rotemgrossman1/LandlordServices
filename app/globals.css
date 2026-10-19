@@ -1,38 +1,44 @@
 :root {
-  /* Colors – warm & friendly. All text/background pairs pass WCAG AA. */
-  --color-primary: #1e4d45; /* deep warm teal-green */
-  --color-primary-dark: #143832;
-  --color-primary-soft: #e3eeea;
-  --color-accent: #b4532b; /* terracotta – buttons (white text 4.9:1) */
-  --color-accent-dark: #933f1f;
-  --color-accent-bright: #e0855c; /* decorative only, never for text */
-  --color-accent-light: #f4b892; /* accent text on dark backgrounds */
-  --color-accent-soft: #fbe9df;
-  --color-bg: #fbf8f3; /* warm off-white */
-  --color-surface: #ffffff;
-  --color-sand: #f3ece1; /* alternate sections */
-  --color-sand-dark: #e8ddcc;
-  --color-text: #1f2a28;
-  --color-muted: #56625f;
-  --color-border: #e4ddd2;
-  --color-on-dark: #f6f1e9;
-  --color-on-dark-muted: #c9d8d3;
-  --color-focus: var(--color-accent-dark); /* 7:1 on the warm background */
+  /* Colours from the "Acre & Key" design. All text/background pairs pass WCAG AA:
+     copper is a fill (forest text on it, 5.6:1) or text on forest only;
+     sage is for display-size accent words only. */
+  --color-primary: #17382f; /* forest */
+  --color-primary-dark: #0e241e;
+  --color-primary-soft: #e2e4da;
+  --color-accent: #d49a68; /* copper: fills, with forest text on it */
+  --color-accent-dark: #8b5a2b; /* copper text on light surfaces (5.9:1 on cream) */
+  --color-accent-bright: #e3b386; /* decorative only, never for text */
+  --color-accent-light: #d49a68; /* copper text on forest (5.3:1) */
+  --color-accent-soft: #efe2d2;
+  --color-sage: #5e776b; /* display accents on light surfaces (4.2:1 cream, 3.2:1 sand) */
+  --color-bg: #f4f0e8; /* cream */
+  --color-surface: #fbf9f4;
+  --color-sand: #ded5c7;
+  --color-sand-dark: #cfc4b3;
+  --color-text: #1d2824; /* ink */
+  --color-muted: #5a615c; /* 5.9:1 on cream, 4.7:1 on sand */
+  --color-border: rgba(23, 56, 47, 0.18); /* forest hairline */
+  --color-on-dark: #f4f0e8;
+  --color-on-dark-muted: #b9c3bd; /* 6.5:1 on forest */
+  --color-on-dark-border: rgba(255, 255, 255, 0.16);
+  --color-focus: var(--color-accent-dark);
   --color-success: #1e6b3a;
-  --color-success-soft: #e4f2e8;
+  --color-success-soft: #e1ecdf;
   --color-error: #a51d1d;
   --color-whatsapp: #0f7a40; /* white text 5.4:1 */
 
-  /* Typography */
+  /* Typography: Frank Ruhl Libre stands in for Instrument Serif (it has Hebrew),
+     Heebo for DM Sans. Accent words take colour instead of italic. */
   --font-body: var(--font-heebo), "Heebo", "Arial Hebrew", Arial, sans-serif;
-  --font-display: var(--font-rubik), "Rubik", var(--font-body);
+  --font-display: var(--font-frank), "Frank Ruhl Libre", "David", serif;
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
   --text-base: 1.0625rem;
   --text-lg: 1.1875rem;
-  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
-  --text-2xl: clamp(1.75rem, 1.35rem + 1.8vw, 2.5rem);
-  --text-3xl: clamp(2.125rem, 1.5rem + 3vw, 3.5rem);
+  --text-xl: clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem);
+  --text-2xl: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+  --text-3xl: clamp(2.6rem, 1.6rem + 4vw, 4.75rem);
+  --text-display: clamp(3rem, 1.4rem + 6.5vw, 7.5rem);
   --leading: 1.7;
 
   /* Spacing */
@@ -44,25 +50,31 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4.5rem;
-  --section-space: clamp(3.5rem, 2rem + 5vw, 6.5rem);
+  --section-space: clamp(4.5rem, 2rem + 7vw, 9rem);
 
-  --radius-lg: 28px;
+  --radius-lg: 32px;
   --radius: 20px;
   --radius-sm: 12px;
-  --max-width: 1180px;
-  --gutter: 1rem;
-  --header-height: 68px;
+  --max-width: 1360px;
+  --gutter: 1.25rem;
+  --header-height: 76px;
   --mobile-bar-height: 64px;
-  --shadow-sm: 0 1px 2px rgba(31, 42, 40, 0.05), 0 2px 8px rgba(31, 42, 40, 0.05);
-  --shadow: 0 2px 4px rgba(31, 42, 40, 0.04), 0 12px 32px -8px rgba(31, 42, 40, 0.12);
-  --shadow-lg: 0 4px 8px rgba(31, 42, 40, 0.05), 0 28px 60px -16px rgba(31, 42, 40, 0.22);
+  --shadow-sm: 0 1px 2px rgba(14, 36, 30, 0.05), 0 2px 8px rgba(14, 36, 30, 0.05);
+  --shadow: 0 2px 4px rgba(14, 36, 30, 0.04), 0 12px 32px -8px rgba(14, 36, 30, 0.14);
+  --shadow-lg: 0 4px 8px rgba(14, 36, 30, 0.05), 0 28px 60px -16px rgba(14, 36, 30, 0.28);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 @media (min-width: 768px) {
   :root {
-    --gutter: 1.5rem;
-    --header-height: 80px;
+    --gutter: 2.5rem;
+    --header-height: 88px;
+  }
+}
+
+@media (min-width: 1100px) {
+  :root {
+    --gutter: 3.5rem;
   }
 }
 
@@ -107,25 +119,24 @@ h2,
 h3,
 h4 {
   font-family: var(--font-display);
-  line-height: 1.2;
+  font-weight: 500;
+  line-height: 1.1;
   color: var(--color-primary);
   margin-block: 0 var(--space-4);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 h1 {
   font-size: var(--text-3xl);
-  font-weight: 700;
 }
 
 h2 {
   font-size: var(--text-2xl);
-  font-weight: 700;
 }
 
 h3 {
-  font-size: var(--text-lg);
-  font-weight: 600;
+  font-size: var(--text-xl);
 }
 
 p {
@@ -206,8 +217,49 @@ textarea {
   color: var(--color-accent-light);
 }
 
+.section-dark .lead,
+.section-dark p {
+  color: var(--color-on-dark-muted);
+}
+
+/* Small label with a short copper rule before it (the design's eyebrow) */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block: 0 var(--space-5);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+
+.eyebrow::before {
+  content: "";
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.section-dark .eyebrow,
+.on-dark .eyebrow {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* The coloured accent phrase in a headline (stands in for the design's italic) */
+.accent {
+  color: var(--color-sage);
+}
+
+.section-dark .accent,
+.on-dark .accent {
+  color: var(--color-accent-light);
+}
+
 .section-head {
-  max-width: 44rem;
+  max-width: 52rem;
   margin-block-end: var(--space-7);
 }
 
@@ -234,10 +286,6 @@ textarea {
   max-width: 44rem;
 }
 
-.section-dark .lead {
-  color: var(--color-on-dark-muted);
-}
-
 .prose {
   max-width: 46rem;
 }
@@ -262,7 +310,7 @@ textarea {
   height: 1.25rem;
   border-radius: 50%;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231e4d45' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317382f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E")
       center / 0.8rem no-repeat,
     var(--color-primary-soft);
 }
@@ -331,15 +379,47 @@ textarea {
   flex-shrink: 0;
 }
 
+/* The design's diagonal arrow (points up and toward the reading direction) */
+.icon-diag {
+  transform: rotate(45deg);
+}
+
 .btn-primary {
   background: var(--color-accent);
-  color: #fff;
-  box-shadow: 0 6px 16px -6px rgba(180, 83, 43, 0.55);
+  color: var(--color-primary);
 }
 
 .btn-primary:hover {
-  background: var(--color-accent-dark);
-  color: #fff;
+  background: var(--color-accent-bright);
+  color: var(--color-primary);
+}
+
+/* The design's pill: label + a copper circle holding the arrow */
+.btn-pill {
+  gap: var(--space-4);
+  min-height: 52px;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-5) var(--space-2);
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+}
+
+.btn-pill:hover {
+  background: var(--color-bg);
+  border-color: var(--color-bg);
+  color: var(--color-primary);
+}
+
+.btn-circle {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .btn-outline {
@@ -359,7 +439,7 @@ textarea {
 }
 
 .btn-light:hover {
-  background: var(--color-primary-soft);
+  background: var(--color-bg);
   color: var(--color-primary);
 }
 

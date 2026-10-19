@@ -1,23 +1,42 @@
 import Image from "next/image";
 import Link from "next/link";
-import { cta, home, images, pages, partner, site } from "@/content/site";
+import { areas, cta, home, images, pages, partner, site } from "@/content/site";
 import { telHref, whatsappHref } from "@/lib/format";
+import AccentText from "./AccentText";
 import Icon from "./Icon";
-import OwnerPhone from "./OwnerPhone";
 import styles from "./Hero.module.css";
 
+/** Full-bleed photo hero: giant serif H1 with its accent line, a side note and the actions. */
 export default function Hero() {
   return (
-    <section className={styles.hero} data-fab-hide>
+    <section className={`on-dark ${styles.hero}`} data-fab-hide>
+      {images.hero && (
+        <Image
+          src={images.hero}
+          alt={images.heroAlt}
+          fill
+          priority
+          sizes="100vw"
+          className={styles.photo}
+        />
+      )}
+      <div className={styles.scrim} aria-hidden="true" />
+
       <div className={`container ${styles.inner}`}>
-        <div className={styles.text}>
-          <h1 className={styles.title}>{pages.home.h1}</h1>
+        <div className={styles.headline}>
+          <p className="eyebrow">{home.eyebrow}</p>
+          <h1 className={styles.title}>
+            <AccentText text={pages.home.h1} accent={pages.home.h1Accent} block />
+          </h1>
+        </div>
+
+        <div className={styles.note}>
           <p className={styles.promise}>{home.promise}</p>
           <p className={styles.intro}>{pages.home.intro}</p>
           <div className={styles.actions}>
             <Link href={cta.primaryHref} className="btn btn-primary">
               {cta.primary}
-              <Icon name="arrow" size={20} />
+              <Icon name="arrow" size={18} className="icon-diag" />
             </Link>
             {site.whatsapp ? (
               <a
@@ -27,37 +46,28 @@ export default function Hero() {
                 target="_blank"
               >
                 <Icon name="whatsapp" size={20} />
-                {cta.whatsappLong}
+                {cta.whatsapp}
               </a>
             ) : (
-              <a href={telHref(site.phone)} className="btn btn-outline">
+              <a href={telHref(site.phone)} className="btn btn-ghost-light">
                 <Icon name="phone" size={20} />
-                {cta.call} <span className="ltr">{site.phone}</span>
+                {cta.call}
               </a>
             )}
           </div>
-          <p className={styles.proof}>
-            {partner.name && (
-              <strong>
-                {home.ledBy} {partner.name}, {partner.role}
-              </strong>
-            )}
-            <span>
-              {home.sinceText} {home.sinceLabel}
-            </span>
-          </p>
-        </div>
-
-        <div className={styles.media}>
-          {images.hero ? (
-            <div className={styles.frame}>
-              <Image src={images.hero} alt="" fill sizes="(min-width: 960px) 520px, 100vw" priority />
-            </div>
-          ) : (
-            <OwnerPhone />
+          {partner.name && (
+            <p className={styles.partner}>
+              {home.ledBy} {partner.name}, {partner.role}
+            </p>
           )}
         </div>
       </div>
+
+      {areas.regions.length > 0 && (
+        <p className={styles.badge}>
+          {home.sinceLabel} · {areas.regions.join(" ו")}
+        </p>
+      )}
     </section>
   );
 }
