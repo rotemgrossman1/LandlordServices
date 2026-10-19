@@ -638,6 +638,7 @@ export const home = {
   promise: "אתם נהנים מהשכירות. אנחנו דואגים לכל השאר.",
   sinceLabel: `מאז ${site.foundingYear}`,
   sinceText: "מנהלים נכסים בשביל בעלי דירות",
+  ledBy: "בהובלת", // hero line: "בהובלת <partner>, <role>"
   googleRatingLabel: "דירוג ב-Google:",
   servicesTitle: "כל מה שהדירה שלכם צריכה, במקום אחד",
   servicesLead: "כל לקוח מקבל חבילה שמותאמת לנכס ולצרכים שלו.",

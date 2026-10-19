@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { cta, home, images, pages, site } from "@/content/site";
+import { cta, home, images, pages, partner, site } from "@/content/site";
 import { telHref, whatsappHref } from "@/lib/format";
 import Icon from "./Icon";
-import NumbersStrip from "./NumbersStrip";
 import OwnerPhone from "./OwnerPhone";
 import styles from "./Hero.module.css";
 
@@ -37,7 +36,16 @@ export default function Hero() {
               </a>
             )}
           </div>
-          <NumbersStrip />
+          <p className={styles.proof}>
+            {partner.name && (
+              <strong>
+                {home.ledBy} {partner.name}, {partner.role}
+              </strong>
+            )}
+            <span>
+              {home.sinceText} {home.sinceLabel}
+            </span>
+          </p>
         </div>
 
         <div className={styles.media}>
