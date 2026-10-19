@@ -15,7 +15,7 @@ export const metadata = buildMetadata(pages.about, "/about");
 export default function AboutPage() {
   return (
     <>
-      <PageIntro page={pages.about} />
+      <PageIntro page={pages.about} eyebrow={home.sinceLabel} />
 
       <section className="section" aria-labelledby="story-title">
         <div className={`container ${styles.story}`}>
@@ -45,9 +45,6 @@ export default function AboutPage() {
           <ul className={styles.values}>
             {about.values.map((v, i) => (
               <li key={v.title} className={styles.value}>
-                <span className={styles.valueIcon}>
-                  <Icon name={v.icon} size={26} />
-                </span>
                 <h3>{v.title}</h3>
                 <p>{v.text}</p>
               </li>

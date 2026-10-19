@@ -10,7 +10,7 @@ export const metadata = buildMetadata(pages.faq, "/faq");
 export default function FaqPage() {
   return (
     <>
-      <PageIntro page={pages.faq} />
+      <PageIntro page={pages.faq} eyebrow={home.faqEyebrow} />
       <section className="section">
         <div className="container">
           <Faq items={faq} />

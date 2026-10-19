@@ -1,25 +1,25 @@
 :root {
   /* Colours from the "Acre & Key" design. All text/background pairs pass WCAG AA:
-     copper is a fill (forest text on it, 5.6:1) or text on forest only;
+     copper is a fill (forest text on it, 5.3:1) or text on forest only;
      sage is for display-size accent words only. */
   --color-primary: #17382f; /* forest */
   --color-primary-dark: #0e241e;
   --color-primary-soft: #e2e4da;
   --color-accent: #d49a68; /* copper: fills, with forest text on it */
-  --color-accent-dark: #8b5a2b; /* copper text on light surfaces (5.9:1 on cream) */
+  --color-accent-dark: #8b5a2b; /* copper text on light surfaces (5.1:1 on cream) */
   --color-accent-bright: #e3b386; /* decorative only, never for text */
   --color-accent-light: #d49a68; /* copper text on forest (5.3:1) */
   --color-accent-soft: #efe2d2;
-  --color-sage: #5e776b; /* display accents on light surfaces (4.2:1 cream, 3.2:1 sand) */
+  --color-sage: #5e776b; /* display accents on light surfaces (4.3:1 cream, 3.3:1 sand) */
   --color-bg: #f4f0e8; /* cream */
   --color-surface: #fbf9f4;
   --color-sand: #ded5c7;
   --color-sand-dark: #cfc4b3;
   --color-text: #1d2824; /* ink */
-  --color-muted: #5a615c; /* 5.9:1 on cream, 4.7:1 on sand */
+  --color-muted: #545b56; /* 6.1:1 on cream, 4.8:1 on sand */
   --color-border: rgba(23, 56, 47, 0.18); /* forest hairline */
   --color-on-dark: #f4f0e8;
-  --color-on-dark-muted: #b9c3bd; /* 6.5:1 on forest */
+  --color-on-dark-muted: #b9c3bd; /* 7.1:1 on forest */
   --color-on-dark-border: rgba(255, 255, 255, 0.16);
   --color-focus: var(--color-accent-dark);
   --color-success: #1e6b3a;

@@ -11,7 +11,7 @@ export const metadata = buildMetadata(pages.services, "/services");
 export default function ServicesPage() {
   return (
     <>
-      <PageIntro page={pages.services}>
+      <PageIntro page={pages.services} eyebrow={home.servicesEyebrow}>
         <nav className={styles.toc} aria-label={labels.onThisPage}>
           <ul>
             {services.map((s) => (
@@ -35,8 +35,8 @@ export default function ServicesPage() {
         >
           <div className={`container ${styles.service}`}>
             <div>
-              <span className={`${styles.icon} ${s.id === "landlord-safe" ? styles.iconSafe : ""}`}>
-                <Icon name={s.icon} size={30} />
+              <span className={styles.num} aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
               </span>
               <h2 id={`${s.id}-title`}>{s.title}</h2>
               <p className="lead">{s.short}</p>

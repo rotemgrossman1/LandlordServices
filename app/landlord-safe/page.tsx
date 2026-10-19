@@ -7,7 +7,7 @@ import PageIntro from "@/components/PageIntro";
 import ProtectionLayers from "@/components/ProtectionLayers";
 import SectionHeading from "@/components/SectionHeading";
 import Steps from "@/components/Steps";
-import { cta, home, labels, pages, safe, safeTerms, services } from "@/content/site";
+import { cta, home, labels, pages, protection, safe, safeTerms, services } from "@/content/site";
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
 import styles from "./page.module.css";
 
@@ -19,7 +19,7 @@ export default function LandlordSafePage() {
 
   return (
     <>
-      <PageIntro page={pages.safe}>
+      <PageIntro page={pages.safe} eyebrow={protection.eyebrow}>
         <div className="btn-row">
           <Link href={cta.primaryHref} className="btn btn-primary">
             {cta.primary}

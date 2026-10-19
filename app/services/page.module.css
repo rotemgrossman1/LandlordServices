@@ -47,19 +47,13 @@
   }
 }
 
-.icon {
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  margin-block-end: var(--space-4);
-  border-radius: 20px;
-  background: var(--color-primary);
-  color: #fff;
-}
-
-.iconSafe {
-  background: var(--color-accent);
+/* The design's copper row numbers */
+.num {
+  display: block;
+  margin-block-end: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent-dark);
 }
 
 .subhead {

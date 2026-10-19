@@ -11,7 +11,7 @@ export const metadata = buildMetadata(pages.contact, "/contact");
 export default function ContactPage() {
   return (
     <>
-      <PageIntro page={pages.contact} />
+      <PageIntro page={pages.contact} eyebrow={labels.contactUs} />
       <section className="section">
         <div className={`container ${styles.grid}`}>
           <div className={styles.formBox}>

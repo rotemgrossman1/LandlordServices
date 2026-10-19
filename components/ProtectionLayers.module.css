@@ -1,6 +1,6 @@
 /* The design's sand "split" card, inset from the page edges */
 .section {
-  padding-block: var(--section-space) 0;
+  padding-block: var(--section-space) var(--space-7);
   padding-inline: clamp(0.75rem, 0.25rem + 2vw, 2.5rem);
 }
 
