@@ -26,6 +26,8 @@
 
 .logo {
   display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   text-decoration: none;
   border-radius: var(--radius-sm);
 }

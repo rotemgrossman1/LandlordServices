@@ -110,19 +110,23 @@
   color: var(--color-accent-dark);
 }
 
-/* On small screens keep the icons, hide the words visually (still read by screen readers) */
+/* On small screens the word stays under its icon: the icons alone don't explain themselves */
 @media (max-width: 559px) {
-  .valueLabel {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
+  .table thead td {
+    width: 40%;
   }
 
-  .table thead td {
-    width: 46%;
+  .table td {
+    padding-inline: var(--space-1);
+  }
+
+  .mark {
+    width: 24px;
+    height: 24px;
+  }
+
+  .valueLabel {
+    line-height: 1.2;
   }
 
   .table thead th,
