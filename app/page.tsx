@@ -31,7 +31,6 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
       <div className="container">
         <SectionHeading
           id="services-title"
-          eyebrow={home.servicesEyebrow}
           title={home.servicesTitle}
           lead={home.servicesLead}
         />
@@ -48,7 +47,7 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
   steps: () => (
     <section className="section section-alt" aria-labelledby="steps-title">
       <div className="container">
-        <SectionHeading id="steps-title" eyebrow={home.stepsEyebrow} title={home.stepsTitle} />
+        <SectionHeading id="steps-title" title={home.stepsTitle} />
         <Steps steps={steps} />
       </div>
     </section>
@@ -59,7 +58,7 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
     homeFaq.length > 0 && (
       <section className="section section-alt" aria-labelledby="faq-title">
         <div className="container">
-          <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} />
+          <SectionHeading id="faq-title" title={home.faqTitle} />
           <Faq items={homeFaq} />
           <p className="more-link">
             <Link href="/faq">

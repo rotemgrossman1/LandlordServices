@@ -8,14 +8,6 @@
   position: relative;
 }
 
-.figure::before {
-  content: "";
-  position: absolute;
-  inset: 8% 4%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(224, 133, 92, 0.28), rgba(224, 133, 92, 0) 70%);
-}
-
 .phone {
   position: relative;
   width: min(100%, 360px);

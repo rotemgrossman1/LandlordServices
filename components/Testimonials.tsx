@@ -8,7 +8,7 @@ export default function Testimonials() {
   return (
     <section className="section" aria-labelledby="testimonials-title">
       <div className="container">
-        <SectionHeading id="testimonials-title" eyebrow={home.testimonialsEyebrow} title={home.testimonialsTitle} />
+        <SectionHeading id="testimonials-title" title={home.testimonialsTitle} />
         {googleRating.value && (
           <p className={styles.rating}>
             {googleRating.url ? (
@@ -25,7 +25,7 @@ export default function Testimonials() {
         )}
         <ul className={styles.grid}>
           {testimonials.map((t) => (
-            <li key={t.name + t.text} className={styles.card} data-reveal>
+            <li key={t.name + t.text} className={styles.card}>
               <blockquote className={styles.quote}>
                 <p>{t.text}</p>
               </blockquote>

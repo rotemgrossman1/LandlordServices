@@ -10,13 +10,8 @@ import styles from "./Hero.module.css";
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={styles.blob} aria-hidden="true" />
       <div className={`container ${styles.inner}`}>
         <div className={styles.text}>
-          <p className={styles.eyebrow}>
-            <Icon name="home" size={18} />
-            {home.eyebrow}
-          </p>
           <h1 className={styles.title}>{pages.home.h1}</h1>
           <p className={styles.promise}>{home.promise}</p>
           <p className={styles.intro}>{pages.home.intro}</p>

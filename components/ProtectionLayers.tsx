@@ -27,14 +27,12 @@ export default function ProtectionLayers({ showLinks = true }: { showLinks?: boo
         </div>
 
         <div>
-          <SectionHeading id="protection-title" eyebrow={protection.eyebrow} title={protection.title} lead={protection.lead} />
+          <SectionHeading id="protection-title" title={protection.title} lead={protection.lead} />
           <ol className={styles.list}>
             {layers.map((l, i) => (
               <li
                 key={l.title}
                 className={`${styles.item} ${i === layers.length - 1 ? styles.itemSafe : ""}`}
-                data-reveal
-                style={{ "--reveal-i": i } as React.CSSProperties}
               >
                 <span className={styles.num} aria-hidden="true">
                   {i + 1}

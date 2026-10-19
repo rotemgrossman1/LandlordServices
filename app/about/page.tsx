@@ -15,11 +15,11 @@ export const metadata = buildMetadata(pages.about, "/about");
 export default function AboutPage() {
   return (
     <>
-      <PageIntro page={pages.about} eyebrow={home.sinceLabel} />
+      <PageIntro page={pages.about} />
 
       <section className="section" aria-labelledby="story-title">
         <div className={`container ${styles.story}`}>
-          <div className="prose" data-reveal>
+          <div className="prose">
             <h2 id="story-title">{labels.story}</h2>
             {about.story.map((p) => (
               <p key={p} className={styles.storyText}>
@@ -27,7 +27,7 @@ export default function AboutPage() {
               </p>
             ))}
           </div>
-          <div className={styles.numbers} data-reveal>
+          <div className={styles.numbers}>
             <NumbersStrip />
             {areas.regions.length > 0 && (
               <p className={styles.regions}>
@@ -44,7 +44,7 @@ export default function AboutPage() {
           <SectionHeading id="values-title" title={labels.values} />
           <ul className={styles.values}>
             {about.values.map((v, i) => (
-              <li key={v.title} className={styles.value} data-reveal style={{ "--reveal-i": i } as React.CSSProperties}>
+              <li key={v.title} className={styles.value}>
                 <span className={styles.valueIcon}>
                   <Icon name={v.icon} size={26} />
                 </span>
@@ -66,7 +66,6 @@ export default function AboutPage() {
             </span>
           )}
           <div className="prose">
-            <p className="eyebrow">{labels.partner}</p>
             <h2 id="partner-title">{partner.name}</h2>
             <p className={styles.partnerRole}>{partner.role}</p>
             <p className="lead">{partner.bio}</p>

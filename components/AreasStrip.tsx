@@ -11,12 +11,12 @@ export default function AreasStrip() {
     <section className="section section-alt" aria-labelledby="areas-title">
       <div className={`container ${styles.inner}`}>
         <div>
-          <SectionHeading id="areas-title" eyebrow={home.areasEyebrow} title={home.areasTitle} lead={home.areasLead} />
+          <SectionHeading id="areas-title" title={home.areasTitle} lead={home.areasLead} />
           <Link href={cta.primaryHref} className="btn btn-outline">
             {cta.primary}
           </Link>
         </div>
-        <ul className={styles.list} data-reveal>
+        <ul className={styles.list}>
           {areas.cities.map((city) => (
             <li key={city} className={styles.city}>
               <Icon name="mapPin" size={18} />

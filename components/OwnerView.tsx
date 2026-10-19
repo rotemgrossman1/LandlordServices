@@ -10,10 +10,10 @@ export default function OwnerView() {
     <section className="section section-alt" aria-labelledby="owner-title">
       <div className={`container ${styles.inner}`}>
         <div>
-          <SectionHeading id="owner-title" eyebrow={ownerView.eyebrow} title={ownerView.title} lead={ownerView.lead} />
+          <SectionHeading id="owner-title" title={ownerView.title} lead={ownerView.lead} />
           <ul className={styles.points}>
             {ownerView.points.map((p, i) => (
-              <li key={p.title} className={styles.point} data-reveal style={{ "--reveal-i": i } as React.CSSProperties}>
+              <li key={p.title} className={styles.point}>
                 <span className={styles.pointIcon}>
                   <Icon name={p.icon} size={22} />
                 </span>
@@ -26,9 +26,7 @@ export default function OwnerView() {
           </ul>
         </div>
 
-        <div data-reveal>
-          <OwnerPhone />
-        </div>
+        <OwnerPhone />
       </div>
     </section>
   );

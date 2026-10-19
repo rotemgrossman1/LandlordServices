@@ -19,7 +19,7 @@ export default function LandlordSafePage() {
 
   return (
     <>
-      <PageIntro page={pages.safe} eyebrow={labels.whatItIs}>
+      <PageIntro page={pages.safe}>
         <div className="btn-row">
           <Link href={cta.primaryHref} className="btn btn-primary">
             {cta.primary}
@@ -33,7 +33,7 @@ export default function LandlordSafePage() {
 
       <section className="section" aria-labelledby="what-title">
         <div className={`container ${styles.what}`}>
-          <div className="prose" data-reveal>
+          <div className="prose">
             <h2 id="what-title">{labels.whatItIs}</h2>
             <p className="lead">{safe.whatItIs}</p>
             <div className={styles.promise}>
@@ -47,7 +47,7 @@ export default function LandlordSafePage() {
             </div>
           </div>
 
-          <div className={styles.included} data-reveal>
+          <div className={styles.included}>
             <h3 id="included-title">{labels.whatsIncluded}</h3>
             <ul className="check-list">
               {included.map((item) => (
@@ -85,7 +85,7 @@ export default function LandlordSafePage() {
 
       <section id="faq" className="section" aria-labelledby="safe-faq-title">
         <div className="container">
-          <SectionHeading id="safe-faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} />
+          <SectionHeading id="safe-faq-title" title={home.faqTitle} />
           <Faq items={safe.faq} />
         </div>
       </section>

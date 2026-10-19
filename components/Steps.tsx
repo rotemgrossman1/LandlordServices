@@ -5,7 +5,7 @@ export default function Steps({ steps, tone = "light" }: { steps: Step[]; tone?:
   return (
     <ol className={`${styles.steps} ${tone === "alt" ? styles.alt : ""}`}>
       {steps.map((step, i) => (
-        <li key={step.title} className={styles.step} data-reveal style={{ "--reveal-i": i } as React.CSSProperties}>
+        <li key={step.title} className={styles.step}>
           <span className={styles.num} aria-hidden="true">
             {String(i + 1).padStart(2, "0")}
           </span>

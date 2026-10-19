@@ -221,28 +221,6 @@ ol {
   margin-inline: auto;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  margin-block-end: var(--space-3);
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--color-accent-dark);
-}
-
-.eyebrow::before {
-  content: "";
-  width: 1.5rem;
-  height: 2px;
-  border-radius: 2px;
-  background: currentColor;
-}
-
-.section-dark .eyebrow {
-  color: var(--color-accent-light);
-}
-
 .lead {
   font-size: var(--text-lg);
   color: var(--color-muted);
@@ -411,7 +389,6 @@ ol {
   transition:
     opacity 0.7s var(--ease),
     transform 0.7s var(--ease);
-  transition-delay: calc(var(--reveal-i, 0) * 80ms);
 }
 
 /* ---------- Accessibility ---------- */

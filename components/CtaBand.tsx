@@ -10,7 +10,7 @@ export default function CtaBand() {
   return (
     <section className={styles.section} aria-labelledby="cta-title">
       <div className="container">
-        <div className={styles.band} data-reveal>
+        <div className={styles.band}>
           <div className={styles.text}>
             <h2 id="cta-title">{home.ctaTitle}</h2>
             <p className="lead">{home.ctaText}</p>

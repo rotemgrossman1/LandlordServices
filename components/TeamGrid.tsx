@@ -9,7 +9,7 @@ export default function TeamGrid() {
   return (
     <ul className={styles.grid}>
       {team.map((m, i) => (
-        <li key={m.name} className={styles.card} data-reveal style={{ "--reveal-i": i } as React.CSSProperties}>
+        <li key={m.name} className={styles.card}>
           {m.photo ? (
             <Image src={m.photo} alt={m.name} width={160} height={160} className={styles.photo} />
           ) : (

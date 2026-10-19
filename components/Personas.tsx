@@ -8,7 +8,7 @@ export default function Personas() {
   return (
     <section className="section" aria-labelledby="personas-title">
       <div className={`container ${styles.inner}`}>
-        <SectionHeading id="personas-title" eyebrow={personas.eyebrow} title={personas.title} lead={personas.lead} />
+        <SectionHeading id="personas-title" title={personas.title} lead={personas.lead} />
         <ul className={styles.list}>
           {personas.items.map((p) => (
             <li key={p.title} className={styles.item}>
