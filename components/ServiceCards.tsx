@@ -1,27 +1,20 @@
 import Link from "next/link";
-import { labels, services } from "@/content/site";
+import { services } from "@/content/site";
 import Icon from "./Icon";
 import styles from "./ServiceCards.module.css";
 
+/** Compact list of services for the home page; each links to its full description. */
 export default function ServiceCards() {
   return (
-    <ul className={styles.grid}>
-      {services.map((s, i) => (
-        <li
-          key={s.id}
-          className={`${styles.card} ${s.id === "landlord-safe" ? styles.featured : ""}`}
-          data-reveal
-          style={{ "--reveal-i": i % 3 } as React.CSSProperties}
-        >
-          <span className={styles.icon}>
-            <Icon name={s.icon} size={26} />
-          </span>
-          <h3 className={styles.title}>{s.title}</h3>
-          <p className={styles.text}>{s.short}</p>
+    <ul className={styles.list}>
+      {services.map((s) => (
+        <li key={s.id}>
           <Link href={`/services#${s.id}`} className={styles.link}>
-            {labels.learnMore}
-            <span className="visually-hidden"> – {s.title}</span>
-            <Icon name="arrow" size={18} />
+            <span className={styles.title}>
+              {s.title}
+              <Icon name="arrow" size={18} />
+            </span>
+            <span className={styles.text}>{s.short}</span>
           </Link>
         </li>
       ))}

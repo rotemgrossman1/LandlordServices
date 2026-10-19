@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { cta, home, images, pages, site } from "@/content/site";
 import { telHref, whatsappHref } from "@/lib/format";
-import HeroArt from "./HeroArt";
 import Icon from "./Icon";
 import NumbersStrip from "./NumbersStrip";
+import OwnerPhone from "./OwnerPhone";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
@@ -46,27 +46,13 @@ export default function Hero() {
         </div>
 
         <div className={styles.media}>
-          <div className={styles.frame}>
-            {images.hero ? (
+          {images.hero ? (
+            <div className={styles.frame}>
               <Image src={images.hero} alt="" fill sizes="(min-width: 960px) 520px, 100vw" priority />
-            ) : (
-              <HeroArt />
-            )}
-          </div>
-          {home.heroCards.map((c, i) => (
-            <div key={c.title} className={`${styles.card} ${i === 0 ? styles.cardA : styles.cardB}`} aria-hidden="true">
-              <span className={styles.cardIcon}>
-                <Icon name={c.icon} size={20} />
-              </span>
-              <span>
-                <strong>{c.title}</strong>
-                <span className={styles.cardText}>{c.text}</span>
-              </span>
-              <span className={styles.cardCheck}>
-                <Icon name="check" size={16} />
-              </span>
             </div>
-          ))}
+          ) : (
+            <OwnerPhone />
+          )}
         </div>
       </div>
     </section>

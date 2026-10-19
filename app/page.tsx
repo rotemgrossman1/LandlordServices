@@ -57,7 +57,7 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
   testimonials: () => <Testimonials />,
   faq: () =>
     homeFaq.length > 0 && (
-      <section className="section" aria-labelledby="faq-title">
+      <section className="section section-alt" aria-labelledby="faq-title">
         <div className="container">
           <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} />
           <Faq items={homeFaq} />

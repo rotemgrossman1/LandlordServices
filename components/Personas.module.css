@@ -1,84 +1,47 @@
-.grid {
+.inner {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 960px) {
+  .inner {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .inner :global(.section-head) {
+    margin-block-end: 0;
+  }
+}
+
+.list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: var(--space-4);
+  gap: var(--space-5);
+}
+
+.item {
+  display: grid;
+  gap: var(--space-1);
 }
 
 @media (min-width: 640px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1000px) {
-  .grid {
-    grid-template-columns: repeat(6, 1fr);
+  .item {
+    grid-template-columns: 13rem minmax(0, 1fr);
     gap: var(--space-5);
+    align-items: baseline;
   }
-
-  /* 3 cards on top, 2 wider cards below */
-  .card {
-    grid-column: span 2;
-  }
-
-  .card:nth-child(4),
-  .card:nth-child(5) {
-    grid-column: span 3;
-  }
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-6) var(--space-5);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  transition:
-    transform 0.25s var(--ease),
-    box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-}
-
-.icon {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  margin-block-end: var(--space-4);
-  border-radius: 18px;
-  background: var(--color-accent-soft);
-  color: var(--color-accent-dark);
 }
 
 .title {
-  margin-block-end: var(--space-2);
-  font-size: var(--text-xl);
+  margin: 0;
+  font-size: var(--text-lg);
 }
 
 .pain {
+  margin: 0;
   color: var(--color-muted);
-}
-
-.solution {
-  display: flex;
-  gap: var(--space-2);
-  margin: auto 0 0;
-  padding-block-start: var(--space-4);
-  border-block-start: 1px dashed var(--color-border);
-  font-weight: 500;
-  color: var(--color-text);
-}
-
-.solution svg {
-  flex-shrink: 0;
-  margin-block-start: 0.25rem;
-  color: var(--color-success);
 }

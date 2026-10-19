@@ -114,7 +114,7 @@ export const nav = [
 ];
 
 export const cta = {
-  primary: "קבעו שיחת ייעוץ",
+  primary: "תאמו שיחת היכרות",
   primaryHref: "/contact",
   call: "התקשרו",
   whatsapp: "וואטסאפ",
@@ -128,14 +128,13 @@ export const cta = {
 // (The hero always comes first.)
 // ---------------------------------------------------------------------------
 
+// "steps", "areas" and "ownerView" are off to keep the home page short: the FAQ
+// answers where we work, and the hero already shows the owner's phone.
 export const homeSections: HomeSection[] = [
   "personas",
-  "ownerView",
   "protection",
   "services",
   "comparison",
-  "steps",
-  "areas",
   "testimonials",
   "faq",
   "cta",
@@ -644,11 +643,6 @@ export const home = {
   promise: "אתם נהנים מהשכירות. אנחנו דואגים לכל השאר.",
   sinceLabel: `מאז ${site.foundingYear}`,
   sinceText: "מנהלים נכסים בשביל בעלי דירות",
-  // Floating status cards on the hero illustration
-  heroCards: [
-    { icon: "banknote", title: "שכר הדירה הועבר אליכם", text: "בזמן, כמו בכל חודש" },
-    { icon: "shieldCheck", title: "החוזה נחתם", text: "בליווי משפטי" },
-  ] satisfies Feature[],
   googleRatingLabel: "דירוג ב-Google:",
   servicesEyebrow: "מה אנחנו עושים",
   servicesTitle: "כל מה שהדירה שלכם צריכה, במקום אחד",
@@ -664,8 +658,16 @@ export const home = {
   faqEyebrow: "שאלות ותשובות",
   faqTitle: "שאלות נפוצות",
   faqMore: "לכל השאלות",
-  ctaTitle: "רוצים שנדבר על הדירה שלכם?",
-  ctaText: "השאירו פרטים ונחזור אליכם, או כתבו לנו עכשיו בוואטסאפ. שיחת ההיכרות לא מחייבת.",
+  ctaTitle: "שיחת היכרות על הדירה שלכם",
+  ctaText: "שיחה קצרה ולא מחייבת. אפשר להשאיר טלפון, או לכתוב לנו עכשיו בוואטסאפ.",
+  // What happens after someone leaves details (shown as an ordered list)
+  ctaNextTitle: "מה קורה אחרי שתשאירו פרטים",
+  ctaNext: [
+    "מישהו מהצוות שלנו חוזר אליכם תוך יום עסקים.",
+    "בשיחת ההיכרות אתם מספרים לנו על הדירה ועל מה שחשוב לכם.",
+    "אנחנו מציעים לכם חבילה שמותאמת לנכס ולצרכים שלכם.",
+  ],
+  ctaPartnerText: "כל שלב בשכירות מקבל אצלנו גיבוי משפטי.",
 };
 
 // ---------------------------------------------------------------------------
@@ -674,6 +676,7 @@ export const home = {
 
 export const form = {
   title: "השאירו פרטים",
+  titleShort: "השאירו שם וטלפון",
   name: "שם",
   phone: "טלפון",
   city: "עיר הנכס",
@@ -684,13 +687,15 @@ export const form = {
   message: "הודעה",
   consent: "קראתי ואני מסכים/ה ל",
   consentLink: "מדיניות הפרטיות",
-  submit: "שליחה",
+  submit: "חזרו אליי לשיחת היכרות",
   sending: "שולח…",
   required: "(חובה)",
-  success: "תודה! קיבלנו את הפרטים ונחזור אליכם בהקדם.",
+  success: "תודה! קיבלנו את הפרטים. מישהו מהצוות יחזור אליכם תוך יום עסקים.",
   error: "לא הצלחנו לשלוח את הטופס. אפשר להתקשר אלינו:",
-  invalidPhone: "נא להזין מספר טלפון תקין.",
-  invalidConsent: "יש לאשר את מדיניות הפרטיות.",
+  phoneHint: "מספר ישראלי, או מספר מחו״ל עם קידומת מדינה (+)",
+  missingPhone: "כתבו מספר טלפון כדי שנוכל לחזור אליכם.",
+  invalidPhone: "מספר הטלפון לא נראה תקין. כתבו מספר ישראלי, למשל 050-1234567, או מספר מחו״ל שמתחיל ב-+.",
+  invalidConsent: "כדי שנוכל לחזור אליכם, סמנו שקראתם את מדיניות הפרטיות.",
 };
 
 // ---------------------------------------------------------------------------

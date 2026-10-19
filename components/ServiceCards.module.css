@@ -1,96 +1,66 @@
-.grid {
+.list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: var(--space-4);
+  gap: var(--space-2) var(--space-6);
 }
 
-@media (min-width: 640px) {
-  .grid {
+@media (min-width: 720px) {
+  .list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 1000px) {
-  .grid {
+  .list {
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-5);
   }
 }
 
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-6) var(--space-5) var(--space-5);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  transition:
-    transform 0.25s var(--ease),
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: var(--color-sand-dark);
-}
-
-.featured {
-  background: linear-gradient(160deg, var(--color-accent-soft), var(--color-surface) 60%);
-  border-color: rgba(180, 83, 43, 0.35);
-}
-
-.icon {
+.link {
   display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  margin-block-end: var(--space-4);
-  border-radius: 18px;
-  background: var(--color-primary-soft);
-  color: var(--color-primary);
-}
-
-.featured .icon {
-  background: var(--color-accent);
-  color: #fff;
+  gap: var(--space-1);
+  padding-block: var(--space-3);
+  text-decoration: none;
+  color: inherit;
 }
 
 .title {
-  margin-block-end: var(--space-2);
-  font-size: var(--text-xl);
-}
-
-.text {
-  color: var(--color-muted);
-}
-
-.link {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-1);
-  margin-block-start: auto;
-  font-weight: 700;
-  text-decoration: none;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.title svg {
+  flex-shrink: 0;
   color: var(--color-accent-dark);
-}
-
-/* whole card is clickable via the link */
-.link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-}
-
-.link svg {
   transition: transform 0.2s var(--ease);
 }
 
-.card:hover .link svg {
-  transform: translateX(-4px);
+/* On phones the titles alone keep the list short; each links to the full description. */
+.text {
+  display: none;
+  color: var(--color-muted);
+}
+
+@media (min-width: 720px) {
+  .text {
+    display: block;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover .title {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .link:hover .title svg {
+    transform: translateX(-4px);
+  }
 }
