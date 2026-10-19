@@ -154,7 +154,7 @@
   border-color: var(--color-whatsapp);
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 960px) {
   .toggle {
     display: none;
   }
@@ -203,5 +203,21 @@
     flex-direction: row;
     align-items: center;
     margin: 0;
+  }
+}
+
+/* Laptops (960–1199px): keep the full nav and the primary action; the phone
+   pill gives way (WhatsApp stays one tap away in the floating button). */
+@media (min-width: 960px) and (max-width: 1199px) {
+  .contact {
+    display: none;
+  }
+
+  .list {
+    gap: 0;
+  }
+
+  .link {
+    padding-inline: var(--space-2);
   }
 }

@@ -27,7 +27,7 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
   ownerView: () => <OwnerView />,
   protection: () => <ProtectionLayers />,
   services: () => (
-    <section className="section section-white" aria-labelledby="services-title">
+    <section className="section section-alt" aria-labelledby="services-title">
       <div className="container">
         <SectionHeading
           id="services-title"
