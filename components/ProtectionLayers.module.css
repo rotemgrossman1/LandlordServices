@@ -197,6 +197,15 @@
   color: var(--color-on-dark-muted);
 }
 
+.proofText {
+  max-width: 40rem;
+  margin-block-end: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: #fff;
+}
+
 .more {
   display: inline-flex;
   align-items: center;
@@ -209,29 +218,4 @@
   display: grid;
   gap: var(--space-5);
   justify-items: start;
-}
-
-.stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-6);
-  margin: 0;
-}
-
-.stats div {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.stats dt {
-  color: var(--color-on-dark-muted);
-}
-
-.stats dd {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(2.25rem, 1.8rem + 2vw, 3.25rem);
-  font-weight: 700;
-  line-height: 1.05;
-  color: #fff;
 }

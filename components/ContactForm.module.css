@@ -17,6 +17,8 @@
 .field {
   display: grid;
   gap: var(--space-1);
+  /* side-by-side fields keep their inputs aligned when only one has a hint */
+  align-content: start;
 }
 
 .field label,

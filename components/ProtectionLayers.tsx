@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { partner, protection, stats } from "@/content/site";
+import { partner, protection } from "@/content/site";
 import { initials } from "@/lib/format";
 import Icon from "./Icon";
 import styles from "./ProtectionLayers.module.css";
@@ -11,7 +11,6 @@ import styles from "./ProtectionLayers.module.css";
  */
 export default function ProtectionLayers({ showLinks = true }: { showLinks?: boolean }) {
   const layers = protection.layers;
-  const proof = stats.filter((s) => s.value);
   return (
     <section className={`section section-dark ${styles.section}`} aria-labelledby="protection-title">
       <div className="container">
@@ -67,22 +66,13 @@ export default function ProtectionLayers({ showLinks = true }: { showLinks?: boo
               <h3 className={styles.name}>{partner.name}</h3>
               <p className={styles.role}>{partner.role}</p>
               {partner.bio && <p className={styles.bio}>{partner.bio}</p>}
+              {protection.partnerProof && <p className={styles.proofText}>{protection.partnerProof}</p>}
               <Link href="/about#partner-title" className={styles.more}>
                 {protection.partnerLink}
                 <Icon name="arrow" size={18} />
               </Link>
             </div>
             <div className={styles.proof}>
-              {proof.length > 0 && (
-                <dl className={styles.stats}>
-                  {proof.map((s) => (
-                    <div key={s.label}>
-                      <dt>{s.label}</dt>
-                      <dd>{s.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              )}
               <Link href="/landlord-safe" className="btn btn-light">
                 {protection.safeLink}
                 <Icon name="arrow" size={20} />
