@@ -26,6 +26,24 @@ export type Service = {
 // h1Accent: part of h1 shown in the accent colour (must appear in h1)
 export type PageMeta = { title: string; description: string; h1: string; h1Accent?: string; intro: string };
 export type Feature = { icon: IconName; title: string; text: string };
+// credit + creditUrl are required for Creative Commons photos (see public/images/CREDITS.md)
+export type Photo = { src: string; alt: string; credit: string; creditUrl: string };
+export type CityPage = {
+  slug: string; // URL: /areas/<slug>
+  city: string; // must match a name in areas.cities
+  meta: PageMeta;
+  eyebrow: string;
+  hero: Photo;
+  galleryTitle: string;
+  galleryNote: string; // e.g. "for illustration only"
+  gallery: Photo[]; // Empty = gallery hidden
+  workTitle: string;
+  work: string[]; // paragraphs
+  facts: Stat[]; // items with an empty value are hidden
+  includesTitle: string;
+  includes: string[];
+  faq: FaqItem[];
+};
 export type Persona = { icon: IconName; title: string; pain: string; solution: string };
 export type CompareValue = "yes" | "no" | "you";
 export type HomeSection =
@@ -45,6 +63,9 @@ export type HomeSection =
 // ---------------------------------------------------------------------------
 
 const addressFull = "ב.ס.ר 2, קומה 20, דרך בן גוריון 1, בני ברק";
+// Google Business Profile link (e.g. "https://maps.app.goo.gl/…"). When set, the
+// "Google Maps" links open the profile and it is listed in the JSON-LD `sameAs`.
+const googleProfile = "";
 
 export const site = {
   name: "Landlord",
@@ -60,7 +81,10 @@ export const site = {
     city: "בני ברק",
     full: addressFull,
   },
-  mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("דרך בן גוריון 1, בני ברק")}`,
+  googleProfile,
+  mapsUrl:
+    googleProfile ||
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("דרך בן גוריון 1, בני ברק")}`,
   wazeUrl: `https://waze.com/ul?q=${encodeURIComponent("דרך בן גוריון 1, בני ברק")}&navigate=yes`,
   facebook: "https://www.facebook.com/landlordservicesltd",
   hours: "", // e.g. "א׳–ה׳ 9:00–17:00"
@@ -78,17 +102,27 @@ export const images = {
   protection: "/images/protection-law.jpg", // side panel of the legal-protection card. Empty = plain forest
 };
 
+// Confirmed by the company: true for all clients, not only Landlord Safe.
+export const rentRecord =
+  "ב-13 שנה ויותר מ-200 נכסים, אף בעל דירה שלנו לא נשאר בלי שכר דירה – גם כשהדייר הפסיק לשלם.";
+
 // Numbers strip. Items with an empty value are hidden. "מאז 2013" is always shown.
 export const stats: Stat[] = [
-  { value: "מאות", label: "נכסים בניהול" },
-  { value: "100%", label: "גבייה בזמן" },
+  { value: "170+", label: "נכסים בניהול היום" },
+  { value: "0", label: "חודשים בלי שכר דירה לבעלי הדירות שלנו" },
 ];
 
 // Real Google reviews only, copied word for word. Empty = the reviews section is hidden.
-export const testimonials: Testimonial[] = [];
+export const testimonials: Testimonial[] = [ // TEMP SAMPLE: remove before publishing
+  { name: "דוגמה 1", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
+  { name: "דוגמה 2", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
+  { name: "דוגמה 3", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
+  { name: "דוגמה 4", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
+  { name: "דוגמה 5", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
+];
 
-// value: e.g. "4.9", count: e.g. "37 ביקורות", url: the Google Maps reviews link
-export const googleRating = { value: "", count: "", url: "" };
+// value: e.g. "4.9", count: e.g. "37 ביקורות", url: the Google reviews link (defaults to the profile)
+export const googleRating = { value: "", count: "", url: site.googleProfile };
 
 // photo: "" = initials are shown instead
 export const team: TeamMember[] = [
@@ -161,6 +195,115 @@ export const areas = {
     },
   ],
 };
+
+// ---------------------------------------------------------------------------
+// City pages (/areas/<slug>)
+// Photos are placeholders of each city's buildings, not properties we manage,
+// until we have photos of our own apartments.
+// ---------------------------------------------------------------------------
+
+export const cityPages: CityPage[] = [
+  {
+    slug: "tel-aviv",
+    city: "תל אביב",
+    meta: {
+      title: "ניהול נכסים בתל אביב – ניהול דירות להשכרה | לנדלורד",
+      description:
+        "ניהול דירות מושכרות בתל אביב: כ-50 נכסים בניהול בכל רחבי העיר. בדיקת דיירים, חוזה עם ליווי משפטי, טיפול בתקלות ושכר דירה מובטח עם Landlord Safe.",
+      h1: "ניהול נכסים בתל אביב",
+      h1Accent: "בתל אביב",
+      intro:
+        "לנדלורד מנהלת כ-50 דירות מושכרות בתל אביב, בשכונות בכל רחבי העיר. אנחנו מוצאים ובודקים דיירים, מכינים חוזה עם ליווי משפטי ומטפלים בכל תקלה ובכל חשבון, ואתם מקבלים את שכר הדירה.",
+    },
+    eyebrow: "אזורי פעילות · גוש דן",
+    hero: {
+      src: "/images/tel-aviv-white-city.jpg",
+      alt: "בניין מגורים בסגנון באוהאוס בעיר הלבנה בתל אביב, עם עץ דקל בחזית",
+      credit: "ליאור גולגר, PikiWiki, CC BY 2.5",
+      creditUrl: "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_9168_White_City_of_Tel_Aviv.JPG",
+    },
+    galleryTitle: "דירות להשכרה בתל אביב",
+    galleryNote: "התמונות להמחשה: בנייני מגורים בתל אביב, לא נכסים שבניהולנו.",
+    gallery: [
+      {
+        src: "/images/tel-aviv-balconies.jpg",
+        alt: "בניין מגורים עם מרפסות מלאות צמחייה בתל אביב",
+        credit: "",
+        creditUrl: "",
+      },
+      {
+        src: "/images/tel-aviv-dizengoff.jpg",
+        alt: "בניין מגורים עגול ברחוב דיזנגוף",
+        credit: "שלמה רודד, PikiWiki, CC BY 2.5",
+        creditUrl: "https://commons.wikimedia.org/wiki/File:127526_tel_aviv_residential_building_in_dizengoff_PikiWiki_Israel.jpg",
+      },
+      {
+        src: "/images/tel-aviv-rothschild.jpg",
+        alt: "בניין מגורים בשדרות רוטשילד",
+        credit: "David Shankbone, CC BY-SA 3.0",
+        creditUrl: "https://commons.wikimedia.org/wiki/File:118_Rothschild_Boulevard_by_David_Shankbone.jpg",
+      },
+      {
+        src: "/images/tel-aviv-clock-building.jpg",
+        alt: "בניין מגורים ותיק עם מרפסות ושעון גדול בחזית",
+        credit: "Deror Avi, CC BY-SA 3.0",
+        creditUrl: "https://commons.wikimedia.org/wiki/File:Buildings_in_Tel_Aviv_P1010824.JPG",
+      },
+      {
+        src: "/images/tel-aviv-apartment-block.jpg",
+        alt: "בניין דירות טיפוסי בתל אביב בערב",
+        credit: "TLV and more, CC BY 2.0",
+        creditUrl: "https://commons.wikimedia.org/wiki/File:Tel-aviv-residential-building-001-february-2016.jpg",
+      },
+    ],
+    workTitle: "העבודה שלנו בתל אביב",
+    work: [
+      "תל אביב היא אחת הערים המרכזיות שבהן אנחנו פעילים. היום אנחנו מנהלים בה כ-50 נכסים, בשכונות בכל רחבי העיר, בשביל בעלי דירות שלא רוצים או לא יכולים לנהל את השכירות בעצמם.",
+      "השכרת דירה בתל אביב מגיעה עם אתגרים משלה: הרבה מועמדים לכל דירה, שצריך לסנן בקפידה, ובניינים ותיקים שבהם תקלות הן עניין שבשגרה. בדיוק בשביל זה אנחנו כאן: הדיירים פונים אלינו, ואנחנו מטפלים עד הסוף.",
+    ],
+    facts: [
+      { value: "כ-50", label: "נכסים בניהול בתל אביב" },
+      { value: "0", label: "חודשים בלי שכר דירה לבעלי הדירות שלנו" },
+      { value: `מאז ${site.foundingYear}`, label: "מנהלים נכסים בשביל בעלי דירות" },
+    ],
+    includesTitle: "מה אנחנו עושים בשבילכם בתל אביב",
+    includes: [
+      "איתור דיירים וסינון קפדני של המועמדים",
+      "בדיקה כלכלית של הדייר וחוזה עם ליווי משפטי",
+      "העברת הארנונה בעיריית תל אביב-יפו, המים, החשמל והגז על שם הדיירים",
+      "טיפול בכל תקלה, עם בעלי מקצוע שמגיעים לדירה",
+      "Landlord Safe: שכר הדירה ממשיך להגיע גם אם הדייר מפסיק לשלם, בכפוף לתנאי השירות",
+      "בדיקה שהדירה חוזרת אליכם בסוף השכירות תקינה וללא חובות",
+    ],
+    faq: [
+      {
+        id: "tlv-areas",
+        question: "באילו שכונות בתל אביב אתם מנהלים דירות?",
+        answer:
+          "בכל רחבי העיר. היום אנחנו מנהלים כ-50 נכסים בתל אביב, בשכונות שונות מצפון העיר ועד דרומה. הדירה שלכם בתל אביב? נשמח לשמוע עליה.",
+      },
+      {
+        id: "tlv-arnona",
+        question: "מי מטפל בארנונה ובחשבונות של דירה מושכרת בתל אביב?",
+        answer:
+          "אנחנו. בתחילת השכירות אנחנו מעבירים את חשבון הארנונה בעיריית תל אביב-יפו, וגם את המים, החשמל והגז, על שם הדיירים. בסוף השכירות אנחנו בודקים שהדירה חוזרת אליכם ללא חובות.",
+      },
+      {
+        id: "tlv-abroad",
+        question: "אני גר בחו״ל ויש לי דירה בתל אביב. תוכלו לנהל אותה?",
+        answer:
+          "כן. אנחנו מטפלים בהשכרה, בדיירים ובתקלות כאן, ומעדכנים אתכם בכל מקום שבו אתם נמצאים, כך שלא תצטרכו להגיע לארץ בשביל הדירה.",
+      },
+      {
+        id: "tlv-stops-paying",
+        question: "מה קורה אם הדייר בדירה שלי בתל אביב מפסיק לשלם?",
+        answer:
+          "עם Landlord Safe אתם ממשיכים לקבל שכר דירה, בכפוף לתנאי השירות, ואנחנו מטפלים בגבייה ובפינוי בהליך משפטי. " +
+          rentRecord,
+      },
+    ],
+  },
+];
 
 // ---------------------------------------------------------------------------
 // Navigation
@@ -400,7 +543,7 @@ export const protection = {
   eyebrow: "הגב המשפטי",
   title: "הגנה בשכבות, עוד לפני שהדייר נכנס",
   titleAccent: "עוד לפני שהדייר נכנס",
-  lead: "השותף המנהל שלנו הוא עורך דין, ולכן כל שלב בשכירות בנוי אצלנו כדי להגן עליכם: מבדיקת הדייר, דרך חוזה חזק ועד שכר דירה מובטח. השילוב הזה הוא מה שמייחד אותנו.",
+  lead: "השותף המנהל שלנו הוא עורך דין, ולכן כל שלב בשכירות בנוי אצלנו כדי להגן עליכם: מבדיקת הדייר, דרך חוזה חזק ועד שכר דירה מובטח. והתוצאה: " + rentRecord,
   layers: [
     {
       icon: "search",
@@ -460,7 +603,7 @@ export const faq: FaqItem[] = [
     id: "why-us",
     question: "למה לבחור בנו?",
     answer:
-      "לנדלורד הוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות מושכרות, ולכן אנחנו מכירים את הצד שלכם מקרוב. השותף המנהל הוא עורך דין, כך שכל שלב – מבדיקת הדייר והחוזה ועד טיפול בדייר שלא משלם – מקבל גיבוי משפטי. יחד עם Landlord Safe, זו חבילה שקשה למצוא במקום אחר. אנחנו עובדים בשקיפות ובלי ניגוד עניינים: אנחנו מייצגים רק אתכם, בעלי הנכס.",
+      "לנדלורד הוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות מושכרות, ולכן אנחנו מכירים את הצד שלכם מקרוב. השותף המנהל הוא עורך דין, כך שכל שלב – מבדיקת הדייר והחוזה ועד טיפול בדייר שלא משלם – מקבל גיבוי משפטי. יחד עם Landlord Safe, זו חבילה שקשה למצוא במקום אחר. אנחנו עובדים בשקיפות ובלי ניגוד עניינים: אנחנו מייצגים רק אתכם, בעלי הנכס. " + rentRecord,
   },
   {
     id: "for-whom",
@@ -600,7 +743,7 @@ export const safe = {
 export const about = {
   story: [
     "לנדלורד הוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות מושכרות. הכרנו מקרוב את כל מה שמעסיק בעלי דירות: מציאת דיירים טובים, חוזה שמגן עליכם, תקלות באמצע הלילה, ודייר שמפסיק לשלם.",
-    "מתוך הניסיון הזה בנינו חברת ניהול נכסים שעובדת כמו שהיינו רוצים שיעבדו בשבילנו: בשקיפות, בזמינות ועם גב משפטי. היום אנחנו מנהלים מאות נכסים בגוש דן ובירושלים.",
+    "מתוך הניסיון הזה בנינו חברת ניהול נכסים שעובדת כמו שהיינו רוצים שיעבדו בשבילנו: בשקיפות, בזמינות ועם גב משפטי. היום אנחנו מנהלים יותר מ-170 נכסים בגוש דן ובירושלים.",
   ],
   values: [
     {
@@ -670,7 +813,7 @@ export const pages: Record<
     h1: "אודות לנדלורד",
     h1Accent: "לנדלורד",
     intro:
-      "לנדלורד היא חברת ניהול נכסים שהוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות מושכרות. אנחנו מנהלים מאות נכסים בשביל בעלי דירות בגוש דן ובירושלים, בהובלת השותף המנהל עו״ד דורון מרום.",
+      "לנדלורד היא חברת ניהול נכסים שהוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות מושכרות. אנחנו מנהלים יותר מ-170 נכסים בשביל בעלי דירות בגוש דן ובירושלים, בהובלת השותף המנהל עו״ד דורון מרום.",
   },
   faq: {
     title: "שאלות נפוצות על ניהול נכסים | לנדלורד",
@@ -815,6 +958,8 @@ export const labels = {
   footerNav: "קישורים בתחתית העמוד",
   homeLink: "עמוד הבית",
   onThisPage: "בעמוד הזה",
+  cityPage: "ניהול נכסים ב{city}", // footer link to a city page
+  allServices: "לכל השירותים",
   footerTagline: `חברת ניהול נכסים לבעלי דירות מושכרות בגוש דן ובירושלים, מאז ${site.foundingYear}. אתם נהנים מהשכירות – אנחנו דואגים לכל השאר.`,
 };
 
@@ -868,4 +1013,5 @@ export const legal = {
 
 // Short company summary (also used for llms.txt wording and JSON-LD description)
 export const summary =
-  "לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות, שהוקמה ב-2013 ופועלת בגוש דן ובירושלים. החברה מספקת ניהול נכסים מושכרים, Landlord Safe לשכר דירה מובטח (בכפוף לתנאי השירות), ניהול דירות לתושבי חוץ, אחזקה ותחזוקה, ניהול נכסי יוקרה וניהול משרדים ונכסים מסחריים.";
+  "לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות, שהוקמה ב-2013 ופועלת בגוש דן ובירושלים. החברה מספקת ניהול נכסים מושכרים, Landlord Safe לשכר דירה מובטח (בכפוף לתנאי השירות), ניהול דירות לתושבי חוץ, אחזקה ותחזוקה, ניהול נכסי יוקרה וניהול משרדים ונכסים מסחריים. " +
+  rentRecord;

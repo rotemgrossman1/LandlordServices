@@ -39,7 +39,9 @@ export function organizationJsonLd() {
     ...(areas.cities.length > 0
       ? { areaServed: areas.cities.map((name) => ({ "@type": "City", name })) }
       : {}),
-    ...(site.facebook ? { sameAs: [site.facebook] } : {}),
+    ...(site.facebook || site.googleProfile
+      ? { sameAs: [site.facebook, site.googleProfile].filter(Boolean) }
+      : {}),
     ...(site.companyId ? { taxID: site.companyId } : {}),
   };
 }

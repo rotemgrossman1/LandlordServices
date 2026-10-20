@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { areas, cta, labels, nav, services, site } from "@/content/site";
+import { areas, cityPages, cta, labels, nav, services, site } from "@/content/site";
 import { telHref, whatsappHref } from "@/lib/format";
 import Icon from "./Icon";
 import Logo from "./Logo";
@@ -44,6 +44,11 @@ export default function Footer() {
             {nav.map((item) => (
               <li key={item.href}>
                 <Link href={item.href}>{item.label}</Link>
+              </li>
+            ))}
+            {cityPages.map((c) => (
+              <li key={c.slug}>
+                <Link href={`/areas/${c.slug}`}>{labels.cityPage.replace("{city}", c.city)}</Link>
               </li>
             ))}
             <li>

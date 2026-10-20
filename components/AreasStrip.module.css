@@ -125,8 +125,16 @@
   text-decoration: none;
 }
 
+.credit {
+  z-index: 2;
+}
+
 .credit:hover {
   text-decoration: underline;
+}
+
+.card {
+  position: relative;
 }
 
 .city {
@@ -174,4 +182,31 @@
 .lead {
   margin: 0;
   color: var(--color-on-dark-muted);
+}
+
+/* A city with its own page: the whole card is the link */
+:global(.section-dark) a.cityLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-on-dark);
+  text-decoration: none;
+}
+
+.cityLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cityLink svg {
+  color: var(--color-accent-light);
+  transition: transform 0.25s var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .cityLink svg {
+    transform: translateX(-4px);
+  }
 }

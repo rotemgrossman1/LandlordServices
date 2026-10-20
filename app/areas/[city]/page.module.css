@@ -1,0 +1,195 @@
+/* Photo hero: the city's buildings behind the H1 and the direct answer */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(520px, 78svh, 760px);
+  overflow: hidden;
+  color: var(--color-on-dark);
+  background: var(--color-primary);
+  --color-focus: var(--color-accent-light);
+}
+
+.photo {
+  z-index: -2;
+  object-fit: cover;
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(8, 28, 23, 0.35) 0%, rgba(8, 28, 23, 0.15) 35%, rgba(8, 28, 23, 0.88) 100%),
+    linear-gradient(270deg, rgba(8, 28, 23, 0.45), transparent 75%);
+}
+
+.heroInner {
+  padding-block: var(--space-8) clamp(3rem, 2rem + 4vw, 5rem);
+}
+
+.title {
+  max-width: 14ch;
+  margin-block-end: var(--space-5);
+  font-size: var(--text-display);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  color: var(--color-on-dark);
+}
+
+.lead {
+  max-width: 40rem;
+  margin-block-end: var(--space-6);
+  padding-inline-start: var(--space-5);
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* The sticky mobile bar already offers WhatsApp */
+@media (max-width: 767px) {
+  .heroWhatsapp {
+    display: none;
+  }
+}
+
+/* Creative Commons credit, bottom corner of a photo */
+.credit {
+  position: absolute;
+  inset-block-end: var(--space-2);
+  inset-inline-end: var(--space-2);
+  z-index: 1;
+  padding: 2px var(--space-2);
+  border-radius: 4px;
+  background: rgba(14, 36, 30, 0.72);
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  color: #fff;
+  text-decoration: none;
+}
+
+a.credit:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Gallery: one tall photo beside a 2×2 grid on wide screens */
+.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.galleryItem {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-primary-soft);
+}
+
+.galleryItem img {
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .galleryItem:hover img {
+    transform: scale(1.04);
+  }
+}
+
+@media (min-width: 720px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .galleryItem:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .galleryItem:first-child {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    aspect-ratio: auto;
+  }
+}
+
+.note {
+  margin-block: var(--space-4) 0;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+/* Our work in the city: text beside the facts */
+.work {
+  display: grid;
+  gap: var(--space-7);
+}
+
+@media (min-width: 1024px) {
+  .work {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    align-items: center;
+  }
+}
+
+.facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-block: var(--space-5);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.fact:first-child {
+  padding-block-start: 0;
+}
+
+.factValue {
+  /* numbers like "170+" read left to right; Hebrew values stay right to left */
+  align-self: flex-start;
+  unicode-bidi: plaintext;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 1.6rem + 2vw, 3.25rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+.factLabel {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+@media (min-width: 720px) {
+  .includes {
+    columns: 2;
+    column-gap: var(--space-7);
+  }
+
+  .includes li {
+    break-inside: avoid;
+  }
+}

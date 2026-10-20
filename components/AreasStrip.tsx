@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { areas, cta, home } from "@/content/site";
+import { areas, cityPages, cta, home } from "@/content/site";
 import AccentText from "./AccentText";
 import Icon from "./Icon";
 import styles from "./AreasStrip.module.css";
@@ -31,7 +31,9 @@ export default function AreasStrip() {
 
         {areas.featured.length > 0 && (
           <ul className={styles.grid}>
-            {areas.featured.map((a) => (
+            {areas.featured.map((a) => {
+              const page = cityPages.find((c) => c.city === a.city);
+              return (
               <li key={a.city} className={styles.card}>
                 <div className={styles.media}>
                   <Image src={a.image} alt={a.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 720px) 50vw, 100vw" />
@@ -42,9 +44,19 @@ export default function AreasStrip() {
                     </a>
                   )}
                 </div>
-                <h3 className={styles.city}>{a.city}</h3>
+                <h3 className={styles.city}>
+                  {page ? (
+                    <Link href={`/areas/${page.slug}`} className={styles.cityLink}>
+                      {a.city}
+                      <Icon name="arrow" size={18} />
+                    </Link>
+                  ) : (
+                    a.city
+                  )}
+                </h3>
               </li>
-            ))}
+              );
+            })}
           </ul>
         )}
 
