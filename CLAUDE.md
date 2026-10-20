@@ -9,3 +9,11 @@
 - **SEO:** one H1 per page, unique title and description via `buildMetadata` in `lib/seo.ts`, FAQPage JSON-LD on pages with FAQs, no `noindex`. Add new pages to `app/sitemap.ts` and `public/llms.txt`.
 - **Accessibility:** labels on every input, visible focus, keyboard-usable controls, AA contrast.
 - Run `npm run build` after changes and fix all errors.
+
+## City pages (`cityPages` in `content/site.ts`)
+
+We are a property-management company, not a rental agency, so city copy talks about managed properties, not renting.
+
+- `galleryTitle` is always "נכסים מנוהלים ב<עיר>", never "דירות להשכרה" or "נכסים להשכרה".
+- `meta.title` is "ניהול נכסים ב<עיר> – ניהול דירות מושכרות | לנדלורד", never "להשכרה".
+- `includesTitle` is always "מה אתם מקבלים ב<עיר>", never variations like "מה אנחנו לוקחים מכם" or "מה אנחנו עושים בשבילכם".
