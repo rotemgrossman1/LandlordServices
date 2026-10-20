@@ -111,3 +111,10 @@
     flex: 1 1 100%;
   }
 }
+
+/* Below 768px the sticky mobile bar already offers WhatsApp and call, so the hero keeps only the main CTA */
+@media (max-width: 767px) {
+  .actions .secondary {
+    display: none;
+  }
+}

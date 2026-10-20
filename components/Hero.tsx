@@ -41,7 +41,7 @@ export default function Hero() {
             {site.whatsapp ? (
               <a
                 href={whatsappHref(site.whatsapp, cta.whatsappText)}
-                className="btn btn-whatsapp"
+                className={`btn btn-whatsapp ${styles.secondary}`}
                 rel="noopener"
                 target="_blank"
               >
@@ -49,7 +49,7 @@ export default function Hero() {
                 {cta.whatsapp}
               </a>
             ) : (
-              <a href={telHref(site.phone)} className="btn btn-ghost-light">
+              <a href={telHref(site.phone)} className={`btn btn-ghost-light ${styles.secondary}`}>
                 <Icon name="phone" size={20} />
                 {cta.call}
               </a>
