@@ -27,3 +27,9 @@ The city photos show the cities themselves, not properties we manage.
 | givatayim-palms.jpg | Residential building and palm trees, Givatayim | Chenspec | https://commons.wikimedia.org/wiki/File:Buildings_in_Givatayim,_March_2024_12.jpg (CC BY-SA 4.0, credited on the photo) |
 | givatayim-old-house.jpg | Old house with a red tile roof, Givatayim | Dr. Avishai Teicher (PikiWiki Israel) | https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_34059_An_old_house_in_Givatayim.JPG (CC BY 2.5, credited on the photo) |
 | givatayim-panorama.jpg | Panorama of Givatayim's residential neighborhoods | Eli Shany (he.wikipedia) | https://commons.wikimedia.org/wiki/File:Giv%27atayim_Panorama.jpg (CC BY-SA 3.0, credited on the photo) |
+| herzliya-marina-towers.jpg | Residential buildings over Herzliya marina (same photo as area-herzliya-marina-towers.jpg, cropped to the buildings) | George (Unsplash) | https://unsplash.com/photos/Eol0BmZnP7E |
+| herzliya-neve-amirim.jpg | Residential towers, Neve Amirim, Herzliya | David Shay | https://commons.wikimedia.org/wiki/File:Neve_Amirim.JPG (CC BY-SA 3.0, credited on the photo) |
+| herzliya-brigade-street.jpg | New apartment buildings on Jewish Brigade Group street, Herzliya | דוד שי | https://commons.wikimedia.org/wiki/File:Jewish_Brigade_Group_street,_Herzliya.jpg (CC BY-SA 4.0, credited on the photo) |
+| herzliya-yad-hatisha.jpg | Apartment buildings, Yad HaTisha, Herzliya | דוד שי | https://commons.wikimedia.org/wiki/File:Yad_Hatisha_1.jpg (CC BY-SA 4.0, credited on the photo) |
+| herzliya-bauhaus.jpg | Bauhaus-style building, Herzliya | Israel Zeller (PikiWiki Israel) | https://commons.wikimedia.org/wiki/File:115732_herzliya_bauhaus_building_PikiWiki_Israel.jpg (CC BY 2.5, credited on the photo) |
+| herzliya-new-buildings.jpg | New residential buildings, Herzliya | דוד שי | https://commons.wikimedia.org/wiki/File:New_buildings_on_central_bus_station_of_Herzliya.jpg (CC BY-SA 4.0, credited on the photo) |
