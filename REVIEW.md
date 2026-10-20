@@ -41,7 +41,8 @@ Who: 🛠 = can do in code · 📋 = needs a fact from you.
 - ✅ **A. Quick fixes:** H1 accent space, meta descriptions and the `/services` title, the hero's WhatsApp button hidden on mobile, and security headers.
 - ✅ **B. Repeated copy:** "מאז 2013" removed from the page intros, the CTA band's legal-backing line hidden, and the two abroad FAQs merged, and the maintenance service folded into rental management.
 - ✅ **C. Home page design:** the hero keeps one supporting line (the intro now leads the services section), services are a compact card grid, personas moved from dark to light, and the comparison table moved to `/services` with one FAQ (`for-whom`) dropped from home.
-- ⏳ **Next:** D (structured data and AI search), E (bigger additions, after the city pages merge). After the city pages merge, also take "areas" off the home page.
+- ✅ **D. Structured data and AI search:** richer company JSON-LD (image, managing partner, services), a Service for Landlord Safe, BreadcrumbList on the main pages, a "last updated" date on the FAQ, and an English section in `llms.txt`.
+- ⏳ **Next:** E (bigger additions), after the city pages merge. Then also take "areas" off the home page and add breadcrumbs to the city pages.
 
 ---
 
@@ -117,7 +118,7 @@ Counted in `content/site.ts`:
 2. **One page per service** (`/services/landlord-safe`, `/services/abroad`, `/services/commercial`…). `/services` becomes a hub page.
 3. **A guides section** (`/guides`) with 5–10 articles on real landlord questions: "מה עושים כשהדייר מפסיק לשלם", "חוזה שכירות – מה חייב להיות בו", "חוק שכירות הוגנת", "העברת ארנונה לשוכר", "השכרת דירה כשגרים בחו״ל". This is where most of the traffic is, and AI tools quote this kind of content.
 4. ✅ **Done: meta fixes.** All descriptions are now 117–146 characters, and `/services` is titled "ניהול דירות ונכסים להשכרה". Was: the home description is 173 characters and Landlord Safe's is 162 (Google cuts at ~155). Privacy and accessibility descriptions are only ~30 characters. The `/services` title "ניהול נכסים ונדל״ן" should be "ניהול דירות ונכסים להשכרה".
-5. Add a `BreadcrumbList` and internal links: service pages ↔ city pages ↔ guides.
+5. 🟡 **BreadcrumbList done** (Home › page) on services, Landlord Safe, About, FAQ, contact, privacy and accessibility. The city pages can call `breadcrumbJsonLd` after the merge. Internal links service pages ↔ city pages ↔ guides wait for those pages (E).
 
 **Already good:** canonicals, OG and Twitter tags, sitemap, robots, static HTML, `lang="he" dir="rtl"`, fast static pages, `next/image` everywhere, 301s from the old Wix URLs.
 
@@ -131,10 +132,10 @@ Counted in `content/site.ts`:
 |---|---|---|
 | P1 | **No outside mentions at all.** AI tools rank by who else talks about you. In progress: Google Business Profile + client reviews (Top 5 #3). | 📋 (1) Claim and fill in a **Google Business Profile** (address, hours, photos, categories "חברת ניהול נכסים"). (2) Ask 10–20 real clients for Google reviews. (3) List the business on b144, d.co.il, nadlano.co.il, Madlan and Facebook (already there: keep it active). (4) Write 1–2 guest articles or get press coverage (Calcalist/Ynet real estate sections, landlord groups). |
 | P1 | **Few hard facts AI can quote:** no price, no number of properties, no Safe coverage period, no hours, no ח.פ. AI answers prefer specific numbers. | 📋 Fill in `stats`, `safeTerms`, `pricing`, `hours`, `companyId`. |
-| P2 | JSON-LD is thin (`lib/seo.ts:21`): no `logo`, `image`, `openingHoursSpecification`, `geo`, `priceRange`, `founder`/`employee` (עו״ד דורון מרום as a `Person` with `jobTitle`), no `Service` items, and `sameAs` is only Facebook. | 🛠 Add these, plus `Service` JSON-LD on each service page and `BreadcrumbList`. |
-| P2 | `llms.txt`: ✅ the "מבוגרים" wording and the rent fact are fixed. It still lacks an English section with full details. | 🛠 Add an English block (relocated Israelis abroad search in English: "property management Tel Aviv for overseas owners"). Don't touch the city lines (city-pages session). |
+| 🟡 | JSON-LD: **done:** `image`, the managing partner as a `Person` (`employee`, with `jobTitle` and bio), every service in a `hasOfferCatalog`, `legalName` when filled, and a `Service` on `/landlord-safe`. **Still open:** `logo` (needs a logo image file), `openingHoursSpecification`, `priceRange` and `geo` (📋 facts), more `sameAs` (Google profile, Top 5 #3). | 📋 + 🛠 `Service` JSON-LD on each future service page (E). |
+| ✅ | `llms.txt`: **done.** The wording and the rent fact are fixed, and an "In English" section covers who it's for, the services, Landlord Safe, the track record, the area and contact details. | — |
 | P2 | No **English page** at all. A large share of the abroad persona searches and asks AI in English. | 🛠 One `/en` page (abroad owners). |
-| P3 | Add `dateModified` / a "last updated" line to the FAQ and guides. AI search prefers fresh content. | 🛠 |
+| 🟡 | "Last updated": **done for the FAQ.** It shows "עודכן לאחרונה" and sends `dateModified` from `faqUpdated` in `site.ts`; update that date when you change an answer. Guides get the same when they exist (E). | — |
 
 ## 6. Extra checks
 
