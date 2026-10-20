@@ -39,7 +39,7 @@ Who: 🛠 = can do in code · 📋 = needs a fact from you.
 
 **Progress on branch `review/remaining-fixes`**
 - ✅ **A. Quick fixes:** H1 accent space, meta descriptions and the `/services` title, the hero's WhatsApp button hidden on mobile, and security headers.
-- ✅ **B. Repeated copy:** "מאז 2013" removed from the page intros, the CTA band's legal-backing line hidden, and the two abroad FAQs merged. The **maintenance** service is still open and waits for your answer (see section 2).
+- ✅ **B. Repeated copy:** "מאז 2013" removed from the page intros, the CTA band's legal-backing line hidden, and the two abroad FAQs merged, and the maintenance service folded into rental management.
 - ⏳ **Next:** C (home page design), D (structured data and AI search), E (bigger additions, after the city pages merge).
 
 ---
@@ -74,7 +74,7 @@ Counted in `content/site.ts`:
 
 **Overlapping sections**
 - **Living abroad** is covered 4 times: a persona, a service (`abroad`), and 2 FAQs (`abroad-manage`, `abroad-maintain`). ✅ **Done:** merged into `abroad-manage`, without the "נשמח לפרט בשיחה" ending.
-- The **maintenance** service repeats bullets already inside **rental-management** ("טיפול בכל התקלות"). 🛠 Merge it into a sub-bullet, or explain what's different (maintenance only, without leasing). 📋 **Waiting for your answer:** do you offer maintenance on its own, for an apartment that isn't rented through you (for example an owner abroad who only visits)? If yes, it stays as a separate service with that difference spelled out. If no, it gets merged.
+- The **maintenance** service repeats bullets already inside **rental-management** ("טיפול בכל התקלות"). 🛠 Merge it into a sub-bullet, or explain what's different (maintenance only, without leasing). ✅ **Done:** maintenance isn't offered on its own, so it's merged into rental management ("כולל תיאום בעלי מקצוע") and removed from the service lists, the FAQ, the summary and `llms.txt`.
 - **Luxury** says "כל מה שכלול בניהול נכסים מושכרים" plus 2 vague bullets. It's thin. 📋 Explain what's actually different, or merge it.
 - **Personas ↔ FAQ "for-whom"**: same content. **Comparison ↔ FAQ "broker"**: same content. Both fine for SEO, but on the home page, show only one of each pair.
 - The **CTA band** appears at the bottom of every page *and* there's a sticky mobile bar *and* a WhatsApp FAB. That's 3 contact elements at once on mobile.
