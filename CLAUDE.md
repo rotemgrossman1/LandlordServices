@@ -15,4 +15,5 @@
 We are a property-management company, not a rental agency, so city copy talks about managed properties, not renting.
 
 - `galleryTitle` is always "נכסים מנוהלים ב<עיר>", never "דירות להשכרה" or "נכסים להשכרה".
+- `meta.title` is "ניהול נכסים ב<עיר> – ניהול דירות מושכרות | לנדלורד", never "להשכרה".
 - `includesTitle` is always "מה אתם מקבלים ב<עיר>", never variations like "מה אנחנו לוקחים מכם" or "מה אנחנו עושים בשבילכם".
