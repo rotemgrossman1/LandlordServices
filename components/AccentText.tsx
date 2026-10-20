@@ -18,7 +18,9 @@ export default function AccentText({
   return (
     <>
       {before}
-      {block ? <br /> : before && " "}
+      {/* The space keeps the words apart in extracted text (snippets, screen readers) even with the <br>. */}
+      {before && " "}
+      {block && <br />}
       <span className="accent">{accent}</span>
       {after}
     </>
