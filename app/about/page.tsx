@@ -2,12 +2,13 @@ import Image from "next/image";
 import CtaBand from "@/components/CtaBand";
 import Icon from "@/components/Icon";
 import NumbersStrip from "@/components/NumbersStrip";
+import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
 import SectionHeading from "@/components/SectionHeading";
 import TeamGrid from "@/components/TeamGrid";
 import { about, areas, home, images, labels, pages, partner, site, team } from "@/content/site";
 import { initials } from "@/lib/format";
-import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
 export const metadata = buildMetadata(pages.about, "/about");
@@ -104,6 +105,7 @@ export default function AboutPage() {
       </section>
 
       <CtaBand />
+      <JsonLd data={breadcrumbJsonLd("/about")} />
     </>
   );
 }

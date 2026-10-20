@@ -3,7 +3,7 @@ import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
 import { faq, home, pages } from "@/content/site";
-import { buildMetadata, faqJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 
 export const metadata = buildMetadata(pages.faq, "/faq");
 
@@ -18,6 +18,7 @@ export default function FaqPage() {
       </section>
       <CtaBand />
       <JsonLd data={faqJsonLd(faq)} />
+      <JsonLd data={breadcrumbJsonLd("/faq")} />
     </>
   );
 }

@@ -1,9 +1,10 @@
 import ContactForm from "@/components/ContactForm";
 import Icon from "@/components/Icon";
+import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
 import { cta, form, labels, pages, site } from "@/content/site";
 import { telHref, whatsappHref } from "@/lib/format";
-import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
 export const metadata = buildMetadata(pages.contact, "/contact");
@@ -80,6 +81,7 @@ export default function ContactPage() {
           </address>
         </div>
       </section>
+      <JsonLd data={breadcrumbJsonLd("/contact")} />
     </>
   );
 }

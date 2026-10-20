@@ -8,7 +8,7 @@ import ProtectionLayers from "@/components/ProtectionLayers";
 import SectionHeading from "@/components/SectionHeading";
 import Steps from "@/components/Steps";
 import { cta, home, labels, pages, protection, safe, safeTerms, services } from "@/content/site";
-import { buildMetadata, faqJsonLd, serviceJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, buildMetadata, faqJsonLd, serviceJsonLd } from "@/lib/seo";
 import styles from "./page.module.css";
 
 export const metadata = buildMetadata(pages.safe, "/landlord-safe");
@@ -93,6 +93,7 @@ export default function LandlordSafePage() {
       <CtaBand />
       <JsonLd data={faqJsonLd(safe.faq)} />
       <JsonLd data={serviceJsonLd("Landlord Safe", pages.safe.description, "/landlord-safe")} />
+      <JsonLd data={breadcrumbJsonLd("/landlord-safe")} />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { areas, partner, services, site, summary, type FaqItem, type PageMeta } from "@/content/site";
+import { areas, labels, nav, partner, services, site, summary, type FaqItem, type PageMeta } from "@/content/site";
 
 export function buildMetadata(page: PageMeta, path: string): Metadata {
   return {
@@ -85,6 +85,18 @@ export function serviceJsonLd(name: string, description: string, path: string, s
     ...(areas.cities.length > 0
       ? { areaServed: areas.cities.map((city) => ({ "@type": "City", name: city })) }
       : {}),
+  };
+}
+
+/** Home › page. The name defaults to the page's label in the main navigation. */
+export function breadcrumbJsonLd(path: string, name = nav.find((n) => n.href === path)?.label ?? "") {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: labels.homeLink, item: `${site.url}/` },
+      { "@type": "ListItem", position: 2, name, item: `${site.url}${path}` },
+    ],
   };
 }
 

@@ -2,9 +2,10 @@ import Link from "next/link";
 import Comparison from "@/components/Comparison";
 import CtaBand from "@/components/CtaBand";
 import Icon from "@/components/Icon";
+import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
 import { home, labels, pages, services } from "@/content/site";
-import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
 export const metadata = buildMetadata(pages.services, "/services");
@@ -66,6 +67,7 @@ export default function ServicesPage() {
       <Comparison alt={services.length % 2 === 1} />
 
       <CtaBand />
+      <JsonLd data={breadcrumbJsonLd("/services")} />
     </>
   );
 }
