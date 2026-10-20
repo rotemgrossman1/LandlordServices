@@ -1,7 +1,8 @@
-/* The design's sand "split" card, inset from the page edges */
+/* The design's sand "split" card, inset from the page edges on a forest band */
 .section {
-  padding-block: var(--section-space) var(--space-7);
+  padding-block: var(--section-space);
   padding-inline: clamp(0.75rem, 0.25rem + 2vw, 2.5rem);
+  background: var(--color-primary);
 }
 
 .card {
@@ -19,7 +20,7 @@
   }
 }
 
-/* ---------- forest panel with the rings ---------- */
+/* ---------- photo panel ---------- */
 
 .visualPanel {
   position: relative;
@@ -37,72 +38,16 @@
   }
 }
 
-.visual {
-  position: relative;
-  width: min(100%, 420px);
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
+.photo {
+  object-fit: cover;
+  object-position: center;
 }
 
-@media (max-width: 639px) {
-  .visual {
-    width: min(72%, 260px);
-  }
-}
-
-.ring {
+/* Darkens the bottom so the note card sits on calm ground */
+.scrim {
   position: absolute;
-  inset: calc((4 - var(--ring)) * 10%);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.035);
-}
-
-.ringOuter {
-  border: 2px solid var(--color-accent);
-  background: rgba(212, 154, 104, 0.08);
-}
-
-/* badge sits on each ring at the 45° point (14.64% in from the box corner) */
-.badge {
-  position: absolute;
-  inset-block-start: 14.64%;
-  inset-inline-end: 14.64%;
-  transform: translate(-50%, -50%);
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--color-primary-dark);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  color: var(--color-on-dark);
-  font-size: var(--text-xs);
-  font-weight: 700;
-}
-
-.ringOuter .badge {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-primary);
-}
-
-.core {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  gap: var(--space-1);
-  width: 30%;
-  aspect-ratio: 1;
-  align-content: center;
-  border-radius: 50%;
-  background: var(--color-bg);
-  color: var(--color-primary);
-  font-family: var(--font-display);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  text-align: center;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(8, 28, 23, 0.1) 45%, rgba(8, 28, 23, 0.6) 100%);
 }
 
 /* Small cream card in the corner, like the design's "Every detail matters" */
@@ -196,63 +141,9 @@
   color: var(--color-muted);
 }
 
-/* who stands behind the shield */
-.partner {
-  display: flex;
-  gap: var(--space-4);
-  margin-block-end: var(--space-6);
-}
-
-.avatar {
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  object-fit: cover;
-  background: var(--color-primary);
-  color: var(--color-on-dark);
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-}
-
-.name {
-  margin: 0;
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.role {
-  margin: 0 0 var(--space-2);
-  font-size: var(--text-sm);
-  color: var(--color-muted);
-}
-
-.bio {
-  margin-block-end: var(--space-2);
-  font-size: var(--text-sm);
-  color: var(--color-muted);
-}
-
-.proof {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-  color: var(--color-primary);
-}
-
 .links {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3) var(--space-5);
-}
-
-.more {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font-weight: 700;
-  color: var(--color-primary);
 }

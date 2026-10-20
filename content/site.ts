@@ -9,7 +9,8 @@
 import type { IconName } from "@/components/Icon";
 
 export type Stat = { value: string; label: string };
-export type Testimonial = { name: string; city: string; text: string };
+// A Google review, copied as written. rating: 1–5 stars (0 = no stars shown); date: e.g. "לפני חודש"
+export type Testimonial = { name: string; city: string; text: string; rating: number; date: string };
 export type TeamMember = { name: string; role: string; photo: string };
 export type PriceItem = { title: string; price: string; note: string };
 export type FaqItem = { id: string; question: string; answer: string };
@@ -73,6 +74,8 @@ export const images = {
   hero: "/images/hero.jpg", // landscape, at least 1800px wide
   heroAlt: "", // decorative: the headline carries the meaning
   office: "", // e.g. "/images/office.jpg"
+  personas: "/images/personas-building.jpg", // background of "who is it for". Empty = plain forest
+  protection: "/images/protection-law.jpg", // side panel of the legal-protection card. Empty = plain forest
 };
 
 // Numbers strip. Items with an empty value are hidden. "מאז 2013" is always shown.
@@ -81,8 +84,10 @@ export const stats: Stat[] = [
   { value: "100%", label: "גבייה בזמן" },
 ];
 
+// Real Google reviews only, copied word for word. Empty = the reviews section is hidden.
 export const testimonials: Testimonial[] = [];
 
+// value: e.g. "4.9", count: e.g. "37 ביקורות", url: the Google Maps reviews link
 export const googleRating = { value: "", count: "", url: "" };
 
 // photo: "" = initials are shown instead
@@ -103,11 +108,57 @@ export const safeTerms = {
 export const areas = {
   regions: ["גוש דן", "ירושלים"],
   cities: ["תל אביב", "רמת גן", "גבעתיים", "הרצליה", "רעננה", "גבעת שמואל", "בת ים", "ירושלים"],
-  // Home page photo cards: views of the cities themselves (not our properties)
+  // Home page photo cards: views of the cities themselves (not our properties).
+  // `credit` + `creditUrl` are required for Creative Commons photos (see public/images/CREDITS.md)
   featured: [
-    { city: "תל אביב", region: "גוש דן", image: "/images/area-tel-aviv.jpg", alt: "נוף של תל אביב" },
-    { city: "הרצליה", region: "גוש דן", image: "/images/area-herzliya.jpg", alt: "המרינה של הרצליה" },
-    { city: "ירושלים", region: "ירושלים", image: "/images/area-jerusalem.jpg", alt: "נוף של ירושלים" },
+    {
+      city: "תל אביב",
+      region: "גוש דן",
+      image: "/images/area-tel-aviv-yoo.jpg",
+      alt: "מגדלי YOO בתל אביב",
+      credit: "Ynhockey, CC BY-SA 4.0",
+      creditUrl: "https://commons.wikimedia.org/wiki/File:Yoo_Towers_01.jpg",
+    },
+    {
+      city: "הרצליה",
+      region: "גוש דן",
+      image: "/images/area-herzliya-marina-towers.jpg",
+      alt: "מגדלים מעל המרינה של הרצליה",
+      credit: "",
+      creditUrl: "",
+    },
+    {
+      city: "בת ים",
+      region: "גוש דן",
+      image: "/images/area-bat-yam.jpg",
+      alt: "חוף הים של בת ים",
+      credit: "",
+      creditUrl: "",
+    },
+    {
+      city: "ירושלים",
+      region: "ירושלים",
+      image: "/images/area-jerusalem-old-city.jpg",
+      alt: "חומות העיר העתיקה ומגדל דוד בירושלים",
+      credit: "",
+      creditUrl: "",
+    },
+    {
+      city: "גבעתיים",
+      region: "גוש דן",
+      image: "/images/area-givatayim.jpg",
+      alt: "בנייני מגורים בגבעתיים",
+      credit: "Юкатан, CC BY-SA 4.0",
+      creditUrl: "https://commons.wikimedia.org/wiki/File:Givatayim_-_03.jpg",
+    },
+    {
+      city: "גבעת שמואל",
+      region: "גוש דן",
+      image: "/images/area-givat-shmuel.jpg",
+      alt: "מגדלי מגורים בגבעת שמואל בשקיעה",
+      credit: "דוידי ורדי, PikiWiki, CC BY 2.5",
+      creditUrl: "https://commons.wikimedia.org/wiki/File:140026_sunset_givat_shmuel_PikiWiki_Israel.jpg",
+    },
   ],
 };
 
@@ -143,9 +194,9 @@ export const homeSections: HomeSection[] = [
   "personas",
   "services",
   "protection",
+  "testimonials",
   "areas",
   "comparison",
-  "testimonials",
   "faq",
   "cta",
 ];
@@ -267,6 +318,9 @@ export const personas = {
   title: "יש לכם דירה. אין לכם כוח לנהל אותה.",
   titleAccent: "אין לכם כוח לנהל אותה.",
   lead: "רוב הלקוחות שלנו הם אנשים רגילים עם דירה אחת עד שלוש, שלא יכולים או לא רוצים לנהל את השכירות בעצמם.",
+  // Closing card after the items. Empty title = hidden
+  closingTitle: "המצב שלכם קצת אחר?",
+  closingText: "ספרו לנו על הדירה, ונבדוק יחד אם ואיך אנחנו יכולים לעזור.",
   items: [
     {
       icon: "homeHeart",
@@ -369,11 +423,7 @@ export const protection = {
       text: "שכר הדירה מובטח, בכפוף לתנאי השירות: גם אם הדייר מפסיק לשלם, אתם ממשיכים לקבל.",
     },
   ] satisfies Feature[],
-  centerLabel: "הדירה שלכם",
   safeLink: "להכיר את Landlord Safe",
-  partnerLink: "על השותף המנהל",
-  // Shown under the partner's bio on the home page (same facts as `stats`)
-  partnerProof: "היום אנחנו מנהלים מאות נכסים, עם 100% גבייה בזמן.",
 };
 
 // ---------------------------------------------------------------------------
@@ -664,7 +714,6 @@ export const home = {
   sinceLabel: `מאז ${site.foundingYear}`,
   sinceText: "מנהלים נכסים בשביל בעלי דירות",
   ledBy: "בהובלת", // hero line: "בהובלת <partner>, <role>"
-  googleRatingLabel: "דירוג ב-Google:",
   servicesEyebrow: "מה אנחנו עושים",
   servicesTitle: "כל מה שהדירה שלכם צריכה, במקום אחד",
   servicesTitleAccent: "במקום אחד",
@@ -676,9 +725,12 @@ export const home = {
   areasTitleAccent: "בגוש דן ובירושלים",
   citiesLabel: "ערים בגוש דן ובירושלים", // numbers strip: "<count> ערים..."
   areasAllLabel: "הערים שבהן אנחנו פעילים",
+  photoCredit: "צילום:", // before the photographer on Creative Commons city photos
   areasLead: "אנחנו מתמקדים בערים עם ביקוש גבוה להשכרה. הנכס שלכם בעיר אחרת? דברו איתנו.",
-  testimonialsEyebrow: "לקוחות מספרים",
-  testimonialsTitle: "מה אומרים עלינו",
+  testimonialsTitle: "ביקורות מ-Google",
+  reviewsPrev: "הביקורת הקודמת",
+  reviewsNext: "הביקורת הבאה",
+  reviewStars: "{n} מתוך 5 כוכבים", // screen-reader text for the stars
   faqEyebrow: "שאלות ותשובות",
   faqTitle: "שאלות נפוצות",
   faqMore: "לכל השאלות",
@@ -701,16 +753,9 @@ export const home = {
 // ---------------------------------------------------------------------------
 
 export const form = {
-  title: "השאירו פרטים",
   titleShort: "השאירו שם וטלפון",
   name: "שם",
   phone: "טלפון",
-  city: "עיר הנכס",
-  apartments: "מספר דירות",
-  residence: "אני גר/ה",
-  residenceIsrael: "בישראל",
-  residenceAbroad: "בחו״ל",
-  message: "הודעה",
   consent: "קראתי ואני מסכים/ה ל",
   consentLink: "מדיניות הפרטיות",
   submit: "חזרו אליי לשיחת היכרות",
@@ -786,7 +831,7 @@ export const legal = {
     },
     {
       title: "איזה מידע נאסף",
-      text: "כשאתם ממלאים את טופס יצירת הקשר, אנחנו מקבלים את הפרטים שמסרתם: שם, טלפון, עיר, מספר דירות, מקום מגורים ותוכן ההודעה.",
+      text: "כשאתם ממלאים את טופס יצירת הקשר, אנחנו מקבלים את הפרטים שמסרתם: שם וטלפון.",
     },
     {
       title: "שימוש במידע",

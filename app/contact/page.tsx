@@ -15,7 +15,7 @@ export default function ContactPage() {
       <section className="section">
         <div className={`container ${styles.grid}`}>
           <div className={styles.formBox}>
-            <h2 className={styles.formTitle}>{form.title}</h2>
+            <h2 className={styles.formTitle}>{form.titleShort}</h2>
             <ContactForm />
           </div>
 

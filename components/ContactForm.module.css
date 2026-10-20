@@ -21,8 +21,7 @@
   align-content: start;
 }
 
-.field label,
-.fieldset legend {
+.field label {
   font-weight: 600;
   font-size: var(--text-sm);
 }
@@ -64,28 +63,6 @@
   text-align: end;
 }
 
-.fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2) var(--space-5);
-}
-
-.fieldset legend {
-  margin-block-end: var(--space-1);
-  padding: 0;
-}
-
-.inline {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  min-height: 44px;
-}
-
-.inline input,
 .consent input {
   width: 20px;
   height: 20px;

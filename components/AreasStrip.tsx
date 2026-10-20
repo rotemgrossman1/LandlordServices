@@ -12,7 +12,7 @@ import styles from "./AreasStrip.module.css";
 export default function AreasStrip() {
   if (areas.cities.length === 0) return null;
   return (
-    <section className="section" aria-labelledby="areas-title">
+    <section className="section section-dark" aria-labelledby="areas-title">
       <div className="container">
         <div className={styles.head}>
           <div>
@@ -36,6 +36,11 @@ export default function AreasStrip() {
                 <div className={styles.media}>
                   <Image src={a.image} alt={a.alt} fill sizes="(min-width: 1024px) 33vw, (min-width: 720px) 50vw, 100vw" />
                   <span className={styles.chip}>{a.region}</span>
+                  {a.credit && (
+                    <a href={a.creditUrl} className={styles.credit} target="_blank" rel="noopener license">
+                      {home.photoCredit} {a.credit}
+                    </a>
+                  )}
                 </div>
                 <h3 className={styles.city}>{a.city}</h3>
               </li>
@@ -45,7 +50,11 @@ export default function AreasStrip() {
 
         <div className={styles.all}>
           <p className={styles.allLabel}>{home.areasAllLabel}</p>
-          <p className={styles.cities}>{areas.cities.join(" · ")}</p>
+          <ul className={styles.cities}>
+            {areas.cities.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
           {home.areasLead && <p className={styles.lead}>{home.areasLead}</p>}
         </div>
       </div>
