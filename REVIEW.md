@@ -37,6 +37,11 @@ Who: 🛠 = can do in code · 📋 = needs a fact from you.
 - To keep merges clean with the city-pages session, **don't touch**: the `cityPages` array in `content/site.ts`, `app/areas/`, the city photos in `public/images`, and the city lines in `public/llms.txt`.
 - Follow `CLAUDE.md`: all copy goes in `content/site.ts`, never invent facts, an empty value hides the section, logical CSS only, and `npm run build` must pass.
 
+**Progress on branch `review/remaining-fixes`**
+- ✅ **A. Quick fixes:** H1 accent space, meta descriptions and the `/services` title, the hero's WhatsApp button hidden on mobile, and security headers.
+- ✅ **B. Repeated copy:** "מאז 2013" removed from the page intros, the CTA band's legal-backing line hidden, and the two abroad FAQs merged. The **maintenance** service is still open and waits for your answer (see section 2).
+- ⏳ **Next:** C (home page design), D (structured data and AI search), E (bigger additions, after the city pages merge).
+
 ---
 
 ## 1. Design
@@ -46,13 +51,13 @@ Who: 🛠 = can do in code · 📋 = needs a fact from you.
 | — | ~~Hero photo doesn't match Israeli apartments~~: **considered, keeping it** (see Top 5). Optional: compress `hero.jpg` (604 KB). | `public/images/hero.jpg` | — |
 | P1 | The home page is far too long: **~10,300px on desktop, ~16,150px on mobile (about 20 screens)**, with 9 sections after the hero. | `homeSections`, `site.ts:199` | 🛠 Cut to about 6. Merge "comparison" into "services", and drop "areas" from the home page once city pages exist (link to them from the footer). |
 | P1 | Too much dark forest green. Hero, personas, protection and areas are all dark, so the page feels heavy and the sections blur together. | `Hero`, `Personas`, `ProtectionLayers`, `AreasStrip` | 🛠 Keep dark for the hero and one feature section, and make the rest light. |
-| P2 | On mobile the first screen shows **two WhatsApp buttons** (in the hero and in the sticky bar) plus the CTA. That's 4 buttons fighting each other. | `Hero.tsx` + `MobileBar.tsx` | 🛠 Hide the hero's WhatsApp button on mobile, since the sticky bar already has it. |
+| ✅ | ~~On mobile the first screen shows **two WhatsApp buttons**~~: **done.** Below 768px the hero shows only the main CTA. WhatsApp and call stay in the sticky bar. | `Hero.tsx` + `MobileBar.tsx` | — |
 | ✅ | ~~The numbers strip shows "**מאות** נכסים בניהול"~~: **done**, now `170+` (Top 5 #1). | `site.ts:83` | — |
 | P2 | The team section shows initials only, with no photos. On a trust business, faceless people hurt. | `team`, `partner` in `site.ts` | 📋 Add real photos, at least of עו״ד דורון מרום. |
 | P2 | The hero eyebrow, H1, promise line and intro paragraph all say the same thing at 4 sizes. | `Hero.tsx` | 🛠 Keep the H1 and one supporting line, and move the intro paragraph below the fold. |
 | P2 | The services list on the home page is a plain text list with a lot of empty space (wide gaps between the title and the one-line description). It reads like a table of contents, not a selling section. | `ServiceCards` | 🛠 Make it tighter: icon + title + 1 line, in 2–3 columns. |
 | P3 | The city photo cards are stock tourist shots (Jerusalem Old City, Herzliya marina). They have nothing to do with rental apartments. | `areas.featured` | 🛠 Fine for now. Reuse them as headers on the city pages instead. Belongs to the city-pages session, so don't touch it here. |
-| P3 | The H1 accent uses `<br>` with no space, so the text reads "שלכם,מקצה" when extracted (affects snippets and screen readers). | `components/AccentText.tsx:24` | 🛠 Add a space before the `<br />`. |
+| ✅ | ~~The H1 accent reads "שלכם,מקצה" when extracted~~: **done**, a space now comes before the `<br />`. | `components/AccentText.tsx` | — |
 
 ## 2. Repetition
 
@@ -60,16 +65,16 @@ Counted in `content/site.ts`:
 
 | Phrase | Times | Fix |
 |---|---|---|
-| "מאז 2013" / "ב-2013" | **16** | Keep it in the hero badge, About and the footer, and remove it from every page intro. |
-| "גב / גיבוי / ליווי משפטי" | **14** | Say it once and strongly in "protection", and refer to it elsewhere instead of repeating it. |
+| "מאז 2013" / "ב-2013" | **16** | ✅ **Done.** Removed from the home, services, Landlord Safe, FAQ and contact intros. Kept in the hero badge, numbers strip, footer, About, the why-us FAQ, the JSON-LD summary and the home meta description. |
+| "גב / גיבוי / ליווי משפטי" | **14** | ✅ **Done.** The CTA band's "כל שלב בשכירות מקבל אצלנו גיבוי משפטי" (it was on every page) is hidden. The remaining mentions are the H1, "protection", About, and contract bullets in the service lists, where they describe a real feature. |
 | "בכפוף לתנאי השירות" | **8** | Show it once per page, as a footnote marker (*) that links to a terms section. 📋 That terms section doesn't exist yet. |
 | "נשמח לפרט (בשיחה)" | **6** | These are empty answers. See the FAQ fixes below. |
-| "עורך דין" (managing partner is a lawyer) | 5 | Hero + protection + About is enough. |
+| "עורך דין" (managing partner is a lawyer) | 5 | ✅ **Kept as is.** Hero (the partner line), protection and About, plus the why-us FAQ. FAQ answers are quoted one at a time by Google and AI tools, so why-us keeps it. |
 | "בחו״ל" | 7 | — |
 
 **Overlapping sections**
-- **Living abroad** is covered 4 times: a persona, a service (`abroad`), and 2 FAQs (`abroad-manage`, `abroad-maintain`). 🛠 Merge the two FAQs into one.
-- The **maintenance** service repeats bullets already inside **rental-management** ("טיפול בכל התקלות"). 🛠 Merge it into a sub-bullet, or explain what's different (maintenance only, without leasing).
+- **Living abroad** is covered 4 times: a persona, a service (`abroad`), and 2 FAQs (`abroad-manage`, `abroad-maintain`). ✅ **Done:** merged into `abroad-manage`, without the "נשמח לפרט בשיחה" ending.
+- The **maintenance** service repeats bullets already inside **rental-management** ("טיפול בכל התקלות"). 🛠 Merge it into a sub-bullet, or explain what's different (maintenance only, without leasing). 📋 **Waiting for your answer:** do you offer maintenance on its own, for an apartment that isn't rented through you (for example an owner abroad who only visits)? If yes, it stays as a separate service with that difference spelled out. If no, it gets merged.
 - **Luxury** says "כל מה שכלול בניהול נכסים מושכרים" plus 2 vague bullets. It's thin. 📋 Explain what's actually different, or merge it.
 - **Personas ↔ FAQ "for-whom"**: same content. **Comparison ↔ FAQ "broker"**: same content. Both fine for SEO, but on the home page, show only one of each pair.
 - The **CTA band** appears at the bottom of every page *and* there's a sticky mobile bar *and* a WhatsApp FAB. That's 3 contact elements at once on mobile.
@@ -87,7 +92,7 @@ Counted in `content/site.ts`:
 | P1 | The legal pages show **"טיוטה – לאישור עורך דין"** to the public (`LegalPage.tsx:14`). The privacy policy is also thin (no data-retention period, no named owner of the data). | 📋 Get legal sign-off, then remove the note. |
 | P1 | The **Landlord Safe terms are missing**: `safeTerms.monthsCovered` and `price` are empty. The site promises "שכר דירה מובטח" 8 times, says "בכפוף לתנאי השירות", and never says what the terms are. | 📋 Add the coverage period and the main conditions. |
 | P2 | `hours`, `companyId` (ח.פ.) and `legalName` are empty, so they're hidden. A company that guarantees rent should show its ח.פ. | 📋 |
-| P2 | No security headers (CSP, HSTS, X-Frame-Options, Referrer-Policy) in `next.config.ts`. | 🛠 Add `headers()`, unless the host already adds them. |
+| ✅ | ~~No security headers~~: **done.** CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy and Permissions-Policy are set in `next.config.ts`. The CSP allows only the site's own origin, so add any future outside service (analytics, maps, chat) there first. | — |
 | ✅ | Working: form validation (bad phone → 400 with a clear Hebrew message, missing consent → 400), honeypot, no-JS form fallback, mobile menu (opens, Esc closes, focus returns), 404 page (noindex, one H1), every page has exactly one H1, no horizontal scroll at 375px, all images have `alt`, old Wix URLs 301-redirect. | — |
 
 ## 4. Google keywords
@@ -110,7 +115,7 @@ Counted in `content/site.ts`:
 1. **City pages** `/areas/tel-aviv` etc. (8 pages). ✅ Tel Aviv is done. 🔄 The other 7 are in progress in the city-pages session. Each needs unique content: neighborhoods you work in, typical tenant profile, the local FAQ. 📋 Facts per city come from you. Don't make 8 copies of one template; Google treats thin duplicates as spam.
 2. **One page per service** (`/services/landlord-safe`, `/services/abroad`, `/services/commercial`…). `/services` becomes a hub page.
 3. **A guides section** (`/guides`) with 5–10 articles on real landlord questions: "מה עושים כשהדייר מפסיק לשלם", "חוזה שכירות – מה חייב להיות בו", "חוק שכירות הוגנת", "העברת ארנונה לשוכר", "השכרת דירה כשגרים בחו״ל". This is where most of the traffic is, and AI tools quote this kind of content.
-4. **Meta fixes:** the home description is 173 characters and Landlord Safe's is 162 (Google cuts at ~155). Privacy and accessibility descriptions are only ~30 characters. The `/services` title "ניהול נכסים ונדל״ן" should be "ניהול דירות ונכסים להשכרה".
+4. ✅ **Done: meta fixes.** All descriptions are now 117–146 characters, and `/services` is titled "ניהול דירות ונכסים להשכרה". Was: the home description is 173 characters and Landlord Safe's is 162 (Google cuts at ~155). Privacy and accessibility descriptions are only ~30 characters. The `/services` title "ניהול נכסים ונדל״ן" should be "ניהול דירות ונכסים להשכרה".
 5. Add a `BreadcrumbList` and internal links: service pages ↔ city pages ↔ guides.
 
 **Already good:** canonicals, OG and Twitter tags, sitemap, robots, static HTML, `lang="he" dir="rtl"`, fast static pages, `next/image` everywhere, 301s from the old Wix URLs.
