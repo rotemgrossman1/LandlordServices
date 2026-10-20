@@ -17,10 +17,10 @@ function Cell({ value }: { value: CompareValue }) {
 }
 
 /** Self-managed vs broker vs Landlord. A real <table> so it reads well for everyone. */
-export default function Comparison() {
+export default function Comparison({ alt = false }: { alt?: boolean }) {
   if (comparison.rows.length === 0) return null;
   return (
-    <section className="section" aria-labelledby="compare-title">
+    <section className={`section ${alt ? "section-alt" : ""}`} aria-labelledby="compare-title">
       <div className="container">
         <SectionHeading
           id="compare-title"

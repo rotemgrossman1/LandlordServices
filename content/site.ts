@@ -332,14 +332,14 @@ export const cta = {
 // (The hero always comes first.)
 // ---------------------------------------------------------------------------
 
-// Order follows the Acre & Key design. "steps" and "ownerView" are off.
+// Order follows the Acre & Key design. "steps" and "ownerView" are off; "comparison" lives on /services.
+// "areas" should come off once all the city pages exist (they get linked from the footer).
 export const homeSections: HomeSection[] = [
   "personas",
   "services",
   "protection",
   "testimonials",
   "areas",
-  "comparison",
   "faq",
   "cta",
 ];
@@ -655,7 +655,8 @@ export const faq: FaqItem[] = [
 ];
 
 // Questions shown on the home page (by id)
-export const homeFaqIds = ["why-us", "broker", "for-whom", "area", "price"];
+// "for-whom" is left out: the personas section already answers it on the home page
+export const homeFaqIds = ["why-us", "broker", "area", "price"];
 
 // ---------------------------------------------------------------------------
 // Landlord Safe

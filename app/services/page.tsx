@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Comparison from "@/components/Comparison";
 import CtaBand from "@/components/CtaBand";
 import Icon from "@/components/Icon";
 import PageIntro from "@/components/PageIntro";
@@ -60,6 +61,9 @@ export default function ServicesPage() {
           </div>
         </section>
       ))}
+
+      {/* Moved here from the home page; alternates with the last service's background */}
+      <Comparison alt={services.length % 2 === 1} />
 
       <CtaBand />
     </>
