@@ -54,7 +54,7 @@ export default function CtaBand() {
                 )}
                 <p>
                   <strong>{partner.name}</strong>, {partner.role}
-                  <span className={styles.partnerText}>{home.ctaPartnerText}</span>
+                  {home.ctaPartnerText && <span className={styles.partnerText}>{home.ctaPartnerText}</span>}
                 </p>
               </div>
             )}
