@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { areas, site, summary, type FaqItem, type PageMeta } from "@/content/site";
+import { areas, partner, services, site, summary, type FaqItem, type PageMeta } from "@/content/site";
 
 export function buildMetadata(page: PageMeta, path: string): Metadata {
   return {
@@ -27,6 +27,7 @@ export function organizationJsonLd() {
     alternateName: site.name,
     description: summary,
     url: site.url,
+    image: `${site.url}/images/og-default.png`,
     telephone: site.phone,
     email: site.email,
     foundingDate: String(site.foundingYear),
@@ -43,6 +44,47 @@ export function organizationJsonLd() {
       ? { sameAs: [site.facebook, site.googleProfile].filter(Boolean) }
       : {}),
     ...(site.companyId ? { taxID: site.companyId } : {}),
+    ...(site.legalName ? { legalName: site.legalName } : {}),
+    // The managing partner, so AI answers can name who stands behind the legal backing
+    ...(partner.name
+      ? {
+          employee: {
+            "@type": "Person",
+            name: partner.name,
+            jobTitle: partner.role,
+            ...(partner.bio ? { description: partner.bio } : {}),
+          },
+        }
+      : {}),
+    ...(services.length > 0
+      ? {
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "שירותי ניהול נכסים",
+            itemListElement: services.map((s) => ({
+              "@type": "Offer",
+              itemOffered: serviceJsonLd(s.title, s.short, `/services#${s.id}`, false),
+            })),
+          },
+        }
+      : {}),
+    // Not set until the facts exist: openingHoursSpecification (site.hours), priceRange (pricing), geo.
+  };
+}
+
+/** A Service from this company. `standalone` adds the @context for its own <script>. */
+export function serviceJsonLd(name: string, description: string, path: string, standalone = true) {
+  return {
+    ...(standalone ? { "@context": "https://schema.org" } : {}),
+    "@type": "Service",
+    name,
+    description,
+    url: `${site.url}${path}`,
+    serviceType: "ניהול נכסים",
+    provider: { "@id": `${site.url}/#organization` },
+    ...(areas.cities.length > 0
+      ? { areaServed: areas.cities.map((city) => ({ "@type": "City", name: city })) }
+      : {}),
   };
 }
 
