@@ -45,3 +45,9 @@ The city photos show the cities themselves, not properties we manage.
 | bat-yam-towers.jpg | Residential towers, Bat Yam | Юкатан | https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Bat-Yam_03.jpg (CC BY-SA 3.0, credited on the photo) |
 | bat-yam-apartments.jpg | Apartment blocks on a Bat Yam street | Rakoon | https://commons.wikimedia.org/wiki/File:20240923_135010_September_2024_in_Bat_Yam.jpg (CC0, no credit required) |
 | bat-yam-city-park.jpg | Residential towers over Bat Yam City Park | Ynhockey | https://commons.wikimedia.org/wiki/File:City_Park_Bat_Yam_01.jpg (CC BY-SA 4.0, credited on the photo) |
+| jerusalem-old-city.jpg | Old City walls and Tower of David, with Jerusalem neighborhoods behind (same photo as area-jerusalem-old-city.jpg, full frame) | George (Unsplash) | https://unsplash.com/photos/YGTfs3dmZcM |
+| jerusalem-city-view.jpg | View over central Jerusalem's residential buildings | חגי אגמון-שניר (Hagai Agmon-Snir) | https://commons.wikimedia.org/wiki/File:CityTowerJerusalemNov112022.jpg (CC BY-SA 4.0, credited on the photo) |
+| jerusalem-stone-street.jpg | Stone-clad apartment buildings on a Jerusalem street | Rakoon | https://commons.wikimedia.org/wiki/File:20180116-132708-jerusalem-january-2018.jpg (CC0, no credit required) |
+| jerusalem-baka.jpg | Old stone house with a garden, Baka, Jerusalem | Israel Zeller (PikiWiki Israel) | https://commons.wikimedia.org/wiki/File:114052_jerusalem_bakaa_neighborhood_PikiWiki_Israel.jpg (CC BY 2.5, credited on the photo) |
+| jerusalem-unsdorf.jpg | Apartment buildings, Unsdorf, Jerusalem | Yoninah | https://commons.wikimedia.org/wiki/File:Unsdorf,_Jerusalem.JPG (CC BY-SA 4.0, credited on the photo) |
+| jerusalem-ramat-eshkol.jpg | Stone apartment block, Ramat Eshkol, Jerusalem | יעקב | https://commons.wikimedia.org/wiki/File:Ramat_Eshkol7221.JPG (CC BY-SA 4.0, credited on the photo) |
