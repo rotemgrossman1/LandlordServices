@@ -586,6 +586,10 @@ export const comparison = {
 // FAQ
 // ---------------------------------------------------------------------------
 
+// Date the FAQ answers last changed (YYYY-MM-DD). Shown on /faq and sent as dateModified,
+// since AI search prefers fresh answers. Update it when you edit an answer. Empty = hidden.
+export const faqUpdated = "2026-10-20";
+
 export const faq: FaqItem[] = [
   {
     id: "why-us",
@@ -941,6 +945,7 @@ export const labels = {
   footerNav: "קישורים בתחתית העמוד",
   homeLink: "עמוד הבית",
   onThisPage: "בעמוד הזה",
+  lastUpdated: "עודכן לאחרונה:",
   cityPage: "ניהול נכסים ב{city}", // footer link to a city page
   allServices: "לכל השירותים",
   footerTagline: `חברת ניהול נכסים לבעלי דירות מושכרות בגוש דן ובירושלים, מאז ${site.foundingYear}. אתם נהנים מהשכירות – אנחנו דואגים לכל השאר.`,

@@ -100,10 +100,11 @@ export function breadcrumbJsonLd(path: string, name = nav.find((n) => n.href ===
   };
 }
 
-export function faqJsonLd(items: FaqItem[]) {
+export function faqJsonLd(items: FaqItem[], dateModified = "") {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(dateModified ? { dateModified } : {}),
     mainEntity: items.map((q) => ({
       "@type": "Question",
       name: q.question,

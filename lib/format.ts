@@ -18,3 +18,13 @@ export function initials(name: string): string {
     .map((w) => w[0])
     .join("");
 }
+
+/** "2026-10-20" → "20 באוקטובר 2026". Fixed time zone so the static build always prints the same day. */
+export function formatDateHe(isoDate: string) {
+  return new Intl.DateTimeFormat("he-IL", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${isoDate}T00:00:00Z`));
+}
