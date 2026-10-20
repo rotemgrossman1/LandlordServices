@@ -1,38 +1,20 @@
-/* Full-bleed photo section, same recipe as the hero: photo, forest scrim, light text */
-.section {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding-block: var(--section-space);
-  color: var(--color-on-dark);
-  background: var(--color-primary);
-  --color-focus: var(--color-accent-light);
-}
-
-.photo {
-  z-index: -2;
-  object-fit: cover;
-  object-position: left center;
-}
-
-/* Dark on the reading side (inline-start) and at the bottom behind the cards,
-   so the building stays visible on the far side */
-.scrim {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(180deg, rgba(8, 28, 23, 0.55) 0%, rgba(8, 28, 23, 0.25) 35%, rgba(8, 28, 23, 0.88) 100%),
-    linear-gradient(270deg, rgba(8, 28, 23, 0.78) 0%, rgba(8, 28, 23, 0.35) 55%, rgba(8, 28, 23, 0.1) 100%);
-}
-
+/* Light sand section (.section-alt): headline beside a framed photo, then the persona cards */
 .inner {
   display: grid;
   gap: var(--space-8);
 }
 
 .head {
-  max-width: 40rem;
+  display: grid;
+  gap: var(--space-6);
+  align-items: end;
+}
+
+@media (min-width: 1024px) {
+  .head {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    gap: var(--space-8);
+  }
 }
 
 .heading {
@@ -40,7 +22,6 @@
   font-size: clamp(2.5rem, 1.5rem + 3.6vw, 4.75rem);
   line-height: 1.04;
   letter-spacing: -0.03em;
-  color: var(--color-on-dark);
 }
 
 .lead {
@@ -48,7 +29,20 @@
   max-width: 34rem;
   font-size: var(--text-lg);
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--color-muted);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius, 6px);
+  background: var(--color-sand-dark);
+}
+
+.photo {
+  object-fit: cover;
+  object-position: left center;
 }
 
 .list {
@@ -75,48 +69,58 @@
   display: flex;
   flex-direction: column;
   padding: var(--space-6);
-  border: 1px solid var(--color-on-dark-border);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius, 6px);
-  background: rgba(10, 30, 25, 0.62);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--color-surface);
 }
 
 .num {
   margin-block-end: var(--space-4);
   font-family: var(--font-display);
   font-size: var(--text-lg);
-  color: var(--color-accent-light);
+  color: var(--color-accent-dark);
 }
 
 .title {
   margin-block-end: var(--space-3);
   font-size: var(--text-xl);
-  color: #fff;
+  color: var(--color-primary);
 }
 
 .pain {
   margin-block-end: var(--space-4);
-  color: var(--color-on-dark-muted);
+  color: var(--color-muted);
 }
 
 .solution {
   margin: auto 0 0;
   padding-block-start: var(--space-4);
-  border-block-start: 1px solid var(--color-on-dark-border);
+  border-block-start: 1px solid var(--color-border);
   font-weight: 500;
-  color: var(--color-on-dark);
+  color: var(--color-text);
 }
 
-/* The closing card: copper-edged, with the main action */
+/* The closing card: forest, with the main action, so the section ends on a clear next step */
 .closing {
   justify-content: center;
   align-items: flex-start;
-  border-color: rgba(212, 154, 104, 0.55);
-  background: rgba(10, 30, 25, 0.42);
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  --color-focus: var(--color-accent-light);
+}
+
+.closing .title {
+  color: #fff;
 }
 
 .closingText {
   margin-block-end: var(--space-5);
   color: var(--color-on-dark-muted);
+}
+
+/* Phones: the photo would add a full screen to an already long page */
+@media (max-width: 719px) {
+  .media {
+    display: none;
+  }
 }

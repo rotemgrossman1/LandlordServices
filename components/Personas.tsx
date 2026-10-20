@@ -6,26 +6,34 @@ import Icon from "./Icon";
 import styles from "./Personas.module.css";
 
 /**
- * "Who is it for", in the hero's language: a full-bleed building photo under a
- * forest scrim, the eyebrow, headline and lead stacked in one column, then each
- * typical owner (pain + our answer) as a glass card that fades in one after another.
+ * "Who is it for", on a light sand surface so the page isn't dark section after dark section:
+ * the eyebrow, headline and lead beside a framed building photo, then each typical owner
+ * (pain + our answer) as a card that fades in one after another.
  */
 export default function Personas() {
   if (personas.items.length === 0) return null;
   return (
-    <section className={`on-dark ${styles.section}`} aria-labelledby="personas-title">
-      {images.personas && (
-        <Image src={images.personas} alt="" fill sizes="100vw" className={styles.photo} />
-      )}
-      <div className={styles.scrim} aria-hidden="true" />
-
+    <section className="section section-alt" aria-labelledby="personas-title">
       <div className={`container ${styles.inner}`}>
         <div className={styles.head}>
-          <p className="eyebrow">{personas.eyebrow}</p>
-          <h2 id="personas-title" className={styles.heading}>
-            <AccentText text={personas.title} accent={personas.titleAccent} />
-          </h2>
-          {personas.lead && <p className={styles.lead}>{personas.lead}</p>}
+          <div>
+            <p className="eyebrow">{personas.eyebrow}</p>
+            <h2 id="personas-title" className={styles.heading}>
+              <AccentText text={personas.title} accent={personas.titleAccent} />
+            </h2>
+            {personas.lead && <p className={styles.lead}>{personas.lead}</p>}
+          </div>
+          {images.personas && (
+            <div className={styles.media}>
+              <Image
+                src={images.personas}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className={styles.photo}
+              />
+            </div>
+          )}
         </div>
 
         <ul className={styles.list}>
