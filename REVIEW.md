@@ -40,7 +40,8 @@ Who: 🛠 = can do in code · 📋 = needs a fact from you.
 **Progress on branch `review/remaining-fixes`**
 - ✅ **A. Quick fixes:** H1 accent space, meta descriptions and the `/services` title, the hero's WhatsApp button hidden on mobile, and security headers.
 - ✅ **B. Repeated copy:** "מאז 2013" removed from the page intros, the CTA band's legal-backing line hidden, and the two abroad FAQs merged, and the maintenance service folded into rental management.
-- ⏳ **Next:** C (home page design), D (structured data and AI search), E (bigger additions, after the city pages merge).
+- ✅ **C. Home page design:** the hero keeps one supporting line (the intro now leads the services section), services are a compact card grid, personas moved from dark to light, and the comparison table moved to `/services` with one FAQ (`for-whom`) dropped from home.
+- ⏳ **Next:** D (structured data and AI search), E (bigger additions, after the city pages merge). After the city pages merge, also take "areas" off the home page.
 
 ---
 
@@ -49,13 +50,13 @@ Who: 🛠 = can do in code · 📋 = needs a fact from you.
 | P | Finding | Where | Fix |
 |---|---|---|---|
 | — | ~~Hero photo doesn't match Israeli apartments~~: **considered, keeping it** (see Top 5). Optional: compress `hero.jpg` (604 KB). | `public/images/hero.jpg` | — |
-| P1 | The home page is far too long: **~10,300px on desktop, ~16,150px on mobile (about 20 screens)**, with 9 sections after the hero. | `homeSections`, `site.ts:199` | 🛠 Cut to about 6. Merge "comparison" into "services", and drop "areas" from the home page once city pages exist (link to them from the footer). |
-| P1 | Too much dark forest green. Hero, personas, protection and areas are all dark, so the page feels heavy and the sections blur together. | `Hero`, `Personas`, `ProtectionLayers`, `AreasStrip` | 🛠 Keep dark for the hero and one feature section, and make the rest light. |
+| 🟡 | ~~The home page is far too long~~: **mostly done.** ~10,400 → ~8,990px at 1024px wide, and ~16,150 → ~14,640px on phones. The comparison table moved to `/services`, and the home FAQ dropped `for-whom` (personas covers it). **Still open:** drop "areas" from home (3,700px on phones) once the city pages merge. | `homeSections` in `site.ts` | 🛠 After the city-pages merge. |
+| 🟡 | ~~Too much dark forest green~~: **mostly done.** Personas is now light sand, with the photo framed beside the headline. Dark sections are the hero and protection, plus "areas", which is left alone until it leaves the home page after the city-pages merge. | `Personas` | — |
 | ✅ | ~~On mobile the first screen shows **two WhatsApp buttons**~~: **done.** Below 768px the hero shows only the main CTA. WhatsApp and call stay in the sticky bar. | `Hero.tsx` + `MobileBar.tsx` | — |
 | ✅ | ~~The numbers strip shows "**מאות** נכסים בניהול"~~: **done**, now `170+` (Top 5 #1). | `site.ts:83` | — |
 | P2 | The team section shows initials only, with no photos. On a trust business, faceless people hurt. | `team`, `partner` in `site.ts` | 📋 Add real photos, at least of עו״ד דורון מרום. |
-| P2 | The hero eyebrow, H1, promise line and intro paragraph all say the same thing at 4 sizes. | `Hero.tsx` | 🛠 Keep the H1 and one supporting line, and move the intro paragraph below the fold. |
-| P2 | The services list on the home page is a plain text list with a lot of empty space (wide gaps between the title and the one-line description). It reads like a table of contents, not a selling section. | `ServiceCards` | 🛠 Make it tighter: icon + title + 1 line, in 2–3 columns. |
+| ✅ | ~~The hero says the same thing 4 times~~: **done.** The hero keeps the eyebrow, H1 and the promise line. The intro paragraph (the page's direct answer) now leads the services section. | `Hero.tsx`, `ServiceCards.tsx` | — |
+| ✅ | ~~The services list reads like a table of contents~~: **done.** Cards with icon, title and one line, 3 columns on desktop, 2 on tablets, 1 on phones. | `ServiceCards` | — |
 | P3 | The city photo cards are stock tourist shots (Jerusalem Old City, Herzliya marina). They have nothing to do with rental apartments. | `areas.featured` | 🛠 Fine for now. Reuse them as headers on the city pages instead. Belongs to the city-pages session, so don't touch it here. |
 | ✅ | ~~The H1 accent reads "שלכם,מקצה" when extracted~~: **done**, a space now comes before the `<br />`. | `components/AccentText.tsx` | — |
 
