@@ -842,7 +842,6 @@ export const home = {
   servicesEyebrow: "מה אנחנו עושים",
   servicesTitle: "כל מה שהדירה שלכם צריכה, במקום אחד",
   servicesTitleAccent: "במקום אחד",
-  servicesLead: "כל לקוח מקבל חבילה שמותאמת לנכס ולצרכים שלו.",
   servicesMore: "לכל השירותים",
   stepsTitle: "ארבעה צעדים, ואתם בשקט",
   areasEyebrow: "איפה אנחנו",

@@ -6,7 +6,10 @@ import AccentText from "./AccentText";
 import Icon from "./Icon";
 import styles from "./Hero.module.css";
 
-/** Full-bleed photo hero: giant serif H1 with its accent line, a side note and the actions. */
+/**
+ * Full-bleed photo hero: giant serif H1 with its accent line, one supporting line and the actions.
+ * The longer intro paragraph is the lead of the services section, just below.
+ */
 export default function Hero() {
   return (
     <section className={`on-dark ${styles.hero}`} data-fab-hide>
@@ -32,7 +35,6 @@ export default function Hero() {
 
         <div className={styles.note}>
           <p className={styles.promise}>{home.promise}</p>
-          <p className={styles.intro}>{pages.home.intro}</p>
           <div className={styles.actions}>
             <Link href={cta.primaryHref} className="btn btn-primary">
               {cta.primary}

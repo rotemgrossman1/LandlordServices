@@ -66,12 +66,6 @@
   color: var(--color-on-dark);
 }
 
-.intro {
-  font-size: var(--text-sm);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.78);
-}
-
 .actions {
   display: flex;
   flex-wrap: wrap;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { home, services } from "@/content/site";
+import { home, pages, services } from "@/content/site";
 import AccentText from "./AccentText";
 import Icon from "./Icon";
 import styles from "./ServiceCards.module.css";
@@ -17,7 +17,8 @@ export default function ServiceCards() {
               <AccentText text={home.servicesTitle} accent={home.servicesTitleAccent} block />
             </h2>
           </div>
-          {home.servicesLead && <p className={styles.lead}>{home.servicesLead}</p>}
+          {/* The home intro (the page's direct answer) lives here, so the hero keeps one supporting line */}
+          {pages.home.intro && <p className={styles.lead}>{pages.home.intro}</p>}
         </div>
 
         <ol className={styles.list}>

@@ -23,7 +23,7 @@
 }
 
 .lead {
-  max-width: 22rem;
+  max-width: 30rem;
   margin: 0;
   font-size: var(--text-sm);
   line-height: 1.7;
