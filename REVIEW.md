@@ -23,11 +23,19 @@ Who: 🛠 = can do in code · 📋 = needs a fact from you.
    6. CTA.
 
    Add the page to `app/sitemap.ts` and `public/llms.txt`, and link it from the areas strip and the footer.
+
+   🔄 **In progress elsewhere:** the other 7 city pages are being built in the separate "city-pages" session on its own branch.
 3. 🟡 **Ready, waiting for the profile link: Google Business Profile.** Code is ready (`googleProfile` in `content/site.ts`), and the profile and directory text is in `BUSINESS-LISTINGS.md`. Once the profile exists: Fill `googleRating` (value, count, URL), add the profile to `sameAs` in the JSON-LD, and point the "Google Maps" button to the profile instead of an address search. Separately, write matching listing text for b144, d.co.il and nadlano.co.il. Reviews help right away, but AI tools take a few weeks to pick up new mentions.
 4. ✅ **Decided: sample reviews stay for the demo, and are committed.** The 5 "דוגמה" reviews (`site.ts:88-94`) stay for the demo to your boss. Pushing to `main` doesn't deploy, so they can be committed. Before the site goes live on the domain, they **must** be replaced with real Google reviews (copied word for word) or set to `[]`.
-5. **🛠 Next item from the review: your pick.** Either the empty FAQ answers (section 2) or the structured-data upgrade (section 5).
+5. **🛠 Next: work through the remaining 🛠 items below.** First list them by priority and suggest an order, then wait for an OK. After that, do them one at a time with one commit each. 📋 items need a fact from you (prices, hours, ח.פ., Safe terms): ask for it, or skip the item.
 
-**Considered and kept:** the hero photo (a house with a pool) stays. Your reasoning: it draws clients in even if they don't own a home like that.
+**Considered and kept:** the hero photo (a house with a pool) stays. Your reasoning: it draws clients in even if they don't own a home like that. Don't reopen this.
+
+**Working rules for the remaining items**
+- Branch: a new branch cut from `feature/rent-fact-tel-aviv-page` (PR #4, not merged yet).
+- Don't redo Top 5 items 1, 2 and 4. Item 3 waits for the profile link.
+- To keep merges clean with the city-pages session, **don't touch**: the `cityPages` array in `content/site.ts`, `app/areas/`, the city photos in `public/images`, and the city lines in `public/llms.txt`.
+- Follow `CLAUDE.md`: all copy goes in `content/site.ts`, never invent facts, an empty value hides the section, logical CSS only, and `npm run build` must pass.
 
 ---
 
@@ -39,11 +47,11 @@ Who: 🛠 = can do in code · 📋 = needs a fact from you.
 | P1 | The home page is far too long: **~10,300px on desktop, ~16,150px on mobile (about 20 screens)**, with 9 sections after the hero. | `homeSections`, `site.ts:199` | 🛠 Cut to about 6. Merge "comparison" into "services", and drop "areas" from the home page once city pages exist (link to them from the footer). |
 | P1 | Too much dark forest green. Hero, personas, protection and areas are all dark, so the page feels heavy and the sections blur together. | `Hero`, `Personas`, `ProtectionLayers`, `AreasStrip` | 🛠 Keep dark for the hero and one feature section, and make the rest light. |
 | P2 | On mobile the first screen shows **two WhatsApp buttons** (in the hero and in the sticky bar) plus the CTA. That's 4 buttons fighting each other. | `Hero.tsx` + `MobileBar.tsx` | 🛠 Hide the hero's WhatsApp button on mobile, since the sticky bar already has it. |
-| P2 | The numbers strip shows "**מאות** נכסים בניהול". A word where a number should be looks weak. | `site.ts:83` | 🛠 → Top 5 #1 (`170+`). |
+| ✅ | ~~The numbers strip shows "**מאות** נכסים בניהול"~~: **done**, now `170+` (Top 5 #1). | `site.ts:83` | — |
 | P2 | The team section shows initials only, with no photos. On a trust business, faceless people hurt. | `team`, `partner` in `site.ts` | 📋 Add real photos, at least of עו״ד דורון מרום. |
 | P2 | The hero eyebrow, H1, promise line and intro paragraph all say the same thing at 4 sizes. | `Hero.tsx` | 🛠 Keep the H1 and one supporting line, and move the intro paragraph below the fold. |
 | P2 | The services list on the home page is a plain text list with a lot of empty space (wide gaps between the title and the one-line description). It reads like a table of contents, not a selling section. | `ServiceCards` | 🛠 Make it tighter: icon + title + 1 line, in 2–3 columns. |
-| P3 | The city photo cards are stock tourist shots (Jerusalem Old City, Herzliya marina). They have nothing to do with rental apartments. | `areas.featured` | 🛠 Fine for now. Reuse them as headers on the city pages instead. |
+| P3 | The city photo cards are stock tourist shots (Jerusalem Old City, Herzliya marina). They have nothing to do with rental apartments. | `areas.featured` | 🛠 Fine for now. Reuse them as headers on the city pages instead. Belongs to the city-pages session, so don't touch it here. |
 | P3 | The H1 accent uses `<br>` with no space, so the text reads "שלכם,מקצה" when extracted (affects snippets and screen readers). | `components/AccentText.tsx:24` | 🛠 Add a space before the `<br />`. |
 
 ## 2. Repetition
@@ -99,7 +107,7 @@ Counted in `content/site.ts`:
 | כמה עולה ניהול נכס / עמלת חברת ניהול | FAQ with no number | FAQ answer with a real range |
 
 **Structure changes (🛠):**
-1. **City pages** `/areas/tel-aviv` etc. (8 pages). Each needs unique content: neighborhoods you work in, typical tenant profile, the local FAQ. 📋 Facts per city come from you. Don't make 8 copies of one template; Google treats thin duplicates as spam.
+1. **City pages** `/areas/tel-aviv` etc. (8 pages). ✅ Tel Aviv is done. 🔄 The other 7 are in progress in the city-pages session. Each needs unique content: neighborhoods you work in, typical tenant profile, the local FAQ. 📋 Facts per city come from you. Don't make 8 copies of one template; Google treats thin duplicates as spam.
 2. **One page per service** (`/services/landlord-safe`, `/services/abroad`, `/services/commercial`…). `/services` becomes a hub page.
 3. **A guides section** (`/guides`) with 5–10 articles on real landlord questions: "מה עושים כשהדייר מפסיק לשלם", "חוזה שכירות – מה חייב להיות בו", "חוק שכירות הוגנת", "העברת ארנונה לשוכר", "השכרת דירה כשגרים בחו״ל". This is where most of the traffic is, and AI tools quote this kind of content.
 4. **Meta fixes:** the home description is 173 characters and Landlord Safe's is 162 (Google cuts at ~155). Privacy and accessibility descriptions are only ~30 characters. The `/services` title "ניהול נכסים ונדל״ן" should be "ניהול דירות ונכסים להשכרה".
@@ -118,7 +126,7 @@ Counted in `content/site.ts`:
 | P1 | **No outside mentions at all.** AI tools rank by who else talks about you. In progress: Google Business Profile + client reviews (Top 5 #3). | 📋 (1) Claim and fill in a **Google Business Profile** (address, hours, photos, categories "חברת ניהול נכסים"). (2) Ask 10–20 real clients for Google reviews. (3) List the business on b144, d.co.il, nadlano.co.il, Madlan and Facebook (already there: keep it active). (4) Write 1–2 guest articles or get press coverage (Calcalist/Ynet real estate sections, landlord groups). |
 | P1 | **Few hard facts AI can quote:** no price, no number of properties, no Safe coverage period, no hours, no ח.פ. AI answers prefer specific numbers. | 📋 Fill in `stats`, `safeTerms`, `pricing`, `hours`, `companyId`. |
 | P2 | JSON-LD is thin (`lib/seo.ts:21`): no `logo`, `image`, `openingHoursSpecification`, `geo`, `priceRange`, `founder`/`employee` (עו״ד דורון מרום as a `Person` with `jobTitle`), no `Service` items, and `sameAs` is only Facebook. | 🛠 Add these, plus `Service` JSON-LD on each service page and `BreadcrumbList`. |
-| P2 | `llms.txt` doesn't match the site: it says "מבוגרים" where the site says "כשקשה לטפל בעצמכם", and "100% גבייה בזמן" should become the exact rent fact (Top 5 #1). It also lacks an English section with full details. | 🛠 Generate it from `site.ts` and add an English block (relocated Israelis abroad search in English: "property management Tel Aviv for overseas owners"). |
+| P2 | `llms.txt`: ✅ the "מבוגרים" wording and the rent fact are fixed. It still lacks an English section with full details. | 🛠 Add an English block (relocated Israelis abroad search in English: "property management Tel Aviv for overseas owners"). Don't touch the city lines (city-pages session). |
 | P2 | No **English page** at all. A large share of the abroad persona searches and asks AI in English. | 🛠 One `/en` page (abroad owners). |
 | P3 | Add `dateModified` / a "last updated" line to the FAQ and guides. AI search prefers fresh content. | 🛠 |
 
@@ -127,7 +135,7 @@ Counted in `content/site.ts`:
 - **Trust:** for a company that guarantees rent, the site lacks proof. No real reviews, no photos of people or the office, no ח.פ., no terms, no client logos or case story. 📋 Add one real case story ("tenant stopped paying in month 4: here's what happened").
 - **Conversion:** the form asks only for a name and phone. Good, low friction. But the "תאמו שיחת היכרות" CTA appears ~6 times on the home page, which feels pushy. Consider "בדקו כמה זה עולה לנכס שלכם" as a second, softer offer.
 - **Legal:** the accessibility statement should name an accessibility coordinator (name + contact) and the date of the last audit, as IS 5568 requires. 📋
-- **Image credits:** 3 city photos have an empty `credit` (`site.ts:133-150`). If those are CC images, a credit is required. Check `public/images/CREDITS.md`.
+- **Image credits:** 3 city photos have an empty `credit` (`site.ts:133-150`). If those are CC images, a credit is required. Check `public/images/CREDITS.md`. Leave this to the city-pages session, because it owns the city photos.
 
 ---
 
