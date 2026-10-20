@@ -1,14 +1,10 @@
-.section {
-  --color-focus: var(--color-accent-light);
-}
-
 .head {
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
   margin-block-end: var(--space-7);
   padding-block-end: var(--space-6);
-  border-block-end: 1px solid var(--color-on-dark-border);
+  border-block-end: 1px solid var(--color-border);
 }
 
 @media (min-width: 768px) {
@@ -31,6 +27,7 @@
   margin: 0;
   font-size: var(--text-sm);
   line-height: 1.7;
+  color: var(--color-muted);
 }
 
 .list {
@@ -44,7 +41,7 @@
   display: grid;
   gap: var(--space-3) var(--space-6);
   padding-block: var(--space-6);
-  border-block-end: 1px solid var(--color-on-dark-border);
+  border-block-end: 1px solid var(--color-border);
   text-decoration: none;
   color: inherit;
   transition: background-color 0.2s ease;
@@ -60,14 +57,14 @@
 .num {
   font-size: var(--text-sm);
   font-weight: 500;
-  color: var(--color-accent-light);
+  color: var(--color-accent-dark);
 }
 
 .title {
   margin: 0;
   font-size: clamp(1.75rem, 1.4rem + 1.4vw, 2.4rem);
   letter-spacing: -0.02em;
-  color: var(--color-on-dark);
+  color: var(--color-primary);
 }
 
 .text {
@@ -75,6 +72,7 @@
   margin: 0;
   font-size: var(--text-sm);
   line-height: 1.7;
+  color: var(--color-muted);
 }
 
 .circle {
@@ -82,8 +80,9 @@
   place-items: center;
   width: 48px;
   height: 48px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
+  color: var(--color-primary);
   transition:
     background-color 0.25s ease,
     border-color 0.25s ease,
@@ -92,7 +91,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .row:hover {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(23, 56, 47, 0.04);
   }
 
   .row:hover .circle {
@@ -112,5 +111,5 @@
   align-items: center;
   gap: var(--space-2);
   min-height: 44px;
-  color: var(--color-accent-light);
+  color: var(--color-primary);
 }

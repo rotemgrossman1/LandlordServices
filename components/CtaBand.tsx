@@ -80,7 +80,7 @@ export default function CtaBand() {
 
           <div className={styles.formBox} id="cta-form">
             <h3 className={styles.formTitle}>{form.titleShort}</h3>
-            <ContactForm idPrefix="cta" compact />
+            <ContactForm idPrefix="cta" />
           </div>
         </div>
       </div>

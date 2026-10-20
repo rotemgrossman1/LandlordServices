@@ -12,9 +12,9 @@ type FieldErrors = { phone?: string; consent?: string };
 
 /**
  * Lead form. Posts JSON to /api/contact; without JavaScript it falls back to a
- * normal form POST to the same endpoint. `compact` asks only for name and phone.
+ * normal form POST to the same endpoint. Asks only for name and phone.
  */
-export default function ContactForm({ idPrefix = "contact", compact = false }: { idPrefix?: string; compact?: boolean }) {
+export default function ContactForm({ idPrefix = "contact" }: { idPrefix?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
   const [serverError, setServerError] = useState("");
@@ -123,36 +123,6 @@ export default function ContactForm({ idPrefix = "contact", compact = false }: {
           )}
         </div>
       </div>
-
-      {!compact && (
-        <>
-          <div className={styles.row}>
-            <div className={styles.field}>
-              <label htmlFor={id("city")}>{form.city}</label>
-              <input id={id("city")} name="city" type="text" autoComplete="address-level2" maxLength={100} />
-            </div>
-            <div className={styles.field}>
-              <label htmlFor={id("apartments")}>{form.apartments}</label>
-              <input id={id("apartments")} name="apartments" type="number" min={1} max={999} inputMode="numeric" />
-            </div>
-          </div>
-
-          <fieldset className={styles.fieldset}>
-            <legend>{form.residence}</legend>
-            <label className={styles.inline}>
-              <input type="radio" name="residence" value="israel" defaultChecked /> {form.residenceIsrael}
-            </label>
-            <label className={styles.inline}>
-              <input type="radio" name="residence" value="abroad" /> {form.residenceAbroad}
-            </label>
-          </fieldset>
-
-          <div className={styles.field}>
-            <label htmlFor={id("message")}>{form.message}</label>
-            <textarea id={id("message")} name="message" rows={3} maxLength={2000} />
-          </div>
-        </>
-      )}
 
       {/* Honeypot: hidden from people, bots tend to fill it */}
       <div className={styles.hp} aria-hidden="true">

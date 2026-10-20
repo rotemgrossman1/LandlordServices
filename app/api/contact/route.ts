@@ -6,10 +6,6 @@ import { isValidPhone } from "@/lib/validation";
 type Lead = {
   name: string;
   phone: string;
-  city: string;
-  apartments: string;
-  residence: string;
-  message: string;
   consent: string;
   website: string; // honeypot
 };
@@ -17,10 +13,6 @@ type Lead = {
 const LIMITS: Record<keyof Lead, number> = {
   name: 100,
   phone: 30,
-  city: 100,
-  apartments: 5,
-  residence: 10,
-  message: 2000,
   consent: 10,
   website: 200,
 };
@@ -74,19 +66,7 @@ export async function POST(req: Request) {
     return reply(false, form.error, 500);
   }
 
-  // The short home-page form has no residence field, so it can be empty
-  const residence =
-    lead.residence === "abroad" ? form.residenceAbroad : lead.residence === "israel" ? form.residenceIsrael : "-";
-  const text = [
-    `${form.name}: ${lead.name || "-"}`,
-    `${form.phone}: ${lead.phone}`,
-    `${form.city}: ${lead.city || "-"}`,
-    `${form.apartments}: ${lead.apartments || "-"}`,
-    `${form.residence}: ${residence}`,
-    "",
-    `${form.message}:`,
-    lead.message || "-",
-  ].join("\n");
+  const text = [`${form.name}: ${lead.name || "-"}`, `${form.phone}: ${lead.phone}`].join("\n");
 
   try {
     const resend = new Resend(apiKey);

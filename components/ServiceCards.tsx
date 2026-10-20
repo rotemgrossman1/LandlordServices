@@ -4,11 +4,11 @@ import AccentText from "./AccentText";
 import Icon from "./Icon";
 import styles from "./ServiceCards.module.css";
 
-/** Home "what we do": the design's dark numbered rows; each row links to its full description. */
+/** Home "what we do": the design's numbered rows on cream; each row links to its full description. */
 export default function ServiceCards() {
   if (services.length === 0) return null;
   return (
-    <section className={`section section-dark ${styles.section}`} aria-labelledby="services-title">
+    <section className="section" aria-labelledby="services-title">
       <div className="container">
         <div className={styles.head}>
           <div>

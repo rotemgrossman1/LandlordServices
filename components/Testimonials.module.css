@@ -1,48 +1,103 @@
-.rating {
-  margin-block: calc(var(--space-5) * -1) var(--space-6);
-  font-weight: 700;
+/* Slim white transition band between the two forest sections */
+.section {
+  padding-block: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  background: #fff;
 }
 
-.grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Small eyebrow-style title, lined up with the cards (past the side button) */
+.title {
+  margin-block: 0 var(--space-5);
+}
+
+@media (min-width: 600px) {
+  .title {
+    padding-inline-start: calc(48px + var(--space-4));
+  }
+}
+
+/* ---------- carousel ---------- */
+
+/* [prev] track [next]: in RTL the first column is on the right */
+.carousel {
   display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
   gap: var(--space-4);
 }
 
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+/* On phones the buttons would squeeze the cards; swiping does the job */
+@media (max-width: 599px) {
+  .carousel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .carousel > .navBtn {
+    display: none;
+  }
+}
+
+.track {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 var(--space-2);
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 86%;
+  gap: var(--space-4);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .track {
+    grid-auto-columns: calc((100% - var(--space-5)) / 2);
     gap: var(--space-5);
   }
 }
 
+@media (min-width: 1024px) {
+  .track {
+    grid-auto-columns: calc((100% - 2 * var(--space-5)) / 3);
+  }
+}
+
 .card {
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  padding: var(--space-6) var(--space-5) var(--space-5);
-  background: var(--color-surface);
+  padding: var(--space-6);
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
+}
+
+.stars {
+  display: inline-flex;
+  letter-spacing: 0.1em;
+  font-size: var(--text-lg);
+  line-height: 1;
+  color: var(--color-accent);
+}
+
+.starsOff {
+  color: var(--color-sand-dark);
+}
+
+.card .stars {
+  margin-block-end: var(--space-4);
 }
 
 .quote {
-  position: relative;
-  margin: 0 0 var(--space-4);
-  font-size: var(--text-lg);
-  line-height: 1.6;
-}
-
-.quote::before {
-  content: "”";
-  display: block;
-  height: 2.25rem;
-  font-family: Georgia, serif;
-  font-size: 4rem;
-  line-height: 1;
-  color: var(--color-accent-bright);
+  margin: 0 0 var(--space-5);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--color-text);
 }
 
 .quote p {
@@ -53,4 +108,40 @@
   margin: auto 0 0;
   font-weight: 700;
   color: var(--color-primary);
+}
+
+.date {
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+
+.navBtn {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .navBtn:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-on-dark);
+  }
+}
+
+/* The arrow icon points forward (left in RTL); flip it for "previous" */
+.prevIcon {
+  transform: scaleX(-1);
 }
