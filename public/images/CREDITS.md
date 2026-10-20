@@ -39,3 +39,9 @@ The city photos show the cities themselves, not properties we manage.
 | givat-shmuel-ramat-hadar-street.jpg | Residential buildings, Ramat Hadar, Givat Shmuel | Michael Jacobson | https://commons.wikimedia.org/wiki/File:GivatShmuel23.jpg (CC BY-SA 4.0, credited on the photo) |
 | givat-shmuel-ramon-park.jpg | Ramon Park and surrounding buildings, Givat Shmuel | Dr. Avishai Teicher (PikiWiki Israel) | https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_28348_Ramon_Park_in_Givat_Shmuel.JPG (CC BY 2.5, credited on the photo) |
 | givat-shmuel-towers.jpg | Tall residential buildings along a street, Givat Shmuel | Chenspec | https://commons.wikimedia.org/wiki/File:Givat_Shmuel,_May_2024_05.jpg (CC BY-SA 4.0, credited on the photo) |
+| bat-yam-beach.jpg | Bat Yam beach and seafront towers (same photo as area-bat-yam.jpg, full frame) | Artem Belinsky (Unsplash) | https://unsplash.com/photos/549Uq3CHAO0 |
+| bat-yam-coast.jpg | Aerial view of Bat Yam's residential blocks along the coast | בר | https://commons.wikimedia.org/wiki/File:Bat_Yam.jpg (CC BY-SA 3.0, credited on the photo) |
+| bat-yam-renovated.jpg | Renovated older residential building, Bat Yam | שלמה רודד (PikiWiki Israel) | https://commons.wikimedia.org/wiki/File:150835_bat_yam_-_renovated_residential_buildings_-_charac_PikiWiki_Israel.jpg (CC BY 2.5, credited on the photo) |
+| bat-yam-towers.jpg | Residential towers, Bat Yam | Юкатан | https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Bat-Yam_03.jpg (CC BY-SA 3.0, credited on the photo) |
+| bat-yam-apartments.jpg | Apartment blocks on a Bat Yam street | Rakoon | https://commons.wikimedia.org/wiki/File:20240923_135010_September_2024_in_Bat_Yam.jpg (CC0, no credit required) |
+| bat-yam-city-park.jpg | Residential towers over Bat Yam City Park | Ynhockey | https://commons.wikimedia.org/wiki/File:City_Park_Bat_Yam_01.jpg (CC BY-SA 4.0, credited on the photo) |
