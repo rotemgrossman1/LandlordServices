@@ -222,7 +222,7 @@ export const cityPages: CityPage[] = [
       credit: "ליאור גולגר, PikiWiki, CC BY 2.5",
       creditUrl: "https://commons.wikimedia.org/wiki/File:PikiWiki_Israel_9168_White_City_of_Tel_Aviv.JPG",
     },
-    galleryTitle: "דירות להשכרה בתל אביב",
+    galleryTitle: "נכסים מנוהלים בתל אביב",
     galleryNote: "התמונות להמחשה: בנייני מגורים בתל אביב, לא נכסים שבניהולנו.",
     gallery: [
       {
@@ -266,7 +266,7 @@ export const cityPages: CityPage[] = [
       { value: "0", label: "חודשים בלי שכר דירה לבעלי הדירות שלנו" },
       { value: `מאז ${site.foundingYear}`, label: "מנהלים נכסים בשביל בעלי דירות" },
     ],
-    includesTitle: "מה אנחנו עושים בשבילכם בתל אביב",
+    includesTitle: "מה אתם מקבלים בתל אביב",
     includes: [
       "איתור דיירים וסינון קפדני של המועמדים",
       "בדיקה כלכלית של הדייר וחוזה עם ליווי משפטי",
@@ -322,7 +322,7 @@ export const cityPages: CityPage[] = [
       credit: "Юкатан, CC BY-SA 4.0",
       creditUrl: "https://commons.wikimedia.org/wiki/File:Givatayim_-_03.jpg",
     },
-    galleryTitle: "דירות להשכרה בגבעתיים",
+    galleryTitle: "נכסים מנוהלים בגבעתיים",
     galleryNote: "התמונות להמחשה: בנייני מגורים בגבעתיים, לא נכסים שבניהולנו.",
     gallery: [
       {
@@ -422,7 +422,7 @@ export const cityPages: CityPage[] = [
       credit: "",
       creditUrl: "",
     },
-    galleryTitle: "דירות להשכרה בהרצליה",
+    galleryTitle: "נכסים מנוהלים בהרצליה",
     galleryNote: "התמונות להמחשה: בנייני מגורים בהרצליה, לא נכסים שבניהולנו.",
     gallery: [
       {
@@ -466,7 +466,7 @@ export const cityPages: CityPage[] = [
       { value: "0", label: "חודשים בלי שכר דירה לבעלי הדירות שלנו" },
       { value: `מאז ${site.foundingYear}`, label: "מנהלים נכסים בשביל בעלי דירות" },
     ],
-    includesTitle: "מה אנחנו לוקחים מכם בהרצליה",
+    includesTitle: "מה אתם מקבלים בהרצליה",
     includes: [
       "מציאת דיירים מתאימים וסינון קפדני של כל מועמד",
       "בדיקה כלכלית, ביטחונות וערבויות, וחוזה שכירות עם ליווי משפטי",
