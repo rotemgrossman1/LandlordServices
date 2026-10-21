@@ -60,4 +60,5 @@
   padding: 0 var(--space-5) var(--space-5);
   color: var(--color-muted);
   max-width: 46rem;
+  white-space: pre-line; /* answers use line breaks for lists */
 }
