@@ -104,7 +104,7 @@ export const images = {
 
 // Confirmed by the company: true for all clients, not only Landlord Safe.
 export const rentRecord =
-  "ב-13 שנה ויותר מ-200 נכסים, אף בעל דירה שלנו לא נשאר בלי שכר דירה – גם כשהדייר הפסיק לשלם.";
+  "ב-13 שנה ויותר מ-250 נכסים, אף בעל דירה שלנו לא נשאר בלי שכר דירה – גם כשהדייר הפסיק לשלם.";
 
 // Numbers strip. Items with an empty value are hidden. "מאז 2013" is always shown.
 export const stats: Stat[] = [

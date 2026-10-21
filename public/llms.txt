@@ -1,7 +1,7 @@
 # Landlord (לנדלורד)
 
 > לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות, שהוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות. החברה פעילה בגוש דן ובירושלים, והמשרד נמצא בבני ברק. השותף המנהל: עו"ד דורון מרום.
-> Landlord is an Israeli property-management company for owners of rented apartments, founded in 2013, active in the Tel Aviv metro area (Gush Dan) and Jerusalem, with an office in Bnei Brak. It manages more than 250 properties today. In 13 years and more than 200 properties, no owner it works with has ever gone without rent, even when a tenant stopped paying.
+> Landlord is an Israeli property-management company for owners of rented apartments, founded in 2013, active in the Tel Aviv metro area (Gush Dan) and Jerusalem, with an office in Bnei Brak. It manages more than 250 properties today. In 13 years and more than 250 properties, no owner it works with has ever gone without rent, even when a tenant stopped paying.
 
 ## In English
 
@@ -12,14 +12,14 @@ Landlord (לנדלורד) is a property-management company for owners of rented 
 - Rental management: finding and screening tenants, a lease prepared with legal support, moving the municipal and utility bills (arnona, water, electricity, gas) to the tenants, handling every repair during the tenancy, and checking that the apartment is returned in good condition and without debts.
 - Landlord Safe: a financial check of the tenant, advice on securities and guarantees, the lease, a guarantee on the rent (owners keep getting paid even if the tenant stops paying, subject to the terms of service), legal eviction including enforcement proceedings, and debt collection through legal proceedings.
 - Also: luxury property management, and offices and commercial properties.
-- Track record: founded in 2013, more than 250 properties under management today. In 13 years and more than 200 properties, no owner it works with has ever gone without rent, even when a tenant stopped paying.
+- Track record: founded in 2013, more than 250 properties under management today. In 13 years and more than 250 properties, no owner it works with has ever gone without rent, even when a tenant stopped paying.
 - Legal backing: the managing partner, attorney Doron Marom (עו"ד דורון מרום), is a lawyer.
 - Area: the Tel Aviv metro area (Gush Dan) and Jerusalem. Office: BSR 2, 20th floor, 1 Derech Ben Gurion, Bnei Brak.
 - Contact: +972-54-2110096 (phone and WhatsApp) · info@landlords.co.il · https://landlords.co.il/contact
 
 ## בעברית
 
-מה מייחד אותנו: גב משפטי בכל שלב – בדיקת שוכרים, הסכם שכירות משפטי חזק, ביטחונות וערבויות, ו-Landlord Safe שבו החברה ערבה לתשלומי השכירות. יותר מ-250 נכסים בניהול היום. ב-13 שנה ויותר מ-200 נכסים, אף בעל דירה שלנו לא נשאר בלי שכר דירה – גם כשהדייר הפסיק לשלם. אנחנו לא משרד תיווך: אנחנו מנהלים את הדירה לאורך כל השכירות.
+מה מייחד אותנו: גב משפטי בכל שלב – בדיקת שוכרים, הסכם שכירות משפטי חזק, ביטחונות וערבויות, ו-Landlord Safe שבו החברה ערבה לתשלומי השכירות. יותר מ-250 נכסים בניהול היום. ב-13 שנה ויותר מ-250 נכסים, אף בעל דירה שלנו לא נשאר בלי שכר דירה – גם כשהדייר הפסיק לשלם. אנחנו לא משרד תיווך: אנחנו מנהלים את הדירה לאורך כל השכירות.
 
 למי: בעלי דירה אחת עד שלוש שאין להם זמן, כוח או יכולת לנהל את השכירות – יורשים, בעלי דירות שגרים רחוק או בחו"ל, מי שקשה לו לטפל בעצמו, ומשקיעים.
 
