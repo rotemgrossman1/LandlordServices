@@ -3,7 +3,7 @@ import { logoSkyline, logoWordmark } from "./logoPaths";
 import styles from "./Logo.module.css";
 
 /**
- * The official logo (gold skyline over the LANDLORD SERVICES wordmark), plus the Hebrew name.
+ * The official logo: gold skyline over the LANDLORD SERVICES wordmark.
  * The wordmark uses the current text color, so it stays readable on light and dark backgrounds.
  * markOnly: just the skyline on a rounded tile, for small avatar-sized spots.
  */
@@ -27,7 +27,7 @@ export default function Logo({
 
   return (
     <span className={`${styles.logo} ${tone === "light" ? styles.light : ""}`}>
-      <svg className={styles.mark} viewBox="64 48 126 139" aria-hidden="true" focusable="false">
+      <svg className={styles.mark} viewBox="64 48 126 139" role="img" aria-label={site.nameHe}>
         {logoSkyline.map((d) => (
           <path key={d} d={d} className={styles.skyline} />
         ))}
@@ -35,7 +35,6 @@ export default function Logo({
           <path key={d} d={d} fill="currentColor" />
         ))}
       </svg>
-      <span className={styles.he}>{site.nameHe}</span>
     </span>
   );
 }

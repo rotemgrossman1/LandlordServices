@@ -1,26 +1,24 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
   color: var(--color-primary);
 }
 
 .mark {
-  width: 54px;
-  height: 60px;
+  width: 63px;
+  height: 70px;
   flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .mark {
+    width: 72px;
+    height: 80px;
+  }
 }
 
 .skyline {
   fill: var(--color-logo-gold);
-}
-
-.he {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1;
 }
 
 .light {
