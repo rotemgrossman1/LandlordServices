@@ -946,8 +946,8 @@ export const steps: Step[] = [
 
 export const personas = {
   eyebrow: "למי זה מתאים",
-  title: "יש לכם דירה. אין לכם כוח לנהל אותה.",
-  titleAccent: "אין לכם כוח לנהל אותה.",
+  title: "יש לכם דירה. אין לכם אפשרות לנהל אותה.",
+  titleAccent: "אין לכם אפשרות לנהל אותה.",
   lead: "רוב הלקוחות שלנו הם אנשים רגילים עם דירה אחת עד שלוש, שלא יכולים או לא רוצים לנהל את השכירות בעצמם.",
   // Closing card after the items. Empty title = hidden
   closingTitle: "המצב שלכם קצת אחר?",
