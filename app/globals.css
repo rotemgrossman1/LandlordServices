@@ -69,7 +69,7 @@
 @media (min-width: 768px) {
   :root {
     --gutter: 2.5rem;
-    --header-height: 88px;
+    --header-height: 116px;
   }
 }
 
