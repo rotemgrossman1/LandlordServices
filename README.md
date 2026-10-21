@@ -35,7 +35,7 @@ npm run start      # serve the production build
 
 - **Photos:** set the paths in `images` in `content/site.ts` (e.g. `hero: "/images/hero.jpg"`, `office: "/images/office.jpg"`) after adding the files to `public/images/`. While `images.hero` is empty, the home page shows a drawn illustration (`components/HeroArt.tsx`).
 - **Team and partner photos:** set `photo` on each entry in `team`, and `partner.photo`. While empty, initials are shown.
-- **Logo:** `components/Logo.tsx` holds a temporary mark. To use the official logo, put the file in `public/images/` and replace the `<svg>` in that component.
+- **Logo:** `components/Logo.tsx` draws the official logo inline from the vector paths in `components/logoPaths.ts` (taken from logo.pdf). The skyline uses `--color-logo-gold`; the wordmark follows the text color, so it works on light and dark backgrounds.
 - **Social preview:** `public/images/og-default.png` (1200×630).
 
 ## Environment variables
