@@ -79,7 +79,7 @@ Skipped: the user preferred the existing reviews carousel.
 **Done when:** the home page alternates cream and forest, with one sand panel at most (the legal protection section). No white sections. Check the other pages that use the same classes as well.
 
 ### 7. FAQ as divider rows in two columns
-- [ ] Done
+- [x] Done
 
 **Figma:** no FAQ, so use the same language as the service rows.
 **Ours:** the FAQ block in `app/page.tsx` and `components/Faq.tsx`: white rounded boxes with circled "+" in the right half, and the left half empty.
