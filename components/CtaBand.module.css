@@ -1,5 +1,7 @@
+/* Closing contact section on white */
 .section {
   padding-block: var(--section-space);
+  background: #fff;
 }
 
 /* The shared section header (SectionHeading); the panel brings its own gap */
