@@ -76,7 +76,7 @@ export const site = {
   foundingYear: 2013,
   phone: "054-2110096", // the one number for calls and WhatsApp
   whatsapp: "054-2110096", // Empty = WhatsApp buttons hidden
-  email: "info@landlords.co.il",
+  email: "doron@landlords.co.il",
   address: {
     street: "דרך בן גוריון 1, ב.ס.ר 2, קומה 20",
     city: "בני ברק",
@@ -1378,7 +1378,7 @@ export const pages: Record<
   contact: {
     title: "צור קשר – לנדלורד חברת ניהול נכסים",
     description:
-      "צרו קשר עם לנדלורד, חברת ניהול נכסים בגוש דן ובירושלים: 054-2110096 (גם בוואטסאפ), info@landlords.co.il. השאירו פרטים ונחזור אליכם.",
+      "צרו קשר עם לנדלורד, חברת ניהול נכסים בגוש דן ובירושלים: 054-2110096 (גם בוואטסאפ), doron@landlords.co.il. השאירו פרטים ונחזור אליכם.",
     h1: "בואו נדבר על הדירה שלכם",
     h1Accent: "על הדירה שלכם",
     intro:
