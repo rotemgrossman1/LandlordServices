@@ -86,7 +86,7 @@ Skipped: the user preferred the existing reviews carousel.
 **Done when:** on desktop the heading and the "לכל השאלות" link sit in one column and the questions in the other. Each question is a row with a thin divider and a small + that turns into −. No boxes. It stays keyboard-accessible, and the FAQPage JSON-LD is unchanged. The `/faq` page should look good too.
 
 ### 8. One section-header pattern everywhere
-- [ ] Done
+- [x] Done
 
 **Figma:** every section header is an eyebrow (a short copper line before small bold text), a big headline with tight line-height, and a short muted paragraph on the opposite side, aligned to the bottom, with a thin line under the whole header.
 **Ours:** `components/SectionHeading.tsx` plus per-section headers that vary, with empty gaps such as the one next to "כל מה שהדירה שלכם צריכה".

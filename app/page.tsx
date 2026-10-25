@@ -48,7 +48,7 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
       <section className="section section-dark" aria-labelledby="faq-title">
         <div className={`container ${styles.faqLayout}`}>
           <div className={styles.faqHead}>
-            <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} />
+            <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} large />
           </div>
           <div className={styles.faqList}>
             <Faq items={homeFaq} />

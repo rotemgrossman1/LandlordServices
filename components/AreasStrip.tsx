@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { areas, cityPages, cta, home } from "@/content/site";
-import AccentText from "./AccentText";
 import Icon from "./Icon";
+import SectionHeading from "./SectionHeading";
 import styles from "./AreasStrip.module.css";
 
 /**
@@ -15,20 +15,22 @@ export default function AreasStrip() {
   return (
     <section className="section" aria-labelledby="areas-title">
       <div className="container">
-        <div className={styles.head}>
-          <div>
-            <p className="eyebrow">{home.areasEyebrow}</p>
-            <h2 id="areas-title" className={styles.heading}>
-              <AccentText text={home.areasTitle} accent={home.areasTitleAccent} />
-            </h2>
-          </div>
-          <Link href={cta.primaryHref} className={styles.link}>
-            {cta.primary}
-            <span className={styles.linkCircle} aria-hidden="true">
-              <Icon name="arrow" size={18} />
-            </span>
-          </Link>
-        </div>
+        <SectionHeading
+          id="areas-title"
+          eyebrow={home.areasEyebrow}
+          title={home.areasTitle}
+          accent={home.areasTitleAccent}
+          large
+          rule
+          side={
+            <Link href={cta.primaryHref} className={styles.link}>
+              {cta.primary}
+              <span className={styles.linkCircle} aria-hidden="true">
+                <Icon name="arrow" size={18} />
+              </span>
+            </Link>
+          }
+        />
 
         {areas.featured.length > 0 && (
           <ul className={styles.grid}>
