@@ -7,7 +7,7 @@
   --color-primary-soft: #e2e4da;
   --color-accent: #d49a68; /* copper: fills, with forest text on it */
   --color-accent-dark: #8b5a2b; /* copper text on light surfaces (5.1:1 on cream) */
-  --color-accent-bright: #e3b386; /* decorative only, never for text */
+  --color-accent-bright: #e3b386; /* decorative on light surfaces; copper text over tinted photos */
   --color-accent-light: #d49a68; /* copper text on forest (5.3:1) */
   --color-accent-soft: #efe2d2;
   --color-logo-gold: #bc9d1c; /* the logo's skyline, decorative only */
