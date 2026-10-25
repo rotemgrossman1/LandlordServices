@@ -55,11 +55,12 @@ Skipped: the user preferred the existing card layout.
 At the user's request the city photos are a little smaller (10:11) and have rounded corners (`--radius`), unlike the Figma.
 
 ### 4. Square photo corners everywhere
-- [ ] Done
+- [x] Done
 
 **Figma:** content photos have square corners. Only the sand panel is rounded.
 **Ours:** a mix of `--radius-lg` (32px) photos and square ones.
 **Done when:** photos in Personas, AreasStrip, ProtectionLayers and city pages have square corners. Buttons, chips and the one sand panel keep their rounding.
+Changed at the user's request: content photos are all rounded with `--radius` (20px) instead of square, for one consistent look. Portraits stay circles and full-width hero photos stay unrounded.
 
 ### 5. Testimonials as one big quote
 - [ ] Done
