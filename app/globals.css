@@ -17,6 +17,7 @@
   --color-sand: #ded5c7;
   --color-sand-dark: #cfc4b3;
   --color-text: #1d2824; /* ink */
+  --color-body: #3d4641; /* softer ink for running text: 8.6:1 on cream, 6.7:1 on sand */
   --color-muted: #545b56; /* 6.1:1 on cream, 4.8:1 on sand */
   --color-border: rgba(23, 56, 47, 0.18); /* forest hairline */
   --color-on-dark: #f4f0e8;
@@ -32,10 +33,12 @@
      Heebo for DM Sans. Accent words take colour instead of italic. */
   --font-body: var(--font-heebo), "Heebo", "Arial Hebrew", Arial, sans-serif;
   --font-display: var(--font-frank), "Frank Ruhl Libre", "David", serif;
+  /* Body stays at 16px (Hebrew needs a little more than the design's English), so headlines lead */
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
-  --text-base: 1.0625rem;
-  --text-lg: 1.1875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --label-spacing: 0.06em; /* small bold labels (eyebrows) */
   --text-xl: clamp(1.375rem, 1.2rem + 0.7vw, 1.75rem);
   --text-2xl: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
   --text-3xl: clamp(2.6rem, 1.6rem + 4vw, 4.75rem);
@@ -101,7 +104,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: var(--leading);
-  color: var(--color-text);
+  color: var(--color-body);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   /* room for the sticky mobile call bar */
@@ -230,9 +233,9 @@ textarea {
   gap: var(--space-3);
   margin-block: 0 var(--space-5);
   font-family: var(--font-body);
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--label-spacing);
   color: var(--color-primary);
 }
 
