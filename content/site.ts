@@ -47,6 +47,7 @@ export type CityPage = {
 export type Persona = { icon: IconName; title: string; pain: string; solution: string };
 export type CompareValue = "yes" | "no" | "you";
 export type HomeSection =
+  | "howItWorks"
   | "personas"
   | "ownerView"
   | "protection"
@@ -835,6 +836,7 @@ export const cta = {
 // Order follows the Acre & Key design. "steps" and "ownerView" are off; "comparison" lives on /services.
 // "areas" should come off once all the city pages exist (they get linked from the footer).
 export const homeSections: HomeSection[] = [
+  "howItWorks",
   "personas",
   "services",
   "protection",
@@ -939,6 +941,18 @@ export const steps: Step[] = [
     text: "מטפלים בכל תקלה לאורך השכירות, ובסוף בודקים שהדירה חוזרת אליכם תקינה וללא חובות.",
   },
 ];
+
+// Home: the short one-line strip under the hero. Empty items = hidden
+export const howItWorks = {
+  title: "מה אתם מקבלים",
+  items: [
+    { icon: "search", text: "מוצאים לכם דייר מתאים" },
+    { icon: "contract", text: "חוזה עם גב משפטי" },
+    { icon: "bill", text: "מעבר דירה וחשבונות, הכול עלינו" },
+    { icon: "wrench", text: "מטפלים בכל תקלה" },
+    { icon: "banknote", text: "שכר הדירה אצלכם, כל חודש" },
+  ] satisfies { icon: IconName; text: string }[],
+};
 
 // ---------------------------------------------------------------------------
 // Home: "who is it for"
