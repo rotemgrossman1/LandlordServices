@@ -18,6 +18,7 @@ import Steps from "@/components/Steps";
 import Testimonials from "@/components/Testimonials";
 import { faq, home, homeFaqIds, homeSections, pages, steps, type HomeSection } from "@/content/site";
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
+import styles from "./page.module.css";
 
 export const metadata = buildMetadata(pages.home, "/");
 
@@ -45,10 +46,14 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
   faq: () =>
     homeFaq.length > 0 && (
       <section className="section section-dark" aria-labelledby="faq-title">
-        <div className="container">
-          <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} />
-          <Faq items={homeFaq} />
-          <p className="more-link">
+        <div className={`container ${styles.faqLayout}`}>
+          <div className={styles.faqHead}>
+            <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} />
+          </div>
+          <div className={styles.faqList}>
+            <Faq items={homeFaq} />
+          </div>
+          <p className={`more-link ${styles.faqMore}`}>
             <Link href="/faq">
               {home.faqMore} <Icon name="arrow" size={16} />
             </Link>

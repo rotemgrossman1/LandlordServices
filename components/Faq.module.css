@@ -1,65 +1,90 @@
+/* Questions as divider rows (like the service rows): thin line, question, small + that turns into − */
 .faq {
-  display: grid;
-  gap: var(--space-3);
   max-width: 52rem;
+  border-block-start: 1px solid var(--color-border);
 }
 
 .item {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.item[open] {
-  border-color: var(--color-sand-dark);
-  box-shadow: var(--shadow-sm);
+  border-block-end: 1px solid var(--color-border);
 }
 
 .question {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-4);
-  padding: var(--space-4) var(--space-5);
+  gap: var(--space-5);
+  padding-block: var(--space-5);
+  padding-inline: var(--space-2);
   font-family: var(--font-display);
   font-weight: 500;
   font-size: var(--text-lg);
-  color: var(--color-text);
+  line-height: 1.4;
+  color: var(--color-primary);
   cursor: pointer;
   list-style: none;
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
+  transition: background-color 0.3s var(--ease);
 }
 
 .question::-webkit-details-marker {
   display: none;
 }
 
-/* plus / minus indicator */
+/* plus / minus: two thin bars in the text colour; the upright one hides when open */
 .question::after {
   content: "";
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+  width: 14px;
+  height: 14px;
   background:
-    linear-gradient(var(--color-primary), var(--color-primary)) center / 12px 2px no-repeat,
-    linear-gradient(var(--color-primary), var(--color-primary)) center / 2px 12px no-repeat,
-    var(--color-primary-soft);
-  transition: transform 0.25s var(--ease);
+    linear-gradient(currentColor, currentColor) center / 14px 1.5px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1.5px 14px no-repeat;
 }
 
 .item[open] .question::after {
-  transform: rotate(45deg);
+  background: linear-gradient(currentColor, currentColor) center / 14px 1.5px no-repeat;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .question:hover {
+    background: rgba(23, 56, 47, 0.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .question {
+    transition: none;
+  }
 }
 
 /* `.item` keeps the colour when the list sits on a forest section */
 .item .answer {
   margin: 0;
-  padding: 0 var(--space-5) var(--space-5);
+  padding-block: 0 var(--space-5);
+  padding-inline: var(--space-2) var(--space-7);
+  font-size: var(--text-sm);
+  line-height: 1.75;
   color: var(--color-muted);
   max-width: 46rem;
   white-space: pre-line; /* answers use line breaks for lists */
+}
+
+/* On forest: light lines and text */
+:global(.section-dark) .faq,
+:global(.section-dark) .item {
+  border-color: var(--color-on-dark-border);
+}
+
+:global(.section-dark) .question {
+  color: #fff;
+}
+
+:global(.section-dark) .item .answer {
+  color: var(--color-on-dark-muted);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :global(.section-dark) .question:hover {
+    background: rgba(255, 255, 255, 0.04);
+  }
 }

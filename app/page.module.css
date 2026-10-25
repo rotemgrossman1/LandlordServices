@@ -1,0 +1,43 @@
+/* Home FAQ: heading and "all questions" link in a narrow column, the questions beside them */
+.faqLayout {
+  display: grid;
+  grid-template-areas:
+    "head"
+    "list"
+    "more";
+}
+
+.faqHead {
+  grid-area: head;
+}
+
+.faqList {
+  grid-area: list;
+}
+
+.faqMore {
+  grid-area: more;
+}
+
+@media (min-width: 1024px) {
+  .faqLayout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "head list"
+      "more list";
+    column-gap: var(--space-8);
+  }
+
+  .faqHead :global(.section-head) {
+    margin-block-end: 0;
+  }
+
+  .faqMore {
+    align-self: start;
+  }
+
+  .faqList > div {
+    max-width: none;
+  }
+}
