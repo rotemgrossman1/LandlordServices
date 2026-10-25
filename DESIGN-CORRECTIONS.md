@@ -28,6 +28,8 @@ Goal: make the home page below the hero more interesting and closer to the Figma
 
 `testimonials` in `content/site.ts` holds sample text ("דוגמה 1/2/3", marked `TEMP SAMPLE: remove before publishing`). Set it to `[]` so the section disappears, as the "empty value = hidden section" rule requires. Item 5 changes the section's look for when real Google reviews are added later.
 
+Skipped: the user wants to keep the reviews section on the page.
+
 ### 1. Services as numbered rows on dark green
 - [ ] Done
 
