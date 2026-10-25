@@ -1,6 +1,7 @@
-/* Slim forest band (.section-dark) between the cream sections */
+/* Slim white band between the cream sections */
 .section {
   padding-block: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  background: #fff;
 }
 
 /* Small eyebrow-style title, lined up with the cards (past the side button) */
@@ -81,7 +82,7 @@
   letter-spacing: 0.1em;
   font-size: var(--text-lg);
   line-height: 1;
-  color: var(--color-accent);
+  color: var(--color-accent-dark); /* 5.1:1 on the cream cards (the lighter copper was 2.1:1) */
 }
 
 .starsOff {
@@ -99,7 +100,7 @@
   color: var(--color-text);
 }
 
-/* `.card` keeps the dark text on the cream cards over the forest band's light <p> colour */
+/* `.card` keeps the card text colours if the band is ever set on forest (.section-dark) */
 .card .quote p {
   margin: 0;
   color: var(--color-text);
@@ -123,10 +124,10 @@
   width: 48px;
   height: 48px;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
   background: transparent;
-  color: var(--color-on-dark);
+  color: var(--color-primary);
   cursor: pointer;
   transition:
     background-color 0.2s ease,
