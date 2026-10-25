@@ -4,11 +4,11 @@ import AccentText from "./AccentText";
 import Icon from "./Icon";
 import styles from "./ServiceCards.module.css";
 
-/** Home "what we do": a compact grid of cards (icon, title, one line); each card links to its full description. */
+/** Home "what we do": numbered rows on forest (number, title, one line, arrow); each row links to its full description. */
 export default function ServiceCards() {
   if (services.length === 0) return null;
   return (
-    <section className="section" aria-labelledby="services-title">
+    <section className="section section-dark" aria-labelledby="services-title">
       <div className="container">
         <div className={styles.head}>
           <div>
@@ -21,22 +21,22 @@ export default function ServiceCards() {
           {pages.home.intro && <p className={styles.lead}>{pages.home.intro}</p>}
         </div>
 
-        <ul className={styles.list}>
-          {services.map((s) => (
+        <ol className={styles.list}>
+          {services.map((s, i) => (
             <li key={s.id}>
-              <Link href={`/services#${s.id}`} className={styles.card}>
-                <span className={styles.icon} aria-hidden="true">
-                  <Icon name={s.icon} size={24} />
+              <Link href={`/services#${s.id}`} className={styles.row}>
+                <span className={styles.number} aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className={styles.title}>{s.title}</h3>
                 <p className={styles.text}>{s.short}</p>
                 <span className={styles.arrow} aria-hidden="true">
-                  <Icon name="arrow" size={18} className="icon-diag" />
+                  <Icon name="arrow" size={18} />
                 </span>
               </Link>
             </li>
           ))}
-        </ul>
+        </ol>
 
         <p className={styles.more}>
           <Link href="/services">

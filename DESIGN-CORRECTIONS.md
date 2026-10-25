@@ -31,7 +31,7 @@ Goal: make the home page below the hero more interesting and closer to the Figma
 Skipped: the user wants to keep the reviews section on the page.
 
 ### 1. Services as numbered rows on dark green
-- [ ] Done
+- [x] Done
 
 **Figma:** the "What we do" section. Forest background. A header with a big headline and a short muted paragraph on the opposite side, with a thin line under it. Then full-width rows, each with a small copper number, the title in the display font, a short muted description and a round outlined arrow on the far end. Thin dividers between rows. On hover the row lightens slightly and the arrow circle fills copper.
 **Ours:** `components/ServiceCards.tsx` plus `.module.css`: rounded white cards on cream.
