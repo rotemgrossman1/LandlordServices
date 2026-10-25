@@ -842,6 +842,7 @@ export const homeSections: HomeSection[] = [
   "howItWorks",
   "personas",
   "services",
+  "comparison",
   "protection",
   "testimonials",
   "areas",
@@ -1087,6 +1088,8 @@ export const comparison = {
   columns: ["לבד", "מתווך", "לנדלורד"],
   highlight: 2, // index of our column
   valueLabels: { yes: "כלול", no: "לא כלול", you: "עליכם" } satisfies Record<CompareValue, string>,
+  // How many rows each column covers; {n} and {total} are counted from `rows`
+  tally: "{n} מתוך {total} כלולים",
   rows: [
     { label: "מציאת דיירים", values: ["you", "yes", "yes"] },
     { label: "בדיקה כלכלית של הדייר", values: ["you", "you", "yes"] },

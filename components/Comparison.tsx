@@ -4,6 +4,12 @@ import SectionHeading from "./SectionHeading";
 import styles from "./Comparison.module.css";
 
 const valueIcon = { yes: "check", no: "x", you: "user" } as const;
+const total = comparison.rows.length;
+
+/** How many rows a column covers ("yes") */
+function covered(col: number) {
+  return comparison.rows.filter((r) => r.values[col] === "yes").length;
+}
 
 function Cell({ value }: { value: CompareValue }) {
   return (
@@ -16,7 +22,10 @@ function Cell({ value }: { value: CompareValue }) {
   );
 }
 
-/** Self-managed vs broker vs Landlord. A real <table> so it reads well for everyone. */
+/**
+ * Self-managed vs broker vs Landlord: three score tiles (how much each option covers)
+ * over a real <table>, so it reads well for everyone.
+ */
 export default function Comparison({ alt = false }: { alt?: boolean }) {
   if (comparison.rows.length === 0) return null;
   return (
@@ -29,6 +38,25 @@ export default function Comparison({ alt = false }: { alt?: boolean }) {
           accent={comparison.titleAccent}
           lead={comparison.lead}
         />
+        <ul className={styles.tiles}>
+          {comparison.columns.map((c, i) => (
+            <li
+              key={c}
+              className={`${styles.tile} ${i === comparison.highlight ? styles.tileOurs : ""}`}
+              style={{ "--fill": `${(covered(i) / total) * 100}%` } as React.CSSProperties}
+            >
+              <span className={styles.tileName}>{c}</span>
+              <span className={styles.tileNumber} aria-hidden="true">
+                {covered(i)}
+                <small>/{total}</small>
+              </span>
+              <span className={styles.tileBar} aria-hidden="true" />
+              <span className={styles.tileLabel}>
+                {comparison.tally.replace("{n}", String(covered(i))).replace("{total}", String(total))}
+              </span>
+            </li>
+          ))}
+        </ul>
         <div className={styles.wrap}>
           <table className={styles.table}>
             <caption className="visually-hidden">{comparison.title}</caption>
