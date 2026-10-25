@@ -1403,6 +1403,7 @@ export const home = {
   citiesLabel: "ערים מרכזיות בגוש דן ובירושלים", // numbers strip: "<count> ערים..."
   areasAllLabel: "הערים שבהן אנחנו פעילים",
   photoCredit: "צילום:", // before the photographer on Creative Commons city photos
+  areasCityMore: "לעמוד העיר", // under a city photo that has its own page
   areasLead: "אנחנו מתמקדים בערים עם ביקוש גבוה להשכרה. הנכס שלכם בעיר אחרת? דברו איתנו.",
   testimonialsTitle: "ביקורות מ-Google",
   reviewsPrev: "הביקורת הקודמת",

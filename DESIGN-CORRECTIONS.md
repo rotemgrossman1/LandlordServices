@@ -47,11 +47,12 @@ Skipped: the user wants to keep the reviews section on the page.
 Skipped: the user preferred the existing card layout.
 
 ### 3. Cities section on cream with photo captions
-- [ ] Done
+- [x] Done
 
 **Figma:** the "Selected portfolio" section. Cream background. A 3-column grid of 4:5 photos with square corners, with the middle column stepped down. A small cream chip on the photo. Under each photo, on one thin line: the name in the display font, a small muted location line, and a small detail on the opposite side. On hover the photo zooms slightly and a round forest arrow button appears in the photo's corner.
 **Ours:** `components/AreasStrip.tsx` plus `.module.css`: forest background, the name only, and every chip says "גוש דן".
 **Done when:** the section is on cream, each card shows the city name plus a muted second line and a "לעמוד העיר" detail (from `content/site.ts`; use only real facts, otherwise leave the line out), the chip is either meaningful or removed, and the hover arrow is in place. Photo credits must stay visible.
+At the user's request the city photos are a little smaller (10:11) and have rounded corners (`--radius`), unlike the Figma.
 
 ### 4. Square photo corners everywhere
 - [ ] Done

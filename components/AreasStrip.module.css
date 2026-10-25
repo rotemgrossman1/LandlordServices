@@ -28,16 +28,8 @@
   font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.04em;
+  color: var(--color-primary);
   text-decoration: none;
-}
-
-/* light links on the forest surface (outranks the global .section-dark link colour) */
-:global(.section-dark) a.link {
-  color: var(--color-on-dark);
-}
-
-:global(.section-dark) a.credit {
-  color: #fff;
 }
 
 .linkCircle {
@@ -45,7 +37,7 @@
   place-items: center;
   width: 44px;
   height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
   transition: transform 0.25s var(--ease);
 }
@@ -61,7 +53,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: var(--space-7) var(--space-6);
+  gap: var(--space-7);
 }
 
 @media (min-width: 720px) {
@@ -81,11 +73,16 @@
   }
 }
 
+.card {
+  position: relative;
+}
+
 .media {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 10 / 11;
   overflow: hidden;
-  background: var(--color-primary-dark);
+  border-radius: var(--radius);
+  background: var(--color-sand);
 }
 
 .media img {
@@ -93,29 +90,47 @@
   transition: transform 0.7s var(--ease);
 }
 
+/* Round forest arrow in the photo's corner, shown on hover or keyboard focus */
+.photoArrow {
+  position: absolute;
+  inset-block-start: var(--space-4);
+  inset-inline-end: var(--space-4);
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.card:focus-within .photoArrow {
+  opacity: 1;
+  transform: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .card:hover .media img {
     transform: scale(1.04);
   }
-}
 
-.chip {
-  position: absolute;
-  inset-block-start: var(--space-4);
-  inset-inline-start: var(--space-4);
-  padding: var(--space-1) var(--space-4);
-  border-radius: 999px;
-  background: rgba(244, 240, 232, 0.95);
-  font-size: var(--text-xs);
-  font-weight: 700;
-  color: var(--color-primary);
+  .card:hover .photoArrow {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Photo credit for Creative Commons photos, bottom corner of the photo */
 .credit {
   position: absolute;
-  inset-block-end: var(--space-2);
-  inset-inline-end: var(--space-2);
+  z-index: 2;
+  inset-block-end: var(--space-3);
+  inset-inline-end: var(--space-3);
   padding: 2px var(--space-2);
   border-radius: 4px;
   background: rgba(14, 36, 30, 0.72);
@@ -125,23 +140,58 @@
   text-decoration: none;
 }
 
-.credit {
-  z-index: 2;
-}
-
 .credit:hover {
   text-decoration: underline;
 }
 
-.card {
-  position: relative;
+/* One caption line under the photo: name and region, with the page link's label on the far side */
+.caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.names {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--space-3);
 }
 
 .city {
   margin: 0;
-  padding-block: var(--space-4);
-  border-block-end: 1px solid var(--color-on-dark-border);
   font-size: var(--text-xl);
+  color: var(--color-primary);
+}
+
+.region {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.more {
+  flex-shrink: 0;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-dark);
+}
+
+/* A city with its own page: the whole card is the link */
+.cityLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cityLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .all {
@@ -152,7 +202,7 @@
   margin-block-end: var(--space-2);
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-on-dark-muted);
+  color: var(--color-muted);
 }
 
 /* One line on wide screens; on narrow ones it wraps between cities, never inside one */
@@ -166,7 +216,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 0.9rem + 0.9vw, 1.75rem);
   line-height: 1.5;
-  color: var(--color-on-dark);
+  color: var(--color-primary);
 }
 
 .cities li {
@@ -176,37 +226,18 @@
 .cities li + li::before {
   content: "·";
   margin-inline: 0.5em;
-  color: var(--color-accent-light);
+  color: var(--color-accent-dark);
 }
 
 .lead {
   margin: 0;
-  color: var(--color-on-dark-muted);
+  color: var(--color-muted);
 }
 
-/* A city with its own page: the whole card is the link */
-:global(.section-dark) a.cityLink {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-3);
-  color: var(--color-on-dark);
-  text-decoration: none;
-}
-
-.cityLink::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.cityLink svg {
-  color: var(--color-accent-light);
-  transition: transform 0.25s var(--ease);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .card:hover .cityLink svg {
-    transform: translateX(-4px);
+@media (prefers-reduced-motion: reduce) {
+  .media img,
+  .photoArrow,
+  .linkCircle {
+    transition: none;
   }
 }
