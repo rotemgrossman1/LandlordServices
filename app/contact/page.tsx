@@ -1,8 +1,7 @@
-import ContactForm from "@/components/ContactForm";
 import Icon from "@/components/Icon";
 import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
-import { cta, form, labels, pages, site } from "@/content/site";
+import { cta, labels, pages, site } from "@/content/site";
 import { telHref, whatsappHref } from "@/lib/format";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
@@ -14,12 +13,7 @@ export default function ContactPage() {
     <>
       <PageIntro page={pages.contact} eyebrow={labels.contactUs} />
       <section className="section">
-        <div className={`container ${styles.grid}`}>
-          <div className={styles.formBox}>
-            <h2 className={styles.formTitle}>{form.titleShort}</h2>
-            <ContactForm />
-          </div>
-
+        <div className={`container ${styles.wrap}`}>
           <address className={styles.details}>
             {site.whatsapp && (
               <a

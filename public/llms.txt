@@ -42,4 +42,4 @@ Landlord (לנדלורד) is a property-management company for owners of rented 
 - [ניהול נכסים בירושלים](https://landlords.co.il/areas/jerusalem): כ-20 נכסים בניהול בירושלים, מה אנחנו עושים בעיר ושאלות נפוצות
 - [אודות](https://landlords.co.il/about): הסיפור, הערכים, השותף המנהל והצוות
 - [שאלות נפוצות](https://landlords.co.il/faq): תשובות לשאלות של בעלי דירות
-- [צור קשר](https://landlords.co.il/contact): טלפון, וואטסאפ, אימייל, כתובת וטופס פנייה
+- [צור קשר](https://landlords.co.il/contact): טלפון, וואטסאפ, אימייל וכתובת

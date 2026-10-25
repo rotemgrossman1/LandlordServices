@@ -9,7 +9,7 @@ Requires Node.js 20.9 or newer.
 ```bash
 npm install
 npm run dev        # http://localhost:3000
-npm run build      # production build (all pages are static, except /api/contact)
+npm run build      # production build (all pages are static)
 npm run start      # serve the production build
 ```
 
@@ -38,24 +38,15 @@ npm run start      # serve the production build
 - **Logo:** `components/Logo.tsx` draws the official logo inline from the vector paths in `components/logoPaths.ts` (taken from logo.pdf). The skyline uses `--color-logo-gold`; the wordmark follows the text color, so it works on light and dark backgrounds.
 - **Social preview:** `public/images/og-default.png` (1200×630).
 
-## Environment variables
+## Contact
 
-Copy `.env.example` to `.env.local` (locally) or set these in Vercel:
-
-| Variable | Required | Description |
-|---|---|---|
-| `RESEND_API_KEY` | yes | API key from [resend.com](https://resend.com) |
-| `LEAD_EMAIL_TO` | yes | Where leads are sent (comma-separated for several) |
-| `RESEND_FROM` | recommended | Sender on a domain verified in Resend, e.g. `Landlord <site@landlords.co.il>`. Without it, Resend's test sender is used, and that sender only delivers to the Resend account owner. |
-
-If sending fails, the form shows the office phone number instead.
+There is no contact form. Visitors reach the office by WhatsApp, phone or email (`site.whatsapp`, `site.phone`, `site.email`), so the site needs no environment variables.
 
 ## Deploy to Vercel
 
 1. Push the repo to GitHub.
 2. In Vercel, choose **Add New → Project**, then import the repo. The framework is detected automatically.
-3. Add the environment variables above (Settings → Environment Variables).
-4. Deploy, then add the domain `landlords.co.il` under Settings → Domains and update DNS as Vercel instructs.
-5. If the final domain is different (e.g. with `www.`), change `site.url` in `content/site.ts` and the links in `public/llms.txt`.
+3. Deploy, then add the domain `landlords.co.il` under Settings → Domains and update DNS as Vercel instructs.
+4. If the final domain is different (e.g. with `www.`), change `site.url` in `content/site.ts` and the links in `public/llms.txt`.
 
 Old Wix URLs are 301-redirected to the new pages in `next.config.ts`.

@@ -1,26 +1,5 @@
-.grid {
-  display: grid;
-  gap: var(--space-6);
-}
-
-@media (min-width: 900px) {
-  .grid {
-    grid-template-columns: 1.35fr 1fr;
-    gap: var(--space-7);
-    align-items: start;
-  }
-}
-
-.formBox {
-  padding: clamp(1.25rem, 1rem + 2vw, 2.5rem);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-}
-
-.formTitle {
-  font-size: var(--text-xl);
+.wrap {
+  max-width: 40rem;
 }
 
 .details {

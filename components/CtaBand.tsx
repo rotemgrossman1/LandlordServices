@@ -1,14 +1,13 @@
 import Image from "next/image";
-import { cta, form, home, partner, site } from "@/content/site";
+import { cta, home, partner, site } from "@/content/site";
 import { initials, telHref, whatsappHref } from "@/lib/format";
-import ContactForm from "./ContactForm";
 import Icon from "./Icon";
 import SectionHeading from "./SectionHeading";
 import styles from "./CtaBand.module.css";
 
 /**
  * Closing call to action, after the design's contact block: a large headline, then what
- * happens next, who stands behind it, and the short form.
+ * happens next, who stands behind it, and the WhatsApp, phone and email buttons.
  */
 export default function CtaBand() {
   return (
@@ -71,12 +70,13 @@ export default function CtaBand() {
                 <Icon name="phone" size={20} />
                 {cta.call} <span className="ltr">{site.phone}</span>
               </a>
+              {site.email && (
+                <a href={`mailto:${site.email}`} className="btn btn-outline">
+                  <Icon name="mail" size={20} />
+                  {cta.email}
+                </a>
+              )}
             </div>
-          </div>
-
-          <div className={styles.formBox} id="cta-form">
-            <h3 className={styles.formTitle}>{form.titleShort}</h3>
-            <ContactForm idPrefix="cta" />
           </div>
         </div>
       </div>
