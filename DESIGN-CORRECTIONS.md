@@ -69,6 +69,8 @@ Changed at the user's request: content photos are all rounded with `--radius` (2
 **Ours:** `components/Testimonials.tsx` plus `ReviewsCarousel.tsx`: a carousel of 3 cards on a white background.
 **Done when:** the component renders one large quote at a time in this layout (with simple prev/next controls if there are several), with no white background. It must still render nothing when `testimonials` is `[]`. Check it with temporary local data, but don't commit fake reviews.
 
+Skipped: the user preferred the existing reviews carousel.
+
 ### 6. Only three backgrounds, no white
 - [ ] Done
 
