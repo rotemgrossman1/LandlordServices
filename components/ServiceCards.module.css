@@ -10,9 +10,11 @@
   text-shadow: 0 1px 14px rgba(8, 24, 20, 0.45);
 }
 
+/* Square photo: anchored a little above centre so the roof and the entrance both stay in view */
 .bg {
   z-index: -2;
   object-fit: cover;
+  object-position: center 35%;
 }
 
 .scrim {
