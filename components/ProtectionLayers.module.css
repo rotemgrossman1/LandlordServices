@@ -23,6 +23,7 @@
 
 .visualPanel {
   position: relative;
+  overflow: hidden; /* clips the photo's hover zoom */
   display: grid;
   place-items: center;
   min-height: 420px;
@@ -40,6 +41,13 @@
 .photo {
   object-fit: cover;
   object-position: center;
+  transition: transform 0.7s var(--ease);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .visualPanel:hover .photo {
+    transform: scale(1.04);
+  }
 }
 
 /* Darkens the bottom so the note card sits on calm ground */

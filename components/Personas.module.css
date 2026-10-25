@@ -1,4 +1,4 @@
-/* Light sand section (.section-alt): headline beside a framed photo, then the persona cards */
+/* Cream section: headline beside a framed photo, then the persona cards */
 .inner {
   display: grid;
   gap: var(--space-8);
@@ -43,6 +43,14 @@
 .photo {
   object-fit: cover;
   object-position: left center;
+  transition: transform 0.7s var(--ease);
+}
+
+/* Slow zoom inside the frame (.media clips it, so nothing around it moves) */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .media:hover .photo {
+    transform: scale(1.04);
+  }
 }
 
 .list {
