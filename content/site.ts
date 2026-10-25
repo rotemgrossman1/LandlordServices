@@ -944,11 +944,11 @@ export const steps: Step[] = [
 
 // Home: the short one-line strip under the hero. Empty items = hidden
 export const howItWorks = {
-  title: "מה אתם מקבלים",
+  title: "איך זה עובד",
   items: [
-    { icon: "search", text: "מוצאים לכם דייר מתאים" },
+    { icon: "search", text: "אנחנו מוצאים לכם דייר מתאים" },
     { icon: "contract", text: "חוזה עם גב משפטי" },
-    { icon: "bill", text: "מעבר דירה וחשבונות, הכול עלינו" },
+    { icon: "bill", text: "מעבר דירה וחשבונות באחריותנו" },
     { icon: "wrench", text: "מטפלים בכל תקלה" },
     { icon: "banknote", text: "שכר הדירה אצלכם, כל חודש" },
   ] satisfies { icon: IconName; text: string }[],
