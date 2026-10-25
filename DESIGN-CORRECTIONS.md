@@ -44,6 +44,8 @@ Skipped: the user wants to keep the reviews section on the page.
 **Ours:** `components/Personas.tsx` plus `.module.css`: a photo, a headline and 6 rounded cards (plus a dark CTA card).
 **Done when:** the 6 personas render as a numbered list (copper number, title, text) with thin dividers and no boxes. The photo stays, but with square corners. The "המצב שלכם קצת אחר?" CTA becomes a simple text link or outlined button, not a dark card.
 
+Skipped: the user preferred the existing card layout.
+
 ### 3. Cities section on cream with photo captions
 - [ ] Done
 
