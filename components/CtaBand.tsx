@@ -7,9 +7,8 @@ import SectionHeading from "./SectionHeading";
 import styles from "./CtaBand.module.css";
 
 /**
- * Closing call to action, after the design's contact block: a large headline with a
- * copper circle that jumps to the form, then what happens next, who stands behind it,
- * and the short form.
+ * Closing call to action, after the design's contact block: a large headline, then what
+ * happens next, who stands behind it, and the short form.
  */
 export default function CtaBand() {
   return (
@@ -23,12 +22,6 @@ export default function CtaBand() {
           accentBlock
           large
           rule
-          side={
-            <a href="#cta-form" className={styles.circle}>
-              {cta.primary}
-              <Icon name="arrow" size={20} className="icon-diag" />
-            </a>
-          }
           className={styles.head}
         />
 
