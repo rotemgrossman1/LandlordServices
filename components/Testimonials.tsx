@@ -3,15 +3,15 @@ import ReviewsCarousel from "./ReviewsCarousel";
 import styles from "./Testimonials.module.css";
 
 /**
- * Google reviews as a slim, endless carousel on white: a transition band between
- * two forest sections. Every review is in the static HTML; the carousel only adds
+ * Google reviews as a slim, endless carousel of cream cards on a forest band.
+ * Every review is in the static HTML; the carousel only adds
  * the looping and the side buttons. Renders nothing until real reviews are added
  * in content/site.ts.
  */
 export default function Testimonials() {
   if (testimonials.length === 0) return null;
   return (
-    <section className={`section ${styles.section}`} aria-labelledby="testimonials-title">
+    <section className={`section section-dark ${styles.section}`} aria-labelledby="testimonials-title">
       <div className="container">
         <h2 id="testimonials-title" className={`eyebrow ${styles.title}`}>
           {home.testimonialsTitle}

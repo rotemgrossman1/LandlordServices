@@ -72,7 +72,7 @@ Changed at the user's request: content photos are all rounded with `--radius` (2
 Skipped: the user preferred the existing reviews carousel.
 
 ### 6. Only three backgrounds, no white
-- [ ] Done
+- [x] Done
 
 **Figma:** cream, then forest, then cream, then one sand panel, then cream, then a forest footer.
 **Ours:** sand, cream, forest, white, forest, sand and cream stripes (see `homeSections` order and the `section-alt` / `section-dark` classes).

@@ -1,8 +1,7 @@
-/* The design's sand "split" card, inset from the page edges on a forest band */
+/* The design's sand "split" card (the page's one sand panel), inset from the page edges on cream */
 .section {
   padding-block: var(--section-space);
   padding-inline: clamp(0.75rem, 0.25rem + 2vw, 2.5rem);
-  background: var(--color-primary);
 }
 
 .card {

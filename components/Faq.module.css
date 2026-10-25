@@ -55,7 +55,8 @@
   transform: rotate(45deg);
 }
 
-.answer {
+/* `.item` keeps the colour when the list sits on a forest section */
+.item .answer {
   margin: 0;
   padding: 0 var(--space-5) var(--space-5);
   color: var(--color-muted);

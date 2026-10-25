@@ -6,14 +6,14 @@ import Icon from "./Icon";
 import styles from "./Personas.module.css";
 
 /**
- * "Who is it for", on a light sand surface so the page isn't dark section after dark section:
+ * "Who is it for", on cream so the page isn't dark section after dark section:
  * the eyebrow, headline and lead beside a framed building photo, then each typical owner
  * (pain + our answer) as a card that fades in one after another.
  */
 export default function Personas() {
   if (personas.items.length === 0) return null;
   return (
-    <section className="section section-alt" aria-labelledby="personas-title">
+    <section className="section" aria-labelledby="personas-title">
       <div className={`container ${styles.inner}`}>
         <div className={styles.head}>
           <div>

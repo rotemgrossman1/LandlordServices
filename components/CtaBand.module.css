@@ -62,14 +62,14 @@
   }
 }
 
-/* What happens next + the form, on a sand panel */
+/* What happens next + the form, in an outlined panel (the sand panel is kept for the legal section) */
 .panel {
   display: grid;
   gap: var(--space-7);
   margin-block-start: var(--space-8);
   padding: clamp(1.5rem, 0.75rem + 3vw, 3.5rem);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  background: var(--color-sand);
 }
 
 @media (min-width: 960px) {
