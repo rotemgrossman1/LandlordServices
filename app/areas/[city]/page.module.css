@@ -58,8 +58,8 @@
 /* Creative Commons credit, bottom corner of a photo */
 .credit {
   position: absolute;
-  inset-block-end: var(--space-2);
-  inset-inline-end: var(--space-2);
+  inset-block-end: var(--space-3);
+  inset-inline-end: var(--space-3);
   z-index: 1;
   padding: 2px var(--space-2);
   border-radius: 4px;
@@ -88,7 +88,7 @@ a.credit:hover {
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius);
   background: var(--color-primary-soft);
 }
 
