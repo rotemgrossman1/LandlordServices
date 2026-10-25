@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import AreasStrip from "@/components/AreasStrip";
@@ -16,7 +17,7 @@ import SectionHeading from "@/components/SectionHeading";
 import ServiceCards from "@/components/ServiceCards";
 import Steps from "@/components/Steps";
 import Testimonials from "@/components/Testimonials";
-import { faq, home, homeFaqIds, homeSections, pages, steps, type HomeSection } from "@/content/site";
+import { faq, home, homeFaqIds, homeSections, images, pages, steps, type HomeSection } from "@/content/site";
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
 import styles from "./page.module.css";
 
@@ -45,7 +46,13 @@ const sections: Record<HomeSection, () => React.ReactNode> = {
   testimonials: () => <Testimonials />,
   faq: () =>
     homeFaq.length > 0 && (
-      <section className="section section-dark" aria-labelledby="faq-title">
+      <section
+        className={`section section-dark ${images.faq ? `photo-section ${styles.faqPhoto}` : ""}`}
+        aria-labelledby="faq-title"
+      >
+        {images.faq && (
+          <Image src={images.faq} alt="" fill sizes="100vw" className={`photo-section-bg ${styles.faqBg}`} />
+        )}
         <div className={`container ${styles.faqLayout}`}>
           <div className={styles.faqHead}>
             <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} large />

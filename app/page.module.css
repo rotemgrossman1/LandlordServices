@@ -1,3 +1,18 @@
+/* Home FAQ over a photo (.photo-section): extra height so the room shows above and below the questions */
+.faqPhoto {
+  padding-block: calc(var(--section-space) * 1.5);
+}
+
+/* Mirrored, so the bright window sits behind the large heading rather than the small question text */
+.faqBg {
+  transform: scaleX(-1);
+}
+
+/* The "all questions" link sits over the window, so it's cream (still underlined) rather than copper */
+.faqPhoto .faqMore a[href] {
+  color: var(--color-on-dark);
+}
+
 /* Home FAQ: heading and "all questions" link in a narrow column, the questions beside them */
 .faqLayout {
   display: grid;
