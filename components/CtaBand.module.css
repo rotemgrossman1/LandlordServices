@@ -1,7 +1,6 @@
-/* Closing contact section on white */
+/* Closing contact section: cream around the headline, a fully white panel for the text and form */
 .section {
   padding-block: var(--section-space);
-  background: #fff;
 }
 
 /* The shared section header (SectionHeading); the panel brings its own gap */
@@ -17,6 +16,7 @@
   padding: clamp(1.5rem, 0.75rem + 3vw, 3.5rem);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
+  background: #fff;
 }
 
 @media (min-width: 960px) {
@@ -97,7 +97,7 @@
   scroll-margin-block-start: calc(var(--header-height) + var(--space-5));
   padding: clamp(1.25rem, 1rem + 1.5vw, 2.25rem);
   border-radius: var(--radius);
-  background: var(--color-surface);
+  background: #fff;
 }
 
 .formTitle {
