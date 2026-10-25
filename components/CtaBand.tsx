@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { cta, form, home, partner, site } from "@/content/site";
 import { initials, telHref, whatsappHref } from "@/lib/format";
-import AccentText from "./AccentText";
 import ContactForm from "./ContactForm";
 import Icon from "./Icon";
+import SectionHeading from "./SectionHeading";
 import styles from "./CtaBand.module.css";
 
 /**
@@ -15,18 +15,22 @@ export default function CtaBand() {
   return (
     <section className={styles.section} aria-labelledby="cta-title">
       <div className="container">
-        <div className={styles.head}>
-          <div>
-            <p className="eyebrow">{home.ctaEyebrow}</p>
-            <h2 id="cta-title" className={styles.heading}>
-              <AccentText text={home.ctaTitle} accent={home.ctaTitleAccent} />
-            </h2>
-          </div>
-          <a href="#cta-form" className={styles.circle}>
-            {cta.primary}
-            <Icon name="arrow" size={20} className="icon-diag" />
-          </a>
-        </div>
+        <SectionHeading
+          id="cta-title"
+          eyebrow={home.ctaEyebrow}
+          title={home.ctaTitle}
+          accent={home.ctaTitleAccent}
+          accentBlock
+          large
+          rule
+          side={
+            <a href="#cta-form" className={styles.circle}>
+              {cta.primary}
+              <Icon name="arrow" size={20} className="icon-diag" />
+            </a>
+          }
+          className={styles.head}
+        />
 
         <div className={styles.panel}>
           <div className={styles.text}>

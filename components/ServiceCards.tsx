@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { home, pages, services } from "@/content/site";
-import AccentText from "./AccentText";
 import Icon from "./Icon";
+import SectionHeading from "./SectionHeading";
 import styles from "./ServiceCards.module.css";
 
 /** Home "what we do": numbered rows on forest (number, title, one line, arrow); each row links to its full description. */
@@ -10,16 +10,18 @@ export default function ServiceCards() {
   return (
     <section className="section section-dark" aria-labelledby="services-title">
       <div className="container">
-        <div className={styles.head}>
-          <div>
-            <p className="eyebrow">{home.servicesEyebrow}</p>
-            <h2 id="services-title" className={styles.heading}>
-              <AccentText text={home.servicesTitle} accent={home.servicesTitleAccent} block />
-            </h2>
-          </div>
-          {/* The home intro (the page's direct answer) lives here, so the hero keeps one supporting line */}
-          {pages.home.intro && <p className={styles.lead}>{pages.home.intro}</p>}
-        </div>
+        {/* The home intro (the page's direct answer) lives here, so the hero keeps one supporting line */}
+        <SectionHeading
+          id="services-title"
+          eyebrow={home.servicesEyebrow}
+          title={home.servicesTitle}
+          accent={home.servicesTitleAccent}
+          accentBlock
+          large
+          rule
+          side={pages.home.intro && <p className="section-head-note">{pages.home.intro}</p>}
+          className={styles.head}
+        />
 
         <ol className={styles.list}>
           {services.map((s, i) => (
