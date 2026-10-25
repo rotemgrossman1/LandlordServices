@@ -100,7 +100,7 @@ Skipped: the user preferred the existing reviews carousel.
 **Done when:** body and secondary text sizes and colours are tuned in `app/globals.css` (tokens, not one-off values), and every text and background pair still passes WCAG AA (4.5:1 for small text). Readability on mobile must not suffer. Hebrew needs a little more size than English, so don't copy the Figma's sizes exactly.
 
 ### 10. More movement on hover
-- [ ] Done
+- [x] Done
 
 **Figma:** arrow circles fill copper on hover, photos zoom slightly (scale ~1.04 over ~700ms), rows lighten, and nav links get a copper underline that grows in.
 **Ours:** only some of these.

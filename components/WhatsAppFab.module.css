@@ -51,3 +51,11 @@
     max-width: 14rem;
   }
 }
+
+/* Reduced motion: the label still opens, but the button doesn't lift */
+@media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+  .fab:hover,
+  .fab:focus-visible {
+    transform: none;
+  }
+}

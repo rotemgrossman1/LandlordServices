@@ -17,10 +17,22 @@
   height: 44px;
   border: 1px solid var(--color-border);
   border-radius: 50%;
-  transition: transform 0.25s var(--ease);
+  transition:
+    transform 0.25s var(--ease),
+    background-color 0.3s var(--ease),
+    border-color 0.3s var(--ease);
 }
 
+/* The arrow circle fills copper, like the service rows */
 @media (hover: hover) and (pointer: fine) {
+  .link:hover .linkCircle {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-primary);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .link:hover .linkCircle {
     transform: translateX(-4px);
   }
@@ -93,12 +105,21 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .card:hover .photoArrow {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .card:hover .media img {
     transform: scale(1.04);
   }
+}
 
-  .card:hover .photoArrow {
-    opacity: 1;
+/* Reduced motion: the arrow only fades in, without growing */
+@media (prefers-reduced-motion: reduce) {
+  .photoArrow {
     transform: none;
   }
 }

@@ -97,7 +97,7 @@ a.credit:hover {
   transition: transform 0.7s var(--ease);
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .galleryItem:hover img {
     transform: scale(1.04);
   }
