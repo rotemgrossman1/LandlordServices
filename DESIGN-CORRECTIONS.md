@@ -93,7 +93,7 @@ Skipped: the user preferred the existing reviews carousel.
 **Done when:** home page sections use one shared header pattern (extend `SectionHeading` rather than duplicating it), and no section has a large empty area next to its headline.
 
 ### 9. Smaller, calmer body text and quieter labels
-- [ ] Done
+- [x] Done
 
 **Figma:** body text around 14–16px in muted ink, and tiny bold letter-spaced labels, so the headlines dominate.
 **Ours:** larger, darker body text, so headlines stand out less.
