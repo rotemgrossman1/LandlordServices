@@ -34,7 +34,8 @@
      Heebo for DM Sans. Accent words take colour instead of italic. */
   --font-body: var(--font-heebo), "Heebo", "Arial Hebrew", Arial, sans-serif;
   --font-display: var(--font-frank), "Frank Ruhl Libre", "David", serif;
-  /* Body stays at 16px (Hebrew needs a little more than the design's English), so headlines lead */
+  /* Body stays at 16px on phones (Hebrew needs a little more than the design's English), so headlines lead.
+     Desktop bumps these to 17px below. */
   --text-xs: 0.8125rem;
   --text-sm: 0.9375rem;
   --text-base: 1rem;
@@ -74,6 +75,11 @@
   :root {
     --gutter: 2.5rem;
     --header-height: 116px;
+    /* body text a little larger on desktop; headline sizes are unchanged */
+    --text-xs: 0.875rem;
+    --text-sm: 1rem;
+    --text-base: 1.0625rem;
+    --text-lg: 1.1875rem;
   }
 }
 
