@@ -54,7 +54,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section section-dark" aria-labelledby="partner-title">
+      <section className="section" aria-labelledby="partner-title">
         <div className={`container ${styles.partner}`}>
           {partner.photo ? (
             <Image src={partner.photo} alt={partner.name} width={320} height={400} className={styles.partnerPhoto} />

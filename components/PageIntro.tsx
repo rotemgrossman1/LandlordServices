@@ -3,7 +3,7 @@ import type { PageMeta } from "@/content/site";
 import AccentText from "./AccentText";
 import styles from "./PageIntro.module.css";
 
-/** Inner-page opening: forest band with eyebrow, H1 and the direct 2–3 sentence answer. */
+/** Inner-page opening: cream band with eyebrow, H1 and the direct 2–3 sentence answer. */
 export default function PageIntro({
   page,
   eyebrow,
@@ -14,7 +14,7 @@ export default function PageIntro({
   children?: ReactNode;
 }) {
   return (
-    <section className={`on-dark ${styles.intro}`}>
+    <section className={styles.intro}>
       <div className={`container ${styles.inner}`}>
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
         <h1 className={styles.title}>
