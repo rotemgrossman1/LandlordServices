@@ -21,7 +21,6 @@ export default function CtaBand() {
           accent={home.ctaTitleAccent}
           accentBlock
           large
-          rule
           className={styles.head}
         />
 
