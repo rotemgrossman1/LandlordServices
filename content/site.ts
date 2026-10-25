@@ -101,6 +101,7 @@ export const images = {
   office: "", // e.g. "/images/office.jpg"
   personas: "/images/personas-building.jpg", // background of "who is it for". Empty = plain forest
   protection: "/images/protection-law.jpg", // side panel of the legal-protection card. Empty = plain forest
+  services: "/images/services-building.jpg", // behind "what we do", under a dark tint. Empty = plain forest
 };
 
 // Confirmed by the company: true for all clients, not only Landlord Safe.

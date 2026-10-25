@@ -1,14 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
-import { home, pages, services } from "@/content/site";
+import { home, images, pages, services } from "@/content/site";
 import Icon from "./Icon";
 import SectionHeading from "./SectionHeading";
 import styles from "./ServiceCards.module.css";
 
-/** Home "what we do": numbered rows on forest (number, title, one line, arrow); each row links to its full description. */
+/**
+ * Home "what we do": numbered rows (number, title, one line, arrow) over a building photo
+ * under a dark forest tint; each row links to its full description.
+ */
 export default function ServiceCards() {
   if (services.length === 0) return null;
   return (
-    <section className="section section-dark" aria-labelledby="services-title">
+    <section className={`section section-dark ${styles.section}`} aria-labelledby="services-title">
+      {images.services && (
+        <>
+          <Image src={images.services} alt="" fill sizes="100vw" className={styles.bg} />
+          <div className={styles.scrim} aria-hidden="true" />
+        </>
+      )}
       <div className="container">
         {/* The home intro (the page's direct answer) lives here, so the hero keeps one supporting line */}
         <SectionHeading
