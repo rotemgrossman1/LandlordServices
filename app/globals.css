@@ -7,8 +7,9 @@
   --color-primary-soft: #e2e4da;
   --color-accent: #d49a68; /* copper: fills, with forest text on it */
   --color-accent-dark: #8b5a2b; /* copper text on light surfaces (5.1:1 on cream) */
-  --color-accent-bright: #e3b386; /* decorative on light surfaces; copper text over tinted photos */
+  --color-accent-bright: #e3b386; /* decorative only, never for text */
   --color-accent-light: #d49a68; /* copper text on forest (5.3:1) */
+  --color-accent-pale: #f2d2ad; /* copper text over tinted photos (.photo-section) */
   --color-accent-soft: #efe2d2;
   --color-logo-gold: #bc9d1c; /* the logo's skyline, decorative only */
   --color-sage: #5e776b; /* display accents on light surfaces (4.3:1 cream, 3.3:1 sand) */
@@ -245,6 +246,31 @@ textarea {
   width: 2.5rem;
   height: 1px;
   background: var(--color-accent);
+}
+
+/* A forest section with a photo behind it (services, home FAQ): <Image className="photo-section-bg">
+   as the first child, under a light forest tint. Text tones are lighter than on plain forest so
+   the photo can show; checked against the real photo pixels, all text stays AA. */
+.photo-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --color-accent-light: var(--color-accent-pale);
+  --color-on-dark-muted: var(--color-on-dark);
+  text-shadow: 0 1px 14px rgba(8, 24, 20, 0.45);
+}
+
+.photo-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(23, 56, 47, 0.68), rgba(14, 36, 30, 0.78));
+}
+
+.photo-section-bg {
+  z-index: -2;
+  object-fit: cover;
 }
 
 .section-dark .eyebrow,

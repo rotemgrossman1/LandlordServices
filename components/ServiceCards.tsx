@@ -12,12 +12,9 @@ import styles from "./ServiceCards.module.css";
 export default function ServiceCards() {
   if (services.length === 0) return null;
   return (
-    <section className={`section section-dark ${styles.section}`} aria-labelledby="services-title">
+    <section className={`section section-dark ${images.services ? "photo-section" : ""}`} aria-labelledby="services-title">
       {images.services && (
-        <>
-          <Image src={images.services} alt="" fill sizes="100vw" className={styles.bg} />
-          <div className={styles.scrim} aria-hidden="true" />
-        </>
+        <Image src={images.services} alt="" fill sizes="100vw" className={`photo-section-bg ${styles.bg}`} />
       )}
       <div className="container">
         {/* The home intro (the page's direct answer) lives here, so the hero keeps one supporting line */}

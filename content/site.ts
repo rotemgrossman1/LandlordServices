@@ -102,6 +102,7 @@ export const images = {
   personas: "/images/personas-building.jpg", // background of "who is it for". Empty = plain forest
   protection: "/images/protection-law.jpg", // side panel of the legal-protection card. Empty = plain forest
   services: "/images/services-building.jpg", // behind "what we do", under a dark tint. Empty = plain forest
+  faq: "/images/faq-room.jpg", // behind the home FAQ, under a dark tint. Empty = plain forest
 };
 
 // Confirmed by the company: true for all clients, not only Landlord Safe.
@@ -128,7 +129,7 @@ export const googleRating = { value: "", count: "", url: site.googleProfile };
 
 // photo: "" = initials are shown instead
 export const team: TeamMember[] = [
-  { name: "עו״ד דורון מרום", role: "שותף ומנהל", photo: "" },
+  { name: "דורון מרום", role: "שותף ומנהל", photo: "" },
   { name: "אורן קטן", role: "מנהל פיתוח עסקי", photo: "" },
   { name: "גלעד ויינברג", role: "מנהל קשרי לקוחות", photo: "" },
   { name: "רותם גרוסמן", role: "מנהל מחלקת IT", photo: "" },
@@ -1315,7 +1316,7 @@ export const about = {
 };
 
 export const partner = {
-  name: "עו״ד דורון מרום",
+  name: "דורון מרום",
   role: "שותף מנהל",
   bio: "עורך דין, בוגר LLB ו-LLM ותואר ראשון (BA) במנהל עסקים. בעבר עבד במשרד עורכי הדין תדמור ושות׳.",
   photo: "", // e.g. "/images/partner-doron-marom.jpg". Empty = initials shown
@@ -1359,7 +1360,7 @@ export const pages: Record<
   about: {
     title: "אודות לנדלורד – חברת ניהול נכסים מאז 2013",
     description:
-      "לנדלורד הוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות. שקיפות, בלי ניגוד עניינים וגיבוי משפטי, בהובלת עו״ד דורון מרום.",
+      "לנדלורד הוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות. שקיפות, בלי ניגוד עניינים וגיבוי משפטי, בהובלת דורון מרום.",
     h1: "אודות לנדלורד",
     h1Accent: "לנדלורד",
     intro:
