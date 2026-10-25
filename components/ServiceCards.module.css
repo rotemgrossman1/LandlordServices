@@ -4,7 +4,10 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  --color-accent-light: var(--color-accent-bright);
+  /* Lighter text tones, so a light tint can let the photo show */
+  --color-accent-light: #f2d2ad;
+  --color-on-dark-muted: var(--color-on-dark);
+  text-shadow: 0 1px 14px rgba(8, 24, 20, 0.45);
 }
 
 .bg {
@@ -16,7 +19,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(23, 56, 47, 0.9), rgba(14, 36, 30, 0.94));
+  background: linear-gradient(180deg, rgba(23, 56, 47, 0.68), rgba(14, 36, 30, 0.78));
 }
 
 /* The header's line doubles as the top divider of the first row */
@@ -63,10 +66,10 @@
 .number {
   grid-area: number;
   align-self: start;
-  padding-block-start: 0.4em;
-  font-size: var(--text-xs);
+  padding-block-start: 0.15em;
+  font-size: 1.25rem; /* 20px bold = large text, so the copper passes AA over the photo */
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
   color: var(--color-accent-light);
 }
