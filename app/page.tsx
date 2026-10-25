@@ -5,6 +5,7 @@ import Comparison from "@/components/Comparison";
 import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
 import Icon from "@/components/Icon";
 import JsonLd from "@/components/JsonLd";
 import NumbersStrip from "@/components/NumbersStrip";
@@ -25,6 +26,7 @@ const homeFaq = homeFaqIds.flatMap((id) => faq.filter((q) => q.id === id));
 
 // Each key in `homeSections` (content/site.ts) maps to one block here.
 const sections: Record<HomeSection, () => React.ReactNode> = {
+  howItWorks: () => <HowItWorks />,
   personas: () => <Personas />,
   ownerView: () => <OwnerView />,
   protection: () => <ProtectionLayers />,
