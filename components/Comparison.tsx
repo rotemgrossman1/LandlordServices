@@ -1,4 +1,4 @@
-import { comparison, type CompareValue } from "@/content/site";
+import { comparison, images, type CompareValue } from "@/content/site";
 import Icon from "./Icon";
 import SectionHeading from "./SectionHeading";
 import styles from "./Comparison.module.css";
@@ -29,8 +29,12 @@ function Cell({ value }: { value: CompareValue }) {
 export default function Comparison({ alt = false }: { alt?: boolean }) {
   if (comparison.rows.length === 0) return null;
   return (
-    <section className={`section ${alt ? "section-alt" : ""}`} aria-labelledby="compare-title">
-      <div className="container">
+    <section
+      className={`section ${alt ? "section-alt" : ""} ${images.comparison ? styles.withPhoto : ""}`}
+      style={images.comparison ? ({ "--photo": `url(${images.comparison})` } as React.CSSProperties) : undefined}
+      aria-labelledby="compare-title"
+    >
+      <div className={`container ${styles.inner}`}>
         <SectionHeading
           id="compare-title"
           eyebrow={comparison.eyebrow}

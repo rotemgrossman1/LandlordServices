@@ -103,6 +103,7 @@ export const images = {
   protection: "/images/protection-law.jpg", // side panel of the legal-protection card. Empty = plain forest
   services: "/images/services-building.jpg", // behind "what we do", under a dark tint. Empty = plain forest
   faq: "/images/faq-room.jpg", // behind the home FAQ, under a dark tint. Empty = plain forest
+  comparison: "/images/comparison-street.jpg", // behind "alone, broker or Landlord": Landlord on the left, alone on the right, light in the middle. Empty = plain
 };
 
 // Confirmed by the company: true for all clients, not only Landlord Safe.
@@ -1097,7 +1098,7 @@ export const comparison = {
     { label: "העברת חשבונות הרשויות", values: ["you", "you", "yes"] },
     { label: "טיפול בתקלות לאורך השכירות", values: ["you", "you", "yes"] },
     { label: "מעקב אחרי תשלומי השכירות", values: ["you", "you", "yes"] },
-    { label: "שכר דירה מובטח (Landlord Safe)", values: ["no", "no", "yes"] },
+    { label: "שכר דירה מובטח (Landlord\u00a0Safe)", values: ["no", "no", "yes"] },
     { label: "פינוי וגבייה בהליך משפטי", values: ["you", "you", "yes"] },
   ] satisfies { label: string; values: CompareValue[] }[],
   note: "השוואה כללית. השירות של מתווכים משתנה ממשרד למשרד. Landlord Safe בכפוף לתנאי השירות.",

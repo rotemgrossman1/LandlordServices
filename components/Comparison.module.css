@@ -252,3 +252,44 @@
   font-size: var(--text-sm);
   color: var(--color-muted);
 }
+
+/* Photo behind the section: Landlord on the left, the owner alone on the right,
+   light in the middle. Below 1500px it sits under the table; from 1500px the
+   content narrows into the light middle and the people stand on either side. */
+.withPhoto {
+  --photo-bg: #faf6ed; /* the photo's light middle */
+  position: relative;
+  isolation: isolate;
+  background-color: var(--photo-bg);
+  padding-block-end: calc(100vw * 661 / 2000);
+}
+
+.withPhoto::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset-inline: 0;
+  inset-block-end: 0;
+  aspect-ratio: 2000 / 661;
+  background:
+    linear-gradient(to bottom, var(--photo-bg), transparent 30%),
+    var(--photo) center bottom / cover no-repeat;
+}
+
+@media (min-width: 1500px) {
+  .withPhoto {
+    padding-block-end: var(--space-8);
+  }
+
+  .withPhoto .inner {
+    max-width: 50rem;
+  }
+
+  /* the note can land on the photo: keep it readable */
+  .withPhoto .note {
+    width: fit-content;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    background: rgba(250, 246, 237, 0.9);
+  }
+}
