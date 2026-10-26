@@ -261,7 +261,7 @@
   position: relative;
   isolation: isolate;
   background-color: var(--photo-bg);
-  padding-block-end: calc(100vw * 661 / 2000);
+  padding-block-end: calc(100vw * 848 / 2000);
 }
 
 .withPhoto::before {
@@ -270,7 +270,7 @@
   z-index: -1;
   inset-inline: 0;
   inset-block-end: 0;
-  aspect-ratio: 2000 / 661;
+  aspect-ratio: 2000 / 848;
   background:
     linear-gradient(to bottom, var(--photo-bg), transparent 30%),
     var(--photo) center bottom / cover no-repeat;

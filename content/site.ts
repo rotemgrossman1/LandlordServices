@@ -103,7 +103,7 @@ export const images = {
   protection: "/images/protection-law.jpg", // side panel of the legal-protection card. Empty = plain forest
   services: "/images/services-building.jpg", // behind "what we do", under a dark tint. Empty = plain forest
   faq: "/images/faq-room.jpg", // behind the home FAQ, under a dark tint. Empty = plain forest
-  comparison: "/images/comparison-street.jpg", // behind "alone, broker or Landlord": Landlord on the left, alone on the right, light in the middle. Empty = plain
+  comparison: "/images/comparison-street-2.jpg", // behind "alone, broker or Landlord": Landlord on the left, alone on the right, light in the middle. Empty = plain
 };
 
 // Confirmed by the company: true for all clients, not only Landlord Safe.

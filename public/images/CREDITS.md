@@ -53,4 +53,4 @@ The city photos show the cities themselves, not properties we manage.
 | jerusalem-baka.jpg | Old stone house with a garden, Baka, Jerusalem | Israel Zeller (PikiWiki Israel) | https://commons.wikimedia.org/wiki/File:114052_jerusalem_bakaa_neighborhood_PikiWiki_Israel.jpg (CC BY 2.5, credited on the photo) |
 | jerusalem-unsdorf.jpg | Apartment buildings, Unsdorf, Jerusalem | Yoninah | https://commons.wikimedia.org/wiki/File:Unsdorf,_Jerusalem.JPG (CC BY-SA 4.0, credited on the photo) |
 | jerusalem-ramat-eshkol.jpg | Stone apartment block, Ramat Eshkol, Jerusalem | יעקב | https://commons.wikimedia.org/wiki/File:Ramat_Eshkol7221.JPG (CC BY-SA 4.0, credited on the photo) |
-| comparison-street.jpg | Owner with a Landlord manager (left) and a stressed owner alone (right) on one street, faded in the middle (background of the comparison section) | Supplied by the company | Sent by the company, 2000×661 |
+| comparison-street-2.jpg | Owner with a Landlord manager in a branded shirt (left) and a stressed owner alone (right) on one street, faded in the middle (background of the comparison section) | Supplied by the company | Sent by the company, 2000×848 |
