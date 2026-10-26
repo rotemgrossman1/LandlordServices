@@ -1551,3 +1551,49 @@ export const legal = {
 export const summary =
   "לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות, שהוקמה ב-2013 ופועלת בגוש דן ובירושלים. החברה מספקת ניהול נכסים מושכרים, Landlord Safe לשכר דירה מובטח (בכפוף לתנאי השירות), ניהול דירות לתושבי חוץ, ניהול נכסי יוקרה וניהול משרדים ונכסים מסחריים. " +
   rentRecord;
+
+// llms.txt (served by app/llms.txt/route.ts). Contact details, cities and page links are filled in
+// from `site`, `areas`, `cityPages` and `nav`; only the wording lives here.
+export const llms = {
+  intro: [
+    "לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות, שהוקמה ב-2013 על ידי שותפים שהם בעצמם בעלי דירות. החברה פעילה בגוש דן ובירושלים, והמשרד נמצא בבני ברק. השותף המנהל: דורון מרום.",
+    "Landlord is an Israeli property-management company for owners of rented apartments, founded in 2013, active in the Tel Aviv metro area (Gush Dan) and Jerusalem, with an office in Bnei Brak. It manages more than 250 properties today. In 13 years and more than 250 properties, no owner it works with has ever gone without rent, even when a tenant stopped paying.",
+  ],
+  englishTitle: "In English",
+  english:
+    "Landlord (לנדלורד) is a property-management company for owners of rented apartments in Israel. It also serves overseas owners who need property management in Tel Aviv or elsewhere in its area. It manages the apartment for the whole tenancy and is not a real-estate broker.",
+  englishPoints: [
+    "Who it is for: owners of one to three apartments who don't have the time, energy or ability to manage the rental themselves: heirs, owners who live far away or abroad, people who find it hard to handle it themselves, and investors.",
+    "Owners living abroad: the company handles the rental, the tenants and repairs in Israel, and keeps owners updated wherever they are.",
+    "Rental management: finding and screening tenants, a lease prepared with legal support, moving the municipal and utility bills (arnona, water, electricity, gas) to the tenants, handling every repair during the tenancy, and checking that the apartment is returned in good condition and without debts.",
+    "Landlord Safe: a financial check of the tenant, advice on securities and guarantees, the lease, a guarantee on the rent (owners keep getting paid even if the tenant stops paying, subject to the terms of service), legal eviction including enforcement proceedings, and debt collection through legal proceedings.",
+    "Also: luxury property management, and offices and commercial properties.",
+    "Track record: founded in 2013, more than 250 properties under management today. In 13 years and more than 250 properties, no owner it works with has ever gone without rent, even when a tenant stopped paying.",
+    "Legal backing: the managing partner, Doron Marom (דורון מרום), is a lawyer.",
+    "Area: the Tel Aviv metro area (Gush Dan) and Jerusalem. Office: BSR 2, 20th floor, 1 Derech Ben Gurion, Bnei Brak.",
+  ],
+  contactEn: "Contact",
+  phoneNoteEn: "phone and WhatsApp",
+  hebrewTitle: "בעברית",
+  hebrew: [
+    "מה מייחד אותנו: גב משפטי בכל שלב – בדיקת שוכרים, הסכם שכירות משפטי חזק, ביטחונות וערבויות, ו-Landlord Safe שבו החברה ערבה לתשלומי השכירות. יותר מ-250 נכסים בניהול היום. " +
+      rentRecord +
+      " אנחנו לא משרד תיווך: אנחנו מנהלים את הדירה לאורך כל השכירות.",
+    "למי: בעלי דירה אחת עד שלוש שאין להם זמן, כוח או יכולת לנהל את השכירות – יורשים, בעלי דירות שגרים רחוק או בחו\"ל, מי שקשה לו לטפל בעצמו, ומשקיעים.",
+    "שירותים: ניהול נכסים מושכרים (איתור וסינון דיירים, חוזה עם ליווי משפטי, העברת חשבונות הרשויות לדיירים, טיפול בתקלות, בדיקת הדירה בסוף השכירות), Landlord Safe (בדיקה כלכלית של הדייר, ערבות על דמי השכירות, פינוי משפטי וגביית חובות), ניהול דירות לתושבי חוץ, ניהול נכסי יוקרה, ניהול משרדים ונכסים מסחריים.",
+  ],
+  citiesLabel: "ערים",
+  contactHe: "קשר",
+  phoneNoteHe: "טלפון ווואטסאפ",
+  pagesTitle: "עמודים עיקריים",
+  homeNote: "חברת ניהול נכסים לבעלי דירות מושכרות",
+  cityNote: "מה אנחנו עושים בעיר ושאלות נפוצות",
+  // One line per nav link, by href. A link without a note is left out.
+  pageNotes: {
+    "/services": "כל שירותי הניהול ומה כלול בכל אחד",
+    "/landlord-safe": "שכר דירה מובטח (בכפוף לתנאי השירות) וטיפול משפטי בדייר שלא משלם",
+    "/about": "הסיפור, הערכים, השותף המנהל והצוות",
+    "/faq": "תשובות לשאלות של בעלי דירות",
+    "/contact": "טלפון, וואטסאפ, אימייל וכתובת",
+  } as Record<string, string>,
+};
