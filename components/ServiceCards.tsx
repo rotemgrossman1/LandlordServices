@@ -40,7 +40,7 @@ export default function ServiceCards() {
                 <h3 className={styles.title}>{s.title}</h3>
                 <p className={styles.text}>{s.short}</p>
                 <span className={styles.arrow} aria-hidden="true">
-                  <Icon name="arrow" size={18} />
+                  <Icon name="arrow" size={18} className="icon-diag" />
                 </span>
               </Link>
             </li>
