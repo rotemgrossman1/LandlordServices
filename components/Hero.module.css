@@ -24,8 +24,15 @@
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(7, 42, 56, 0.76) 0%, rgba(7, 42, 56, 0.1) 40%, rgba(7, 42, 56, 0.82) 100%),
-    linear-gradient(270deg, rgba(7, 42, 56, 0.32), transparent 70%);
+    linear-gradient(180deg, rgba(7, 42, 56, 0.5) 0%, rgba(7, 42, 56, 0) 40%, rgba(7, 42, 56, 0.72) 100%),
+    linear-gradient(270deg, rgba(7, 42, 56, 0.25), transparent 70%);
+}
+
+/* Phones: the text covers most of the photo, so the tint starts higher behind it (still light on top) */
+@media (max-width: 767px) {
+  .scrim {
+    background: linear-gradient(180deg, rgba(7, 42, 56, 0.5) 0%, rgba(7, 42, 56, 0.05) 25%, rgba(7, 42, 56, 0.72) 55%, rgba(7, 42, 56, 0.85) 100%);
+  }
 }
 
 .inner {

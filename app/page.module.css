@@ -3,9 +3,10 @@
   padding-block: calc(var(--section-space) * 1.5);
 }
 
-/* This photo is darker than the services one, so it takes a lighter tint and still stays AA */
-.faqPhoto::before {
-  background: linear-gradient(180deg, rgba(20, 63, 82, 0.64), rgba(7, 42, 56, 0.72));
+/* Light at the top and bottom edges so the room shows; full tint only behind the text band, which stays AA */
+/* :global(.photo-section) so this wins over the shared tint in globals.css */
+:global(.photo-section).faqPhoto::before {
+  background: linear-gradient(180deg, rgba(20, 63, 82, 0.3) 0%, rgba(20, 63, 82, 0.72) 19%, rgba(7, 42, 56, 0.78) 76%, rgba(7, 42, 56, 0.4) 100%);
 }
 
 /* Mirrored, so the bright window sits behind the large heading rather than the small question text */
