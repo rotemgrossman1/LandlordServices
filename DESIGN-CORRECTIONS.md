@@ -52,6 +52,8 @@ Goal: make the home page below the hero more interesting and closer to the Figma
 ### 0. Hide the sample reviews (content, do first)
 - [x] Done
 
+Reverted: sample reviews restored at the user's request.
+
 `testimonials` in `content/site.ts` holds sample text ("דוגמה 1/2/3", marked `TEMP SAMPLE: remove before publishing`). Set it to `[]` so the section disappears, as the "empty value = hidden section" rule requires. Item 6 changes the section's look for when real Google reviews are added later.
 
 ### 1. Switch to the new coastal palette
