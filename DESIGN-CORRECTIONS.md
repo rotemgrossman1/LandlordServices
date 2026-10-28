@@ -79,7 +79,9 @@ Goal: make the home page below the hero more interesting and closer to the Figma
 **Done when:** no forest, copper or sage colours remain anywhere (grep for the old hex values and rgba tints), every page renders in the new palette, every text pair meets the contrast rules above, focus outlines are still clearly visible (the focus colour is deep ocean), and `npm run build` passes.
 
 ### 2. Services as numbered rows on sky blue
-- [ ] Done
+- [x] Done
+
+Note: kept the dark photo background (user's choice), so this section is not sky blue; the rows follow the design's details on the dark tint.
 
 **Figma:** the "What we do" section. A **pale sky-blue background (`#e7f6fb`) with navy text**. A header with a big headline (its accent word in ocean) and a short muted paragraph on the opposite side, with a thin navy line under it. Then full-width rows, each with a small bold number (deep ocean, since it's small text), the title in the display font, a short muted description and a round outlined arrow on the far end. Thin navy dividers between rows. On hover the row lightens (white at ~50%) and the arrow circle fills with ocean while the arrow turns white.
 **Ours:** `components/ServiceCards.tsx` plus `.module.css`: rounded white cards on cream.
