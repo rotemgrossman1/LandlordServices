@@ -5,7 +5,7 @@
 
 /* This photo is darker than the services one, so it takes a lighter tint and still stays AA */
 .faqPhoto::before {
-  background: linear-gradient(180deg, rgba(23, 56, 47, 0.64), rgba(14, 36, 30, 0.72));
+  background: linear-gradient(180deg, rgba(20, 63, 82, 0.64), rgba(7, 42, 56, 0.72));
 }
 
 /* Mirrored, so the bright window sits behind the large heading rather than the small question text */
@@ -13,7 +13,7 @@
   transform: scaleX(-1);
 }
 
-/* The "all questions" link sits over the window, so it's cream (still underlined) rather than copper */
+/* The "all questions" link sits over the window, so it's off-white (still underlined) rather than coral */
 .faqPhoto .faqMore a[href] {
   color: var(--color-on-dark);
 }

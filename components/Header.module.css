@@ -1,4 +1,4 @@
-/* Inner pages: a solid forest bar. Home: floats over the hero photo and turns
+/* Inner pages: a solid navy bar. Home: floats over the hero photo and turns
    solid once the page scrolls (see .overlay). */
 .header {
   position: sticky;
@@ -101,7 +101,7 @@
   transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Phone: a cream panel under the bar */
+/* Phone: an off-white panel under the bar */
 .nav {
   display: none;
   position: absolute;
@@ -205,7 +205,7 @@
     transition: color 0.18s ease;
   }
 
-  /* Copper underline that grows in from the start of the word (positioned, so nothing shifts) */
+  /* Coral underline that grows in from the start of the word (positioned, so nothing shifts) */
   .link::after {
     content: "";
     position: absolute;

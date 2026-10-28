@@ -6,7 +6,7 @@ import Icon from "./Icon";
 import styles from "./Personas.module.css";
 
 /**
- * "Who is it for", on cream so the page isn't dark section after dark section:
+ * "Who is it for", on off-white so the page isn't dark section after dark section:
  * the eyebrow, headline and lead beside a framed building photo, then each typical owner
  * (pain + our answer) as a card that fades in one after another.
  */

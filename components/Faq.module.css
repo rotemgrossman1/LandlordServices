@@ -47,7 +47,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .question:hover {
-    background: rgba(23, 56, 47, 0.04);
+    background: rgba(20, 63, 82, 0.04);
   }
 }
 
@@ -57,7 +57,7 @@
   }
 }
 
-/* `.item` keeps the colour when the list sits on a forest section */
+/* `.item` keeps the colour when the list sits on a navy section */
 .item .answer {
   margin: 0;
   padding-block: 0 var(--space-5);
@@ -69,7 +69,7 @@
   white-space: pre-line; /* answers use line breaks for lists */
 }
 
-/* On forest: light lines and text */
+/* On navy: light lines and text */
 :global(.section-dark) .faq,
 :global(.section-dark) .item {
   border-color: var(--color-on-dark-border);

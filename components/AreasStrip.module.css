@@ -23,7 +23,7 @@
     border-color 0.3s var(--ease);
 }
 
-/* The arrow circle fills copper, like the service rows */
+/* The arrow circle fills yellow, like the service rows */
 @media (hover: hover) and (pointer: fine) {
   .link:hover .linkCircle {
     background: var(--color-accent);
@@ -80,7 +80,7 @@
   transition: transform 0.7s var(--ease);
 }
 
-/* Round forest arrow in the photo's corner, shown on hover or keyboard focus */
+/* Round navy arrow in the photo's corner, shown on hover or keyboard focus */
 .photoArrow {
   position: absolute;
   inset-block-start: var(--space-4);
@@ -132,7 +132,7 @@
   inset-inline-end: var(--space-3);
   padding: 2px var(--space-2);
   border-radius: 4px;
-  background: rgba(14, 36, 30, 0.72);
+  background: rgba(7, 42, 56, 0.72);
   font-size: 0.6875rem;
   line-height: 1.4;
   color: #fff;

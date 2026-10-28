@@ -21,8 +21,8 @@
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(8, 28, 23, 0.35) 0%, rgba(8, 28, 23, 0.15) 35%, rgba(8, 28, 23, 0.88) 100%),
-    linear-gradient(270deg, rgba(8, 28, 23, 0.45), transparent 75%);
+    linear-gradient(180deg, rgba(7, 42, 56, 0.35) 0%, rgba(7, 42, 56, 0.15) 35%, rgba(7, 42, 56, 0.88) 100%),
+    linear-gradient(270deg, rgba(7, 42, 56, 0.45), transparent 75%);
 }
 
 .heroInner {
@@ -63,7 +63,7 @@
   z-index: 1;
   padding: 2px var(--space-2);
   border-radius: 4px;
-  background: rgba(14, 36, 30, 0.72);
+  background: rgba(7, 42, 56, 0.72);
   font-size: 0.6875rem;
   line-height: 1.4;
   color: #fff;

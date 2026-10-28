@@ -62,6 +62,7 @@
 
 .step:last-child .num {
   background: var(--color-accent);
+  color: var(--color-primary);
 }
 
 .title {

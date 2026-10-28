@@ -1,4 +1,4 @@
-/* Cream section: headline beside a framed photo, then the persona cards */
+/* Off-white section: headline beside a framed photo, then the persona cards */
 .inner {
   display: grid;
   gap: var(--space-8);
@@ -108,7 +108,7 @@
   color: var(--color-text);
 }
 
-/* The closing card: forest, with the main action, so the section ends on a clear next step */
+/* The closing card: navy, with the main action, so the section ends on a clear next step */
 .closing {
   justify-content: center;
   align-items: flex-start;
