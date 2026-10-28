@@ -90,6 +90,8 @@ Note: kept the dark photo background (user's choice), so this section is not sky
 ### 3. "Who it's for" as an editorial section
 - [ ] Done
 
+Skipped: the user preferred to keep the current card layout for this section.
+
 **Figma:** the "approach" section, on off-white. An eyebrow in a narrow column, a large statement headline in a wide column (accent words in ocean), and under it a thin line with text split into two muted columns.
 **Ours:** `components/Personas.tsx` plus `.module.css`: a photo, a headline and 6 rounded cards (plus a dark CTA card).
 **Done when:** the 6 personas render as a numbered list (deep-ocean number, title, text) with thin dividers and no boxes. The photo stays (unchanged), but with square corners. The "המצב שלכם קצת אחר?" CTA becomes a simple text link or outlined button, not a dark card.
