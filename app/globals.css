@@ -1,28 +1,33 @@
 :root {
-  /* Colours from the "Acre & Key" design. All text/background pairs pass WCAG AA:
-     copper is a fill (forest text on it, 5.3:1) or text on forest only;
-     sage is for display-size accent words only. */
-  --color-primary: #17382f; /* forest */
-  --color-primary-dark: #0e241e;
-  --color-primary-soft: #e2e4da;
-  --color-accent: #d49a68; /* copper: fills, with forest text on it */
-  --color-accent-dark: #8b5a2b; /* copper text on light surfaces (5.1:1 on cream) */
-  --color-accent-bright: #e3b386; /* decorative only, never for text */
-  --color-accent-light: #d49a68; /* copper text on forest (5.3:1) */
-  --color-accent-pale: #f2d2ad; /* copper text over tinted photos (.photo-section) */
-  --color-accent-soft: #efe2d2;
+  /* Coastal palette from the Figma design. All text/background pairs pass WCAG AA:
+     - yellow is a fill (navy text on it, 8.8:1) or text on navy/teal-navy only;
+       never white text on yellow or coral, never yellow text on light surfaces;
+     - coral is accent text on dark (7.0:1 on teal-navy, 7.7:1 on navy);
+     - ocean (--color-sage) is for display-size accent words only (3.3–3.9:1);
+       smaller accent text, links and numbers use deep ocean (5.5:1 off-white, 4.7:1 sand);
+     - the Figma's light sea blue #5ea6b8 is decoration only, never text on light. */
+  --color-primary: #143f52; /* deep teal-navy */
+  --color-primary-dark: #10394c; /* navy (footer) */
+  --color-primary-soft: #e7f6fb; /* sky */
+  --color-accent: #ffd57a; /* yellow: fills, with navy text on it */
+  --color-accent-dark: #0f6f86; /* deep ocean: small accent text on light (5.5:1 off-white, 5.2:1 sky) */
+  --color-accent-bright: #ffd57a; /* yellow, decorative only, never for text */
+  --color-accent-light: #ffbe9b; /* coral: accent text on teal-navy (7.0:1) and navy (7.7:1) */
+  --color-accent-pale: #ffd8c2; /* pale coral: accent text over tinted photos (.photo-section) */
+  --color-accent-soft: #fdf3d9; /* pale yellow tint */
   --color-logo-gold: #bc9d1c; /* the logo's skyline, decorative only */
-  --color-sage: #5e776b; /* display accents on light surfaces (4.3:1 cream, 3.3:1 sand) */
-  --color-bg: #f4f0e8; /* cream */
-  --color-surface: #fbf9f4;
-  --color-sand: #ded5c7;
-  --color-sand-dark: #cfc4b3;
-  --color-text: #1d2824; /* ink */
-  --color-body: #3d4641; /* softer ink for running text: 8.6:1 on cream, 6.7:1 on sand */
-  --color-muted: #545b56; /* 6.1:1 on cream, 4.8:1 on sand */
-  --color-border: rgba(23, 56, 47, 0.18); /* forest hairline */
-  --color-on-dark: #f4f0e8;
-  --color-on-dark-muted: #b9c3bd; /* 7.1:1 on forest */
+  --color-sage: #168aa4; /* ocean: display accents on light surfaces (3.9:1 off-white, 3.3:1 sand) */
+  --color-sky: #e7f6fb;
+  --color-bg: #fbfaf6; /* off-white */
+  --color-surface: #ffffff;
+  --color-sand: #f2e7d7;
+  --color-sand-dark: #e6d6bf;
+  --color-text: #193646; /* ink */
+  --color-body: #2b4654; /* softer ink for running text: 9.5:1 on off-white, 8.2:1 on sand */
+  --color-muted: #4d6470; /* 6.0:1 on off-white, 5.6:1 on sky, 5.1:1 on sand */
+  --color-border: rgba(20, 63, 82, 0.15); /* navy hairline */
+  --color-on-dark: #fbfaf6;
+  --color-on-dark-muted: #b7c9d1; /* 6.6:1 on teal-navy, 7.2:1 on navy */
   --color-on-dark-border: rgba(255, 255, 255, 0.16);
   --color-focus: var(--color-accent-dark);
   --color-success: #1e6b3a;
@@ -65,9 +70,9 @@
   --gutter: 1.25rem;
   --header-height: 76px;
   --mobile-bar-height: 64px;
-  --shadow-sm: 0 1px 2px rgba(14, 36, 30, 0.05), 0 2px 8px rgba(14, 36, 30, 0.05);
-  --shadow: 0 2px 4px rgba(14, 36, 30, 0.04), 0 12px 32px -8px rgba(14, 36, 30, 0.14);
-  --shadow-lg: 0 4px 8px rgba(14, 36, 30, 0.05), 0 28px 60px -16px rgba(14, 36, 30, 0.28);
+  --shadow-sm: 0 1px 2px rgba(7, 42, 56, 0.05), 0 2px 8px rgba(7, 42, 56, 0.05);
+  --shadow: 0 2px 4px rgba(7, 42, 56, 0.04), 0 12px 32px -8px rgba(7, 42, 56, 0.14);
+  --shadow-lg: 0 4px 8px rgba(7, 42, 56, 0.05), 0 28px 60px -16px rgba(7, 42, 56, 0.28);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -181,7 +186,7 @@ ol {
   border-radius: 4px;
 }
 
-/* On the dark green surfaces the ring switches to the light accent */
+/* On the dark navy surfaces the ring switches to the light accent */
 .section-dark,
 footer {
   --color-focus: var(--color-accent-light);
@@ -233,7 +238,7 @@ textarea {
   color: var(--color-on-dark-muted);
 }
 
-/* Small label with a short copper rule before it (the design's eyebrow) */
+/* Small label with a short yellow rule before it (the design's eyebrow) */
 .eyebrow {
   display: flex;
   align-items: center;
@@ -254,8 +259,8 @@ textarea {
   background: var(--color-accent);
 }
 
-/* A forest section with a photo behind it (services, home FAQ): <Image className="photo-section-bg">
-   as the first child, under a light forest tint. Text tones are lighter than on plain forest so
+/* A navy section with a photo behind it (services, home FAQ): <Image className="photo-section-bg">
+   as the first child, under a light navy tint. Text tones are lighter than on plain navy so
    the photo can show; checked against the real photo pixels, all text stays AA. */
 .photo-section {
   position: relative;
@@ -263,7 +268,7 @@ textarea {
   overflow: hidden;
   --color-accent-light: var(--color-accent-pale);
   --color-on-dark-muted: var(--color-on-dark);
-  text-shadow: 0 1px 14px rgba(8, 24, 20, 0.45);
+  text-shadow: 0 1px 14px rgba(7, 42, 56, 0.45);
 }
 
 .photo-section::before {
@@ -271,7 +276,7 @@ textarea {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(23, 56, 47, 0.68), rgba(14, 36, 30, 0.78));
+  background: linear-gradient(180deg, rgba(20, 63, 82, 0.68), rgba(7, 42, 56, 0.78));
 }
 
 .photo-section-bg {
@@ -281,7 +286,7 @@ textarea {
 
 .section-dark .eyebrow,
 .on-dark .eyebrow {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 0.92); /* AA over the photo sections' lightest spots */
 }
 
 /* The coloured accent phrase in a headline (stands in for the design's italic) */
@@ -393,7 +398,7 @@ textarea {
   height: 1.25rem;
   border-radius: 50%;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2317382f' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E")
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23143f52' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E")
       center / 0.8rem no-repeat,
     var(--color-primary-soft);
 }
@@ -477,7 +482,7 @@ textarea {
   color: var(--color-primary);
 }
 
-/* The design's pill: label + a copper circle holding the arrow */
+/* The design's pill: label + a yellow circle holding the arrow */
 .btn-pill {
   gap: var(--space-4);
   min-height: 52px;

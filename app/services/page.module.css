@@ -31,7 +31,7 @@
 }
 
 .toc svg {
-  color: var(--color-accent);
+  color: var(--color-accent-dark);
 }
 
 .service {
@@ -47,7 +47,7 @@
   }
 }
 
-/* The design's copper row numbers */
+/* The design's small row numbers, in deep ocean */
 .num {
   display: block;
   margin-block-end: var(--space-3);

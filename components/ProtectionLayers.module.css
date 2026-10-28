@@ -1,4 +1,4 @@
-/* The design's sand "split" card (the page's one sand panel), inset from the page edges on cream */
+/* The design's sand "split" card (the page's one sand panel), inset from the page edges on off-white */
 .section {
   padding-block: var(--section-space);
   padding-inline: clamp(0.75rem, 0.25rem + 2vw, 2.5rem);
@@ -54,10 +54,10 @@
 .scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 28, 23, 0.1) 45%, rgba(8, 28, 23, 0.6) 100%);
+  background: linear-gradient(180deg, rgba(7, 42, 56, 0.1) 45%, rgba(7, 42, 56, 0.6) 100%);
 }
 
-/* Small cream card in the corner, like the design's "Every detail matters" */
+/* Small off-white card in the corner, like the design's "Every detail matters" */
 .note {
   position: absolute;
   inset-block-end: var(--space-5);

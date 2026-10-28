@@ -24,8 +24,8 @@
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(8, 28, 23, 0.76) 0%, rgba(8, 28, 23, 0.1) 40%, rgba(8, 28, 23, 0.82) 100%),
-    linear-gradient(270deg, rgba(8, 28, 23, 0.32), transparent 70%);
+    linear-gradient(180deg, rgba(7, 42, 56, 0.76) 0%, rgba(7, 42, 56, 0.1) 40%, rgba(7, 42, 56, 0.82) 100%),
+    linear-gradient(270deg, rgba(7, 42, 56, 0.32), transparent 70%);
 }
 
 .inner {
@@ -79,7 +79,7 @@
   color: rgba(255, 255, 255, 0.78);
 }
 
-/* Copper corner tab, bottom of the hero on the far side */
+/* Yellow corner tab, bottom of the hero on the far side */
 .badge {
   display: none;
 }

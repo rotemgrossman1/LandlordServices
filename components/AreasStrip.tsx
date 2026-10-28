@@ -6,7 +6,7 @@ import SectionHeading from "./SectionHeading";
 import styles from "./AreasStrip.module.css";
 
 /**
- * Where we work, in the design's portfolio layout on cream: photo cards of the cities themselves
+ * Where we work, in the design's portfolio layout on off-white: photo cards of the cities themselves
  * (not our properties) with a caption line under each, and the full list of cities.
  * Hidden when the list is empty.
  */

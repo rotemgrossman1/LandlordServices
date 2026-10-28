@@ -55,7 +55,7 @@ Goal: make the home page below the hero more interesting and closer to the Figma
 `testimonials` in `content/site.ts` holds sample text ("דוגמה 1/2/3", marked `TEMP SAMPLE: remove before publishing`). Set it to `[]` so the section disappears, as the "empty value = hidden section" rule requires. Item 6 changes the section's look for when real Google reviews are added later.
 
 ### 1. Switch to the new coastal palette
-- [ ] Done
+- [x] Done
 
 **What:** switch the whole site (every page, not just home) from forest and copper to the palette above. This item changes **colours only**: no layout, spacing, font or photo changes.
 

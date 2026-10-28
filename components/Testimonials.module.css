@@ -1,4 +1,4 @@
-/* Slim white band between the cream sections */
+/* Slim white band between the off-white sections */
 .section {
   padding-block: clamp(2.5rem, 1.5rem + 3vw, 4rem);
   background: #fff;
@@ -82,7 +82,7 @@
   letter-spacing: 0.1em;
   font-size: var(--text-lg);
   line-height: 1;
-  color: var(--color-accent-dark); /* 5.1:1 on the cream cards (the lighter copper was 2.1:1) */
+  color: var(--color-accent-dark); /* deep ocean, 5.5:1 on the off-white cards */
 }
 
 .starsOff {
@@ -100,7 +100,7 @@
   color: var(--color-text);
 }
 
-/* `.card` keeps the card text colours if the band is ever set on forest (.section-dark) */
+/* `.card` keeps the card text colours if the band is ever set on navy (.section-dark) */
 .card .quote p {
   margin: 0;
   color: var(--color-text);

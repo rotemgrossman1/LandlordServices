@@ -3,7 +3,7 @@ import type { PageMeta } from "@/content/site";
 import AccentText from "./AccentText";
 import styles from "./PageIntro.module.css";
 
-/** Inner-page opening: cream band with eyebrow, H1 and the direct 2–3 sentence answer. */
+/** Inner-page opening: off-white band with eyebrow, H1 and the direct 2–3 sentence answer. */
 export default function PageIntro({
   page,
   eyebrow,

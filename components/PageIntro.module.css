@@ -1,4 +1,4 @@
-/* Cream opening band with a thin line under it (green is kept for the header and footer) */
+/* Off-white opening band with a thin line under it (navy is kept for the header and footer) */
 .intro {
   padding-block: clamp(3rem, 1.5rem + 6vw, 7rem) clamp(3.5rem, 2rem + 6vw, 7.5rem);
   border-block-end: 1px solid var(--color-border);

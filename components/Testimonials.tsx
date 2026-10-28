@@ -3,7 +3,7 @@ import ReviewsCarousel from "./ReviewsCarousel";
 import styles from "./Testimonials.module.css";
 
 /**
- * Google reviews as a slim, endless carousel of cream cards on a white band.
+ * Google reviews as a slim, endless carousel of off-white cards on a white band.
  * Every review is in the static HTML; the carousel only adds
  * the looping and the side buttons. Renders nothing until real reviews are added
  * in content/site.ts.

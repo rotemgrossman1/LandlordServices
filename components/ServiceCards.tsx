@@ -7,7 +7,7 @@ import styles from "./ServiceCards.module.css";
 
 /**
  * Home "what we do": numbered rows (number, title, one line, arrow) over a building photo
- * under a dark forest tint; each row links to its full description.
+ * under a dark navy tint; each row links to its full description.
  */
 export default function ServiceCards() {
   if (services.length === 0) return null;
