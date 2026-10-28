@@ -1,48 +1,33 @@
-/* Off-white section: headline beside a framed photo, then the persona cards */
+/* Off-white editorial section: a narrow column (eyebrow, portrait photo) beside a wide one
+   (statement headline, lead, numbered list of owners, next step). No boxes, only thin lines. */
 .inner {
   display: grid;
-  gap: var(--space-8);
-}
-
-.head {
-  display: grid;
   gap: var(--space-6);
-  align-items: end;
 }
 
 @media (min-width: 1024px) {
-  .head {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+  .inner {
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
     gap: var(--space-8);
+    align-items: start;
   }
 }
 
-.heading {
-  margin-block-end: var(--space-5);
-  font-size: clamp(2.5rem, 1.5rem + 3.6vw, 4.75rem);
-  line-height: 1.04;
-  letter-spacing: -0.03em;
+.aside :global(.eyebrow) {
+  margin-block-end: var(--space-6);
 }
 
-.lead {
-  margin: 0;
-  max-width: 34rem;
-  font-size: var(--text-lg);
-  line-height: 1.7;
-  color: var(--color-muted);
-}
-
+/* Portrait frame with square corners, like the design's photos */
 .media {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: var(--radius, 6px);
   background: var(--color-sand-dark);
 }
 
 .photo {
   object-fit: cover;
-  object-position: left center;
+  object-position: center;
   transition: transform 0.7s var(--ease);
 }
 
@@ -53,82 +38,137 @@
   }
 }
 
+/* Phones: the photo would add a full screen to an already long page */
+@media (max-width: 1023px) {
+  .media {
+    display: none;
+  }
+
+  .aside :global(.eyebrow) {
+    margin-block-end: 0;
+  }
+}
+
+.heading {
+  margin-block-end: var(--space-6);
+  font-size: clamp(2.5rem, 1.5rem + 3.6vw, 4.75rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+/* A thin line, then the lead in muted text */
+.lead {
+  margin: 0;
+  padding-block-start: var(--space-6);
+  border-block-start: 1px solid var(--color-border);
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
 .list {
   list-style: none;
-  margin: 0;
+  margin: var(--space-7) 0 0;
   padding: 0;
+  border-block-start: 1px solid var(--color-border);
+}
+
+/* One row per owner: number · title · pain and our answer */
+.item {
   display: grid;
-  gap: var(--space-4);
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  grid-template-areas:
+    "num title"
+    "num body";
+  column-gap: var(--space-4);
+  row-gap: var(--space-2);
+  padding-block: var(--space-5);
+  border-block-end: 1px solid var(--color-border);
 }
 
 @media (min-width: 720px) {
-  .list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .item {
+    grid-template-columns: 3.5rem minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-areas: "num title body";
+    column-gap: var(--space-6);
+    padding-block: var(--space-6);
   }
-}
-
-@media (min-width: 1024px) {
-  .list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-6);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius, 6px);
-  background: var(--color-surface);
 }
 
 .num {
-  margin-block-end: var(--space-4);
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
+  grid-area: num;
+  padding-block-start: 0.45em;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
   color: var(--color-accent-dark);
 }
 
 .title {
-  margin-block-end: var(--space-3);
+  grid-area: title;
+  margin: 0;
   font-size: var(--text-xl);
+  line-height: 1.2;
   color: var(--color-primary);
 }
 
+.body {
+  grid-area: body;
+}
+
 .pain {
-  margin-block-end: var(--space-4);
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-sm);
+  line-height: 1.65;
   color: var(--color-muted);
 }
 
 .solution {
-  margin: auto 0 0;
-  padding-block-start: var(--space-4);
-  border-block-start: 1px solid var(--color-border);
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: 1.65;
   font-weight: 500;
   color: var(--color-text);
 }
 
-/* The closing card: navy, with the main action, so the section ends on a clear next step */
+/* The next step: a plain closing row with an outlined pill, not a dark card */
 .closing {
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  border-color: var(--color-primary);
-  background: var(--color-primary);
-  --color-focus: var(--color-accent-light);
+  gap: var(--space-5);
+  margin-block-start: var(--space-7);
 }
 
-.closing .title {
-  color: #fff;
+@media (min-width: 720px) {
+  .closing {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+}
+
+.closingTitle {
+  margin-block-end: var(--space-2);
+  font-size: var(--text-xl);
 }
 
 .closingText {
-  margin-block-end: var(--space-5);
-  color: var(--color-on-dark-muted);
+  margin: 0;
+  max-width: 32rem;
+  color: var(--color-muted);
 }
 
-/* Phones: the photo would add a full screen to an already long page */
-@media (max-width: 719px) {
-  .media {
-    display: none;
-  }
+.closingBtn {
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+/* On off-white the pill's default hover (off-white fill) wouldn't show, so it fills navy */
+.closingBtn:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
 }
