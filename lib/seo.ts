@@ -23,8 +23,8 @@ export function organizationJsonLd() {
     "@context": "https://schema.org",
     "@type": ["RealEstateAgent", "LocalBusiness"],
     "@id": `${site.url}/#organization`,
-    name: `${site.nameHe} (${site.name})`,
-    alternateName: site.name,
+    name: `${site.nameHe} ${site.name}`,
+    alternateName: [site.name, site.nameHe, site.shortNameHe],
     description: summary,
     url: site.url,
     image: `${site.url}/images/og-default.png`,
@@ -35,6 +35,7 @@ export function organizationJsonLd() {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
       addressLocality: site.address.city,
+      postalCode: site.address.postalCode,
       addressCountry: "IL",
     },
     ...(areas.cities.length > 0

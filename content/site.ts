@@ -66,12 +66,14 @@ export type HomeSection =
 const addressFull = "ב.ס.ר 2, קומה 20, דרך בן גוריון 1, בני ברק";
 // Google Business Profile link (e.g. "https://maps.app.goo.gl/…"). When set, the
 // "Google Maps" links open the profile and it is listed in the JSON-LD `sameAs`.
-const googleProfile = "";
+const googleProfile = "https://share.google/uryyv6pInsEbb5cyk";
 
 export const site = {
-  name: "Landlord",
-  nameHe: "לנדלורד",
-  legalName: "", // e.g. "לנדלורד שירותי ניהול בע\"מ" – fill in when confirmed
+  // Matches the Google Business Profile name exactly; "לנדלורד" stays the short brand in copy
+  name: "Landlord Services",
+  nameHe: "לנדלורד סרויסס",
+  shortNameHe: "לנדלורד",
+  legalName: "לנדלורד סרויסס בע\"מ",
   url: "https://www.landlords.co.il",
   foundingYear: 2013,
   phone: "054-2110096", // the one number for calls and WhatsApp
@@ -80,6 +82,7 @@ export const site = {
   address: {
     street: "דרך בן גוריון 1, ב.ס.ר 2, קומה 20",
     city: "בני ברק",
+    postalCode: "5120149",
     full: addressFull,
   },
   googleProfile,
@@ -89,7 +92,7 @@ export const site = {
   wazeUrl: `https://waze.com/ul?q=${encodeURIComponent("דרך בן גוריון 1, בני ברק")}&navigate=yes`,
   facebook: "https://www.facebook.com/landlordservicesltd",
   hours: "", // e.g. "א׳–ה׳ 9:00–17:00"
-  companyId: "", // ח.פ.
+  companyId: "514867191", // ח.פ.
 };
 
 // Photos. Placeholder stock photos for now (sources in public/images/CREDITS.md);

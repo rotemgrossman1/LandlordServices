@@ -6,10 +6,12 @@ Use **exactly the same** name, address and phone everywhere (Google and AI tools
 
 | Field | Value |
 |---|---|
-| Name | לנדלורד – ניהול נכסים (Landlord) |
-| Address | דרך בן גוריון 1, ב.ס.ר 2, קומה 20, בני ברק |
+| Name | לנדלורד סרויסס Landlord Services |
+| Address | דרך בן גוריון 1, ב.ס.ר 2, קומה 20, בני ברק 5120149 |
+| Company | לנדלורד סרויסס בע"מ, ח.פ. 514867191 |
+| Google Business Profile | https://share.google/uryyv6pInsEbb5cyk |
 | Phone / WhatsApp | 054-2110096 |
-| Email | info@landlords.co.il |
+| Email | doron@landlords.co.il |
 | Website | https://www.landlords.co.il |
 | Founded | 2013 |
 | Service area | תל אביב, רמת גן, גבעתיים, הרצליה, רעננה, גבעת שמואל, בת ים, ירושלים |
@@ -25,7 +27,7 @@ Use **exactly the same** name, address and phone everywhere (Google and AI tools
 
 > לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות, שהוקמה ב-2013 ופועלת בגוש דן ובירושלים. היום אנחנו מנהלים יותר מ-170 נכסים. אנחנו מוצאים ובודקים דיירים, מכינים חוזה עם ליווי משפטי, מעבירים את חשבונות הרשויות על שם הדיירים ומטפלים בכל תקלה לאורך השכירות. השותף המנהל, עו״ד דורון מרום, מלווה כל שלב משפטית. עם Landlord Safe שכר הדירה ממשיך להגיע גם אם הדייר מפסיק לשלם, בכפוף לתנאי השירות. ב-13 שנה ויותר מ-200 נכסים, אף בעל דירה שלנו לא נשאר בלי שכר דירה. אנחנו לא משרד תיווך: אנחנו מנהלים את הדירה לאורך כל השכירות.
 
-**After the profile is live:** send me the profile link. It goes into `googleProfile` in `content/site.ts`, which updates the Google Maps links and the structured data. Once there are reviews, fill in `googleRating` (value and count).
+**Profile is live** and linked in `googleProfile` in `content/site.ts`. Once there are reviews, fill in `googleRating` (value and count).
 
 **Asking clients for reviews (WhatsApp text):**
 
