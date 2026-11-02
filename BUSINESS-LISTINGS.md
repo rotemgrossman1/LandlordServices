@@ -42,3 +42,12 @@ Suggested: b144, d.co.il, nadlano.co.il, Madlan (if they list management compani
 **Short description (about 300 characters):**
 
 > לנדלורד – חברת ניהול נכסים לבעלי דירות מושכרות בגוש דן ובירושלים, מאז 2013. יותר מ-170 נכסים בניהול: בדיקת דיירים, חוזה עם ליווי משפטי, טיפול בתקלות ושכר דירה מובטח עם Landlord Safe. אף בעל דירה שלנו לא נשאר בלי שכר דירה.
+
+## Listed on
+
+| Directory | Submitted | Status | Listing URL |
+|---|---|---|---|
+| b144 (b144.co.il) | 2026-11-02 | Free self-registration, awaiting b144 review (up to 2 business days) | *(add once live)* |
+| Dapei Zahav (d.co.il) | 2026-11-02 | Free listing, awaiting Zap call to verify | *(add once live)* |
+
+Both use the NAP above. Directory form limits: b144's phone field takes digits only (`0542110096`) and its address has only city, street and number (no building, floor or postal code). d.co.il has no postal code field. Category on both: ניהול נכסים. Logo for directories: `brand/landlord-logo.png`.
