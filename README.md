@@ -46,7 +46,7 @@ There is no contact form. Visitors reach the office by WhatsApp, phone or email 
 
 1. Push the repo to GitHub.
 2. In Vercel, choose **Add New → Project**, then import the repo. The framework is detected automatically.
-3. Deploy, then add the domain `landlords.co.il` under Settings → Domains and update DNS as Vercel instructs.
-4. If the final domain is different (e.g. with `www.`), change `site.url` in `content/site.ts` and the links in `public/llms.txt`.
+3. Deploy, then add `www.landlords.co.il` (primary) and `landlords.co.il` (redirects to www) under Settings → Domains and update DNS as Vercel instructs.
+4. `site.url` in `content/site.ts` must match the primary domain (currently `https://www.landlords.co.il`).
 
 Old Wix URLs are 301-redirected to the new pages in `next.config.ts`.

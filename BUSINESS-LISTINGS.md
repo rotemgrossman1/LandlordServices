@@ -10,7 +10,7 @@ Use **exactly the same** name, address and phone everywhere (Google and AI tools
 | Address | דרך בן גוריון 1, ב.ס.ר 2, קומה 20, בני ברק |
 | Phone / WhatsApp | 054-2110096 |
 | Email | info@landlords.co.il |
-| Website | https://landlords.co.il |
+| Website | https://www.landlords.co.il |
 | Founded | 2013 |
 | Service area | תל אביב, רמת גן, גבעתיים, הרצליה, רעננה, גבעת שמואל, בת ים, ירושלים |
 | Hours | *(fill in – also add to `site.hours` in content/site.ts)* |
