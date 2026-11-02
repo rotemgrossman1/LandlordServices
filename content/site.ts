@@ -72,7 +72,7 @@ export const site = {
   name: "Landlord",
   nameHe: "לנדלורד",
   legalName: "", // e.g. "לנדלורד שירותי ניהול בע\"מ" – fill in when confirmed
-  url: "https://landlords.co.il",
+  url: "https://www.landlords.co.il",
   foundingYear: 2013,
   phone: "054-2110096", // the one number for calls and WhatsApp
   whatsapp: "054-2110096", // Empty = WhatsApp buttons hidden
