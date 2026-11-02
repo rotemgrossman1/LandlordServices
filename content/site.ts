@@ -117,13 +117,7 @@ export const stats: Stat[] = [
 ];
 
 // Real Google reviews only, copied word for word. Empty = the reviews section is hidden.
-export const testimonials: Testimonial[] = [ // TEMP SAMPLE: remove before publishing
-  { name: "דוגמה 1", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
-  { name: "דוגמה 2", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
-  { name: "דוגמה 3", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
-  { name: "דוגמה 4", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
-  { name: "דוגמה 5", city: "תל אביב", text: "טקסט לדוגמה בלבד לבדיקת התצוגה. ביקורת אמיתית מ-Google תופיע כאן ותכלול כמה משפטים על השירות.", rating: 5, date: "לפני חודש" },
-];
+export const testimonials: Testimonial[] = [];
 
 // value: e.g. "4.9", count: e.g. "37 ביקורות", url: the Google reviews link (defaults to the profile)
 export const googleRating = { value: "", count: "", url: site.googleProfile };
