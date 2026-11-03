@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { areas, cta, home, images, pages, partner, site } from "@/content/site";
 import { telHref, whatsappHref } from "@/lib/format";
-import AccentText from "./AccentText";
 import Icon from "./Icon";
 import styles from "./Hero.module.css";
 
@@ -11,6 +10,11 @@ import styles from "./Hero.module.css";
  * The longer intro paragraph is the lead of the services section, just below.
  */
 export default function Hero() {
+  const { h1, h1Accent } = pages.home;
+  const at = h1Accent ? h1.lastIndexOf(h1Accent) : -1;
+  const lead = at >= 0 ? h1.slice(0, at).trimEnd() : h1;
+  // the accent's sentences, one per line ("א. ב" -> ["א.", "ב"])
+  const lines = at >= 0 && h1Accent ? h1Accent.split(/(?<=\.)\s+/) : [];
   return (
     <section className={`on-dark ${styles.hero}`} data-fab-hide>
       {images.hero && (
@@ -27,9 +31,20 @@ export default function Hero() {
 
       <div className={`container ${styles.inner}`}>
         <div className={styles.headline}>
-          <p className="eyebrow">{home.eyebrow}</p>
+          {home.eyebrow && <p className="eyebrow">{home.eyebrow}</p>}
           <h1 className={styles.title}>
-            <AccentText text={pages.home.h1} accent={pages.home.h1Accent} block />
+            {lead}
+            {lines.length > 0 && (
+              <span className={`accent ${styles.titleLines}`}>
+                {lines.map((l) => (
+                  // The leading space keeps the words apart in extracted text (snippets, screen readers).
+                  <span key={l} className={styles.titleLine}>
+                    {" "}
+                    {l}
+                  </span>
+                ))}
+              </span>
+            )}
           </h1>
         </div>
 

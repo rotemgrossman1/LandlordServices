@@ -59,6 +59,20 @@
   color: var(--color-on-dark);
 }
 
+/* The accent sentences under the main line: smaller, one line each */
+.titleLines {
+  display: block;
+  margin-block-start: 0.3em;
+  font-size: clamp(1.3rem, 0.55rem + 3.5vw, 3.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.titleLine {
+  display: block;
+  white-space: nowrap;
+}
+
 .note {
   max-width: 26rem;
   padding-inline-start: var(--space-5);
