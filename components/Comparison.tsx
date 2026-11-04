@@ -11,13 +11,16 @@ function covered(col: number) {
   return comparison.rows.filter((r) => r.values[col] === "yes").length;
 }
 
-function Cell({ value }: { value: CompareValue }) {
+function Cell({ value, mark }: { value: CompareValue; mark?: string }) {
   return (
     <span className={`${styles.value} ${styles[value]}`}>
       <span className={styles.mark}>
         <Icon name={valueIcon[value]} size={16} />
       </span>
-      <span className={styles.valueLabel}>{comparison.valueLabels[value]}</span>
+      <span className={styles.valueLabel}>
+        {comparison.valueLabels[value]}
+        {mark && <sup className={styles.footMark}>{mark}</sup>}
+      </span>
     </span>
   );
 }
@@ -80,7 +83,7 @@ export default function Comparison({ alt = false }: { alt?: boolean }) {
                   <th scope="row">{row.label}</th>
                   {row.values.map((v, i) => (
                     <td key={i} className={i === comparison.highlight ? styles.ours : undefined}>
-                      <Cell value={v} />
+                      <Cell value={v} mark={i === comparison.highlight ? row.mark : undefined} />
                     </td>
                   ))}
                 </tr>
@@ -88,7 +91,11 @@ export default function Comparison({ alt = false }: { alt?: boolean }) {
             </tbody>
           </table>
         </div>
-        {comparison.note && <p className={styles.note}>{comparison.note}</p>}
+        {comparison.notes.map((n) => (
+          <p key={n} className={styles.note}>
+            {n}
+          </p>
+        ))}
       </div>
     </section>
   );

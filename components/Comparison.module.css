@@ -246,6 +246,11 @@
   border-end-end-radius: var(--radius);
 }
 
+.footMark {
+  margin-inline-start: 0.15em;
+  font-size: 0.75em;
+}
+
 .note {
   margin: var(--space-4) 0 0;
   max-width: 64rem;
@@ -292,4 +297,9 @@
     border-radius: var(--radius-sm);
     background: rgba(250, 246, 237, 0.9);
   }
+}
+
+/* footnotes after the first sit closer together */
+.note + .note {
+  margin-block-start: var(--space-1);
 }

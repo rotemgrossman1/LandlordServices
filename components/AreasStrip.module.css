@@ -211,7 +211,9 @@
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.15em 0;
+  gap: 0.15em 1.25em;
+  /* each dot sits in the gap before its city; the one at the start of a line falls outside and is clipped */
+  overflow: hidden;
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 0.9rem + 0.9vw, 1.75rem);
   line-height: 1.5;
@@ -219,12 +221,16 @@
 }
 
 .cities li {
+  position: relative;
   white-space: nowrap;
 }
 
-.cities li + li::before {
+.cities li::before {
   content: "·";
-  margin-inline: 0.5em;
+  position: absolute;
+  inset-inline-end: 100%;
+  width: 1.25em;
+  text-align: center;
   color: var(--color-accent-dark);
 }
 
