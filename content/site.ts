@@ -97,9 +97,10 @@ export const site = {
 
 // Accessibility coordinator (רכז/ת נגישות), shown in the accessibility statement.
 // The law asks for the coordinator's name; empty name = the statement just says "us".
+// Empty phone = only the email is listed.
 export const accessibilityContact = {
-  name: "",
-  phone: site.phone,
+  name: "דורון מרום",
+  phone: "",
   email: site.email,
 };
 
@@ -1588,11 +1589,11 @@ export const legal = {
     },
     {
       title: "הסדרי נגישות במשרד",
-      text: "", // e.g. parking, entrance, elevator, accessible restroom at the Bnei Brak office. Empty = hidden
+      text: `המשרד נמצא בכתובת ${site.address.full}. יש חניה בבניין, בתיאום מראש מול המשרד. הדרך מהחניון ועד המשרדים נגישה במלואה, ויש מעלית לקומת המשרד. מבקרים הזקוקים לסיוע מוזמנים להתקשר אלינו לפני ההגעה, ונשמח לעמוד לשירותם.`,
     },
     {
       title: "פנייה בנושא נגישות",
-      text: `נתקלתם בבעיה או שיש לכם הצעה לשיפור? פנו ${accessibilityContact.name ? `לרכז/ת הנגישות, ${accessibilityContact.name}, ` : "אלינו "}בטלפון ${accessibilityContact.phone} או באימייל ${accessibilityContact.email}. נשתדל לחזור אליכם בהקדם.`,
+      text: `נתקלתם בבעיה או שיש לכם הצעה לשיפור? פנו ${accessibilityContact.name ? `לרכז הנגישות, ${accessibilityContact.name}, ` : "אלינו "}${accessibilityContact.phone ? `בטלפון ${accessibilityContact.phone} או ` : ""}באימייל ${accessibilityContact.email}. נשתדל לחזור אליכם בהקדם.`,
     },
   ],
   accessibilityUpdated: "2026-11-04", // date the accessibility statement was last reviewed
