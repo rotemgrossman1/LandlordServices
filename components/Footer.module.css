@@ -105,3 +105,21 @@
 .bottom p {
   margin: 0;
 }
+
+/* A button that looks like the footer links (opens the cookie notice) */
+.linkButton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-on-dark-muted);
+  font: inherit;
+  cursor: pointer;
+}
+
+.linkButton:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}

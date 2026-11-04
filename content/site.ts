@@ -95,6 +95,14 @@ export const site = {
   companyId: "514867191", // ח.פ.
 };
 
+// Accessibility coordinator (רכז/ת נגישות), shown in the accessibility statement.
+// The law asks for the coordinator's name; empty name = the statement just says "us".
+export const accessibilityContact = {
+  name: "",
+  phone: site.phone,
+  email: site.email,
+};
+
 // Photos. Placeholder stock photos for now (sources in public/images/CREDITS.md);
 // replace with your own office and apartment photos. Empty = the slot falls back
 // to a plain colour field.
@@ -1521,28 +1529,81 @@ export const legal = {
       text: "האתר מתארח אצל ספק אחסון חיצוני.",
     },
     {
+      title: "עוגיות (Cookies) ואחסון בדפדפן",
+      text: "האתר שומר בדפדפן שלכם רק העדפות: הבחירה שלכם לגבי עוגיות והגדרות תפריט הנגישות. עוגיות נוספות, כמו כלי מדידה, יופעלו רק אם תאשרו זאת בהודעת העוגיות. אפשר לשנות את הבחירה בכל עת דרך הקישור \"הגדרות עוגיות\" בתחתית העמוד, או למחוק את העוגיות בהגדרות הדפדפן.",
+    },
+    {
       title: "פנייה בנושא פרטיות",
       text: `לבקשה לעיין במידע, לתקן אותו או למחוק אותו, פנו אלינו באימייל ${site.email}.`,
     },
   ],
+  // Sections with an empty `text` are hidden
   accessibility: [
     {
       title: "מחויבות לנגישות",
-      text: "אנחנו פועלים כדי שהאתר יהיה נגיש לכל המשתמשים, כולל אנשים עם מוגבלויות.",
-    },
-    {
-      title: "מה עשינו",
-      text: "האתר בנוי עם כותרות מסודרות, ניגודיות צבעים טובה, אפשרות ניווט מלאה במקלדת, קישור לדילוג לתוכן הראשי והתאמה למסכים קטנים.",
+      text: "אנחנו פועלים כדי שהאתר יהיה נגיש לכל המשתמשים, כולל אנשים עם מוגבלויות, בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ\"ח-1998, ולתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע\"ג-2013.",
     },
     {
       title: "רמת הנגישות",
-      text: "השאיפה היא לעמוד בתקן הישראלי 5568 ברמה AA. ייתכן שחלקים מסוימים עדיין אינם נגישים במלואם.",
+      text: "האתר הותאם לפי תקן ישראלי 5568, המבוסס על הנחיות WCAG 2.0, ברמה AA, ככל שהדבר אפשרי.",
+    },
+    {
+      title: "מה עשינו",
+      text: "האתר בנוי עם כותרות מסודרות, טקסט חלופי לתמונות, ניגודיות צבעים טובה, אפשרות ניווט מלאה במקלדת עם סימון בולט של הרכיב הפעיל, קישור לדילוג לתוכן הראשי, תמיכה בקוראי מסך, כיבוד הגדרת \"הפחתת תנועה\" במערכת ההפעלה והתאמה למסכים קטנים.",
+    },
+    {
+      title: "תפריט הנגישות",
+      text: "בכל עמוד יש כפתור נגישות שפותח תפריט עם האפשרויות: הגדלה והקטנה של הטקסט, ניגודיות גבוהה, גווני אפור, הדגשת קישורים, גופן קריא ועצירת אנימציות. ההגדרות נשמרות בדפדפן שלכם ונשארות פעילות גם במעבר בין עמודים.",
+    },
+    {
+      title: "מגבלות ידועות",
+      text: "למרות המאמצים, ייתכן שחלקים מסוימים באתר עדיין אינם נגישים במלואם. אם נתקלתם בבעיה, נשמח לשמוע ולתקן.",
+    },
+    {
+      title: "הסדרי נגישות במשרד",
+      text: "", // e.g. parking, entrance, elevator, accessible restroom at the Bnei Brak office. Empty = hidden
     },
     {
       title: "פנייה בנושא נגישות",
-      text: `נתקלתם בבעיה? נשמח לשמוע: טלפון ${site.phone}, אימייל ${site.email}.`,
+      text: `נתקלתם בבעיה או שיש לכם הצעה לשיפור? פנו ${accessibilityContact.name ? `לרכז/ת הנגישות, ${accessibilityContact.name}, ` : "אלינו "}בטלפון ${accessibilityContact.phone} או באימייל ${accessibilityContact.email}. נשתדל לחזור אליכם בהקדם.`,
     },
   ],
+  accessibilityUpdated: "2026-11-04", // date the accessibility statement was last reviewed
+};
+
+// ---------------------------------------------------------------------------
+// Cookie notice (components/CookieBanner.tsx)
+// ---------------------------------------------------------------------------
+
+export const cookieNotice = {
+  title: "עוגיות באתר",
+  text: "האתר שומר בדפדפן שלכם רק את ההעדפות שלכם. עוגיות נוספות, כמו כלי מדידה, יופעלו רק אם תאשרו.",
+  accept: "אישור",
+  decline: "דחייה",
+  policyLink: "למדיניות הפרטיות",
+  settings: "הגדרות עוגיות", // footer link that reopens the notice
+};
+
+// ---------------------------------------------------------------------------
+// Accessibility menu (components/AccessibilityMenu.tsx)
+// ---------------------------------------------------------------------------
+
+export const a11yMenu = {
+  open: "תפריט נגישות",
+  close: "סגירת תפריט הנגישות",
+  title: "נגישות",
+  textSize: "גודל טקסט",
+  increase: "הגדלת טקסט",
+  decrease: "הקטנת טקסט",
+  options: {
+    contrast: "ניגודיות גבוהה",
+    grayscale: "גווני אפור",
+    links: "הדגשת קישורים",
+    font: "גופן קריא",
+    motion: "עצירת אנימציות",
+  },
+  reset: "איפוס הגדרות",
+  statement: "הצהרת נגישות",
 };
 
 // Short company summary (also used for llms.txt wording and JSON-LD description)

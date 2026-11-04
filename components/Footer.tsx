@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { areas, cityPages, cta, labels, nav, services, site } from "@/content/site";
 import { telHref, whatsappHref } from "@/lib/format";
+import CookieSettingsButton from "./CookieSettingsButton";
 import Icon from "./Icon";
 import Logo from "./Logo";
 import styles from "./Footer.module.css";
@@ -56,6 +57,9 @@ export default function Footer() {
             </li>
             <li>
               <Link href="/accessibility">{labels.accessibility}</Link>
+            </li>
+            <li>
+              <CookieSettingsButton />
             </li>
           </ul>
         </nav>

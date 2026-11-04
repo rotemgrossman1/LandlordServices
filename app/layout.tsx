@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Frank_Ruhl_Libre, Heebo } from "next/font/google";
+import AccessibilityMenu from "@/components/AccessibilityMenu";
+import CookieBanner from "@/components/CookieBanner";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import JsonLd from "@/components/JsonLd";
@@ -51,6 +53,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <MobileBar />
         <WhatsAppFab />
+        <AccessibilityMenu />
+        <CookieBanner />
         <RevealObserver />
         <JsonLd data={organizationJsonLd()} />
       </body>

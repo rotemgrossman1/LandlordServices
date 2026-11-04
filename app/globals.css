@@ -612,3 +612,74 @@ textarea {
     animation: none !important;
   }
 }
+
+/* ---------- Accessibility menu modes (see components/AccessibilityMenu.tsx) ---------- */
+
+/* Grayscale. On the root element, a filter doesn't break position: fixed */
+html.a11y-grayscale {
+  filter: grayscale(1);
+}
+
+/* High contrast: white text on black, yellow links, white borders */
+html.a11y-contrast {
+  --color-focus: #ffeb3b;
+}
+
+html.a11y-contrast body,
+html.a11y-contrast body *:not(svg):not(svg *) {
+  background-color: #000 !important;
+  background-image: none !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+html.a11y-contrast body a,
+html.a11y-contrast body a * {
+  color: #ffeb3b !important;
+}
+
+html.a11y-contrast .btn,
+html.a11y-contrast button {
+  border: 2px solid #fff !important;
+}
+
+html.a11y-contrast img {
+  opacity: 1 !important;
+}
+
+/* Highlight links */
+html.a11y-links a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 3px;
+  font-weight: 700 !important;
+}
+
+html.a11y-links a:not(.btn) {
+  outline: 2px dashed currentColor;
+  outline-offset: 2px;
+}
+
+/* Readable font */
+html.a11y-font body,
+html.a11y-font body * {
+  font-family: Arial, "Arial Hebrew", Helvetica, sans-serif !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Stop animations */
+html.a11y-motion,
+html.a11y-motion *,
+html.a11y-motion *::before,
+html.a11y-motion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+html.a11y-motion [data-reveal].reveal-armed {
+  opacity: 1;
+  transform: none;
+}

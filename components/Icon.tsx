@@ -126,6 +126,12 @@ const icons = {
       <circle cx="12" cy="12" r="3" />
     </>
   ),
+  accessibility: (
+    <>
+      <circle cx="12" cy="4.5" r="1.8" />
+      <path d="M5 8.5c2.3.7 4.6 1 7 1s4.7-.3 7-1M12 9.5V14M12 14l-3 6.5M12 14l3 6.5" />
+    </>
+  ),
 } satisfies Record<string, ReactNode>;
 
 export type IconName = keyof typeof icons;

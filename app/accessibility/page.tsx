@@ -8,7 +8,7 @@ export const metadata = buildMetadata(pages.accessibility, "/accessibility");
 export default function AccessibilityPage() {
   return (
     <>
-      <LegalPage page={pages.accessibility} sections={legal.accessibility} />
+      <LegalPage page={pages.accessibility} sections={legal.accessibility} updated={legal.accessibilityUpdated} />
       <JsonLd data={breadcrumbJsonLd("/accessibility", pages.accessibility.h1)} />
     </>
   );
