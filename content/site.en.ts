@@ -590,8 +590,26 @@ export const cityPages: CityPage[] = [
       creditUrl: "",
     },
     galleryTitle: "Managed properties in Bat Yam",
-    galleryNote: "Photos are for illustration: residential buildings in Bat Yam, not properties we manage.",
+    galleryNote: "The first three photos show an apartment we manage in Bat Yam. The rest are for illustration: residential buildings in Bat Yam, not properties we manage.",
     gallery: [
+      {
+        src: "/images/bat-yam-managed-kitchen.jpg",
+        alt: "A modern light-gray kitchen with a countertop, sink and oven space, in an apartment we manage in Bat Yam",
+        credit: "",
+        creditUrl: "",
+      },
+      {
+        src: "/images/bat-yam-managed-living-room.jpg",
+        alt: "A bright living room with gray floor tiles and built-in closets, with the front door at the end of the hall, in an apartment we manage in Bat Yam",
+        credit: "",
+        creditUrl: "",
+      },
+      {
+        src: "/images/bat-yam-managed-balcony.jpg",
+        alt: "A balcony with a glass railing overlooking residential buildings in Bat Yam, in an apartment we manage",
+        credit: "",
+        creditUrl: "",
+      },
       {
         src: "/images/bat-yam-coast.jpg",
         alt: "Aerial view of Bat Yam's residential neighborhoods along the coast",

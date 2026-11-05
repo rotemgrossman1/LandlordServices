@@ -650,8 +650,26 @@ export const cityPages: CityPage[] = [
       creditUrl: "",
     },
     galleryTitle: "נכסים מנוהלים בבת ים",
-    galleryNote: "התמונות להמחשה: בנייני מגורים בבת ים, לא נכסים שבניהולנו.",
+    galleryNote: "שלוש התמונות הראשונות: דירה בניהולנו בבת ים. שאר התמונות להמחשה: בנייני מגורים בבת ים, לא נכסים שבניהולנו.",
     gallery: [
+      {
+        src: "/images/bat-yam-managed-kitchen.jpg",
+        alt: "מטבח מודרני בגוון אפור בהיר, עם משטח עבודה, כיור ומקום לתנור, בדירה בניהולנו בבת ים",
+        credit: "",
+        creditUrl: "",
+      },
+      {
+        src: "/images/bat-yam-managed-living-room.jpg",
+        alt: "סלון מואר עם ריצוף אפור וארונות קיר, ובקצה המסדרון דלת הכניסה, בדירה בניהולנו בבת ים",
+        credit: "",
+        creditUrl: "",
+      },
+      {
+        src: "/images/bat-yam-managed-balcony.jpg",
+        alt: "מרפסת עם מעקה זכוכית ונוף לבנייני מגורים בבת ים, בדירה בניהולנו",
+        credit: "",
+        creditUrl: "",
+      },
       {
         src: "/images/bat-yam-coast.jpg",
         alt: "מבט מלמעלה על שכונות המגורים של בת ים לאורך חוף הים",
