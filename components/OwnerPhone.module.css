@@ -21,12 +21,12 @@
 .notch {
   position: absolute;
   inset-block-start: 8px;
-  inset-inline-start: 50%;
+  inset-inline: 0;
+  margin-inline: auto; /* centred in both reading directions */
   width: 90px;
   height: 22px;
   border-radius: 999px;
   background: #0b2533;
-  transform: translateX(50%);
 }
 
 .screenHead {

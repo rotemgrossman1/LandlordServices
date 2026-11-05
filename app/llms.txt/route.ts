@@ -1,4 +1,5 @@
 import { areas, cityPages, labels, llms, nav, site } from "@/content/site";
+import * as en from "@/content/site.en";
 
 // Built at build time from content/site.ts, so contact details always match the site.
 export const dynamic = "force-static";
@@ -55,6 +56,12 @@ function body() {
     `## ${llms.pagesTitle}`,
     "",
     ...pageLinks,
+    "",
+    `## ${llms.englishPagesTitle}`,
+    "",
+    `- [${en.labels.homeLink}](${site.url}/en): ${en.pages.home.description}`,
+    ...en.nav.map((n) => `- [${n.label}](${site.url}/en${n.href})`),
+    ...en.cityPages.map((c) => `- [${c.meta.h1}](${site.url}/en/areas/${c.slug})`),
     "",
   ].join("\n");
 }

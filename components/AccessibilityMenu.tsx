@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
-import { a11yMenu } from "@/content/site";
+import type { SiteContent } from "@/content";
 import Icon from "./Icon";
 import styles from "./AccessibilityMenu.module.css";
 
@@ -10,8 +10,9 @@ const STORAGE_KEY = "a11y-settings";
 const SCALES = [90, 100, 112.5, 125, 137.5, 150]; // root font size, %
 const DEFAULT_SCALE = 1;
 
-type Option = keyof typeof a11yMenu.options;
-const OPTIONS = Object.keys(a11yMenu.options) as Option[];
+type Text = SiteContent["a11yMenu"];
+type Option = keyof Text["options"];
+const OPTIONS: Option[] = ["contrast", "grayscale", "links", "font", "motion"];
 
 type Settings = { scale: number } & Record<Option, boolean>;
 const DEFAULTS: Settings = {
@@ -44,7 +45,7 @@ function apply(s: Settings) {
  * grayscale, link highlighting, a readable font and stopping animations. Settings are kept
  * in localStorage (a preference, not tracking) and re-applied on every page.
  */
-export default function AccessibilityMenu() {
+export default function AccessibilityMenu({ text: a11yMenu, statementHref }: { text: Text; statementHref: string }) {
   const [open, setOpen] = useState(false);
   // null until the saved settings are read, so the defaults never overwrite them
   const [saved, setSaved] = useState<Settings | null>(null);
@@ -129,7 +130,7 @@ export default function AccessibilityMenu() {
                 disabled={settings.scale === 0}
                 aria-label={a11yMenu.decrease}
               >
-                א-
+                {a11yMenu.decreaseSymbol}
               </button>
               <span className={styles.sizeValue} aria-live="polite">
                 {Math.round(SCALES[settings.scale])}%
@@ -141,7 +142,7 @@ export default function AccessibilityMenu() {
                 disabled={settings.scale === SCALES.length - 1}
                 aria-label={a11yMenu.increase}
               >
-                א+
+                {a11yMenu.increaseSymbol}
               </button>
             </div>
           </div>
@@ -168,7 +169,7 @@ export default function AccessibilityMenu() {
             <button type="button" className={styles.reset} onClick={() => setSaved(DEFAULTS)}>
               {a11yMenu.reset}
             </button>
-            <Link href="/accessibility" className={styles.statement} onClick={() => setOpen(false)}>
+            <Link href={statementHref} className={styles.statement} onClick={() => setOpen(false)}>
               {a11yMenu.statement}
             </Link>
           </div>

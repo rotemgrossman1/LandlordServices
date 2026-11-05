@@ -1,24 +1,25 @@
-import { comparison, images, type CompareValue } from "@/content/site";
+import { getContent } from "@/content";
+import type { CompareValue } from "@/content/site";
 import Icon from "./Icon";
 import SectionHeading from "./SectionHeading";
 import styles from "./Comparison.module.css";
 
 const valueIcon = { yes: "check", no: "x", you: "user" } as const;
-const total = comparison.rows.length;
+type Rows = { values: CompareValue[] }[];
 
 /** How many rows a column covers ("yes") */
-function covered(col: number) {
-  return comparison.rows.filter((r) => r.values[col] === "yes").length;
+function covered(rows: Rows, col: number) {
+  return rows.filter((r) => r.values[col] === "yes").length;
 }
 
-function Cell({ value, mark }: { value: CompareValue; mark?: string }) {
+function Cell({ value, mark, label }: { value: CompareValue; mark?: string; label: string }) {
   return (
     <span className={`${styles.value} ${styles[value]}`}>
       <span className={styles.mark}>
         <Icon name={valueIcon[value]} size={16} />
       </span>
       <span className={styles.valueLabel}>
-        {comparison.valueLabels[value]}
+        {label}
         {mark && <sup className={styles.footMark}>{mark}</sup>}
       </span>
     </span>
@@ -29,7 +30,9 @@ function Cell({ value, mark }: { value: CompareValue; mark?: string }) {
  * Self-managed vs broker vs Landlord: three score tiles (how much each option covers)
  * over a real <table>, so it reads well for everyone.
  */
-export default function Comparison({ alt = false }: { alt?: boolean }) {
+export default async function Comparison({ alt = false }: { alt?: boolean }) {
+  const { comparison, images } = await getContent();
+  const total = comparison.rows.length;
   if (comparison.rows.length === 0) return null;
   return (
     <section
@@ -50,16 +53,16 @@ export default function Comparison({ alt = false }: { alt?: boolean }) {
             <li
               key={c}
               className={`${styles.tile} ${i === comparison.highlight ? styles.tileOurs : ""}`}
-              style={{ "--fill": `${(covered(i) / total) * 100}%` } as React.CSSProperties}
+              style={{ "--fill": `${(covered(comparison.rows, i) / total) * 100}%` } as React.CSSProperties}
             >
               <span className={styles.tileName}>{c}</span>
               <span className={styles.tileNumber} aria-hidden="true">
-                {covered(i)}
+                {covered(comparison.rows, i)}
                 <small>/{total}</small>
               </span>
               <span className={styles.tileBar} aria-hidden="true" />
               <span className={styles.tileLabel}>
-                {comparison.tally.replace("{n}", String(covered(i))).replace("{total}", String(total))}
+                {comparison.tally.replace("{n}", String(covered(comparison.rows, i))).replace("{total}", String(total))}
               </span>
             </li>
           ))}
@@ -83,7 +86,7 @@ export default function Comparison({ alt = false }: { alt?: boolean }) {
                   <th scope="row">{row.label}</th>
                   {row.values.map((v, i) => (
                     <td key={i} className={i === comparison.highlight ? styles.ours : undefined}>
-                      <Cell value={v} mark={i === comparison.highlight ? row.mark : undefined} />
+                      <Cell value={v} label={comparison.valueLabels[v]} mark={i === comparison.highlight ? row.mark : undefined} />
                     </td>
                   ))}
                 </tr>

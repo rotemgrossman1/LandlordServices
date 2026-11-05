@@ -2,14 +2,18 @@ import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
-import { faq, faqUpdated, home, labels, pages } from "@/content/site";
-import { formatDateHe } from "@/lib/format";
+import { getContent } from "@/content";
+import { formatDate } from "@/lib/format";
 import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata = buildMetadata(pages.faq, "/faq");
+export async function generateMetadata() {
+  const { pages } = await getContent();
+  return buildMetadata(pages.faq, "/faq");
+}
 
-export default function FaqPage() {
+export default async function FaqPage() {
+  const { faq, faqUpdated, home, labels, lang, pages } = await getContent();
   return (
     <>
       <PageIntro page={pages.faq} eyebrow={home.faqEyebrow} />
@@ -18,14 +22,14 @@ export default function FaqPage() {
           <Faq items={faq} />
           {faqUpdated && (
             <p className={styles.updated}>
-              {labels.lastUpdated} <time dateTime={faqUpdated}>{formatDateHe(faqUpdated)}</time>
+              {labels.lastUpdated} <time dateTime={faqUpdated}>{formatDate(faqUpdated, lang)}</time>
             </p>
           )}
         </div>
       </section>
       <CtaBand />
       <JsonLd data={faqJsonLd(faq, faqUpdated)} />
-      <JsonLd data={breadcrumbJsonLd("/faq")} />
+      <JsonLd data={await breadcrumbJsonLd("/faq")} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { home, testimonials } from "@/content/site";
+import { getContent } from "@/content";
 import ReviewsCarousel from "./ReviewsCarousel";
 import styles from "./Testimonials.module.css";
 
@@ -8,7 +8,8 @@ import styles from "./Testimonials.module.css";
  * the looping and the side buttons. Renders nothing until real reviews are added
  * in content/site.ts.
  */
-export default function Testimonials() {
+export default async function Testimonials() {
+  const { home, testimonials } = await getContent();
   if (testimonials.length === 0) return null;
   return (
     <section className={`section ${styles.section}`} aria-labelledby="testimonials-title">
@@ -19,7 +20,7 @@ export default function Testimonials() {
         <ReviewsCarousel prevLabel={home.reviewsPrev} nextLabel={home.reviewsNext}>
           {testimonials.map((t) => (
             <li key={t.name + t.text} className={styles.card}>
-              {t.rating > 0 && <Stars rating={t.rating} />}
+              {t.rating > 0 && <Stars rating={t.rating} label={home.reviewStars} />}
               <blockquote className={styles.quote}>
                 <p>{t.text}</p>
               </blockquote>
@@ -36,10 +37,10 @@ export default function Testimonials() {
   );
 }
 
-function Stars({ rating }: { rating: number }) {
+function Stars({ rating, label }: { rating: number; label: string }) {
   const n = Math.max(0, Math.min(5, rating));
   return (
-    <span className={styles.stars} role="img" aria-label={home.reviewStars.replace("{n}", String(n))}>
+    <span className={styles.stars} role="img" aria-label={label.replace("{n}", String(n))}>
       {"★".repeat(n)}
       <span className={styles.starsOff}>{"★".repeat(5 - n)}</span>
     </span>

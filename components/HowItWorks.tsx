@@ -1,9 +1,10 @@
-import { howItWorks } from "@/content/site";
+import { getContent } from "@/content";
 import Icon from "./Icon";
 import styles from "./HowItWorks.module.css";
 
 /** Home: what the owner gets, as one short line of icon steps joined by a thin line. Hidden when empty. */
-export default function HowItWorks() {
+export default async function HowItWorks() {
+  const { howItWorks } = await getContent();
   if (howItWorks.items.length === 0) return null;
   return (
     <section className={styles.section} aria-labelledby="how-title">

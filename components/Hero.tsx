@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { areas, cta, home, images, pages, partner, site } from "@/content/site";
+import { getContent } from "@/content";
 import { telHref, whatsappHref } from "@/lib/format";
 import Icon from "./Icon";
 import styles from "./Hero.module.css";
@@ -9,7 +9,8 @@ import styles from "./Hero.module.css";
  * Full-bleed photo hero: giant serif H1 with its accent line, one supporting line and the actions.
  * The longer intro paragraph is the lead of the services section, just below.
  */
-export default function Hero() {
+export default async function Hero() {
+  const { areas, cta, home, images, pages, partner, site, link } = await getContent();
   const { h1, h1Accent } = pages.home;
   const at = h1Accent ? h1.lastIndexOf(h1Accent) : -1;
   const lead = at >= 0 ? h1.slice(0, at).trimEnd() : h1;
@@ -51,7 +52,7 @@ export default function Hero() {
         <div className={styles.note}>
           <p className={styles.promise}>{home.promise}</p>
           <div className={styles.actions}>
-            <Link href={cta.primaryHref} className="btn btn-primary">
+            <Link href={link(cta.primaryHref)} className="btn btn-primary">
               {cta.primary}
               <Icon name="arrow" size={18} className="icon-diag" />
             </Link>
@@ -82,7 +83,7 @@ export default function Hero() {
 
       {areas.regions.length > 0 && (
         <p className={styles.badge}>
-          {home.sinceLabel} · {areas.regions.join(" ו")}
+          {home.sinceLabel} · {areas.regions.join(home.regionsJoin)}
         </p>
       )}
     </section>

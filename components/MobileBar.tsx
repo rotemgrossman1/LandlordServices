@@ -1,10 +1,11 @@
-import { cta, site } from "@/content/site";
+import { getContent } from "@/content";
 import { telHref, whatsappHref } from "@/lib/format";
 import Icon from "./Icon";
 import styles from "./MobileBar.module.css";
 
 /** Sticky call / WhatsApp bar, mobile only. WhatsApp shows only when a number is set. */
-export default function MobileBar() {
+export default async function MobileBar() {
+  const { cta, site } = await getContent();
   return (
     <div className={styles.bar}>
       {site.whatsapp && (

@@ -1,17 +1,18 @@
 import Link from "next/link";
-import { areas, cityPages, cta, labels, nav, services, site } from "@/content/site";
+import { getContent } from "@/content";
 import { telHref, whatsappHref } from "@/lib/format";
 import CookieSettingsButton from "./CookieSettingsButton";
 import Icon from "./Icon";
 import Logo from "./Logo";
 import styles from "./Footer.module.css";
 
-export default function Footer() {
+export default async function Footer() {
+  const { areas, cityPages, cookieNotice, cta, labels, nav, services, site, link } = await getContent();
   return (
     <footer className={styles.footer} data-fab-hide>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brandCol}>
-          <Logo tone="light" />
+          <Logo tone="light" label={site.nameHe} />
           <p className={styles.tagline}>{labels.footerTagline}</p>
           <div className="btn-row">
             {site.whatsapp && (
@@ -33,7 +34,7 @@ export default function Footer() {
           <ul className={styles.list}>
             {services.map((s) => (
               <li key={s.id}>
-                <Link href={`/services#${s.id}`}>{s.title}</Link>
+                <Link href={link(`/services#${s.id}`)}>{s.title}</Link>
               </li>
             ))}
           </ul>
@@ -44,22 +45,22 @@ export default function Footer() {
           <ul className={styles.list}>
             {nav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href}>{item.label}</Link>
+                <Link href={link(item.href)}>{item.label}</Link>
               </li>
             ))}
             {cityPages.map((c) => (
               <li key={c.slug}>
-                <Link href={`/areas/${c.slug}`}>{labels.cityPage.replace("{city}", c.city)}</Link>
+                <Link href={link(`/areas/${c.slug}`)}>{labels.cityPage.replace("{city}", c.city)}</Link>
               </li>
             ))}
             <li>
-              <Link href="/privacy">{labels.privacy}</Link>
+              <Link href={link("/privacy")}>{labels.privacy}</Link>
             </li>
             <li>
-              <Link href="/accessibility">{labels.accessibility}</Link>
+              <Link href={link("/accessibility")}>{labels.accessibility}</Link>
             </li>
             <li>
-              <CookieSettingsButton />
+              <CookieSettingsButton label={cookieNotice.settings} />
             </li>
           </ul>
         </nav>

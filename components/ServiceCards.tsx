@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { home, images, pages, services } from "@/content/site";
+import { getContent } from "@/content";
 import Icon from "./Icon";
 import SectionHeading from "./SectionHeading";
 import styles from "./ServiceCards.module.css";
@@ -9,7 +9,8 @@ import styles from "./ServiceCards.module.css";
  * Home "what we do": numbered rows (number, title, one line, arrow) over a building photo
  * under a dark navy tint; each row links to its full description.
  */
-export default function ServiceCards() {
+export default async function ServiceCards() {
+  const { home, images, pages, services, link } = await getContent();
   if (services.length === 0) return null;
   return (
     <section className={`section section-dark ${images.services ? "photo-section" : ""}`} aria-labelledby="services-title">
@@ -33,7 +34,7 @@ export default function ServiceCards() {
         <ol className={styles.list}>
           {services.map((s, i) => (
             <li key={s.id}>
-              <Link href={`/services#${s.id}`} className={styles.row}>
+              <Link href={link(`/services#${s.id}`)} className={styles.row}>
                 <span className={styles.number} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -48,7 +49,7 @@ export default function ServiceCards() {
         </ol>
 
         <p className={styles.more}>
-          <Link href="/services">
+          <Link href={link("/services")}>
             {home.servicesMore}
             <Icon name="arrow" size={18} />
           </Link>

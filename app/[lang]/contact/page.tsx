@@ -1,14 +1,18 @@
 import Icon from "@/components/Icon";
 import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
-import { cta, labels, pages, site } from "@/content/site";
+import { getContent } from "@/content";
 import { telHref, whatsappHref } from "@/lib/format";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata = buildMetadata(pages.contact, "/contact");
+export async function generateMetadata() {
+  const { pages } = await getContent();
+  return buildMetadata(pages.contact, "/contact");
+}
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { cta, labels, pages, site } = await getContent();
   return (
     <>
       <PageIntro page={pages.contact} eyebrow={labels.contactUs} />
@@ -75,7 +79,7 @@ export default function ContactPage() {
           </address>
         </div>
       </section>
-      <JsonLd data={breadcrumbJsonLd("/contact")} />
+      <JsonLd data={await breadcrumbJsonLd("/contact")} />
     </>
   );
 }

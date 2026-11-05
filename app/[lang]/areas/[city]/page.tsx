@@ -7,7 +7,8 @@ import Faq from "@/components/Faq";
 import Icon from "@/components/Icon";
 import JsonLd from "@/components/JsonLd";
 import SectionHeading from "@/components/SectionHeading";
-import { cityPages, cta, home, labels, site, type Photo } from "@/content/site";
+import { getContent } from "@/content";
+import { cityPages as heCityPages, type Photo } from "@/content/site";
 import { whatsappHref } from "@/lib/format";
 import { buildMetadata, faqJsonLd } from "@/lib/seo";
 import styles from "./page.module.css";
@@ -16,27 +17,30 @@ type Props = { params: Promise<{ city: string }> };
 
 export const dynamicParams = false;
 
+// Slugs are the same in both languages
 export function generateStaticParams() {
-  return cityPages.map((c) => ({ city: c.slug }));
+  return heCityPages.map((c) => ({ city: c.slug }));
 }
 
 export async function generateMetadata({ params }: Props) {
   const { city } = await params;
+  const { cityPages } = await getContent();
   const page = cityPages.find((c) => c.slug === city);
   return page ? buildMetadata(page.meta, `/areas/${page.slug}`) : {};
 }
 
-function Credit({ photo }: { photo: Photo }) {
+function Credit({ photo, label }: { photo: Photo; label: string }) {
   if (!photo.credit) return null;
   return (
     <a href={photo.creditUrl} className={styles.credit} target="_blank" rel="noopener license">
-      {home.photoCredit} {photo.credit}
+      {label} {photo.credit}
     </a>
   );
 }
 
 /** One city: photo hero, a gallery, our work there with its facts, what we do, local FAQ. */
 export default async function CityAreaPage({ params }: Props) {
+  const { cityPages, cta, home, labels, link, site } = await getContent();
   const { city } = await params;
   const page = cityPages.find((c) => c.slug === city);
   if (!page) notFound();
@@ -56,7 +60,7 @@ export default async function CityAreaPage({ params }: Props) {
           </h1>
           <p className={styles.lead}>{page.meta.intro}</p>
           <div className="btn-row">
-            <Link href={cta.primaryHref} className="btn btn-primary">
+            <Link href={link(cta.primaryHref)} className="btn btn-primary">
               {cta.primary}
               <Icon name="arrow" size={18} className="icon-diag" />
             </Link>
@@ -73,7 +77,7 @@ export default async function CityAreaPage({ params }: Props) {
             )}
           </div>
         </div>
-        <Credit photo={page.hero} />
+        <Credit label={home.photoCredit} photo={page.hero} />
       </section>
 
       {page.gallery.length > 0 && (
@@ -89,7 +93,7 @@ export default async function CityAreaPage({ params }: Props) {
                     fill
                     sizes="(min-width: 1024px) 50vw, (min-width: 720px) 50vw, 100vw"
                   />
-                  <Credit photo={photo} />
+                  <Credit label={home.photoCredit} photo={photo} />
                 </li>
               ))}
             </ul>
@@ -129,7 +133,7 @@ export default async function CityAreaPage({ params }: Props) {
               ))}
             </ul>
             <p className="more-link">
-              <Link href="/services">
+              <Link href={link("/services")}>
                 {labels.allServices} <Icon name="arrow" size={16} />
               </Link>
             </p>

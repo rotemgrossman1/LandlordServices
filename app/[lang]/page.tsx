@@ -1,0 +1,90 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Fragment } from "react";
+import AreasStrip from "@/components/AreasStrip";
+import Comparison from "@/components/Comparison";
+import CtaBand from "@/components/CtaBand";
+import Faq from "@/components/Faq";
+import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
+import Icon from "@/components/Icon";
+import JsonLd from "@/components/JsonLd";
+import NumbersStrip from "@/components/NumbersStrip";
+import OwnerView from "@/components/OwnerView";
+import Personas from "@/components/Personas";
+import ProtectionLayers from "@/components/ProtectionLayers";
+import SectionHeading from "@/components/SectionHeading";
+import ServiceCards from "@/components/ServiceCards";
+import Steps from "@/components/Steps";
+import Testimonials from "@/components/Testimonials";
+import { getContent } from "@/content";
+import type { HomeSection } from "@/content/site";
+import { buildMetadata, faqJsonLd } from "@/lib/seo";
+import styles from "./page.module.css";
+
+export async function generateMetadata() {
+  const { pages } = await getContent();
+  return buildMetadata(pages.home, "/");
+}
+
+export default async function HomePage() {
+  const { faq, home, homeFaqIds, homeSections, images, link, steps } = await getContent();
+  // In the order listed in `homeFaqIds`
+  const homeFaq = homeFaqIds.flatMap((id) => faq.filter((q) => q.id === id));
+
+  // Each key in `homeSections` (content/site.ts) maps to one block here.
+  const sections: Record<HomeSection, () => React.ReactNode> = {
+    howItWorks: () => <HowItWorks />,
+    personas: () => <Personas />,
+    ownerView: () => <OwnerView />,
+    protection: () => <ProtectionLayers />,
+    services: () => <ServiceCards />,
+    comparison: () => <Comparison />,
+    steps: () => (
+      <section className="section section-alt" aria-labelledby="steps-title">
+        <div className="container">
+          <SectionHeading id="steps-title" title={home.stepsTitle} />
+          <Steps steps={steps} />
+        </div>
+      </section>
+    ),
+    areas: () => <AreasStrip />,
+    testimonials: () => <Testimonials />,
+    faq: () =>
+      homeFaq.length > 0 && (
+        <section
+          className={`section section-dark ${images.faq ? `photo-section ${styles.faqPhoto}` : ""}`}
+          aria-labelledby="faq-title"
+        >
+          {images.faq && (
+            <Image src={images.faq} alt="" fill sizes="100vw" className={`photo-section-bg ${styles.faqBg}`} />
+          )}
+          <div className={`container ${styles.faqLayout}`}>
+            <div className={styles.faqHead}>
+              <SectionHeading id="faq-title" eyebrow={home.faqEyebrow} title={home.faqTitle} large />
+            </div>
+            <div className={styles.faqList}>
+              <Faq items={homeFaq} />
+            </div>
+            <p className={`more-link ${styles.faqMore}`}>
+              <Link href={link("/faq")}>
+                {home.faqMore} <Icon name="arrow" size={16} />
+              </Link>
+            </p>
+          </div>
+        </section>
+      ),
+    cta: () => <CtaBand />,
+  };
+
+  return (
+    <>
+      <Hero />
+      <NumbersStrip band />
+      {homeSections.map((key) => (
+        <Fragment key={key}>{sections[key]()}</Fragment>
+      ))}
+      {homeSections.includes("faq") && homeFaq.length > 0 && <JsonLd data={faqJsonLd(homeFaq)} />}
+    </>
+  );
+}

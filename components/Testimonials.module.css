@@ -147,3 +147,8 @@
 .prevIcon {
   transform: scaleX(-1);
 }
+
+/* English: "next" arrows are mirrored (globals.css), so "previous" keeps the original direction */
+:global(html[dir="ltr"]) svg.prevIcon {
+  transform: none;
+}

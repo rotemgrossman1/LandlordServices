@@ -1,10 +1,11 @@
-import { ownerView } from "@/content/site";
+import { getContent } from "@/content";
 import Icon from "./Icon";
 import Logo from "./Logo";
 import styles from "./OwnerPhone.module.css";
 
 /** Illustrative phone with the updates an owner receives. Captioned as an illustration. */
-export default function OwnerPhone() {
+export default async function OwnerPhone() {
+  const { ownerView } = await getContent();
   return (
     <figure className={styles.figure}>
       <div className={styles.phone}>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cta, home, partner, site } from "@/content/site";
+import { getContent } from "@/content";
 import { initials, telHref, whatsappHref } from "@/lib/format";
 import Icon from "./Icon";
 import SectionHeading from "./SectionHeading";
@@ -9,7 +9,8 @@ import styles from "./CtaBand.module.css";
  * Closing call to action, after the design's contact block: a large headline, then what
  * happens next, who stands behind it, and the WhatsApp, phone and email buttons.
  */
-export default function CtaBand() {
+export default async function CtaBand() {
+  const { cta, home, partner, site } = await getContent();
   return (
     <section className={styles.section} aria-labelledby="cta-title">
       <div className="container">
