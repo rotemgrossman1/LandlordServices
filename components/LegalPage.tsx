@@ -20,9 +20,6 @@ export default async function LegalPage({
       <PageIntro page={page} />
       <section className="section">
         <div className="container prose">
-          <p>
-            <strong>{legal.draftNote}</strong>
-          </p>
           {legal.hebrewGoverns && (
             <p>
               <em>{legal.hebrewGoverns}</em>
