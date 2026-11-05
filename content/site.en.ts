@@ -1477,11 +1477,10 @@ export const labels = {
 };
 
 // ---------------------------------------------------------------------------
-// Legal pages (drafts)
+// Legal pages
 // ---------------------------------------------------------------------------
 
 export const legal = {
-  draftNote: "Draft – pending attorney review",
   hebrewGoverns: "This is an English translation provided for convenience. The Hebrew version of this page is the binding one.",
   privacy: [
     {

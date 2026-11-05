@@ -385,7 +385,7 @@ Each of these is a concrete commitment. Keep only if it really happens for every
 
 ### 9.3 Both pages show "Draft – pending attorney review" [Tone]
 - Visible to every visitor and looks unfinished. Get them reviewed, then remove `legal.draftNote` (both languages).
-- **Decision:**
+- **Decision:** Done: banner removed in both languages.
 
 ---
 

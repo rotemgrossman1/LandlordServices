@@ -1541,11 +1541,10 @@ export const labels = {
 };
 
 // ---------------------------------------------------------------------------
-// Legal pages (drafts)
+// Legal pages
 // ---------------------------------------------------------------------------
 
 export const legal = {
-  draftNote: "טיוטה – לאישור עורך דין",
   hebrewGoverns: "", // English only: the Hebrew version is binding
   privacy: [
     {
