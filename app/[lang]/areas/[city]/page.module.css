@@ -127,16 +127,27 @@ a.credit:hover {
     aspect-ratio: auto;
   }
 
-  /* A third row of three photos (8-photo galleries): no full-width last photo here */
+  /* Larger galleries: photos after the first five fill rows of three */
   .galleryItem:last-child:nth-child(even) {
     grid-column: auto;
     aspect-ratio: 4 / 3;
   }
 
-  /* The wide first column in rows after the first two: match the row's height instead of 4:3 */
   .galleryItem:nth-child(3n + 6) {
     aspect-ratio: auto;
     min-block-size: 12rem;
+  }
+
+  /* Exactly three photos (e.g. our own portrait shots): three equal portrait tiles in one row */
+  .gallery:has(> .galleryItem:first-child:nth-last-child(3)) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .galleryItem:first-child:nth-last-child(3),
+  .galleryItem:first-child:nth-last-child(3) ~ .galleryItem {
+    grid-row: auto;
+    aspect-ratio: 3 / 4;
   }
 }
 

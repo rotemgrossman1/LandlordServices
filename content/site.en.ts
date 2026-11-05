@@ -590,7 +590,7 @@ export const cityPages: CityPage[] = [
       creditUrl: "",
     },
     galleryTitle: "Managed properties in Bat Yam",
-    galleryNote: "The first three photos show an apartment we manage in Bat Yam. The rest are for illustration: residential buildings in Bat Yam, not properties we manage.",
+    galleryNote: "",
     gallery: [
       {
         src: "/images/bat-yam-managed-kitchen.jpg",
@@ -609,36 +609,6 @@ export const cityPages: CityPage[] = [
         alt: "A balcony with a glass railing overlooking residential buildings in Bat Yam, in an apartment we manage",
         credit: "",
         creditUrl: "",
-      },
-      {
-        src: "/images/bat-yam-coast.jpg",
-        alt: "Aerial view of Bat Yam's residential neighborhoods along the coast",
-        credit: "Bar, CC BY-SA 3.0",
-        creditUrl: "https://commons.wikimedia.org/wiki/File:Bat_Yam.jpg",
-      },
-      {
-        src: "/images/bat-yam-renovated.jpg",
-        alt: "An older, renovated residential building in Bat Yam",
-        credit: "Shlomo Roded, PikiWiki, CC BY 2.5",
-        creditUrl: "https://commons.wikimedia.org/wiki/File:150835_bat_yam_-_renovated_residential_buildings_-_charac_PikiWiki_Israel.jpg",
-      },
-      {
-        src: "/images/bat-yam-towers.jpg",
-        alt: "Residential towers in Bat Yam",
-        credit: "Юкатан, CC BY-SA 3.0",
-        creditUrl: "https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Bat-Yam_03.jpg",
-      },
-      {
-        src: "/images/bat-yam-apartments.jpg",
-        alt: "Apartment buildings and a strip of lawn on a street in Bat Yam",
-        credit: "",
-        creditUrl: "",
-      },
-      {
-        src: "/images/bat-yam-city-park.jpg",
-        alt: "Residential towers above the Bat Yam city park",
-        credit: "Ynhockey, CC BY-SA 4.0",
-        creditUrl: "https://commons.wikimedia.org/wiki/File:City_Park_Bat_Yam_01.jpg",
       },
     ],
     workTitle: "Our work in Bat Yam",
