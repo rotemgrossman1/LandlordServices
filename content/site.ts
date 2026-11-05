@@ -650,7 +650,7 @@ export const cityPages: CityPage[] = [
       creditUrl: "",
     },
     galleryTitle: "נכסים מנוהלים בבת ים",
-    galleryNote: "שלוש התמונות הראשונות: דירה בניהולנו בבת ים. שאר התמונות להמחשה: בנייני מגורים בבת ים, לא נכסים שבניהולנו.",
+    galleryNote: "",
     gallery: [
       {
         src: "/images/bat-yam-managed-kitchen.jpg",
@@ -669,36 +669,6 @@ export const cityPages: CityPage[] = [
         alt: "מרפסת עם מעקה זכוכית ונוף לבנייני מגורים בבת ים, בדירה בניהולנו",
         credit: "",
         creditUrl: "",
-      },
-      {
-        src: "/images/bat-yam-coast.jpg",
-        alt: "מבט מלמעלה על שכונות המגורים של בת ים לאורך חוף הים",
-        credit: "בר, CC BY-SA 3.0",
-        creditUrl: "https://commons.wikimedia.org/wiki/File:Bat_Yam.jpg",
-      },
-      {
-        src: "/images/bat-yam-renovated.jpg",
-        alt: "בניין מגורים ותיק ומשופץ בבת ים",
-        credit: "שלמה רודד, PikiWiki, CC BY 2.5",
-        creditUrl: "https://commons.wikimedia.org/wiki/File:150835_bat_yam_-_renovated_residential_buildings_-_charac_PikiWiki_Israel.jpg",
-      },
-      {
-        src: "/images/bat-yam-towers.jpg",
-        alt: "מגדלי מגורים בבת ים",
-        credit: "Юкатан, CC BY-SA 3.0",
-        creditUrl: "https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Bat-Yam_03.jpg",
-      },
-      {
-        src: "/images/bat-yam-apartments.jpg",
-        alt: "בנייני דירות ורצועת דשא ברחוב בבת ים",
-        credit: "",
-        creditUrl: "",
-      },
-      {
-        src: "/images/bat-yam-city-park.jpg",
-        alt: "מגדלי מגורים מעל הפארק העירוני של בת ים",
-        credit: "Ynhockey, CC BY-SA 4.0",
-        creditUrl: "https://commons.wikimedia.org/wiki/File:City_Park_Bat_Yam_01.jpg",
       },
     ],
     workTitle: "העבודה שלנו בבת ים",
