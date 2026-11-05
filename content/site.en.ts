@@ -1104,7 +1104,7 @@ export const faq: FaqItem[] = [
     id: "area",
     question: "Which areas do you operate in?",
     answer:
-      "We are the management company with the widest coverage in Israel. Some of our services are also available for properties located outside these areas, and you are welcome to contact us so we can tailor a personal package for you.",
+      "We operate in Greater Tel Aviv and Jerusalem. Some of our services are also available for properties located outside these areas, and you are welcome to contact us so we can tailor a personal package for you.",
   },
   {
     id: "services",
@@ -1269,7 +1269,7 @@ export const about = {
     "Landlord Services was founded in 2013 by its managing partners, who are property owners themselves and found they needed a high-quality management company that would look after them personally.",
     "We looked for a professional management company free of conflicts of interest, one that is transparent with its clients and keeps up a high level of service over time. That need gave rise to Landlord Services.",
     "At Landlord Services we provide comprehensive service to property owners (apartments and houses), aimed at maximizing the return on the property while giving you peace of mind and freeing you completely from any work or worry involved in managing the property and its day-to-day upkeep.",
-    "From its founding and throughout its years of operation, Landlord Services has grown quickly, establishing itself as the high-quality, professional and leading property management company in Israel.",
+    "From its founding and throughout its years of operation, Landlord Services has grown quickly.",
     "The company has a skilled team with broad, extensive experience in real estate, from property management through project initiation to property development.",
   ],
   values: [
