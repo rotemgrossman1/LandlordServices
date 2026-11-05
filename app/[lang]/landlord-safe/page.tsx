@@ -7,13 +7,17 @@ import PageIntro from "@/components/PageIntro";
 import ProtectionLayers from "@/components/ProtectionLayers";
 import SectionHeading from "@/components/SectionHeading";
 import Steps from "@/components/Steps";
-import { cta, home, labels, pages, protection, safe, safeTerms, services } from "@/content/site";
+import { getContent } from "@/content";
 import { breadcrumbJsonLd, buildMetadata, faqJsonLd, serviceJsonLd } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata = buildMetadata(pages.safe, "/landlord-safe");
+export async function generateMetadata() {
+  const { pages } = await getContent();
+  return buildMetadata(pages.safe, "/landlord-safe");
+}
 
-export default function LandlordSafePage() {
+export default async function LandlordSafePage() {
+  const { cta, home, labels, pages, protection, safe, safeTerms, services, link } = await getContent();
   const included = services.find((s) => s.id === "landlord-safe")?.includes ?? [];
   const hasTerms = Boolean(safeTerms.monthsCovered || safeTerms.price);
 
@@ -21,7 +25,7 @@ export default function LandlordSafePage() {
     <>
       <PageIntro page={pages.safe} eyebrow={protection.eyebrow}>
         <div className="btn-row">
-          <Link href={cta.primaryHref} className="btn btn-primary">
+          <Link href={link(cta.primaryHref)} className="btn btn-primary">
             {cta.primary}
             <Icon name="arrow" size={20} />
           </Link>
@@ -92,8 +96,8 @@ export default function LandlordSafePage() {
 
       <CtaBand />
       <JsonLd data={faqJsonLd(safe.faq)} />
-      <JsonLd data={serviceJsonLd("Landlord Safe", pages.safe.description, "/landlord-safe")} />
-      <JsonLd data={breadcrumbJsonLd("/landlord-safe")} />
+      <JsonLd data={await serviceJsonLd("Landlord Safe", pages.safe.description, "/landlord-safe")} />
+      <JsonLd data={await breadcrumbJsonLd("/landlord-safe")} />
     </>
   );
 }

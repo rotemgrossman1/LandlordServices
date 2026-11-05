@@ -36,6 +36,11 @@
   .link:hover .linkCircle {
     transform: translateX(-4px);
   }
+
+  /* Forward is to the right in English */
+  :global(html[dir="ltr"]) .link:hover .linkCircle {
+    transform: translateX(4px);
+  }
 }
 
 .grid {

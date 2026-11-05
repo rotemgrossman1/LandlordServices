@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { cta, images, personas } from "@/content/site";
+import { getContent } from "@/content";
 import AccentText from "./AccentText";
 import Icon from "./Icon";
 import styles from "./Personas.module.css";
@@ -10,7 +10,8 @@ import styles from "./Personas.module.css";
  * the eyebrow, headline and lead beside a framed building photo, then each typical owner
  * (pain + our answer) as a card that fades in one after another.
  */
-export default function Personas() {
+export default async function Personas() {
+  const { cta, images, personas, link } = await getContent();
   if (personas.items.length === 0) return null;
   return (
     <section className="section" aria-labelledby="personas-title">
@@ -60,7 +61,7 @@ export default function Personas() {
             >
               <h3 className={styles.title}>{personas.closingTitle}</h3>
               {personas.closingText && <p className={styles.closingText}>{personas.closingText}</p>}
-              <Link href={cta.primaryHref} className="btn btn-primary">
+              <Link href={link(cta.primaryHref)} className="btn btn-primary">
                 {cta.primary}
                 <Icon name="arrow" size={18} className="icon-diag" />
               </Link>

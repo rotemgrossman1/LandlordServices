@@ -23,15 +23,21 @@
   box-shadow: 0 12px 30px -20px rgba(0, 0, 0, 0.55);
 }
 
+/* Logo, menu and the language switcher. Header.tsx puts the switcher first in English and
+   last in Hebrew, so it always sits in the top-left corner. */
 .inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
+  gap: var(--space-3);
   min-height: var(--header-height);
 }
 
+:global(html[dir="ltr"]) .inner > nav:first-child {
+  margin-inline-end: var(--space-3);
+}
+
 .logo {
+  margin-inline-end: auto;
   display: inline-flex;
   align-items: center;
   min-height: 44px;

@@ -119,7 +119,7 @@ export const images = {
 };
 
 // Confirmed by the company: true for all clients, not only Landlord Safe.
-export const rentRecord =
+export const rentRecord: string =
   "ב-13 שנה ויותר מ-250 נכסים, אף בעל דירה שלנו לא נשאר בלי שכר דירה – גם כשהדייר הפסיק לשלם.";
 
 // Numbers strip. Items with an empty value are hidden. The founding year is always shown.
@@ -836,6 +836,9 @@ export const cityPages: CityPage[] = [
 // Navigation
 // ---------------------------------------------------------------------------
 
+// Language switcher: each language's name in its own language
+export const languageNames = { he: "עברית", en: "English" };
+
 export const nav = [
   { href: "/services", label: "שירותים" },
   { href: "/landlord-safe", label: "Landlord Safe" },
@@ -1444,6 +1447,7 @@ export const home = {
   eyebrow: "", // empty = hidden
   promise: "אתם נהנים משכר הדירה. אנחנו דואגים לכל השאר.",
   sinceLabel: `מאז ${site.foundingYear}`,
+  regionsJoin: " ו", // joins the regions under the hero: "גוש דן וירושלים"
   foundedValue: String(site.foundingYear), // numbers strip, always shown
   foundedText: "שנת הקמת החברה",
   ledBy: "בהובלת", // hero line: "בהובלת <partner>, <role>"
@@ -1486,6 +1490,9 @@ export const home = {
 // ---------------------------------------------------------------------------
 
 export const labels = {
+  language: "שפה", // the language switcher's label for screen readers
+  serviceCatalog: "שירותי ניהול נכסים", // JSON-LD
+  serviceType: "ניהול נכסים", // JSON-LD
   phone: "טלפון",
   whatsapp: "וואטסאפ",
   email: "אימייל",
@@ -1539,6 +1546,7 @@ export const labels = {
 
 export const legal = {
   draftNote: "טיוטה – לאישור עורך דין",
+  hebrewGoverns: "", // English only: the Hebrew version is binding
   privacy: [
     {
       title: "כללי",
@@ -1558,7 +1566,7 @@ export const legal = {
     },
     {
       title: "עוגיות (Cookies) ואחסון בדפדפן",
-      text: "האתר שומר בדפדפן שלכם רק העדפות: הבחירה שלכם לגבי עוגיות והגדרות תפריט הנגישות. עוגיות נוספות, כמו כלי מדידה, יופעלו רק אם תאשרו זאת בהודעת העוגיות. אפשר לשנות את הבחירה בכל עת דרך הקישור \"הגדרות עוגיות\" בתחתית העמוד, או למחוק את העוגיות בהגדרות הדפדפן.",
+      text: "האתר שומר בדפדפן שלכם רק העדפות: הבחירה שלכם לגבי עוגיות, השפה שבחרתם להצגת האתר והגדרות תפריט הנגישות. עוגיות נוספות, כמו כלי מדידה, יופעלו רק אם תאשרו זאת בהודעת העוגיות. אפשר לשנות את הבחירה בכל עת דרך הקישור \"הגדרות עוגיות\" בתחתית העמוד, או למחוק את העוגיות בהגדרות הדפדפן.",
     },
     {
       title: "פנייה בנושא פרטיות",
@@ -1623,6 +1631,8 @@ export const a11yMenu = {
   textSize: "גודל טקסט",
   increase: "הגדלת טקסט",
   decrease: "הקטנת טקסט",
+  decreaseSymbol: "א-",
+  increaseSymbol: "א+",
   options: {
     contrast: "ניגודיות גבוהה",
     grayscale: "גווני אפור",
@@ -1635,7 +1645,7 @@ export const a11yMenu = {
 };
 
 // Short company summary (also used for llms.txt wording and JSON-LD description)
-export const summary =
+export const summary: string =
   "לנדלורד היא חברת ניהול נכסים לבעלי דירות מושכרות, שהוקמה ב-2013 ופועלת בגוש דן ובירושלים. החברה מספקת ניהול דירות להשכרה, Landlord Safe לשכר דירה מובטח (בכפוף לתנאי השירות), ניהול דירות לתושבי חוץ, ניהול נכסי יוקרה וניהול משרדים ונכסים מסחריים. " +
   rentRecord;
 
@@ -1673,6 +1683,7 @@ export const llms = {
   contactHe: "קשר",
   phoneNoteHe: "טלפון ווואטסאפ",
   pagesTitle: "עמודים עיקריים",
+  englishPagesTitle: "English pages",
   homeNote: "חברת ניהול נכסים לבעלי דירות מושכרות",
   cityNote: "מה אנחנו עושים בעיר ושאלות נפוצות",
   // One line per nav link, by href. A link without a note is left out.

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { cta, site } from "@/content/site";
 import { whatsappHref } from "@/lib/format";
 import Icon from "./Icon";
 import styles from "./WhatsAppFab.module.css";
@@ -11,7 +10,7 @@ import styles from "./WhatsAppFab.module.css";
  * and while an element marked `data-fab-hide` (the hero, the footer) is on screen, since
  * those already show a WhatsApp button. Without JavaScript it simply stays visible.
  */
-export default function WhatsAppFab() {
+export default function WhatsAppFab({ phone, text, label }: { phone: string; text: string; label: string }) {
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
@@ -29,10 +28,10 @@ export default function WhatsAppFab() {
     return () => observer.disconnect();
   }, []);
 
-  if (!site.whatsapp) return null;
+  if (!phone) return null;
   return (
     <a
-      href={whatsappHref(site.whatsapp, cta.whatsappText)}
+      href={whatsappHref(phone, text)}
       className={`${styles.fab} ${hidden ? styles.hidden : ""}`}
       rel="noopener"
       target="_blank"
@@ -40,7 +39,7 @@ export default function WhatsAppFab() {
       tabIndex={hidden ? -1 : undefined}
     >
       <Icon name="whatsapp" size={26} />
-      <span className={styles.label}>{cta.whatsappLong}</span>
+      <span className={styles.label}>{label}</span>
     </a>
   );
 }

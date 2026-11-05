@@ -158,6 +158,7 @@ export default function Icon({
       aria-hidden="true"
       focusable="false"
       className={className}
+      data-icon={name}
     >
       {icons[name]}
     </svg>

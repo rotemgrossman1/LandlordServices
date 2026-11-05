@@ -1,6 +1,6 @@
 # Landlord (לנדלורד) website
 
-A small static marketing site for Landlord, a property-management company. Built with Next.js (App Router), React and TypeScript, using plain CSS (CSS variables plus CSS Modules). The site is in Hebrew and RTL.
+A small static marketing site for Landlord, a property-management company. Built with Next.js (App Router), React and TypeScript, using plain CSS (CSS variables plus CSS Modules). The site is in Hebrew (RTL) at the root, with an English version (LTR) under `/en`.
 
 ## Run locally
 
@@ -29,7 +29,15 @@ npm run start      # serve the production build
 
 **An empty value (`""` or `[]`) hides the section that uses it.** Never put in placeholder numbers or made-up reviews.
 
-`public/llms.txt` (a summary for AI assistants) is a separate plain-text file. Update it if contact details or services change.
+## English version
+
+- **Copy:** [`content/site.en.ts`](content/site.en.ts) has the same exports and keys as `content/site.ts`. The build fails if the English file is missing anything. Shared facts (URL, email, company number, map links, photos) come from the Hebrew file. **Every change to `site.ts` must be mirrored in `site.en.ts`.**
+- **URLs:** Hebrew pages stay at `/services`, `/areas/tel-aviv`…; English pages are `/en/services`, `/en/areas/tel-aviv`…. Pages live in `app/[lang]/`, and `proxy.ts` serves Hebrew URLs from `/he/...` internally.
+- **Default language** (`proxy.ts`), for a visitor who hasn't picked one: anyone in Israel gets Hebrew, even with an English browser. Outside Israel, a browser set to Hebrew gets Hebrew, and everyone else is sent to `/en`. A flag choice is saved in the `lang` cookie and always wins. Search engines and bots are never redirected. The country comes from Vercel's `x-vercel-ip-country` header; without it (local dev) everyone gets Hebrew. To test the English redirect locally, run `curl -H "x-vercel-ip-country: US" localhost:3000/`.
+- **Switcher:** `components/LangSwitch.tsx` (🇮🇱 עברית / 🇺🇸 English) sits in the top-left corner of the header in both languages.
+- **New pages:** add the path to `pageRoutes` in `lib/routes.ts`. It feeds the sitemap, and `proxy.ts` sends any URL not on the list to the 404 page.
+
+`/llms.txt` (a summary for AI assistants) is built from `llms` in `content/site.ts` by `app/llms.txt/route.ts`, and lists the English pages too.
 
 ## Images and logo
 

@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { team } from "@/content/site";
+import { getContent } from "@/content";
 import { initials } from "@/lib/format";
 import styles from "./TeamGrid.module.css";
 
 /** Team cards: photo when set, otherwise initials. Renders nothing while the list is empty. */
-export default function TeamGrid() {
+export default async function TeamGrid() {
+  const { team } = await getContent();
   if (team.length === 0) return null;
   return (
     <ul className={styles.grid}>

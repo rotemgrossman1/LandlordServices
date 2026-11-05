@@ -1,11 +1,12 @@
-import { home, labels, stats } from "@/content/site";
+import { getContent } from "@/content";
 import styles from "./NumbersStrip.module.css";
 
 /**
  * The design's hairline stats strip. The founding year always shows; other numbers only when
  * they have a value. `band` (home page) renders it as its own full-width section.
  */
-export default function NumbersStrip({ band = false }: { band?: boolean }) {
+export default async function NumbersStrip({ band = false }: { band?: boolean }) {
+  const { home, labels, stats } = await getContent();
   const items = [
     { value: home.foundedValue, label: home.foundedText },
     ...stats.filter((s) => s.value),

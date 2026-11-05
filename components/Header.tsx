@@ -3,14 +3,28 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { cta, labels, nav, site } from "@/content/site";
 import { telHref } from "@/lib/format";
+import { stripLang, type Lang } from "@/lib/i18n";
 import Icon from "./Icon";
+import LangSwitch from "./LangSwitch";
 import Logo from "./Logo";
 import styles from "./Header.module.css";
 
-export default function Header() {
+type Props = {
+  lang: Lang;
+  nav: { href: string; label: string }[]; // hrefs already in this language
+  home: string;
+  cta: { label: string; href: string };
+  phone: string;
+  brand: string;
+  labels: { homeLink: string; menu: string; closeMenu: string; mainNav: string; phone: string; language: string };
+  languageNames: Record<Lang, string>;
+};
+
+export default function Header({ lang, nav, home, cta, phone, brand, labels, languageNames }: Props) {
   const pathname = usePathname();
+  // Hebrew pages are served from /he internally (proxy.ts), so compare without any prefix
+  const path = stripLang(pathname);
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -39,12 +53,17 @@ export default function Header() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
+  // Always in the physical top-left corner: first in English (left-to-right), last in Hebrew
+  // (right-to-left). Placed in the DOM where it shows, so keyboard order matches what you see.
+  const switcher = <LangSwitch lang={lang} path={path} names={languageNames} label={labels.language} />;
+
   return (
     <header
-      className={`${styles.header} ${pathname === "/" ? styles.overlay : ""} ${scrolled || open ? styles.scrolled : ""}`}
+      className={`${styles.header} ${path === "/" ? styles.overlay : ""} ${scrolled || open ? styles.scrolled : ""}`}
     >
       <div className={`container ${styles.inner}`}>
-        <Link href="/" className={styles.logo} aria-label={`${site.nameHe} – ${labels.homeLink}`}>
+        {lang === "en" && switcher}
+        <Link href={home} className={styles.logo} aria-label={`${brand} – ${labels.homeLink}`}>
           <Logo tone="light" />
         </Link>
 
@@ -71,7 +90,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={styles.link}
-                  aria-current={pathname === item.href ? "page" : undefined}
+                  aria-current={stripLang(item.href) === path ? "page" : undefined}
                 >
                   {item.label}
                 </Link>
@@ -79,19 +98,21 @@ export default function Header() {
             ))}
           </ul>
           <div className={styles.actions}>
-            <a href={telHref(site.phone)} className={styles.contact}>
+            <a href={telHref(phone)} className={styles.contact}>
               <Icon name="phone" size={20} />
               <span className="visually-hidden">{labels.phone}: </span>
-              <span className="ltr">{site.phone}</span>
+              <span className="ltr">{phone}</span>
             </a>
-            <Link href={cta.primaryHref} className={`btn btn-pill ${styles.cta}`}>
-              {cta.primary}
+            <Link href={cta.href} className={`btn btn-pill ${styles.cta}`}>
+              {cta.label}
               <span className="btn-circle" aria-hidden="true">
                 <Icon name="arrow" size={16} className="icon-diag" />
               </span>
             </Link>
           </div>
         </nav>
+
+        {lang === "he" && switcher}
       </div>
     </header>
   );

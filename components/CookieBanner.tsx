@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { cookieNotice } from "@/content/site";
+import type { SiteContent } from "@/content";
 import styles from "./CookieBanner.module.css";
 
 const STORAGE_KEY = "cookie-consent";
@@ -24,7 +24,13 @@ export function getCookieConsent(): CookieConsent | null {
  * link reopens it. The choice is kept in localStorage and announced with a
  * `cookie-consent` window event so any optional script can wait for "accepted".
  */
-export default function CookieBanner() {
+export default function CookieBanner({
+  text: cookieNotice,
+  policyHref,
+}: {
+  text: SiteContent["cookieNotice"];
+  policyHref: string;
+}) {
   const [open, setOpen] = useState(false);
   const acceptRef = useRef<HTMLButtonElement>(null);
   const reopened = useRef(false);
@@ -63,7 +69,7 @@ export default function CookieBanner() {
           {cookieNotice.title}
         </h2>
         <p>
-          {cookieNotice.text} <Link href="/privacy">{cookieNotice.policyLink}</Link>
+          {cookieNotice.text} <Link href={policyHref}>{cookieNotice.policyLink}</Link>
         </p>
       </div>
       <div className={styles.actions}>

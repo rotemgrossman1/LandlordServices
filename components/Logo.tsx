@@ -1,4 +1,3 @@
-import { site } from "@/content/site";
 import { logoSkyline, logoWordmark } from "./logoPaths";
 import styles from "./Logo.module.css";
 
@@ -10,9 +9,11 @@ import styles from "./Logo.module.css";
 export default function Logo({
   tone = "dark",
   markOnly = false,
+  label = "",
 }: {
   tone?: "dark" | "light";
   markOnly?: boolean;
+  label?: string; // the company name, read by screen readers
 }) {
   if (markOnly) {
     return (
@@ -27,7 +28,7 @@ export default function Logo({
 
   return (
     <span className={`${styles.logo} ${tone === "light" ? styles.light : ""}`}>
-      <svg className={styles.mark} viewBox="64 48 126 139" role="img" aria-label={site.nameHe}>
+      <svg className={styles.mark} viewBox="64 48 126 139" {...(label ? { role: "img", "aria-label": label } : { "aria-hidden": true })}>
         {logoSkyline.map((d) => (
           <path key={d} d={d} className={styles.skyline} />
         ))}

@@ -1,11 +1,11 @@
 import type { PageMeta } from "@/content/site";
-import { labels, legal } from "@/content/site";
-import { formatDateHe } from "@/lib/format";
+import { getContent } from "@/content";
+import { formatDate } from "@/lib/format";
 import PageIntro from "./PageIntro";
 
 type Section = { title: string; text: string };
 
-export default function LegalPage({
+export default async function LegalPage({
   page,
   sections,
   updated,
@@ -14,6 +14,7 @@ export default function LegalPage({
   sections: Section[];
   updated?: string;
 }) {
+  const { labels, lang, legal } = await getContent();
   return (
     <>
       <PageIntro page={page} />
@@ -22,6 +23,11 @@ export default function LegalPage({
           <p>
             <strong>{legal.draftNote}</strong>
           </p>
+          {legal.hebrewGoverns && (
+            <p>
+              <em>{legal.hebrewGoverns}</em>
+            </p>
+          )}
           {sections
             .filter((s) => s.text)
             .map((s) => (
@@ -32,7 +38,7 @@ export default function LegalPage({
             ))}
           {updated && (
             <p>
-              {labels.lastUpdated} <time dateTime={updated}>{formatDateHe(updated)}</time>
+              {labels.lastUpdated} <time dateTime={updated}>{formatDate(updated, lang)}</time>
             </p>
           )}
         </div>

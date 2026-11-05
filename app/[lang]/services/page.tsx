@@ -4,13 +4,17 @@ import CtaBand from "@/components/CtaBand";
 import Icon from "@/components/Icon";
 import JsonLd from "@/components/JsonLd";
 import PageIntro from "@/components/PageIntro";
-import { home, labels, pages, services } from "@/content/site";
+import { getContent } from "@/content";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import styles from "./page.module.css";
 
-export const metadata = buildMetadata(pages.services, "/services");
+export async function generateMetadata() {
+  const { pages } = await getContent();
+  return buildMetadata(pages.services, "/services");
+}
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const { home, labels, pages, services, link } = await getContent();
   return (
     <>
       <PageIntro page={pages.services} eyebrow={home.servicesEyebrow}>
@@ -45,7 +49,7 @@ export default function ServicesPage() {
               <h3 className={styles.subhead}>{labels.forWhom}</h3>
               <p>{s.forWhom}</p>
               {s.id === "landlord-safe" && (
-                <Link href="/landlord-safe" className="btn btn-primary">
+                <Link href={link("/landlord-safe")} className="btn btn-primary">
                   {labels.learnMore} – Landlord Safe
                   <Icon name="arrow" size={20} />
                 </Link>
@@ -67,7 +71,7 @@ export default function ServicesPage() {
       <Comparison alt={services.length % 2 === 1} />
 
       <CtaBand />
-      <JsonLd data={breadcrumbJsonLd("/services")} />
+      <JsonLd data={await breadcrumbJsonLd("/services")} />
     </>
   );
 }

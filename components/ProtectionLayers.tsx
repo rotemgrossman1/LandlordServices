@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { images, protection } from "@/content/site";
+import { getContent } from "@/content";
 import AccentText from "./AccentText";
 import Icon from "./Icon";
 import styles from "./ProtectionLayers.module.css";
@@ -10,7 +10,8 @@ import styles from "./ProtectionLayers.module.css";
  * Landlord Safe note over it, and the four layers beside it. With `showLinks`
  * (home page) it links on to the Landlord Safe page.
  */
-export default function ProtectionLayers({ showLinks = true }: { showLinks?: boolean }) {
+export default async function ProtectionLayers({ showLinks = true }: { showLinks?: boolean }) {
+  const { images, protection, link } = await getContent();
   const layers = protection.layers;
   const safe = layers[layers.length - 1];
   return (
@@ -58,7 +59,7 @@ export default function ProtectionLayers({ showLinks = true }: { showLinks?: boo
 
           {showLinks && (
             <div className={styles.links}>
-              <Link href="/landlord-safe" className="btn btn-outline">
+              <Link href={link("/landlord-safe")} className="btn btn-outline">
                 {protection.safeLink}
                 <Icon name="arrow" size={18} />
               </Link>

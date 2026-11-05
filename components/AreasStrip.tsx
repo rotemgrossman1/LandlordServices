@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { areas, cityPages, cta, home } from "@/content/site";
+import { getContent } from "@/content";
 import Icon from "./Icon";
 import SectionHeading from "./SectionHeading";
 import styles from "./AreasStrip.module.css";
@@ -10,7 +10,8 @@ import styles from "./AreasStrip.module.css";
  * (not our properties) with a caption line under each, and the full list of cities.
  * Hidden when the list is empty.
  */
-export default function AreasStrip() {
+export default async function AreasStrip() {
+  const { areas, cityPages, cta, home, link } = await getContent();
   if (areas.cities.length === 0) return null;
   return (
     <section className="section" aria-labelledby="areas-title">
@@ -23,7 +24,7 @@ export default function AreasStrip() {
           large
           rule
           side={
-            <Link href={cta.primaryHref} className={styles.link}>
+            <Link href={link(cta.primaryHref)} className={styles.link}>
               {cta.primary}
               <span className={styles.linkCircle} aria-hidden="true">
                 <Icon name="arrow" size={18} />
@@ -55,7 +56,7 @@ export default function AreasStrip() {
                     <div className={styles.names}>
                       <h3 className={styles.city}>
                         {page ? (
-                          <Link href={`/areas/${page.slug}`} className={styles.cityLink}>
+                          <Link href={link(`/areas/${page.slug}`)} className={styles.cityLink}>
                             {a.city}
                           </Link>
                         ) : (

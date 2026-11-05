@@ -1,11 +1,12 @@
-import { ownerView } from "@/content/site";
+import { getContent } from "@/content";
 import Icon from "./Icon";
 import OwnerPhone from "./OwnerPhone";
 import SectionHeading from "./SectionHeading";
 import styles from "./OwnerView.module.css";
 
 /** "What it looks like from your side": benefit points + the illustrative phone. */
-export default function OwnerView() {
+export default async function OwnerView() {
+  const { ownerView } = await getContent();
   return (
     <section className="section section-alt" aria-labelledby="owner-title">
       <div className={`container ${styles.inner}`}>
