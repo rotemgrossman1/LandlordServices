@@ -108,7 +108,8 @@ a.credit:hover {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .galleryItem:first-child {
+  .galleryItem:first-child,
+  .galleryItem:last-child:nth-child(even) {
     grid-column: 1 / -1;
     aspect-ratio: 16 / 9;
   }
@@ -124,6 +125,18 @@ a.credit:hover {
     grid-column: 1;
     grid-row: 1 / span 2;
     aspect-ratio: auto;
+  }
+
+  /* A third row of three photos (8-photo galleries): no full-width last photo here */
+  .galleryItem:last-child:nth-child(even) {
+    grid-column: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* The wide first column in rows after the first two: match the row's height instead of 4:3 */
+  .galleryItem:nth-child(3n + 6) {
+    aspect-ratio: auto;
+    min-block-size: 12rem;
   }
 }
 
