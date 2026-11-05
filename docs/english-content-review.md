@@ -395,20 +395,20 @@ Each of these is a concrete commitment. Keep only if it really happens for every
 - **Where:** `llms.intro[1]` "Landlord is an Israeli property-management company…", `llms.english` "Landlord (לנדלורד) is…"
 - **Problem:** CLAUDE.md: the English name is always "Landlord Services".
 - **Fix:** "Landlord Services (לנדלורד) is…"
-- **Decision:**
+- **Decision:** Done.
 
 ### 10.2 "managing partner… is a lawyer" vs. "CEO… attorney" [Accuracy]
 - **Where:** `llms.englishPoints[6]`
 - **Fix:** "Legal backing: the CEO, Doron Marom (דורון מרום), is an attorney." (matches the About page)
-- **Decision:**
+- **Decision:** Done.
 
 ### 10.3 "owners of one to three apartments" [Accuracy]
 - The site (personas, FAQ) also targets investors with several apartments and owners of multiple properties. Confirm "one to three" or drop it.
-- **Decision:**
+- **Decision:** Done: dropped "one to three" in both the English and Hebrew lines of llms.txt.
 
 ### 10.4 Execution Office [Accuracy]
 - `englishPoints[3]` "legal eviction including enforcement proceedings" – same issue as 0.1.
-- **Decision:**
+- **Decision:** Open: waits on 0.1 (are Execution Office proceedings included?).
 
 ---
 
