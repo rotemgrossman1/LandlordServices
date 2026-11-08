@@ -98,7 +98,6 @@ export const areas = {
     "Ramat Gan",
     "Givatayim",
     "Herzliya",
-    "Herzliya Pituach",
     "Ra'anana",
     "Givat Shmuel",
     "Bat Yam",
