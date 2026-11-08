@@ -8,13 +8,14 @@ import styles from "./AreasStrip.module.css";
 /**
  * Where we work, in the design's portfolio layout on off-white: photo cards of the cities themselves
  * (not our properties) with a caption line under each, and the full list of cities.
+ * This is where visitors find the city pages (the footer links here, not to each city).
  * Hidden when the list is empty.
  */
 export default async function AreasStrip() {
   const { areas, cityPages, cta, home, link } = await getContent();
   if (areas.cities.length === 0) return null;
   return (
-    <section className="section" aria-labelledby="areas-title">
+    <section id="areas" className="section" aria-labelledby="areas-title">
       <div className="container">
         <SectionHeading
           id="areas-title"
@@ -80,9 +81,20 @@ export default async function AreasStrip() {
         <div className={styles.all}>
           <p className={styles.allLabel}>{home.areasAllLabel}</p>
           <ul className={styles.cities}>
-            {areas.cities.map((c) => (
-              <li key={c}>{c}</li>
-            ))}
+            {areas.cities.map((c) => {
+              const page = cityPages.find((p) => p.city === c);
+              return (
+                <li key={c}>
+                  {page ? (
+                    <Link href={link(`/areas/${page.slug}`)} className={styles.cityListLink}>
+                      {c}
+                    </Link>
+                  ) : (
+                    c
+                  )}
+                </li>
+              );
+            })}
           </ul>
           {home.areasLead && <p className={styles.lead}>{home.areasLead}</p>}
         </div>

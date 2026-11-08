@@ -7,7 +7,7 @@ import Logo from "./Logo";
 import styles from "./Footer.module.css";
 
 export default async function Footer() {
-  const { areas, cityPages, cookieNotice, cta, labels, nav, services, site, link } = await getContent();
+  const { areas, cookieNotice, cta, labels, nav, services, site, link } = await getContent();
   return (
     <footer className={styles.footer} data-fab-hide>
       <div className={`container ${styles.grid}`}>
@@ -48,11 +48,11 @@ export default async function Footer() {
                 <Link href={link(item.href)}>{item.label}</Link>
               </li>
             ))}
-            {cityPages.map((c) => (
-              <li key={c.slug}>
-                <Link href={link(`/areas/${c.slug}`)}>{labels.cityPage.replace("{city}", c.city)}</Link>
+            {areas.cities.length > 0 && (
+              <li>
+                <Link href={`${link("/")}#areas`}>{labels.areas}</Link>
               </li>
-            ))}
+            )}
             <li>
               <Link href={link("/privacy")}>{labels.privacy}</Link>
             </li>
