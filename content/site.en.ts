@@ -1367,7 +1367,7 @@ export const pages: Record<
 // ---------------------------------------------------------------------------
 
 export const home = {
-  eyebrow: "", // empty = hidden
+  eyebrow: "Property management company for apartment owners", // empty = hidden. Carries the main search phrase above the H1
   promise: "You enjoy the rent. We take care of everything else.",
   sinceLabel: `Since ${site.foundingYear}`,
   regionsJoin: " & ",

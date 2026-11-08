@@ -1431,7 +1431,7 @@ export const pages: Record<
 // ---------------------------------------------------------------------------
 
 export const home = {
-  eyebrow: "", // empty = hidden
+  eyebrow: "חברת ניהול נכסים לבעלי דירות", // empty = hidden. Carries the main search phrase above the H1
   promise: "אתם נהנים משכר הדירה. אנחנו דואגים לכל השאר.",
   sinceLabel: `מאז ${site.foundingYear}`,
   regionsJoin: " ו", // joins the regions under the hero: "גוש דן וירושלים"
