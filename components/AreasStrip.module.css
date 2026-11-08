@@ -239,6 +239,18 @@
   color: var(--color-accent-dark);
 }
 
+.cityListLink {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-dark);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.cityListLink:hover {
+  color: var(--color-accent-dark);
+}
+
 .lead {
   margin: 0;
   color: var(--color-muted);

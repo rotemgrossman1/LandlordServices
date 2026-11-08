@@ -792,7 +792,7 @@ export const cta = {
 // ---------------------------------------------------------------------------
 
 // Order follows the Acre & Key design. "steps" and "ownerView" are off; "comparison" lives on /services.
-// "areas" should come off once all the city pages exist (they get linked from the footer).
+// "areas" stays: it is where visitors find the city pages (the footer links to it).
 export const homeSections: HomeSection[] = [
   "howItWorks",
   "personas",
@@ -1459,7 +1459,6 @@ export const labels = {
   homeLink: "Home",
   onThisPage: "On this page",
   lastUpdated: "Last updated:",
-  cityPage: "Property management in {city}", // footer link to a city page
   allServices: "All services",
   footerTagline: `A property management company for owners of rented apartments in Greater Tel Aviv and Jerusalem, since ${site.foundingYear}. You enjoy the rent – we take care of everything else.`,
 };
