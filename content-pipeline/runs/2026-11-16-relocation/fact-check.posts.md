@@ -1,0 +1,20 @@
+# Fact check: posts.draft.md
+
+Result: FAIL
+
+## Problems (must fix)
+- "וגם הדירה נבדקת: בדוגמה שפורסמה, השכרה לטווח ארוך הייתה מכריעה את אחד המבחנים של הביטוח הלאומי לטובת המדינה החדשה [F21]." (LinkedIn HE, point 2), and the matching "The home counts too: in one published example, a long lease would have settled one of National Insurance's residency tests in favor of the new country [F21]." (LinkedIn EN, point 2). This names the wrong body. In the source's Lisbon example the "first test" is the tax-treaty tie-breaker: "כששתי המדינות רואות באותו אדם תושב שלהן, האמנה מכריעה ... קודם בית קבע, אחר כך מרכז האינטרסים החיוניים". The example never mentions ביטוח לאומי. National Insurance appears in the article only as a body that looks at "מה נעשה בדירה שהשאיר". F21 in research.md also says "outcome depends on the tax treaty". Fix: say the test is the tax treaty's tie-breaker (בית קבע / permanent home), or drop the example and keep only the general point that what you do with the home is examined. (S15, https://www.bizportal.co.il/financialconsumerism/news/article/20042731)
+- "לפי כללי השכירות ההוגנת, תקלה שמונעת מגורים בדירה צריך לתקן תוך 3 ימים [F32]." (Facebook HE, point 5), "Under Israel's Fair Rental rules, a fault..." (Facebook EN, point 5), "Under the Fair Rental rules, a tenant's security is capped..." (LinkedIn EN, point 5). The source calls it a law, not rules: an amendment to חוק השכירות והשאילה, "שמוכר כתיקון השכירות ההוגנת", in force since 2017. "כללים"/"rules" suggests regulations. The article outline itself says "חוק שכירות הוגנת". Fix: "לפי חוק שכירות הוגנת" / "Under Israel's Fair Rental Law". (S19, https://www.bizportal.co.il/guides/news/article/20039018; S21, https://www.themarker.com/realestate/2017-07-17/ty-article/0000017f-e0d0-d75c-a7ff-fcdde59f0000)
+
+## Notes (worth a look)
+- F25, the specific check on Facebook's shorter wording: OK. "ובתל אביב היא ניתנת לחצי שנה לכל היותר" / "Tel Aviv gives it for half a year at most" is supported. S17's table says Tel Aviv gives "100% לשישה חודשים לכל תקופת בעלות, ואחר כך אין הנחה", and its headline says "תל אביב וחיפה נותנות חצי שנה". This fits LinkedIn's "at most six months at 100%". Facebook leaves out "once per ownership period", so a reader could think the clock restarts with each tenant. The source says it doesn't: "המניין אינו מתאפס עם כל שוכר חדש". This is optional. F25 is also single-source Tier 2, and tel-aviv.gov.il could not be read. (S17, https://www.bizportal.co.il/realestates/news/article/20043459)
+- F8, "לפי דיווח מ-3 בנובמבר 2026" / "a report from November 3, 2026": the Globes page shows only "updated 03.11.2026", with no original publication date. "אין שום דיל כרגע" is a quote from a source involved in the committee's work, not an official position. The wording "proposal only, no agreement" is accurate. (S3, https://www.globes.co.il/news/article.aspx?did=1001561794)
+- F2, "במסלול 10% אין ניכוי של הוצאות ופחת": correct per S1, but S1 notes one exception since 2023 (section 122(ו), rent paid for another apartment in Israel). This hardly matters for people relocating abroad and is fine for a post. (S1)
+- "גם בלי הרהיטים" / "Furniture included" [F26]: the furniture point is stated outright in S17 and S18, which are F26's sources, so it's supported. F28 would be the more exact ID.
+- The "rent paid straight into your own account" claim matches FAQ "abroad-manage" in content/site.ts ("הכסף משכר הדירה נכנס ישירות לחשבונך"). "From finding tenants to handling repairs" matches the services copy in site.ts.
+- Contact details match site.ts: 054-2110096 (calls and WhatsApp) and doron@landlords.co.il. +972-54-211-0096 is the required English format.
+- No `needs-check` facts are used (F13, F14 and F40 are absent). The posts make no Landlord Safe guarantee claim, so the terms-of-service wording isn't triggered there. The outline keeps "בכפוף לתנאי השירות".
+- The Hebrew and English versions state the same facts in all four posts.
+
+## Checked
+32 claims checked, 14 source pages opened (S1, S2, S3, S13, S14, S15, S16, S17, S18, S19, S21, S22, S23, plus content/site.ts). S1 opened as a PDF and was readable.
