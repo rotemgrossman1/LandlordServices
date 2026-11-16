@@ -1,9 +1,9 @@
 {
-  "stage": "gate-posts",
+  "stage": "article",
   "subject": "רילוקיישן: 5 דברים שחשוב לדאוג להם בנוגע לבית ולנכסים כשטסים לרילוקיישן",
   "slug": "",
   "approvals": {
-    "posts": "",
+    "posts": "2026-11-16T16:10:00Z — owner: \"the facebook post is flawless\" (Facebook HE/EN), then on the rewritten LinkedIn posts: \"approve\"",
     "article": ""
   },
   "published": {
@@ -13,5 +13,5 @@
       "en": ""
     }
   },
-  "updated": "2026-11-16T15:40:00Z"
+  "updated": "2026-11-16T16:10:00Z"
 }
