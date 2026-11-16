@@ -21,7 +21,7 @@ Closing section: what Landlord Services does for owners who relocate (ניהול
 
 4. הביטוח לא עובר לדיירים. ביטוח המבנה נשאר באחריותכם גם כשהדירה מושכרת [F35], ודירה שעומדת ריקה תקופה ארוכה עלולה לצאת מהכיסוי, לפי תנאי הפוליסה [F36].
 
-5. מישהו קרוב לדירה. לפי כללי השכירות ההוגנת, תקלה שמונעת מגורים בדירה צריך לתקן תוך 3 ימים [F32]. מהצד השני של העולם, עם הפרש שעות, זה לא פשוט.
+5. מישהו קרוב לדירה. לפי חוק שכירות הוגנת, תקלה שמונעת מגורים בדירה צריך לתקן תוך 3 ימים [F32]. מהצד השני של העולם, עם הפרש שעות, זה לא פשוט.
 
 מהניסיון שלנו, רוב הבעיות לא מתחילות ביום הראשון. הן מצטברות בשקט: חשבון שלא הועבר על שם הדיירים, תקלה שמחכה שמישהו יזמין אינסטלטור.
 
@@ -48,7 +48,7 @@ Here are five things worth sorting out before your flight:
 
 4. Insurance stays your job. Building insurance remains with you as the owner even when the apartment is rented out [F35], and an apartment left empty for a long time can fall outside cover, depending on the policy terms [F36].
 
-5. Someone close to the apartment. Under Israel's Fair Rental rules, a fault that makes the apartment unlivable has to be fixed within 3 days [F32]. That's hard to manage from another time zone.
+5. Someone close to the apartment. Under Israel's Fair Rental Law, a fault that makes the apartment unlivable has to be fixed within 3 days [F32]. That's hard to manage from another time zone.
 
 In our experience, most problems don't show up on day one. They build up quietly: a bill still in your name, a repair waiting for someone to call a plumber.
 
@@ -71,7 +71,7 @@ Want to talk about your apartment? +972-54-211-0096 (phone and WhatsApp) · doro
 
 1. מסלול המס. במסלול 10% אין ניכוי של הוצאות ופחת [F2], והמס משולם תוך 30 יום מתום שנת המס [F3]. איזה מסלול מתאים לכם, ומה משתנה כשהופכים לתושבי חוץ, זו שאלה לרואה החשבון.
 
-2. תושבות ומס יציאה. התושבות נקבעת לפי מרכז החיים, וחזקות ימי השהייה ניתנות לסתירה [F17]. מי שמנתק תושבות נחשב כאילו מכר את נכסיו ההוניים יום לפני הניתוק, או שהתשלום נדחה עד למכירה בפועל [F22]. וגם הדירה נבדקת: בדוגמה שפורסמה, השכרה לטווח ארוך הייתה מכריעה את אחד המבחנים של הביטוח הלאומי לטובת המדינה החדשה [F21].
+2. תושבות ומס יציאה. התושבות נקבעת לפי מרכז החיים, וחזקות ימי השהייה ניתנות לסתירה [F17]. מי שמנתק תושבות נחשב כאילו מכר את נכסיו ההוניים יום לפני הניתוק, או שהתשלום נדחה עד למכירה בפועל [F22]. וגם הדירה נבדקת: בדוגמה שפורסמה, השכרה לטווח ארוך הייתה מכריעה את מבחן "בית הקבע" של אמנת המס לטובת המדינה החדשה [F21].
 
 3. ארנונה על דירה ריקה. התקנות מתירות הנחה של עד 36 חודשים מצטברים, בשיעור יורד [F24]. אבל בתל אביב מקבלים לכל היותר חצי שנה ב-100%, פעם אחת לכל תקופת בעלות [F25].
 
@@ -98,13 +98,13 @@ There's also a possible change ahead. According to a report from November 3, 202
 
 1. Your tax track. On the 10% track you can't deduct expenses or depreciation [F2], and the tax is due within 30 days after the end of the tax year [F3]. Which track fits you, and what changes once you become a foreign resident, is a question for your accountant.
 
-2. Residency and exit tax. Residency follows your "center of life," and the day-count presumptions can be rebutted [F17]. If you cut Israeli residency, you're treated as having sold your capital assets the day before, or you can defer the payment until an actual sale [F22]. The home counts too: in one published example, a long lease would have settled one of National Insurance's residency tests in favor of the new country [F21].
+2. Residency and exit tax. Residency follows your "center of life," and the day-count presumptions can be rebutted [F17]. If you cut Israeli residency, you're treated as having sold your capital assets the day before, or you can defer the payment until an actual sale [F22]. The home counts too: in one published example, a long lease would have settled the tax treaty's "permanent home" test in favor of the new country [F21].
 
 3. Arnona (municipal property tax) on an empty apartment. The regulations allow a discount for up to 36 cumulative months, at a falling rate [F24], but Tel Aviv gives at most six months at 100%, once per ownership period [F25].
 
 4. Insurance. Building cover stays with the owner [F35], and an apartment left empty for a long time can fall outside cover, depending on the policy [F36].
 
-5. Lease and upkeep. Under the Fair Rental rules, a tenant's security is capped at the lower of one-third of the total rent or three months' rent [F30], and a fault that makes the home unlivable must be fixed within 3 days [F32].
+5. Lease and upkeep. Under Israel's Fair Rental Law, a tenant's security is capped at the lower of one-third of the total rent or three months' rent [F30], and a fault that makes the home unlivable must be fixed within 3 days [F32].
 
 Our take: settle the tax questions with an accountant. The property side, from the lease to the next repair, needs someone near the apartment.
 

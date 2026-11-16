@@ -10,7 +10,7 @@ Run: content-pipeline/runs/2026-11-16-relocation/ · Researched: 2026-11-16
 - Tax residency is judged by "centre of life", with rebuttable day-count presumptions (183 days, or 30 days plus 425 over three years). Tax residency and National Insurance residency are decided separately. Renting the home out on a long lease rather than keeping it available can affect the residency outcome. (F17, F18, F19, F20, F21)
 - When you cut tax residency, an exit tax treats your capital assets as sold the day before you leave, or the tax can be deferred to an actual sale. (F22)
 - Arnona: an empty-property discount exists (regulations allow up to 100% for 6 months, then less, up to 36 months), but Tel Aviv gives at most 6 months at 100%, once per ownership. The apartment must be empty of people and of furniture, and the discount runs only from the written notice. (F24, F25, F26, F27, F28)
-- Lease under the Fair Rental rules: the guarantee is capped at the lower of 3 months' rent or one-third of the whole term's rent. The landlord repairs within 30 days (3 days if urgent) and returns the guarantee within 60 days. (F29, F30, F31, F32, F33)
+- Lease under the Fair Rental Law (חוק שכירות הוגנת, a 2017 amendment to חוק השכירות והשאילה): the guarantee is capped at the lower of 3 months' rent or one-third of the whole term's rent. The landlord repairs within 30 days (3 days if urgent) and returns the guarantee within 60 days. (F29, F30, F31, F32, F33)
 - Insurance: building cover is the owner's, contents cover is the tenant's. A long-vacant apartment can fall outside cover, and mortgage holders must have building insurance assigned to the bank. (F35, F36, F38, F39)
 
 ## Questions covered
@@ -137,7 +137,7 @@ Run: content-pipeline/runs/2026-11-16-relocation/ · Researched: 2026-11-16
 - URL: https://www.bizportal.co.il/guides/news/article/20039018
 - Publisher: Bizportal (guides team) · Tier: 2 · Language: he
 - Published: 2026-08-17 · Read on: 2026-11-16
-- Why it's relevant: current summary of the Fair Rental rules (scope, guarantee, repairs, notice) and who pays bills.
+- Why it's relevant: current summary of the Fair Rental Law (scope, guarantee, repairs, notice) and who pays bills.
 
 ### S20 · חוק שכירות הוגנת: השוכר יוכל להוריד את עלות התיקונים משכר הדירה
 - URL: https://www.ynet.co.il/articles/0,7340,L-4984064,00.html
@@ -193,7 +193,7 @@ Run: content-pipeline/runs/2026-11-16-relocation/ · Researched: 2026-11-16
 | F18 | To be deemed a foreign resident under the four-year test, a person spends at least 183 days outside Israel in each of two tax years and has their centre of living abroad in the next two years. | S11 | "satisfy a four-year test to be deemed a foreign resident" | single-source |
 | F19 | Form 1348, attached to the annual return, asks how many days were spent in Israel and abroad; the Tax Authority cross-checks against border-control records. | S15 | "ששואלת כמה ימים היית בישראל וכמה בחו"ל" | single-source |
 | F20 | Tax residency and National Insurance residency are two separate determinations, by two bodies, in two processes; a worker who cuts residency stops paying National Insurance but also loses the coverage. | S15, S16 | "בישראל יש שתי קביעות תושבות, בשני גופים, בשני הליכים ובשני לוחות זמנים" | single-source (each part from one source) |
-| F21 | National Insurance examines what was done with the home left behind. In the article's example, an apartment kept unrented and used on visits kept the first residence test open; a long lease would have ended it in favour of the new country (outcome depends on the tax treaty). | S15 | "המבחן הראשון היה מסתיים לטובת פורטוגל" | single-source |
+| F21 | Two separate points in S15: (a) National Insurance examines what was done with the home left behind; (b) under the tax treaty's tie-breaker, the first test is the permanent home (בית קבע). In the article's Lisbon example, an apartment kept unrented and used on visits kept that test open; a long lease would have settled it in favour of Portugal. | S15 | "המבחן הראשון היה מסתיים לטובת פורטוגל" | single-source |
 | F22 | Exit tax (section 100A): someone who stops being an Israeli resident is deemed to have sold all capital assets on the day before cutting residency, at market value; alternatively, payment is deferred until actual sale. | S14, S12 | "מי שחדל להיות תושב ישראל נחשב כמי שמכר את כלל נכסיו ההוניים ביום שקדם למועד הניתוק" | verified (two independent Tier 2) |
 | F23 | Israeli real estate stays under Israeli law in every case; a sale of an apartment by a foreign resident is subject to land appreciation tax. | S14 | "מקרקעין בישראל נשארים בתחולת הדין הישראלי בכל מצב." | single-source |
 | F24 | The empty-property arnona regulations allow a discount of up to 100% in the first 6 months, up to 66.66% in months 7–12 and up to 50% in months 13–36 (36 cumulative months); the municipality decides. | S17 | "עד 100% בששת החודשים הראשונים, עד 66.66% מהחודש השביעי עד ה-12 ועד 50% מהחודש ה-13 עד ה-36" | single-source (regulations not opened) |
