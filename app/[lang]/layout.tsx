@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const { lang, labels, cta, site, nav, a11yMenu, cookieNotice, languageNames, link } = await getContent();
+  const { lang, labels, cta, site, nav, a11yMenu, cookieNotice, languageNames, link, articles } = await getContent();
   return (
     <html lang={lang} dir={langMeta[lang].dir} className={`${heebo.variable} ${frank.variable}`}>
       <body>
@@ -58,6 +58,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             language: labels.language,
           }}
           languageNames={languageNames}
+          articles={
+            articles.length > 0
+              ? {
+                  after: "/landlord-safe",
+                  label: labels.articles,
+                  menuLabel: labels.articlesMenu,
+                  allLabel: labels.allArticles,
+                  allHref: link("/articles"),
+                  items: articles.slice(0, 5).map((a) => ({ href: link(`/articles/${a.slug}`), label: a.meta.h1 })),
+                }
+              : null
+          }
         />
         <main id="main" tabIndex={-1}>
           {children}

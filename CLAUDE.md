@@ -1,6 +1,6 @@
 # Rules for editing this site
 
-- **All text and facts live in `content/site.ts`** (Hebrew) **and `content/site.en.ts`** (English). Components only render it, through `await getContent()` from `@/content`, which picks the page's language. Don't hardcode Hebrew copy, phone numbers or other facts in components.
+- **All text and facts live in `content/site.ts`** (Hebrew) **and `content/site.en.ts`** (English); article text lives in `content/articles.ts` and `content/articles.en.ts`, re-exported from them. Components only render it, through `await getContent()` from `@/content`, which picks the page's language. Don't hardcode Hebrew copy, phone numbers or other facts in components.
 - **Never invent facts.** No made-up numbers, reviews, testimonials, prices, ratings or claims ("המובילה בישראל"). If a fact is unknown, leave it as `""` or `[]`.
 - **Empty value = hidden section.** Every component that uses an optional value must render nothing when it's empty. (The founding year, "2013 / שנת הקמת החברה", in the numbers strip is the one item that always shows.)
 - **Hebrew, RTL.** `<html lang="he" dir="rtl">`. Use logical CSS properties (`margin-inline-start`, `padding-block`, `inset-inline-end`…), never left/right. Copy uses the warm "אתם" form. One exception: the legal-protection lead (`protection.lead` in `content/site.ts`, shown on the home page and on Landlord Safe) speaks to a single homeowner ("דמיין", "בשבילך", "בשמך") by the owner's choice; keep it singular.
@@ -19,6 +19,17 @@ We are a property-management company, not a rental agency, so city copy talks ab
 - `galleryTitle` is always "נכסים מנוהלים ב<עיר>", never "דירות להשכרה" or "נכסים להשכרה".
 - `meta.title` is "ניהול נכסים ב<עיר> – ניהול דירות מושכרות | לנדלורד", never "להשכרה".
 - `includesTitle` is always "מה אתם מקבלים ב<עיר>", never variations like "מה אנחנו לוקחים מכם" or "מה אנחנו עושים בשבילכם".
+
+## Articles (`content/articles.ts` and `content/articles.en.ts`)
+
+- Written by the weekly content pipeline (`/weekly-content`, see `content-pipeline/README.md`) and published only after the owner approves the article.
+- Newest first. Same slug, order, facts and sources in both files.
+- Every fact in an article comes from one of its `sources`. Never add a fact without a source.
+- `services` holds ids from `services` in `content/site.ts`; they show as hashtags linking to `/services#<id>`.
+- Links inside paragraphs are `[text](/path)` (internal, gets the `/en` prefix) or `[text](https://…)`.
+- Article images live in `public/images/articles/` and are illustrations: their `alt` starts with "איור להמחשה:" / "Illustration:". Never present an AI image as a photo of a property we manage.
+- `/articles` and the header's "מאמרים" dropdown are hidden while there are no articles.
+- Nothing is ever posted to Facebook or LinkedIn automatically: the pipeline hands the owner the final posts once the article is live.
 
 ## English version (`content/site.en.ts`, served under `/en`)
 

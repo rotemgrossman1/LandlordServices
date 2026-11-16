@@ -1354,7 +1354,7 @@ export const partner = {
 // ---------------------------------------------------------------------------
 
 export const pages: Record<
-  "home" | "services" | "safe" | "about" | "faq" | "contact" | "privacy" | "accessibility",
+  "home" | "services" | "safe" | "about" | "faq" | "contact" | "privacy" | "accessibility" | "articles",
   PageMeta
 > = {
   home: {
@@ -1423,6 +1423,13 @@ export const pages: Record<
     description: "הצהרת הנגישות של אתר לנדלורד: מה עשינו כדי שהאתר יהיה נגיש לכולם, השאיפה לתקן הישראלי 5568 ברמה AA, ואיך לפנות אלינו בנושא נגישות.",
     h1: "הצהרת נגישות",
     intro: "",
+  },
+  articles: {
+    title: "מאמרים לבעלי דירות מושכרות | לנדלורד",
+    description:
+      "מאמרים של לנדלורד לבעלי דירות מושכרות: שינויים בחוק ובמיסוי, מה קורה בשוק השכירות ואיך לנהל נכס נכון. כל מאמר מציין את המקורות שלו.",
+    h1: "מאמרים לבעלי דירות",
+    intro: "מה שכדאי לדעת אם יש לכם דירה מושכרת: חוק, מיסוי, שוק השכירות וניהול הנכס. בסוף כל מאמר תמצאו את המקורות שעליהם הוא מבוסס.",
   },
 };
 
@@ -1523,6 +1530,15 @@ export const labels = {
   onThisPage: "בעמוד הזה",
   lastUpdated: "עודכן לאחרונה:",
   allServices: "לכל השירותים",
+  articles: "מאמרים",
+  articlesMenu: "מאמרים אחרונים", // the header dropdown's label for screen readers
+  allArticles: "לכל המאמרים",
+  readArticle: "לקריאת המאמר",
+  published: "פורסם:",
+  sources: "מקורות",
+  sourcesNote: "המידע במאמר מבוסס על המקורות האלה, נכון למועד הפרסום.",
+  relatedServices: "השירותים שלנו בנושא",
+  articleFaq: "שאלות נפוצות על הנושא",
   footerTagline: `חברת ניהול נכסים לבעלי דירות מושכרות בגוש דן ובירושלים, מאז ${site.foundingYear}. אתם נהנים מהשכירות – אנחנו דואגים לכל השאר.`,
 };
 
@@ -1671,6 +1687,8 @@ export const llms = {
   englishPagesTitle: "English pages",
   homeNote: "חברת ניהול נכסים לבעלי דירות מושכרות",
   cityNote: "מה אנחנו עושים בעיר ושאלות נפוצות",
+  articlesTitle: "מאמרים",
+  articlesNote: "כל המאמרים לבעלי דירות מושכרות",
   // One line per nav link, by href. A link without a note is left out.
   pageNotes: {
     "/services": "כל שירותי הניהול ומה כלול בכל אחד",
@@ -1680,3 +1698,10 @@ export const llms = {
     "/contact": "טלפון, וואטסאפ, אימייל וכתובת",
   } as Record<string, string>,
 };
+
+// ---------------------------------------------------------------------------
+// Articles: the text lives in content/articles.ts (one long file per language)
+// ---------------------------------------------------------------------------
+
+export { articles } from "./articles";
+export type { Article, ArticleSection, ArticleSource } from "./articles";

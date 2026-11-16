@@ -1,0 +1,104 @@
+.item {
+  position: relative;
+}
+
+/* Looks like the other nav links (the header's .link class); a button, so reset its defaults */
+.button {
+  gap: var(--space-1);
+  padding: 0;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  white-space: nowrap; /* keeps the label and chevron together, see Header.module.css .compact */
+}
+
+.button svg {
+  flex-shrink: 0;
+}
+
+.button[data-current] {
+  color: var(--color-accent-dark);
+}
+
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+.button[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Phone: the list opens in place inside the menu panel */
+.panel {
+  padding-inline-start: var(--space-4);
+  padding-block-end: var(--space-3);
+  border-inline-start: 1px solid var(--color-border);
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link,
+.all {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: var(--space-1);
+  line-height: 1.35;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.link:hover,
+.all:hover,
+.link[aria-current="page"],
+.all[aria-current="page"] {
+  color: var(--color-accent-dark);
+}
+
+.all {
+  gap: var(--space-1);
+  font-weight: 700;
+  color: var(--color-accent-dark);
+}
+
+/* Desktop: a card that drops down under the navy bar */
+@media (min-width: 960px) {
+  .button[data-current] {
+    color: var(--color-accent-light);
+  }
+
+  .panel {
+    position: absolute;
+    inset-block-start: calc(100% + var(--space-2));
+    inset-inline-start: calc(-1 * var(--space-4));
+    z-index: 10;
+    inline-size: max-content;
+    max-inline-size: 22rem;
+    padding: var(--space-3) var(--space-4);
+    color: var(--color-primary);
+    background: var(--color-bg);
+    border: 0;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-lg);
+    --color-focus: var(--color-accent-dark);
+  }
+
+  .link {
+    font-size: var(--text-sm);
+  }
+
+  .all {
+    margin-block-start: var(--space-1);
+    padding-block-start: var(--space-2);
+    border-block-start: 1px solid var(--color-border);
+    font-size: var(--text-sm);
+  }
+}

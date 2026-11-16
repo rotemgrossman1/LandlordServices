@@ -39,6 +39,11 @@ npm run start      # serve the production build
 
 `/llms.txt` (a summary for AI assistants) is built from `llms` in `content/site.ts` by `app/llms.txt/route.ts`, and lists the English pages too.
 
+## Articles and the weekly content pipeline
+
+- **Articles** are in [`content/articles.ts`](content/articles.ts) (Hebrew) and [`content/articles.en.ts`](content/articles.en.ts) (English), newest first. They appear at `/articles` and `/articles/<slug>`, and in the header's "מאמרים / Articles" dropdown. With no articles, the list page and the dropdown are hidden.
+- **The weekly pipeline** runs in Claude Code: `/weekly-content <subject>…`. It researches the subject, drafts Facebook and LinkedIn preview posts for you to approve, writes the article, publishes it after your approval, waits until it is live and then gives you the final posts to post yourself. See [`content-pipeline/README.md`](content-pipeline/README.md).
+
 ## Images and logo
 
 - **Photos:** set the paths in `images` in `content/site.ts` (e.g. `hero: "/images/hero.jpg"`, `office: "/images/office.jpg"`) after adding the files to `public/images/`. While `images.hero` is empty, the home page shows a drawn illustration (`components/HeroArt.tsx`).

@@ -1,4 +1,4 @@
-import { areas, cityPages, labels, llms, nav, site } from "@/content/site";
+import { areas, articles, cityPages, labels, llms, nav, site } from "@/content/site";
 import * as en from "@/content/site.en";
 
 // Built at build time from content/site.ts, so contact details always match the site.
@@ -34,6 +34,18 @@ function body() {
       .map((n) => `- [${n.label}](${site.url}${n.href}): ${llms.pageNotes[n.href]}`),
   ];
 
+  // Shown only once there are articles
+  const articleLinks =
+    articles.length > 0
+      ? [
+          `## ${llms.articlesTitle}`,
+          "",
+          `- [${labels.articles}](${site.url}/articles): ${llms.articlesNote}`,
+          ...articles.map((a) => `- [${a.meta.h1}](${site.url}/articles/${a.slug}): ${a.meta.description}`),
+          "",
+        ]
+      : [];
+
   return [
     `# ${site.name} (${site.nameHe})`,
     "",
@@ -57,11 +69,13 @@ function body() {
     "",
     ...pageLinks,
     "",
+    ...articleLinks,
     `## ${llms.englishPagesTitle}`,
     "",
     `- [${en.labels.homeLink}](${site.url}/en): ${en.pages.home.description}`,
     ...en.nav.map((n) => `- [${n.label}](${site.url}/en${n.href})`),
     ...en.cityPages.map((c) => `- [${c.meta.h1}](${site.url}/en/areas/${c.slug})`),
+    ...en.articles.map((a) => `- [${a.meta.h1}](${site.url}/en/articles/${a.slug})`),
     "",
   ].join("\n");
 }

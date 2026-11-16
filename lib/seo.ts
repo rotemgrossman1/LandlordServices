@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getContent } from "@/content";
-import { site as heSite, type FaqItem, type PageMeta } from "@/content/site";
+import { site as heSite, type Article, type FaqItem, type PageMeta } from "@/content/site";
 import { langMeta, localePath } from "./i18n";
 
 /**
@@ -8,7 +8,12 @@ import { langMeta, localePath } from "./i18n";
  * `path` is the page's path without the language prefix ("/services"). Both languages are
  * listed as alternates (hreflang); x-default is English, the version for everyone outside Israel.
  */
-export async function buildMetadata(page: PageMeta, path: string): Promise<Metadata> {
+export async function buildMetadata(
+  page: PageMeta,
+  path: string,
+  // Articles: Open Graph type "article" and the article's own image
+  extra: { article?: boolean; image?: string } = {},
+): Promise<Metadata> {
   const { lang, site } = await getContent();
   const url = localePath(lang, path);
   return {
@@ -23,14 +28,14 @@ export async function buildMetadata(page: PageMeta, path: string): Promise<Metad
       },
     },
     openGraph: {
-      type: "website",
+      type: extra.article ? "article" : "website",
       locale: langMeta[lang].ogLocale,
       alternateLocale: lang === "he" ? langMeta.en.ogLocale : langMeta.he.ogLocale,
       siteName: site.nameHe,
       title: page.title,
       description: page.description,
       url,
-      images: [{ url: "/images/og-default.png", width: 1200, height: 630 }],
+      images: [extra.image ? { url: extra.image } : { url: "/images/og-default.png", width: 1200, height: 630 }],
     },
   };
 }
@@ -140,5 +145,25 @@ export function faqJsonLd(items: FaqItem[], dateModified = "") {
       name: q.question,
       acceptedAnswer: { "@type": "Answer", text: q.answer },
     })),
+  };
+}
+
+/** An Article page. `path` is without the language prefix ("/articles/<slug>"). */
+export async function articleJsonLd(article: Article, path: string) {
+  const { lang, link, site } = await getContent();
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.meta.h1,
+    description: article.meta.description,
+    inLanguage: lang,
+    datePublished: article.date,
+    dateModified: article.updated || article.date,
+    url: `${site.url}${link(path)}`,
+    mainEntityOfPage: `${site.url}${link(path)}`,
+    ...(article.image.src ? { image: `${site.url}${article.image.src}` } : {}),
+    author: { "@id": `${site.url}/#organization` },
+    publisher: { "@id": `${site.url}/#organization` },
+    ...(article.sources.length > 0 ? { citation: article.sources.map((s) => s.url) } : {}),
   };
 }

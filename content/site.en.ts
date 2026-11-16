@@ -1290,7 +1290,7 @@ export const partner = {
 // ---------------------------------------------------------------------------
 
 export const pages: Record<
-  "home" | "services" | "safe" | "about" | "faq" | "contact" | "privacy" | "accessibility",
+  "home" | "services" | "safe" | "about" | "faq" | "contact" | "privacy" | "accessibility" | "articles",
   PageMeta
 > = {
   home: {
@@ -1359,6 +1359,13 @@ export const pages: Record<
     description: "The Landlord Services website accessibility statement: what we have done to make the site accessible to everyone, our aim to meet Israeli Standard SI 5568 at level AA, and how to contact us about accessibility.",
     h1: "Accessibility Statement",
     intro: "",
+  },
+  articles: {
+    title: "Articles for Owners of Rented Apartments | Landlord Services",
+    description:
+      "Articles from Landlord Services for owners of rented apartments in Israel: changes in law and tax, what's happening in the rental market, and how to manage a property well. Every article lists its sources.",
+    h1: "Articles for Apartment Owners",
+    intro: "What's worth knowing if you own a rented apartment: law, tax, the rental market and property management. At the end of each article you'll find the sources it is based on.",
   },
 };
 
@@ -1459,6 +1466,15 @@ export const labels = {
   onThisPage: "On this page",
   lastUpdated: "Last updated:",
   allServices: "All services",
+  articles: "Articles",
+  articlesMenu: "Latest articles", // the header dropdown's label for screen readers
+  allArticles: "All articles",
+  readArticle: "Read the article",
+  published: "Published:",
+  sources: "Sources",
+  sourcesNote: "The information in this article is based on these sources, as of the publication date.",
+  relatedServices: "Our services on this topic",
+  articleFaq: "Questions about this topic",
   footerTagline: `A property management company for owners of rented apartments in Greater Tel Aviv and Jerusalem, since ${site.foundingYear}. You enjoy the rent – we take care of everything else.`,
 };
 
@@ -1569,3 +1585,9 @@ export const a11yMenu = {
 export const summary: string =
   "Landlord Services is a property management company for owners of rented apartments, founded in 2013 and operating in Greater Tel Aviv and Jerusalem. The company provides Rental Apartment Management, Landlord Safe for guaranteed rent (subject to the terms of service), Property Management for Owners Abroad, Luxury Property Management, and management of Offices & Commercial Properties. " +
   rentRecord;
+
+// ---------------------------------------------------------------------------
+// Articles: the text lives in content/articles.en.ts
+// ---------------------------------------------------------------------------
+
+export { articles } from "./articles.en";

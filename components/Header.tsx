@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { telHref } from "@/lib/format";
 import { stripLang, type Lang } from "@/lib/i18n";
+import ArticlesMenu, { type ArticlesMenuProps } from "./ArticlesMenu";
 import Icon from "./Icon";
 import LangSwitch from "./LangSwitch";
 import Logo from "./Logo";
@@ -19,9 +20,11 @@ type Props = {
   brand: string;
   labels: { homeLink: string; menu: string; closeMenu: string; mainNav: string; phone: string; language: string };
   languageNames: Record<Lang, string>;
+  // The "Articles" dropdown, shown after this nav link (path without the language prefix). null = no articles yet.
+  articles: (Omit<ArticlesMenuProps, "linkClass"> & { after: string }) | null;
 };
 
-export default function Header({ lang, nav, home, cta, phone, brand, labels, languageNames }: Props) {
+export default function Header({ lang, nav, home, cta, phone, brand, labels, languageNames, articles }: Props) {
   const pathname = usePathname();
   // Hebrew pages are served from /he internally (proxy.ts), so compare without any prefix
   const path = stripLang(pathname);
@@ -59,7 +62,7 @@ export default function Header({ lang, nav, home, cta, phone, brand, labels, lan
 
   return (
     <header
-      className={`${styles.header} ${path === "/" ? styles.overlay : ""} ${scrolled || open ? styles.scrolled : ""}`}
+      className={`${styles.header} ${path === "/" ? styles.overlay : ""} ${scrolled || open ? styles.scrolled : ""} ${articles ? styles.compact : ""}`}
     >
       <div className={`container ${styles.inner}`}>
         {lang === "en" && switcher}
@@ -86,22 +89,27 @@ export default function Header({ lang, nav, home, cta, phone, brand, labels, lan
         >
           <ul className={styles.list}>
             {nav.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={styles.link}
-                  aria-current={stripLang(item.href) === path ? "page" : undefined}
-                >
-                  {item.label}
-                </Link>
-              </li>
+              <Fragment key={item.href}>
+                <li>
+                  <Link
+                    href={item.href}
+                    className={styles.link}
+                    aria-current={stripLang(item.href) === path ? "page" : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+                {articles && stripLang(item.href) === articles.after && (
+                  <ArticlesMenu {...articles} linkClass={styles.link} />
+                )}
+              </Fragment>
             ))}
           </ul>
           <div className={styles.actions}>
             <a href={telHref(phone)} className={styles.contact}>
               <Icon name="phone" size={20} />
               <span className="visually-hidden">{labels.phone}: </span>
-              <span className="ltr">{phone}</span>
+              <span className={`ltr ${styles.contactNumber}`}>{phone}</span>
             </a>
             <Link href={cta.href} className={`btn btn-pill ${styles.cta}`}>
               {cta.label}

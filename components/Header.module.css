@@ -267,3 +267,27 @@
     gap: var(--space-4);
   }
 }
+
+/* With the "Articles" dropdown the bar holds one more item: on desktop the phone shows as its
+   icon only (the number stays in the link for screen readers), and laptops get tighter gaps. */
+@media (min-width: 960px) {
+  .compact .contact {
+    min-width: 24px; /* WCAG 2.2 AA target size; it is still 44px tall */
+    justify-content: center;
+  }
+
+  .compact .contactNumber {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1199px) {
+  .compact .list {
+    gap: var(--space-4);
+  }
+}
