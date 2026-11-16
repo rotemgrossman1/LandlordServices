@@ -19,11 +19,11 @@ intro: לפני שטסים לרילוקיישן כדאי לסגור חמישה �
 
 - הוא מיועד רק לדירה בישראל שאדם פרטי משכיר למגורים, כששכר הדירה אינו הכנסה עסקית [F1].
 - אי אפשר לנכות הוצאות או פחת, ואין קיזוז, זיכוי או פטור על ההכנסה הזו [F2].
-- משלמים תוך 30 יום מסוף שנת המס שבה קיבלתם את שכר הדירה. על איחור מתווספים ריבית והפרשי הצמדה (התאמה לאינפלציה) [F3].
+- משלמים תוך 30 יום מסוף שנת המס שבה קיבלתם את שכר הדירה. על איחור מתווספים ריבית והפרשי הצמדה [F3].
 
 איזה מסלול מתאים לכם, והאם הוא פתוח בפניכם כתושבי חוץ, זו שאלה לרואה החשבון.
 
-ועוד משהו שכדאי לעקוב אחריו: נכון ל-3 בנובמבר 2026, רשות המסים רוצה לחייב במס את שכר הדירה מהשקל הראשון ולהקים מאגר של דירות מושכרות בחוק ההסדרים הקרוב. בינתיים זו רק הצעה, ולפי הדיווח אין עליה הסכמה [F8].
+ועוד משהו שכדאי לעקוב אחריו: נכון ל-3 בנובמבר 2026, רשות המסים רוצה לחייב במס את שכר הדירה מהשקל הראשון ולהקים מאגר של דירות מושכרות בחוק ההסדרים הקרוב. בינתיים זו רק הצעה, ולפי גלובס אין עדיין "דיל" סביבה [F8].
 
 ### 2. הדירה היא חלק משאלת התושבות
 התושבות לצורכי מס נקבעת לפי "מרכז החיים" שלכם. יש גם שתי חזקות לפי מספר הימים בישראל. לפיהן מניחים שאתם תושבים אם שהיתם כאן 183 יום בשנת המס, או 30 יום בשנה ו-425 יום בשנה הזו ובשנתיים שלפניה. אפשר לסתור את שתיהן, ומבחן מרכז החיים גובר עליהן [F17].
@@ -59,7 +59,7 @@ intro: לפני שטסים לרילוקיישן כדאי לסגור חמישה �
 
 - פגם שנגרם משימוש סביר צריך לתקן תוך 30 יום מרגע שקיבלתם הודעה, ותוך 3 ימים אם הוא מונע מגורים בדירה [F32].
 - את הביטחונות מחזירים לדייר תוך 60 יום מהחזרת הדירה, יחד עם הריבית או הרווח שנצברו [F31].
-- כדי לסיים את החוזה אתם נותנים הודעה של 90 יום. לשוכר מספיקים 60 [F33].
+- אם אתם לא מתכוונים להמשיך את החוזה, צריך להודיע על כך 90 יום לפני שהוא מסתיים. השוכר צריך להודיע 60 יום לפני סוף החוזה [F33].
 - הביטחונות מוגבלים לסכום הנמוך מבין שליש משכר הדירה לכל התקופה לבין שלושה חודשי שכירות. בחוזה לשנה ב-6,000 ₪ בחודש, זה עד 18,000 ₪ [F30].
 
 שלושה ימים לתיקון דירה שאי אפשר לגור בה הם זמן קצר גם מהעיר הסמוכה. מחו"ל, עם הפרש שעות, צריך מישהו בשטח שמכיר בעלי מקצוע ויכול להגיע.
@@ -108,11 +108,11 @@ The 10% route is the easiest on paperwork. Here's how it works:
 
 - It's only for a home in Israel that a private individual rents out as a residence, where the rent isn't business income [F1].
 - You can't deduct expenses or depreciation, and there's no offset, credit or exemption on that income [F2].
-- It's due within 30 days after the end of the tax year in which you got the rent. Paying late adds interest and linkage differences (an inflation adjustment) [F3].
+- It's due within 30 days after the end of the tax year in which you got the rent. Paying late adds interest and linkage differences [F3].
 
 Which route suits you, and whether it's open to you as a foreign resident, is a question for your accountant.
 
-Also worth watching: as of November 3, 2026, the Israel Tax Authority wants to tax rent from the first shekel and set up a registry of rented apartments in the upcoming Arrangements Law. For now it's only a proposal, and the report says there's no agreement on it [F8].
+Also worth watching: as of November 3, 2026, the Israel Tax Authority wants to tax rent from the first shekel and set up a registry of rented apartments in the upcoming Arrangements Law. For now it's only a proposal, and Globes reports there's no deal on it yet [F8].
 
 ### 2. Your apartment is part of the residency question
 Israeli tax residency follows your "center of life." There are also two day-count rules: you're presumed a resident if you spend 183 days in Israel in a tax year, or 30 days in the year and 425 days over that year and the two before it. Both can be challenged, and the center-of-life test overrides them [F17].
@@ -146,7 +146,7 @@ Israel's Fair Rental Law, a 2017 amendment to the Rental and Loan Law, covers mo
 
 - A defect caused by reasonable use must be fixed within 30 days of being notified, or within 3 days if it makes the apartment unlivable [F32].
 - Return the tenant's guarantee within 60 days of getting the apartment back, with any interest or gain it earned [F31].
-- To end the lease, you give 90 days' notice. The tenant gives 60 [F33].
+- If you don't plan to continue the lease, you need to say so 90 days before it ends. The tenant needs to give notice 60 days before it ends [F33].
 - Guarantees are capped at one-third of the rent for the whole term or three months' rent, whichever is lower. On a one-year lease at NIS 6,000 a month, that's NIS 18,000 at most [F30].
 
 Three days to fix an unlivable apartment is tight even from the next town. From another time zone, you need someone on the ground who knows the tradespeople and can get there.
