@@ -61,58 +61,54 @@ Want to talk about your apartment? +972-54-211-0096 (phone and WhatsApp) · doro
 #Relocation #PropertyManagement #IsraelRealEstate #LivingAbroad
 
 ## LinkedIn · עברית
-רילוקיישן לא מנתק את הדירה בישראל מרשות המסים.
+קיבלתם הצעה לעבודה בחו"ל, וקראתם את החוזה החדש עד הסעיף האחרון. על הדירה שנשארת בישראל מתחילים לחשוב בדרך כלל רק אחרי הנחיתה.
 
-חובת הדיווח והתשלום על הכנסה משכר דירה בישראל נמשכת גם בזמן שגרים בחו"ל [F16], ומקרקעין בישראל נשארים בתחולת הדין הישראלי בכל מצב [F23].
+📌 ריכזנו חמישה דברים שכדאי לסגור לפני שעוזבים:
 
-ויש גם שינוי אפשרי באופק. לפי דיווח מ-3 בנובמבר 2026, רשות המסים מבקשת למסות הכנסה משכירות מהשקל הראשון ולהקים מרשם של דירות להשכרה במסגרת חוק ההסדרים הקרוב. זו הצעה בלבד, ונכון לאותו מועד אין עליה הסכמה [F8].
+1. המס נשאר כאן. גם כשאתם גרים בחו"ל, אתם ממשיכים לדווח ולשלם מס על הכנסה משכר דירה בישראל [F16]. איזו דרך תשלום מתאימה לכם? את זה כדאי לסגור עם רואה החשבון.
 
-📌 חמישה דברים שכדאי לסגור לגבי הדירה לפני שעוזבים:
+2. הדירה נכנסת לשאלת התושבות. התושבות לצורכי מס נקבעת לפי מרכז החיים שלכם [F17], ובביטוח הלאומי בודקים גם מה עשיתם עם הבית שהשארתם בארץ [F21]. לכן שווה לחשוב על זה כבר כשמחליטים מה לעשות עם הדירה.
 
-1. מסלול המס. במסלול 10% אין ניכוי של הוצאות ופחת [F2], והמס משולם תוך 30 יום מתום שנת המס [F3]. איזה מסלול מתאים לכם, ומה משתנה כשהופכים לתושבי חוץ, זו שאלה לרואה החשבון.
+3. דירה ריקה היא לא תמיד חיסכון. בתל אביב ההנחה בארנונה על נכס ריק ניתנת לחצי שנה לכל היותר [F25], ורק אם הדירה ריקה מאדם ומחפץ. כלומר, גם בלי הרהיטים [F26].
 
-2. תושבות ומס יציאה. התושבות נקבעת לפי מרכז החיים, וחזקות ימי השהייה ניתנות לסתירה [F17]. מי שמנתק תושבות נחשב כאילו מכר את נכסיו ההוניים יום לפני הניתוק, או שהתשלום נדחה עד למכירה בפועל [F22]. וגם הדירה נבדקת: בדוגמה שפורסמה, השכרה לטווח ארוך הייתה מכריעה את מבחן "בית הקבע" של אמנת המס לטובת המדינה החדשה [F21].
+4. הביטוח לא עובר לדיירים. ביטוח המבנה נשאר באחריותכם גם כשהדירה מושכרת [F35]. ודירה שעומדת ריקה זמן רב עלולה לצאת מהכיסוי, לפי תנאי הפוליסה [F36].
 
-3. ארנונה על דירה ריקה. התקנות מתירות הנחה של עד 36 חודשים מצטברים, בשיעור יורד [F24]. אבל בתל אביב מקבלים לכל היותר חצי שנה ב-100%, פעם אחת לכל תקופת בעלות [F25].
+5. צריך מישהו קרוב לדירה. לפי חוק שכירות הוגנת, תקלה שמונעת מגורים בדירה צריך לתקן תוך 3 ימים [F32]. כשאתם באזור זמן אחר, קשה לעמוד בזה בלי מישהו בשטח.
 
-4. ביטוח. האחריות לביטוח המבנה נשארת אצל הבעלים [F35], ודירה ריקה לאורך זמן עלולה לצאת מהכיסוי לפי תנאי הפוליסה [F36].
+מהניסיון שלנו, הבעיות לא מגיעות ביום הראשון. הן מצטברות בשקט: חשבון שלא הועבר על שם הדיירים, תקלה שמחכה שמישהו ירים טלפון.
 
-5. חוזה ותחזוקה. הביטחונות מוגבלים לנמוך מבין שליש משכר הדירה לכל התקופה לבין שלושה חודשי שכירות [F30], ותקלה שמונעת מגורים צריך לתקן תוך 3 ימים [F32].
+במאמר המלא פירטנו כל אחת מהנקודות, וסיפרנו גם איך אנחנו מטפלים בדירות של בעלים שגרים בחו"ל.
 
-הזווית שלנו: את שאלות המס סוגרים עם רואה חשבון. את הצד של הנכס, מהחוזה ועד התקלה הבאה, צריך לנהל מישהו שנמצא ליד הדירה.
+🔗 לקריאת המאמר: {{ARTICLE_LINK}}
 
-במאמר פירטנו כל אחת מהנקודות, וגם מה אנחנו עושים בשביל בעלי דירות שגרים בחו"ל.
-
-🔗 {{ARTICLE_LINK}}
+לשיחה על הדירה שלכם: 054-2110096 (טלפון ווואטסאפ) · doron@landlords.co.il
 
 #רילוקיישן #ניהול_נכסים #נדלן #תושבי_חוץ
 
 ## LinkedIn · English
-Relocating abroad doesn't take your Israeli apartment out of the Israeli tax system.
+You've accepted a job abroad and read every line of the new contract. The apartment you're leaving in Israel usually gets your attention only after you land.
 
-If you rent it out, the duty to report and pay tax on that rent in Israel continues while you live abroad [F16]. And Israeli real estate stays under Israeli law in every case [F23].
+📌 Here are five things to sort out before you leave:
 
-There's also a possible change ahead. According to a report from November 3, 2026, the Israel Tax Authority wants to tax rental income from the first shekel and set up a registry of rented apartments in the upcoming Arrangements Law. This is a proposal only, and as of that date there was no agreement on it [F8].
+1. The tax stays in Israel. Even while you live abroad, you still report and pay tax in Israel on rent from your Israeli apartment [F16]. Which way of paying suits you best is a question for your accountant.
 
-📌 Five things to sort out for your property before you leave:
+2. Your apartment is part of the residency question. Israeli tax residency follows your "center of life" [F17], and National Insurance also looks at what you did with the home you left behind [F21]. So it's worth thinking about this when you decide what to do with the apartment.
 
-1. Your tax track. On the 10% track you can't deduct expenses or depreciation [F2], and the tax is due within 30 days after the end of the tax year [F3]. Which track fits you, and what changes once you become a foreign resident, is a question for your accountant.
+3. An empty apartment isn't always cheaper. Tel Aviv gives the arnona (municipal tax) discount for an empty property for half a year at most [F25], and only if the apartment is empty of people and belongings. That means the furniture too [F26].
 
-2. Residency and exit tax. Residency follows your "center of life," and the day-count presumptions can be rebutted [F17]. If you cut Israeli residency, you're treated as having sold your capital assets the day before, or you can defer the payment until an actual sale [F22]. The home counts too: in one published example, a long lease would have settled the tax treaty's "permanent home" test in favor of the new country [F21].
+4. Insurance doesn't pass to the tenants. Building insurance stays with you even when the apartment is rented out [F35]. And an apartment left empty for a long time can fall outside cover, depending on the policy terms [F36].
 
-3. Arnona (municipal property tax) on an empty apartment. The regulations allow a discount for up to 36 cumulative months, at a falling rate [F24], but Tel Aviv gives at most six months at 100%, once per ownership period [F25].
+5. You need someone nearby. Under the Fair Rental Law, a fault that makes the apartment unlivable must be fixed within 3 days [F32]. From another time zone, that's hard to do without someone on the ground.
 
-4. Insurance. Building cover stays with the owner [F35], and an apartment left empty for a long time can fall outside cover, depending on the policy [F36].
+In our experience, problems don't show up on day one. They build up quietly: a bill still in your name, a repair waiting for someone to pick up the phone.
 
-5. Lease and upkeep. Under Israel's Fair Rental Law, a tenant's security is capped at the lower of one-third of the total rent or three months' rent [F30], and a fault that makes the home unlivable must be fixed within 3 days [F32].
+The full article goes through each point and explains how Landlord Services looks after apartments for owners who live abroad.
 
-Our take: settle the tax questions with an accountant. The property side, from the lease to the next repair, needs someone near the apartment.
+🔗 Read the article: {{ARTICLE_LINK}}
 
-The full article goes through each point and explains what Landlord Services does for owners who live abroad.
+Want to talk about your apartment? +972-54-211-0096 (phone and WhatsApp) · doron@landlords.co.il
 
-🔗 {{ARTICLE_LINK}}
-
-#Relocation #PropertyManagement #IsraelRealEstate #ForeignInvestors
+#Relocation #PropertyManagement #IsraelRealEstate #LivingAbroad
 
 ## Image
 Prompt for Gemini:
@@ -122,4 +118,4 @@ Alt (he): איור להמחשה: מזוודה ליד דלת הכניסה ומפ�
 Alt (en): Illustration: a suitcase by the front door and house keys on a side table in a bright living room, ready for a move abroad.
 
 ## Facts used
-F2, F3, F8, F16, F17, F21, F22, F23, F24, F25, F26, F30, F32, F35, F36
+F16, F17, F21, F25, F26, F32, F35, F36
