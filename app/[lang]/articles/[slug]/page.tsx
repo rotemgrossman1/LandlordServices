@@ -95,6 +95,11 @@ export default async function ArticlePage({ params }: Props) {
                     ))}
                   </ul>
                 )}
+                {section.after?.map((p) => (
+                  <p key={p}>
+                    <RichText text={p} link={link} />
+                  </p>
+                ))}
               </section>
             ))}
 

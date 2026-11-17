@@ -1,10 +1,10 @@
 {
-  "stage": "gate-article",
+  "stage": "publish",
   "subject": "רילוקיישן: 5 דברים שחשוב לדאוג להם בנוגע לבית ולנכסים כשטסים לרילוקיישן",
   "slug": "relocation-apartment-israel",
   "approvals": {
     "posts": "2026-11-16T16:10:00Z — owner: \"the facebook post is flawless\" (Facebook HE/EN), then on the rewritten LinkedIn posts: \"approve\"",
-    "article": ""
+    "article": "2026-11-17 — owner: \"add the article to the website. i will post the posts later today\""
   },
   "published": {
     "commit": "",
@@ -13,5 +13,5 @@
       "en": ""
     }
   },
-  "updated": "2026-11-16T17:30:00Z"
+  "updated": "2026-11-17T09:30:00Z"
 }

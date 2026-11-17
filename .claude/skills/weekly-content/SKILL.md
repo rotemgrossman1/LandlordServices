@@ -109,7 +109,7 @@ Then **stop and wait** for a clear approval. Handle changes as in gate 1. Approv
    - `slug`, `services` from the draft header; `date`: today (`YYYY-MM-DD`); `updated: ""`.
    - `meta`: `title`, `description`, `h1`, `intro` from the language's section.
    - `image`: `{ src: "/images/articles/<slug>.<ext>", alt: <alt from posts.approved.md>, credit: "", creditUrl: "" }`.
-   - `sections`: one per `###` heading (except FAQ): `heading`, `paragraphs` (blank-line separated), `bullets` (lines starting with "- ", or `[]`).
+   - `sections`: one per `###` heading (except FAQ): `heading`, `paragraphs` (blank-line separated), `bullets` (lines starting with "- ", or `[]`), and `after` for any paragraphs that come after the bullets (omit if none).
    - `faq`: from the FAQ block, with ids `<slug>-q1`, `<slug>-q2`…, or `[]`.
    - `sources`: the listed source IDs, in order, from `research.md`: `{ title, publisher, url, date }` (`date: ""` if none).
    - Remove every fact ID (`[F3]`). Keep `[text](/path)` links.
