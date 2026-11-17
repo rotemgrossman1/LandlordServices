@@ -1,5 +1,5 @@
 {
-  "stage": "publish",
+  "stage": "done",
   "subject": "רילוקיישן: 5 דברים שחשוב לדאוג להם בנוגע לבית ולנכסים כשטסים לרילוקיישן",
   "slug": "relocation-apartment-israel",
   "approvals": {
@@ -7,11 +7,11 @@
     "article": "2026-11-17 — owner: \"add the article to the website. i will post the posts later today\""
   },
   "published": {
-    "commit": "",
+    "commit": "26b01e9",
     "urls": {
-      "he": "",
-      "en": ""
+      "he": "https://www.landlords.co.il/articles/relocation-apartment-israel",
+      "en": "https://www.landlords.co.il/en/articles/relocation-apartment-israel"
     }
   },
-  "updated": "2026-11-17T09:30:00Z"
+  "updated": "2026-11-17T09:50:00Z"
 }
