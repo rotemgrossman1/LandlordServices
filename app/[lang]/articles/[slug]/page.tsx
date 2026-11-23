@@ -45,7 +45,7 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <>
-      <PageIntro page={{ ...article.meta, intro: "" }} eyebrow={labels.articles}>
+      <PageIntro page={{ ...article.meta, intro: "" }} eyebrow={labels.articles} titleClassName={styles.title}>
         <p className={styles.dates}>
           {labels.published} <time dateTime={article.date}>{formatDate(article.date, lang)}</time>
           {article.updated && (
