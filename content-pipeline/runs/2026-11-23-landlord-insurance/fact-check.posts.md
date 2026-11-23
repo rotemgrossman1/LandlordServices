@@ -1,22 +1,26 @@
-# Fact check: posts.draft.md
+# Fact check: posts.draft.md (re-check after fixes)
 
-Result: FAIL
+Result: PASS WITH NOTES
 
 ## Problems (must fix)
-- "ועוד רקע שכדאי להכיר: לפי הדיווחים על חוק השכירות ההוגנת מ-2017, ביטוח המבנה חל על המשכיר [F27]" (LinkedIn · עברית) and "according to reports on the 2017 fair-rental law, structure insurance falls on the landlord [F27]" (LinkedIn · English) – presents a bill as enacted law. Both F27 sources report the *bill* on the day the Knesset Constitution Committee approved it for second and third readings. Neither says it passed. The draft cites "the 2017 law" and uses the present tense ("חל" / "falls on"), so the reader takes it as the law in force. S14 (https://www.globes.co.il/news/article.aspx?did=1001195270, 2017-07-03): "על פי נוסח הצעת החוק, ביטוח מבנה יחול על המשכיר". S15 (https://www.themarker.com/realestate/1.4223144, 2017-07-03): "אושרה בוועדת חוקה הצעת חוק שכירות הוגנת", "...יחולו על המשכיר, וכך גם ביטוח הדירה המושכרת". The research notes say the statute text was not read and the effective date is not confirmed. Two ways to fix it: (a) attribute it to the bill, e.g. "לפי הדיווחים מ-2017 על הנוסח הסופי של הצעת חוק השכירות ההוגנת, ביטוח המבנה הוטל על המשכיר" / "according to 2017 reports on the final text of the fair-rental bill, structure insurance was placed on the landlord"; or (b) drop the F27 clause and keep only F26 (section 25ט, S10), which already states the rule as law. Fix both languages the same way.
+None.
+
+## Fixes confirmed
+- F27 is gone from both LinkedIn posts. The background line now uses only F26, as law: "לפי סעיף 25ט לחוק השכירות, המשכיר אינו רשאי לחייב את השוכר לרכוש פוליסת ביטוח מבנה" / "under Israel's rental law, a landlord may not require the tenant to buy a structure insurance policy". This matches S10 (https://www.ynet.co.il/economy/article/b11x7aft3): "בהתאם לסעיף 25ט' לחוק השכירות, המשכיר אינו רשאי לחייב את השוכר ברכישת פוליסת ביטוח מבנה." The "Facts used" list no longer includes F27.
+- F15 is now in the past tense and dated: "עורכת דין לביטוח המליצה ב-2016" / "an insurance lawyer recommended in 2016". This matches S12 (TheMarker, 2016-08-25).
+- F8 is now attributed to the regulations: "לפי התקנות" / "Under Israeli regulations". This matches S2 (circular 2016-1-21, page 1): "בתקנות הפיקוח על עסקי ביטוח (תנאי חוזה לביטוח דירות ותכולתן), התשמ"ו-1986... נקבעו תנאים לגבי כיסוי לנזקי מים, במסגרת ההרחבה לסיכוני מים ונוזלים אחרים, שאותה רשאי המבוטח לרכוש".
+- F10 (English) now says "most of the home-insurance complaints it handled". This matches S2: "רוב תלונות הציבור בתחום ביטוח דירה, המטופלות ברשות שוק ההון...".
 
 ## Notes (worth a look)
-- F14/F15 consequence wording passes in all four posts. FB he: "עלול לגלות... שהתגמולים מצטמצמים או בסכנה". FB en: "could reduce or endanger your payout". LI he: "המקורות חלוקים לגבי התוצאה, אבל... עלול לראות את התגמולים מצטמצמים או בסכנה". LI en: "Sources differ on the exact consequence...". No post says a claim "will be rejected". This matches the safe wording in research.md (Conflicts).
-- F14 context: in S6 (https://www.bizportal.co.il/guides/news/article/20039037) the "grounds for rejecting a claim" line refers to a home business, expensive equipment and short-term rental ("עסק שמופעל מהבית, ציוד יקר או השכרה לטווח קצר... עילה לדחיית תביעה"), not to ordinary long-term rental. The draft doesn't use that line, which is correct. Keep it out of the article too.
-- F15 tense (FB he/en): "עורכת דין לביטוח ממליצה" / "an insurance lawyer recommends" is in the present tense, but the source is from 2016 and concerns an apartment rented to tourists (S12). The recommendation itself is quoted correctly: "ההמלצה היא להצהיר על כך שהדירה מיועדת להשכרה בעת החתימה על טופס הצעת הביטוח". Consider "המליצה ב-2016" / "a 2016 article by an insurance lawyer recommends".
-- F8 attribution (FB he "לפי הוראות הרשות", FB en "Under the Israeli regulator's rules"): S2 says the water-extension rule comes from the regulations ("בתקנות הפיקוח על עסקי ביטוח (תנאי חוזה לביטוח דירות ותכולתן), התשמ"ו-1986... נקבעו תנאים לגבי כיסוי לנזקי מים, במסגרת ההרחבה לסיכוני מים ונוזלים אחרים, שאותה רשאי המבוטח לרכוש"). The authority's circular reports the rule; the circular is not its source. "לפי התקנות" / "Under Israeli regulations" would be more precise. Confirmed in the PDF, page 1.
-- F10 (FB en): "most public complaints about home insurance concerned water damage". The source limits this to complaints handled by the authority ("רוב תלונות הציבור בתחום ביטוח דירה, המטופלות ברשות שוק ההון..."). The Hebrew post attributes the statement to the authority, but the English drops the qualifier. Suggest "most home-insurance complaints the Authority handled".
-- F9 "מאז יולי 2015" / "Since July 2015" matches S2: "במסגרת תיקון לתקנות שנכנס לתוקף בחודש יולי 2015, עודכנו תנאי ההרחבה, כך שהם כוללים כעת גם נזקים שמקורם בצד שלישי וכן סתימה של דוודים וצנרת". This is the 2016 state; the research says there is no sign it was repealed.
-- F16 "neighbours' property" comes only from S7. S8 confirms contents and third party but doesn't mention neighbours. Both are Bizportal, so this is one publisher, as research.md already marks.
-- Hebrew/English parity, minor: FB he item 1 says the policy is pledged to the bank ("משועבד לבנק"); FB en only says the bank is the beneficiary. LI he cites "סעיף 25ט"; LI en leaves the section number out. FB en adds "And when you live abroad, you hear about it by phone", which is framing, not a factual claim. None of these adds or changes a fact.
-- F25 (LI he/en) matches S13 (Globes, 2016-05-31): "נקבע כי בהיות הדיירים מבוטחים לפי הפוליסה שהנפיקה המבטחת, אין לה זכות תחלוף מהם". The ruling turned on how the court read that specific policy. The draft's "Better not to need a court to settle it" framing is fair.
-- No F3 or F12 content appears (no 15% / 222k / 78k underinsurance example, no 24-month rent-loss draft). There are no rent-guarantee or Landlord Safe claims, so the "subject to the terms of service" rule does not apply. There are no claims that we handle insurance claims.
+- F14/F15 wording stays cautious in all four posts ("עלול... מצטמצמים או בסכנה" / "could reduce or endanger"). No post says a claim "will be rejected". In S6 the "grounds for rejecting a claim" line covers a home business, expensive equipment and short-term rental, not ordinary rental. Keep that line out of the article too.
+- The outline (line 6) still allows F27 in the article "only as 2017 reports on the bill's final text". That is correct framing, but the article check should confirm it is never presented as the enacted law. F26 already covers the rule.
+- F16 "neighbours' property": only S7 says this. S8 confirms contents and third party only, and both sources are Bizportal (one publisher).
+- Minor Hebrew/English differences, with no fact added or changed:
+  - Facebook: the Hebrew says the policy is pledged to the bank ("משועבד לבנק"); the English does not.
+  - LinkedIn: the Hebrew names "סעיף 25ט"; the English says "Israel's rental law" with no section number.
+  - Facebook English adds "And when you live abroad, you hear about it by phone", which is framing, not a fact.
+- No F3 or F12 content. There are no rent-guarantee or Landlord Safe claims, so "subject to the terms of service" does not apply. There are no claims that we handle insurance claims.
 - Contact details match `content/site.ts`: 054-2110096 (phone and WhatsApp), doron@landlords.co.il. The English uses +972-54-211-0096 as CLAUDE.md requires.
 
 ## Checked
-44 claims checked, 9 source pages opened (S2, S6, S7, S8, S10, S12, S13, S14, S15). All read successfully; S2 was read from the PDF.
+42 claims checked across all four posts, against 9 source pages opened in this session (S2, S6, S7, S8, S10, S12, S13, S14, S15). All read successfully; S2 was read from the PDF.
