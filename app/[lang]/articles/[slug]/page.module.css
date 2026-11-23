@@ -1,4 +1,4 @@
-/* Article H1: Calibri (licensed web font in public/fonts/, see --font-article-title in globals.css) */
+/* Article H1 in Assistant (--font-article-title in globals.css) */
 .title {
   font-family: var(--font-article-title);
   font-weight: 700;

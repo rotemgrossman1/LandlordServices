@@ -1,4 +1,4 @@
-import { Frank_Ruhl_Libre, Heebo } from "next/font/google";
+import { Assistant, Frank_Ruhl_Libre, Heebo } from "next/font/google";
 
 export const heebo = Heebo({
   subsets: ["hebrew", "latin"],
@@ -13,4 +13,12 @@ export const frank = Frank_Ruhl_Libre({
   weight: ["400", "500", "700"],
   display: "swap",
   variable: "--font-frank",
+});
+
+// Article page titles
+export const assistant = Assistant({
+  subsets: ["hebrew", "latin"],
+  weight: ["700"],
+  display: "swap",
+  variable: "--font-assistant",
 });

@@ -9,7 +9,7 @@ import RevealObserver from "@/components/RevealObserver";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import { getContent } from "@/content";
 import { langMeta, langs } from "@/lib/i18n";
-import { frank, heebo } from "@/lib/fonts";
+import { assistant, frank, heebo } from "@/lib/fonts";
 import { organizationJsonLd } from "@/lib/seo";
 import "../globals.css";
 
@@ -37,7 +37,7 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { lang, labels, cta, site, nav, a11yMenu, cookieNotice, languageNames, link, articles } = await getContent();
   return (
-    <html lang={lang} dir={langMeta[lang].dir} className={`${heebo.variable} ${frank.variable}`}>
+    <html lang={lang} dir={langMeta[lang].dir} className={`${heebo.variable} ${frank.variable} ${assistant.variable}`}>
       <body>
         <a href="#main" className="skip-link">
           {labels.skip}

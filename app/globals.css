@@ -1,13 +1,3 @@
-/* Calibri for article titles. Web license from Monotype; the file lives in public/fonts/.
-   local() first: visitors who have Calibri installed don't download it. */
-@font-face {
-  font-family: "Calibri Web";
-  src: local("Calibri Bold"), local("Calibri-Bold"), url("/fonts/calibri-bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   /* Coastal palette from the Figma design. All text/background pairs pass WCAG AA:
      - yellow is a fill (navy text on it, 8.8:1) or text on navy/teal-navy only;
@@ -49,7 +39,7 @@
      Heebo for DM Sans. Accent words take colour instead of italic. */
   --font-body: var(--font-heebo), "Heebo", "Arial Hebrew", Arial, sans-serif;
   --font-display: var(--font-frank), "Frank Ruhl Libre", "David", serif;
-  --font-article-title: "Calibri Web", Calibri, var(--font-heebo), "Heebo", Arial, sans-serif;
+  --font-article-title: var(--font-assistant), "Assistant", var(--font-heebo), Arial, sans-serif;
   /* Body stays at 16px on phones (Hebrew needs a little more than the design's English), so headlines lead.
      Desktop bumps these to 17px below. */
   --text-xs: 0.8125rem;
