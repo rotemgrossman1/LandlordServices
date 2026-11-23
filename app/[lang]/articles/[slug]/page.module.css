@@ -12,7 +12,7 @@
 
 .figure {
   margin: 0;
-  max-width: 46rem;
+  justify-self: stretch;
   width: 100%;
   overflow: hidden;
   border-radius: var(--radius);

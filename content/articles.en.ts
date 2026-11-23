@@ -93,7 +93,7 @@ export const articles: Article[] = [
         ]
       },
       {
-        "heading": "How Landlord Services helps owners who relocate",
+        "heading": "How Landlord Services helps apartment owners who relocate",
         "paragraphs": [
           "We've managed rental apartments in the Gush Dan area and Jerusalem since 2013, including for owners abroad. If you're relocating, three of our services work together:"
         ],

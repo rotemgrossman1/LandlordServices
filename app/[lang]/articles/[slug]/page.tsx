@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props) {
     : {};
 }
 
-/** One article: intro, image, sections, related services as hashtags, FAQ and sources. */
+/** One article: intro, sections, related services as hashtags, full-width image, FAQ and sources. */
 export default async function ArticlePage({ params }: Props) {
   const { articles, labels, lang, link, services } = await getContent();
   const { slug } = await params;
@@ -59,19 +59,6 @@ export default async function ArticlePage({ params }: Props) {
 
       <article className="section">
         <div className={`container ${styles.layout}`}>
-          {article.image.src && (
-            <figure className={styles.figure}>
-              <Image
-                src={article.image.src}
-                alt={article.image.alt}
-                width={1600}
-                height={900}
-                priority
-                sizes="(min-width: 960px) 46rem, 100vw"
-              />
-            </figure>
-          )}
-
           <div className={`prose ${styles.body}`}>
             {article.meta.intro && (
               <p className="lead">
@@ -121,6 +108,18 @@ export default async function ArticlePage({ params }: Props) {
               </nav>
             )}
           </div>
+
+          {article.image.src && (
+            <figure className={styles.figure}>
+              <Image
+                src={article.image.src}
+                alt={article.image.alt}
+                width={1600}
+                height={900}
+                sizes="(min-width: 1360px) 1360px, 100vw"
+              />
+            </figure>
+          )}
         </div>
       </article>
 
