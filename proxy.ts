@@ -15,7 +15,11 @@ import { notFoundRoute, pageRoutes } from "@/lib/routes";
  * An explicit /en link is never redirected back to Hebrew.
  */
 
-const BOT = /bot|crawl|spider|slurp|facebookexternalhit|embedly|preview|lighthouse|pagespeed|gpt|claude|perplexity/i;
+// Google's own tools don't all say "bot": Search Console's live test is "Google-InspectionTool",
+// others are "GoogleOther", "Mediapartners-Google", "FeedFetcher-Google". Redirecting them to
+// /en made Google read the English canonical for Hebrew pages, so match "google" as a whole.
+const BOT =
+  /bot|crawl|spider|slurp|google|bing|yandex|baidu|duckduck|inspectiontool|headless|facebookexternalhit|embedly|preview|lighthouse|pagespeed|gpt|claude|perplexity/i;
 const YEAR = 60 * 60 * 24 * 365;
 
 /** The visitor's preferred browser language is Hebrew (the highest-weighted Accept-Language entry) */
