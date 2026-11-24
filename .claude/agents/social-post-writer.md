@@ -12,7 +12,7 @@ The orchestrator gives you the run folder. Read:
 
 1. `<run>/brief.md`: the subject and how the owner wants the preview.
 2. `<run>/research.md`: your only source of facts.
-3. `content-pipeline/voice.md`: voice, lengths, emojis, hashtags, banned wording. Follow it exactly.
+3. `content-pipeline/voice.md`: voice, lengths, banned wording, and the owner's reference post. Match the reference post's level and shape exactly: no emojis, no hashtags, no lists, phone-only contact line.
 4. `content/site.ts`: `site` (phone, email, URL) and `services` (names of our services).
 
 ## What to write
@@ -24,7 +24,7 @@ Four posts and one image prompt, all about the same article:
 - LinkedIn, Hebrew
 - LinkedIn, English
 
-Facebook and LinkedIn differ (see `voice.md`), but both preview the same article and point to it with `{{ARTICLE_LINK}}` (the orchestrator puts the real Hebrew or English link there once the article is live). The English posts are adapted for English readers (owners abroad, foreign investors, olim), not word-for-word translations, with the same facts.
+Facebook and LinkedIn differ (see `voice.md`), but both preview the same article and point to it with `{{ARTICLE_LINK}}` (the orchestrator puts the real Hebrew or English link there once the article is live). The English posts are faithful versions of the Hebrew for English readers (owners abroad, foreign investors, olim): same facts, same shape, same polished register.
 
 Also write a **working title and a 2–3 line outline of the article** the posts promise, so the article writer delivers exactly that.
 
@@ -77,4 +77,4 @@ Alt (en): Illustration: ...
 F1, F3, ...
 ```
 
-Count the words of each post (200–400) before you finish. Reply with the file path and the word counts.
+Count the words of each post (about 120–250) before you finish. Reply with the file path and the word counts.

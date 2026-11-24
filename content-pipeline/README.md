@@ -38,5 +38,5 @@ If you stop in the middle (close Claude Code, come back tomorrow), continue with
 
 - `runs/<date>-<subject>/`: everything from one run (brief, research, drafts, fact checks, approvals, final posts). Kept in git as a record of what was published and why.
 - `sources.md`: where research comes from and how much to trust each source. Edit it to add or remove sites.
-- `voice.md`: how we write, lengths, emojis, hashtags and the banned AI phrases. Edit it to change the style.
+- `voice.md`: how we write, with the owner's reference post as the standard, lengths and the banned AI phrases. Edit it to change the style.
 - The agents themselves are in `.claude/agents/` (content-researcher, social-post-writer, content-humanizer, article-writer, fact-checker), and the orchestrator is `.claude/skills/weekly-content/SKILL.md`.
