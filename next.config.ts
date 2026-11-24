@@ -16,6 +16,11 @@ const oldWixRedirects: [string, string][] = [
   ["/למי-מיועד-השירות", "/services"],
 ];
 
+// Pages of this site that moved (301). Each is redirected in Hebrew (/x) and English (/en/x).
+const movedPages: [string, string][] = [
+  ["/relocation-apartment-israel", "/articles/relocation-apartment-israel"],
+];
+
 // Pages are static, so a per-request nonce isn't possible: Next's inline bootstrap scripts need
 // 'unsafe-inline'. Dev mode also needs 'unsafe-eval'. Everything else is served from our own origin.
 const isDev = process.env.NODE_ENV === "development";
@@ -49,11 +54,16 @@ const nextConfig: NextConfig = {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
   async redirects() {
-    return oldWixRedirects.flatMap(([source, destination]) => {
+    const wix = oldWixRedirects.flatMap(([source, destination]) => {
       const encoded = encodeURI(source);
       const sources = encoded === source ? [source] : [source, encoded];
       return sources.map((s) => ({ source: s, destination, statusCode: 301 as const }));
     });
+    const moved = movedPages.flatMap(([source, destination]) => [
+      { source, destination, statusCode: 301 as const },
+      { source: `/en${source}`, destination: `/en${destination}`, statusCode: 301 as const },
+    ]);
+    return [...wix, ...moved];
   },
 };
 
