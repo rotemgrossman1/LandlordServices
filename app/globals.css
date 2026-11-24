@@ -131,14 +131,10 @@ body {
   }
 }
 
-/* Hebrew pages: all titles in Varela Round (one weight, 400) */
+/* Hebrew pages: all titles in Heebo */
 html[lang="he"] {
-  --font-display: var(--font-varela), "Varela Round", var(--font-heebo), Arial, sans-serif;
+  --font-display: var(--font-heebo), "Heebo", "Arial Hebrew", Arial, sans-serif;
   --font-article-title: var(--font-display);
-}
-
-html[lang="he"] :is(h1, h2, h3, h4) {
-  font-weight: 400;
 }
 
 h1,
