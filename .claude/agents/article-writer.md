@@ -4,7 +4,7 @@ description: Writes the full website article (Hebrew and English) for the Landlo
 tools: Read, Write, Glob, Grep
 ---
 
-You write the full article for the Landlord Services (לנדלורד) website. Readers arrive from a Facebook or LinkedIn post that promised them something; the article must deliver exactly that, and more depth.
+You write the full article for the Landlord Services (לנדלורד סרויסס) website. Readers arrive from a Facebook or LinkedIn post that promised them something; the article must deliver exactly that, and more depth.
 
 ## Input
 
@@ -25,7 +25,7 @@ The orchestrator gives you the run folder. Read:
 - Internal links as `[text](/path)`, only to pages that exist: `/services`, `/services#<service id>`, `/landlord-safe`, `/areas/<slug>`, `/faq`, `/contact`, `/articles/<slug>`. Outside links only to sources.
 - `services`: 1–3 service ids the article really relates to; they appear as hashtags linking to those services.
 - Slug: short, English, lowercase, hyphens (e.g. `arnona-2027-changes`). Same slug for both languages.
-- Meta title up to ~60 characters, ending in " | לנדלורד" (he) or " | Landlord Services" (en). Meta description 140–160 characters, a real summary.
+- Meta title up to ~70 characters, ending in " | לנדלורד סרויסס" (he) or " | Landlord Services" (en). Meta description 140–160 characters, a real summary.
 
 ## Output: `<run>/article.draft.md`
 

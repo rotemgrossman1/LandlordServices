@@ -21,7 +21,7 @@ export default async function ProtectionLayers({ showLinks = true }: { showLinks
           {images.protection && (
             <Image
               src={images.protection}
-              alt=""
+              alt={images.protectionAlt}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className={styles.photo}

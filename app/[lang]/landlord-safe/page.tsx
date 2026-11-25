@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AreasLinks from "@/components/AreasLinks";
 import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import Icon from "@/components/Icon";
@@ -93,6 +94,8 @@ export default async function LandlordSafePage() {
           <Faq items={safe.faq} />
         </div>
       </section>
+
+      <AreasLinks alt />
 
       <CtaBand />
       <JsonLd data={faqJsonLd(safe.faq)} />

@@ -28,7 +28,7 @@ export default async function Personas() {
             <div className={styles.media}>
               <Image
                 src={images.personas}
-                alt=""
+                alt={images.personasAlt}
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className={styles.photo}

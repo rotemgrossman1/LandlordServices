@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AreasLinks from "@/components/AreasLinks";
 import Comparison from "@/components/Comparison";
 import CtaBand from "@/components/CtaBand";
 import Icon from "@/components/Icon";
@@ -69,6 +70,8 @@ export default async function ServicesPage() {
 
       {/* Moved here from the home page; alternates with the last service's background */}
       <Comparison alt={services.length % 2 === 1} />
+
+      <AreasLinks />
 
       <CtaBand />
       <JsonLd data={await breadcrumbJsonLd("/services")} />

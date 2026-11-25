@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AreasLinks from "@/components/AreasLinks";
 import CtaBand from "@/components/CtaBand";
 import Faq from "@/components/Faq";
 import Icon from "@/components/Icon";
@@ -47,6 +48,12 @@ export default async function ArticlePage({ params }: Props) {
     <>
       <PageIntro page={{ ...article.meta, intro: "" }} eyebrow={labels.articles} titleClassName={styles.title}>
         <p className={styles.dates}>
+          {article.author && (
+            <>
+              {labels.author} {article.author}
+              {" · "}
+            </>
+          )}
           {labels.published} <time dateTime={article.date}>{formatDate(article.date, lang)}</time>
           {article.updated && (
             <>
@@ -170,6 +177,8 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </section>
       )}
+
+      <AreasLinks alt />
 
       <CtaBand />
       <JsonLd data={await articleJsonLd(article, path)} />
