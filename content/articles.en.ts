@@ -3,9 +3,9 @@
  * same sources. See that file for the format.
  */
 
-import type { Article } from "./articles";
+import { published, type Article } from "./articles";
 
-export const articles: Article[] = [
+const allArticles: Article[] = [
   {
     "slug": "relocation-apartment-israel",
     "date": "2026-11-17",
@@ -236,3 +236,5 @@ export const articles: Article[] = [
     ]
   },
 ];
+
+export const articles = published(allArticles);

@@ -1,0 +1,35 @@
+.section {
+  padding-block: var(--space-7);
+}
+
+.title {
+  margin-block-end: var(--space-4);
+  font-size: 1.5rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding-inline: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  border-color: var(--color-accent-dark);
+  text-decoration: underline;
+}

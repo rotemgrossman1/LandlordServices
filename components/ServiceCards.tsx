@@ -15,7 +15,7 @@ export default async function ServiceCards() {
   return (
     <section className={`section section-dark ${images.services ? "photo-section" : ""}`} aria-labelledby="services-title">
       {images.services && (
-        <Image src={images.services} alt="" fill sizes="100vw" className={`photo-section-bg ${styles.bg}`} />
+        <Image src={images.services} alt={images.servicesAlt} fill sizes="100vw" className={`photo-section-bg ${styles.bg}`} />
       )}
       <div className="container">
         {/* The home intro (the page's direct answer) lives here, so the hero keeps one supporting line */}

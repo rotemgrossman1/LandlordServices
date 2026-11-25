@@ -6,7 +6,7 @@ import { langMeta, localePath } from "./i18n";
 /**
  * Title, description, canonical and Open Graph for a page in the current language.
  * `path` is the page's path without the language prefix ("/services"). Both languages are
- * listed as alternates (hreflang); x-default is English, the version for everyone outside Israel.
+ * listed as alternates (hreflang); x-default is Hebrew, the main version of the site.
  */
 export async function buildMetadata(
   page: PageMeta,
@@ -24,7 +24,7 @@ export async function buildMetadata(
       languages: {
         he: localePath("he", path),
         en: localePath("en", path),
-        "x-default": localePath("en", path),
+        "x-default": localePath("he", path),
       },
     },
     openGraph: {
@@ -46,9 +46,9 @@ export async function organizationJsonLd() {
     "@context": "https://schema.org",
     "@type": ["RealEstateAgent", "LocalBusiness"],
     "@id": `${site.url}/#organization`,
-    // The Hebrew and English names in both languages, so either is recognised
-    name: lang === "he" ? `${heSite.nameHe} ${site.name}` : site.name,
-    alternateName: [site.name, heSite.nameHe, heSite.shortNameHe],
+    // One name per language ("לנדלורד סרויסס" / "Landlord Services"); the other language's name as the alternate
+    name: site.nameHe,
+    alternateName: lang === "he" ? site.name : heSite.nameHe,
     description: summary,
     url: `${site.url}${link("/")}`,
     inLanguage: lang,
@@ -162,7 +162,7 @@ export async function articleJsonLd(article: Article, path: string) {
     url: `${site.url}${link(path)}`,
     mainEntityOfPage: `${site.url}${link(path)}`,
     ...(article.image.src ? { image: `${site.url}${article.image.src}` } : {}),
-    author: { "@id": `${site.url}/#organization` },
+    author: article.author ? { "@type": "Person", name: article.author } : { "@id": `${site.url}/#organization` },
     publisher: { "@id": `${site.url}/#organization` },
     ...(article.sources.length > 0 ? { citation: article.sources.map((s) => s.url) } : {}),
   };

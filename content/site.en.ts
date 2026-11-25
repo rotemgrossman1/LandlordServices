@@ -4,7 +4,7 @@
  * build fails if anything is missing. Every change to site.ts must be mirrored here.
  */
 
-import { images, site as heSite } from "./site";
+import { images as heImages, site as heSite } from "./site";
 import type { IconName } from "@/components/Icon";
 import type {
   CityPage,
@@ -58,7 +58,15 @@ export const accessibilityContact = {
 // Photos. Placeholder stock photos for now (sources in public/images/CREDITS.md);
 // replace with your own office and apartment photos. Empty = the slot falls back
 // to a plain colour field.
-export { images };
+// Same photos as the Hebrew site, with English alt text
+export const images = {
+  ...heImages,
+  heroAlt: "A house with a pool and lawn at dusk",
+  personasAlt: "Illustration: an apartment building with lit balconies and trees along the street in the evening",
+  protectionAlt: "A signed rental agreement, a fountain pen and a key on a desk, beside scales and law books",
+  servicesAlt: "A rendering of a modern apartment building with plants on its balconies",
+  faqAlt: "A sunlit room with potted plants by the window",
+};
 
 // Confirmed by the company: true for all clients, not only Landlord Safe.
 export const rentRecord: string =
@@ -175,11 +183,11 @@ export const cityPages: CityPage[] = [
     meta: {
       title: "Property Management in Tel Aviv – Managing Rented Apartments | Landlord Services",
       description:
-        "Rented apartment management in Tel Aviv: about 50 properties citywide. Tenant screening, a lease with legal support, repairs and guaranteed rent with Landlord Safe.",
+        "Property management in Tel Aviv: about 50 rented apartments we manage citywide. Tenant screening, legal support, repairs and guaranteed rent with Landlord Safe.",
       h1: "Property Management in Tel Aviv",
       h1Accent: "in Tel Aviv",
       intro:
-        "Landlord Services manages about 50 rented apartments in Tel Aviv, in neighborhoods all over the city. We find and screen tenants, prepare a lease with legal support and take care of every repair and every bill, and you receive the rent.",
+        "Property management in Tel Aviv for apartment owners: today we manage about 50 rented apartments in the city, in neighborhoods all over Tel Aviv. We find and screen tenants, prepare a lease with legal support and take care of every repair and every bill, and you receive the rent.",
     },
     eyebrow: "Service areas · Greater Tel Aviv",
     hero: {
@@ -222,7 +230,7 @@ export const cityPages: CityPage[] = [
         creditUrl: "https://commons.wikimedia.org/wiki/File:Tel-aviv-residential-building-001-february-2016.jpg",
       },
     ],
-    workTitle: "Our work in Tel Aviv",
+    workTitle: "Rental apartment management in Tel Aviv",
     work: [
       "Tel Aviv is one of the main cities where we work. Today we manage about 50 properties here, in neighborhoods all over the city, for owners who don't want to, or can't, manage the rental themselves.",
       "Renting out an apartment in Tel Aviv comes with its own challenges: many applicants for every apartment, who need careful screening, and older buildings where repairs are a matter of routine. That's exactly why we're here: tenants contact us, and we see every issue through to the end.",
@@ -325,7 +333,7 @@ export const cityPages: CityPage[] = [
     workTitle: "Our work in Givatayim",
     work: [
       "Givatayim has been with us from the beginning. We've managed apartments here since we founded the company, and today we have about 10 properties under management in the city, in different neighborhoods, for owners who have trusted us over the years.",
-      "Givatayim is a small, densely built residential city between Tel Aviv and Ramat Gan, where older buildings stand alongside new towers. An older building needs someone who comes quickly when something breaks, and in a new building you need to make sure the apartment is kept the way you received it. We do both, so you don't have to deal with it.",
+      "Givatayim is a small, densely built residential city between Tel Aviv and Ramat Gan, where older buildings stand alongside new towers. An apartment in an older building needs someone who comes quickly when something breaks, and in a new building you need to make sure the apartment is kept the way you received it. We do both, so you don't have to deal with it.",
     ],
     facts: [
       { value: "~10", label: "Properties under management in Givatayim" },
@@ -573,13 +581,13 @@ export const cityPages: CityPage[] = [
     slug: "bat-yam",
     city: "Bat Yam",
     meta: {
-      title: "Property Management in Bat Yam – Managing Rented Apartments | Landlord Services",
+      title: "Property Management Company in Bat Yam | Landlord Services",
       description:
-        "Property management in Bat Yam: about 10 managed properties citywide, by the sea and in the neighborhoods. Vetted tenants, legal support, repairs, Landlord Safe.",
-      h1: "Property Management in Bat Yam",
+        "A property management company in Bat Yam: about 10 rented apartments we manage, by the sea and inland. Vetted tenants, legal support, repairs and Landlord Safe.",
+      h1: "Property Management Company in Bat Yam",
       h1Accent: "in Bat Yam",
       intro:
-        "An apartment in Bat Yam needs a good tenant and someone to keep an eye on it. We manage about 10 properties in neighborhoods all across the city, and take care of the entire tenancy for you: from choosing the tenant and the lease to repairs and bills.",
+        "An apartment in Bat Yam needs a good tenant and someone to keep an eye on it. We're a property management company for apartment owners, and we manage about 10 rented apartments in neighborhoods all across Bat Yam. We take care of the entire tenancy for you: from choosing the tenant and the lease to repairs and bills.",
     },
     eyebrow: "Service areas · Greater Tel Aviv",
     hero: {
@@ -610,10 +618,10 @@ export const cityPages: CityPage[] = [
         creditUrl: "",
       },
     ],
-    workTitle: "Our work in Bat Yam",
+    workTitle: "Property management in Bat Yam, from the beach to the neighborhoods",
     work: [
       "Bat Yam sits on the coast, just south of Tel Aviv-Yafo, and it has it all: older buildings in the neighborhoods, renovated buildings, and new residential towers near the sea. Today we manage about 10 properties in neighborhoods all across the city.",
-      "In a city that's changing so fast, every apartment needs its own approach. In an older building, it's important to fix every issue quickly; in a new apartment, it's important to keep it in the condition you received it. Either way, the tenants contact us, and you get updates and your rent, without phone calls in the middle of the day.",
+      "In a city that's changing so fast, every apartment needs its own approach. In an apartment in an older building, it's important to fix every issue quickly; in a new apartment, it's important to keep it in the condition you received it. Either way, the tenants contact us, and you get updates and your rent, without phone calls in the middle of the day.",
     ],
     facts: [
       { value: "About 10", label: "properties under management in Bat Yam" },
@@ -661,13 +669,13 @@ export const cityPages: CityPage[] = [
     slug: "jerusalem",
     city: "Jerusalem",
     meta: {
-      title: "Property Management in Jerusalem – Managing Rented Apartments | Landlord Services",
+      title: "Apartment Management in Jerusalem | Landlord Services",
       description:
-        "Property management in Jerusalem: about 20 managed properties in neighborhoods citywide. Vetted tenants, a lease with legal support, repairs and Landlord Safe.",
-      h1: "Property Management in Jerusalem",
+        "Apartment management in Jerusalem for owners who don't live nearby: about 20 apartments we manage citywide. Vetted tenants, legal support and Landlord Safe.",
+      h1: "Apartment Management in Jerusalem",
       h1Accent: "in Jerusalem",
       intro:
-        "Not everyone who owns an apartment in Jerusalem lives nearby. We manage about 20 properties in neighborhoods all across the city, and take care of the entire tenancy for you: vetted tenants, a lease with legal support, issues that get handled and bills kept in order.",
+        "Not everyone who owns an apartment in Jerusalem lives nearby. That's what apartment management in Jerusalem is for: we manage about 20 rented apartments in neighborhoods all across the city, and take care of the entire tenancy for you: vetted tenants, a lease with legal support, issues that get handled and bills kept in order.",
     },
     eyebrow: "Service areas · Jerusalem",
     hero: {
@@ -710,10 +718,10 @@ export const cityPages: CityPage[] = [
         creditUrl: "https://commons.wikimedia.org/wiki/File:Ramat_Eshkol7221.JPG",
       },
     ],
-    workTitle: "Our work in Jerusalem",
+    workTitle: "Property management in Jerusalem, all over the city",
     work: [
       "Jerusalem is the city where we work outside Greater Tel Aviv. Today we manage about 20 properties there, in neighborhoods all across the city, for owners who don't have the time, energy or ability to manage the rental themselves.",
-      "Jerusalem is a city of neighborhoods that are very different from one another: old stone houses in historic neighborhoods, housing blocks from the 1960s and 70s, and new buildings in neighborhoods built since then. Each has its own kind of tenants, and each building has its own issues. We find the right tenant for every apartment, and handle everything that happens there until the end of the tenancy.",
+      "Jerusalem is a city of neighborhoods that are very different from one another: old stone houses in historic neighborhoods, housing blocks from the 1960s and 70s, and new buildings in neighborhoods built since then. Each has its own kind of tenants, and each apartment has its own issues. We find the right tenant for every apartment, and handle everything that happens there until the end of the tenancy.",
     ],
     facts: [
       { value: "About 20", label: "properties under management in Jerusalem" },
@@ -1085,7 +1093,7 @@ export const faq: FaqItem[] = [
     id: "for-whom",
     question: "Who is the service for?",
     answer:
-      "Our service suits any property owner who wants professional, high-quality management of their property that will maximize the return on it and free them from any work or worry involved in managing and maintaining it day to day.\n• Owners living abroad, or clients who spend most of their time abroad\n• Owners who don't want to deal with the day-to-day management and maintenance of their property;\n• People with demanding careers who can't deal with managing and maintaining a property they own;\n• Lawyers, accountants and estate administrators who want management by an external professional;\n• Jointly owned properties that need professional management;\n• Owners of multiple properties;",
+      "Our service suits any property owner who wants professional, high-quality management of their property that will maximize the return on it and free them from any work or worry involved in managing and maintaining it day to day.\n• Owners living abroad, or clients who spend most of their time abroad\n• Owners who don't want to deal with the day-to-day management and maintenance of their property;\n• People with demanding careers who can't deal with managing and maintaining a property they own;\n• Lawyers, accountants and estate administrators who want management by an external professional;\n• Apartments with several owners (heirs, for example) who want professional management;\n• Owners of multiple properties;",
   },
   {
     id: "area",
@@ -1248,6 +1256,18 @@ export const safe = {
       answer:
         "Definitely.\nIf the lease is breached, our goal is to evict the breaching tenant and find a quality tenant to replace them as quickly as possible, one who will pass our background checks and sign a lease on terms as similar as possible, and for at least the lease term in the lease agreement, in place of the breaching tenant.",
     },
+    {
+      id: "safe-covers",
+      question: "What does the rent protection cover?",
+      answer:
+        "Landlord Safe covers a breach of the lease in one of these cases: the tenant doesn't pay rent, runs a business in the apartment, or uses it against the law or the lease. In these cases you keep receiving rent, and the monthly compensation reaches your account within 14 days of your request being approved. If the tenant paid but didn't leave at the end of the lease, you get compensation equal to the rent for up to three months or until they leave, whichever comes first. And we handle the eviction and debt collection through legal proceedings. All subject to the terms of service.",
+    },
+    {
+      id: "safe-vs-guarantee",
+      question: "How is Landlord Safe different from a bank guarantee or a rental guarantee?",
+      answer:
+        "A bank guarantee, guarantors or a security check are securities the tenant gives when signing the lease. When the tenant stops paying, someone has to enforce them, and they're limited to the amount set in them. With Landlord Safe, the company itself guarantees the rent payments: you keep receiving rent, and we deal with the tenant through legal proceedings. One doesn't replace the other: every lease of ours also includes a section on the securities and guarantees the tenant provides.",
+    },
   ] as FaqItem[],
 };
 
@@ -1294,32 +1314,32 @@ export const pages: Record<
   PageMeta
 > = {
   home: {
-    title: "Landlord Services – Property Management for Owners of Rented Apartments",
+    title: "Property Management Company for Apartment Owners | Landlord Services",
     description:
-      "Landlord Services has managed rental apartments in Greater Tel Aviv and Jerusalem since 2013: tenant screening, a legally sound lease, repairs and Landlord Safe for guaranteed rent, subject to the terms of service.",
-    h1: "Your apartment, managed. Minimum hassle and headaches. Maximum enjoyment of your rent.",
+      "A property management company for apartment owners in Greater Tel Aviv and Jerusalem since 2013: tenant screening, legal support, repairs and Landlord Safe.",
+    h1: "A property management company for apartment owners. Minimum hassle and headaches. Maximum enjoyment of your rent.",
     // In the hero each sentence of the accent sits on its own line, in a smaller size
     h1Accent: "Minimum hassle and headaches. Maximum enjoyment of your rent.",
     intro:
-      "We offer several plans designed to give you peace of mind and free you completely from the work and worry of your apartment, dealing with your tenants or day-to-day maintenance, all while maximizing the return on your property.",
+      "Landlord Services is a property management company for owners of rented apartments in Greater Tel Aviv and Jerusalem. We find and screen tenants, prepare a lease with legal support, take care of repairs and bills, and you receive the rent without dealing with tenants or day-to-day maintenance.",
   },
   services: {
-    title: "Rental Apartment and Property Management | Landlord Services",
+    title: "Rental Apartment Management – All Services | Landlord Services",
     description:
-      "All Landlord Services offerings: Rental Apartment Management, Landlord Safe, Property Management for Owners Abroad, Luxury Property Management, and Offices & Commercial Properties.",
-    h1: "Property Management Services",
-    h1Accent: "Property Management",
+      "Rental apartment management for the whole tenancy: vetted tenants, a lease with legal support, bills and repairs. Plus Landlord Safe and management from abroad.",
+    h1: "Rental Apartment Management",
+    h1Accent: "Management",
     intro:
-      "As a real estate management company for apartment owners, we take care of everything involved in renting out your apartment: finding tenants, the lease, maintenance and rent collection. We work in Greater Tel Aviv and Jerusalem, including for owners who live abroad.",
+      "Rental apartment management is what we do: we manage your rented apartment for the whole tenancy, from finding tenants and the lease to maintenance and rent collection. We work in Greater Tel Aviv and Jerusalem, including for owners who live abroad.",
   },
   safe: {
-    title: "Landlord Safe – Guaranteed Rent and Legal Handling | Landlord Services",
+    title: "Rent Protection – Landlord Safe | Landlord Services",
     description:
-      "Landlord Safe: even if the tenant stops paying, you keep receiving rent, subject to the terms of service. Tenant screening, security deposits and guarantees, legal eviction and debt collection.",
-    h1: "Landlord Safe – the rent keeps coming",
-    h1Accent: "the rent keeps coming",
+      "Rent protection with Landlord Safe: if the tenant stops paying, your rent keeps coming, subject to the terms of service. Tenant screening and legal eviction.",
+    h1: "Landlord Safe – protection for your rent",
+    h1Accent: "protection for your rent",
     intro:
-      "Landlord Safe is a service of the property management company Landlord Services, for owners who want security in renting out their apartment. If the tenant stops paying, you keep receiving rent, and we handle the eviction and collection through legal proceedings.",
+      "Landlord Safe is rent protection for apartment owners from the property management company Landlord Services: the company guarantees the rent payments. If the tenant stops paying, you keep receiving rent, subject to the terms of service, and we handle the eviction and collection through legal proceedings.",
   },
   about: {
     title: "About Landlord Services – Property Management Since 2013",
@@ -1382,8 +1402,8 @@ export const home = {
   foundedText: "Year the company was founded",
   ledBy: "Led by", // hero line: "Led by <partner>, <role>"
   servicesEyebrow: "What we do",
-  servicesTitle: "Everything your apartment needs, in one place",
-  servicesTitleAccent: "in one place",
+  servicesTitle: "Property management for apartment owners, all in one place",
+  servicesTitleAccent: "all in one place",
   servicesMore: "All services",
   stepsTitle: "Four steps, and you can relax",
   areasEyebrow: "Where we work",
@@ -1447,7 +1467,7 @@ export const labels = {
   office: "Our office",
   officeLead: "You're welcome to visit us – just arrange it in advance.",
   story: "Our story",
-  whatItIs: "What is Landlord Safe",
+  whatItIs: "Rent protection: what is Landlord Safe",
   monthsCovered: "Guarantee period",
   price: "Price",
   learnMore: "Learn more",
@@ -1470,6 +1490,9 @@ export const labels = {
   articlesMenu: "Latest articles", // the header dropdown's label for screen readers
   allArticles: "All articles",
   readArticle: "Read the article",
+  author: "By:",
+  areasWeServe: "Areas we serve",
+  areaLink: "Property management in {city}", // anchor text of each city link in "areas we serve"
   published: "Published:",
   sources: "Sources",
   sourcesNote: "The information in this article is based on these sources, as of the publication date.",

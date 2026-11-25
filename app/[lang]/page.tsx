@@ -57,7 +57,7 @@ export default async function HomePage() {
           aria-labelledby="faq-title"
         >
           {images.faq && (
-            <Image src={images.faq} alt="" fill sizes="100vw" className={`photo-section-bg ${styles.faqBg}`} />
+            <Image src={images.faq} alt={images.faqAlt} fill sizes="100vw" className={`photo-section-bg ${styles.faqBg}`} />
           )}
           <div className={`container ${styles.faqLayout}`}>
             <div className={styles.faqHead}>

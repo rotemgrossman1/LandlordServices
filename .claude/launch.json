@@ -4,14 +4,35 @@
     {
       "name": "landlord-dev",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
       "port": 3000
     },
     {
       "name": "landlord-prod",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["next", "start", "-p", "3100"],
+      "runtimeArgs": [
+        "next",
+        "start",
+        "-p",
+        "3100"
+      ],
       "port": 3100
+    },
+    {
+      "name": "landlord-drafts",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "SHOW_DRAFTS=1",
+        "npx",
+        "next",
+        "dev",
+        "-p",
+        "3200"
+      ],
+      "port": 3200
     }
   ]
 }

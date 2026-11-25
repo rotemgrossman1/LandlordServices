@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           he: absolute(localePath("he", path)),
           en: absolute(localePath("en", path)),
-          "x-default": absolute(localePath("en", path)),
+          "x-default": absolute(localePath("he", path)),
         },
       },
     })),

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AreasLinks from "@/components/AreasLinks";
 import CtaBand from "@/components/CtaBand";
 import Icon from "@/components/Icon";
 import NumbersStrip from "@/components/NumbersStrip";
@@ -107,6 +108,8 @@ export default async function AboutPage() {
           )}
         </div>
       </section>
+
+      <AreasLinks />
 
       <CtaBand />
       <JsonLd data={await breadcrumbJsonLd("/about")} />

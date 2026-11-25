@@ -35,15 +35,25 @@ export type Article = {
   sections: ArticleSection[];
   faq: FaqItem[]; // [] = no FAQ section
   sources: ArticleSource[];
+  // Who wrote or reviewed it, shown under the title and in the JSON-LD. Omit or "" = the company
+  author?: string;
+  // true = a draft: left out of the build (routes, sitemap, llms.txt, lists, links) until the owner
+  // approves it. Preview drafts locally with `SHOW_DRAFTS=1 npm run dev`.
+  draft?: boolean;
 };
 
-export const articles: Article[] = [
+/** Published articles only, unless SHOW_DRAFTS=1 (local preview). Used by both languages. */
+export function published(list: Article[]): Article[] {
+  return list.filter((a) => !a.draft || process.env.SHOW_DRAFTS === "1");
+}
+
+const allArticles: Article[] = [
   {
     "slug": "relocation-apartment-israel",
     "date": "2026-11-17",
     "updated": "",
     "meta": {
-      "title": "רילוקיישן: 5 דברים לסגור לגבי הדירה בישראל | לנדלורד",
+      "title": "רילוקיישן: 5 דברים לסגור לגבי הדירה בישראל | לנדלורד סרויסס",
       "description": "עוברים לחו\"ל? מה קורה עם המס על שכר הדירה, התושבות, הארנונה על דירה ריקה, הביטוח והתחזוקה מרחוק, ואיך מנהלים את הדירה בישראל בלי לטוס בחזרה לכל תקלה.",
       "h1": "רילוקיישן: 5 דברים שחשוב לסגור לגבי הדירה והנכסים בישראל לפני שטסים",
       "intro": "לפני שטסים לרילוקיישן כדאי לסגור חמישה דברים לגבי הדירה בישראל: המס על שכר הדירה, ההשפעה של הדירה על התושבות, ההחלטה אם להשכיר אותה או להשאיר אותה ריקה, הביטוח, ומי יטפל בדירה ובדיירים. חובת הדיווח והתשלום על הכנסה משכר דירה בישראל נמשכת גם כשאתם גרים בחו\"ל, ורוב שאר הדברים נשארים באחריותכם גם מרחוק. כאן נסביר כל נקודה בפשטות, כולל מה כדאי לבדוק עם רואה החשבון לפני הטיסה."
@@ -126,9 +136,9 @@ export const articles: Article[] = [
         ]
       },
       {
-        "heading": "איך לנדלורד עוזרת לבעלי דירות שעוברים לחו\"ל",
+        "heading": "איך לנדלורד סרויסס עוזרת לבעלי דירות שעוברים לחו\"ל",
         "paragraphs": [
-          "לנדלורד מנהלת דירות להשכרה בגוש דן ובירושלים מאז 2013, כולל דירות של בעלים שגרים בחו\"ל. למי שעובר לחו\"ל, שלושה מהשירותים שלנו עובדים יחד:"
+          "לנדלורד סרויסס מנהלת דירות להשכרה בגוש דן ובירושלים מאז 2013, כולל דירות של בעלים שגרים בחו\"ל. למי שעובר לחו\"ל, שלושה מהשירותים שלנו עובדים יחד:"
         ],
         "bullets": [
           "[ניהול דירות לתושבי חוץ](/services#abroad): אנחנו מנהלים את כל ההשכרה מרחוק, מטפלים בתקלות ובתחזוקה בלי שתצטרכו לטוס, ומעדכנים אתכם בכל מקום שבו אתם נמצאים. עם ייפוי כוח מתאים אנחנו חותמים בשמכם על הסכם השכירות, ושכר הדירה נכנס ישירות לחשבון שלכם ולא עובר דרכנו.",
@@ -269,3 +279,5 @@ export const articles: Article[] = [
     ]
   },
 ];
+
+export const articles = published(allArticles);
